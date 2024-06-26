@@ -2,7 +2,7 @@ import React from "react"; // eslint-disable-line no-unused-vars
 
 const Home = () => {
   return (
-    <div className="nav">
+    <div className="navbar">
       <nav>
         <ul>
           <li>
