@@ -1,0 +1,33 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    height: 10%;
+    width: 100%;
+    background-color: #00008C;
+  }
+  
+  .navbar nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around; /* 리스트 아이템들이 고르게 배치되도록 설정 */
+  }
+  
+  .navbar nav ul li {
+    float: left;
+  }
+  
+  .navbar nav ul li a {
+    display: block;
+    color: #000; /* 원하는 텍스트 색상으로 변경 가능 */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .navbar nav ul li a:hover {
+    background-color: #ddd; /* 원하는 호버 색상으로 변경 가능 */
+  }
+  
