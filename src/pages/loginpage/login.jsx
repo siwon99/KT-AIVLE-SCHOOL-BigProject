@@ -41,11 +41,13 @@ const Login = () => {
   })
     .then(response => response.json())
     .then(data => {
-      if (data.message === 'LOGIN SUCCESS') {
+      console.log(data.token)
+      if (data.token) {
         alert('로그인 되었습니다.');
         localStorage.setItem('token', data.message);
         navigate('/home');
       } else {
+        console.log('username:' ,userInfo.username, 'password:', userInfo.password);
         alert('가입되지 않은 정보입니다.');
       }
     });
@@ -57,8 +59,8 @@ const Login = () => {
         <UserInput
           type="text"
           placeholder="아이디를 입력하세요."
-          value={userInfo.id}
-          name="id"
+          value={userInfo.username}
+          name="username"
         />
         <UserInput
           type="password"
