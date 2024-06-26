@@ -1,10 +1,10 @@
 import React from "react"; // eslint-disable-line no-unused-vars
 import "./navbar.css";
-import WhomeIcon from ".src/assets/WhomeIcon";
-import WsignUp from ".src/assets/WsignUp";
-import WlogOut from ".src/assets/WlogOut";
+import WhomeIcon from "../../assets/WhomeIcon.svg";
+import WsignUp from "../../assets/WsignUp.svg";
+import WlogOut from "../../assets/WlogOut.svg";
 
-const Home = () => {
+const Navbar = () => {
   return (
     <div className="navbar">
       <nav>
@@ -37,4 +37,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Navbar;
