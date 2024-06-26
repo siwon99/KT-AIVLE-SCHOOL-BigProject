@@ -10,24 +10,24 @@ const Navbar = () => {
       <nav>
         <ul>
           <li>
-            <a href="#home">
+            <a href="/">
               <img src={WhomeIcon} alt="NongBu" className="whomeicon" />
             </a>
           </li>
           <li>
-            <a href="#land_list">토지 리스트</a>
+            <a href="/land_list">토지 리스트</a>
           </li>
           <li>
-            <a href="#service">서비스 소개</a>
+            <a href="/service">서비스 소개</a>
           </li>
           <li>
-            <a href="#faq">FAQ</a>
+            <a href="/faq">FAQ</a>
           </li>
           <li className="auth-icons">
-            <a href="#login">
+            <a href="/login">
               <img src={WlogIn} alt="Log In" className="login-icon" />
             </a>
-            <a href="#signup">
+            <a href="/signup">
               <img src={WsignUp} alt="SignUp" className="signup-icon" />
             </a>
           </li>
