@@ -3,11 +3,9 @@ import Navbar from "../navbar/navbar"
 
 const home = () => {
   return (
-    <div>
-      <nav>
-        <p>메뉴</p>
-      </nav>
-    </div>
+    <>
+    <Navbar/>
+    </>
   )
 }
 
