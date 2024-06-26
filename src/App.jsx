@@ -1,7 +1,5 @@
 import './App.css'
-
 import WhomeIcon from "./assets/WhomeIcon.svg"
-
 
 function App() {
 
