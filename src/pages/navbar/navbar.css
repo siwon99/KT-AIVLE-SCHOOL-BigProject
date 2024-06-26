@@ -12,6 +12,7 @@
   width: 100%;
   background-color: #00008C;
   align-items: center;
+  justify-content: space-between; /* 좌우로 공간을 균등하게 배분 */
 }
 
 .navbar nav ul {
@@ -24,32 +25,35 @@
   list-style-type: none; /*리스트 아이템 앞 점 제거*/
 }
 
-.navbar nav ul li:first-child {
-  margin-left: 20px; /*농부만 왼쪽 위치*/
+.navbar nav ul li {
   margin-right: 150px;
-  /* font-weight: bold; */
+}
+
+.navbar nav ul li:first-child {
+  margin-left: 5%; /* 농부만 왼쪽 위치 */
+  margin-right: 20%; /* 나머지 항목을 오른쪽으로 밀기 */
 }
 
 .navbar nav ul li a {
   font-size: 17px;
   color: white;
   text-decoration: none; /* 링크의 밑줄 제거 */
-  white-space: nowrap; /*텍스트 줄바끔 금지*/
+  white-space: nowrap; /* 텍스트 줄바꿈 금지 */
   /* font-size: clamp(10px, 2vw, 15px); 화면 크기에 따라 글자 크기 조정 */
 }
 
-.navbar nav ul li a img.whomeicon { /*농부 로고*/
+.navbar nav ul li a img.whomeicon { /* 농부 로고 */
   width: 120px;
 }
 
-.navbar nav ul li.auth-icons { /*로그인, 회원 아이콘*/
+.navbar nav ul li.auth-icons { /* 로그인, 회원 아이콘 */
   display: flex;
   align-items: center;
-  margin-left: 110px;
+  margin-left: 7%;
 }
 
 .navbar nav ul li.auth-icons a {
-  margin-right: 60px;
+  margin-right: 50%; /* 간격 조정 */
 }
 
 .navbar nav ul li.auth-icons a img.login-icon {
@@ -63,7 +67,7 @@
   width: 37px;
 }
 
-@media (max-width: 1279px) { /*반응형*/
+@media (max-width: 1279px) { /* 반응형 */
   .navbar nav ul li:not(:first-child):not(.auth-icons) {
     display: none;
   }
@@ -78,8 +82,7 @@
   }
 
   .navbar nav ul li.auth-icons {
-    position: absolute;
-    right: -50px;
+    right: 20px; /* 화면 크기 줄어들 때도 오른쪽에 고정 */
   }
 
   .navbar nav ul li.auth-icons a .login-icon {

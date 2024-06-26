@@ -1,5 +1,5 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
-import Navbar from '../navbar/Navbar'; // 경로 수정
+import Navbar from '../navbar/navbar.jsx'; // 경로 수정
 import Search from './Search.jsx'
 
 //메인 페이지 문구

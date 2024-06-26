@@ -2,7 +2,7 @@ import React, { useState } from 'react' // eslint-disable-line no-unused-vars
 import { useNavigate } from 'react-router-dom';
 import UserBtn from './UserBtn.jsx'
 import UserInput from './UserInput.jsx'
-import Navbar from '../navbar/Navbar.jsx';
+import Navbar from '../navbar/navbar.jsx';
 
 const Login = () => {
   //유저 id, password
