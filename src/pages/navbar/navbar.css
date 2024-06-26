@@ -11,23 +11,36 @@
   height: 100%;
   width: 100%;
   background-color: #00008C;
+  align-items: center;
 }
 
 .navbar nav ul {
   display: flex;
+  height: 100%;
   width: 100%;
+  margin: 0;
   padding: 0;
   align-items: center;
   list-style-type: none; /*리스트 아이템 앞 점 제거*/
 }
 
 .navbar nav ul li {
+<<<<<<< Updated upstream
   margin-right: 50px;
 }
 
 .navbar nav ul li:first-child {
   margin-left: 20px; /*농부만 왼쪽 위치*/
   margin-right: 890px; /*나머지 오른쪽 위치*/
+=======
+  margin-right: 150px;
+  /* font-weight: bold; */
+}
+
+.navbar nav ul li:first-child {
+  margin-left: 5%; /*농부만 왼쪽 위치*/
+  margin-right: 20%; /*나머지 오른쪽 위치*/
+>>>>>>> Stashed changes
 }
   
 .navbar nav ul li a {
@@ -35,32 +48,71 @@
   color: white;
   text-decoration: none; /* 링크의 밑줄 제거 */
   white-space: nowrap; /*텍스트 줄바끔 금지*/
-  font-size: clamp(10px, 2vw, 15px); /*화면 크기에 따라 글자 크기 조정*/
+  /* font-size: clamp(10px, 2vw, 15px); 화면 크기에 따라 글자 크기 조정 */
 }
 
+<<<<<<< Updated upstream
 .navbar nav ul li a:hover {
   color: rgb(208, 216, 255);
 }
 
 .navbar nav ul li a img.whomeicon {
+=======
+.navbar nav ul li a img.whomeicon { /*농부 로고*/
+>>>>>>> Stashed changes
   width: 120px;
 }
 
-.navbar nav ul li.auth-icons {
+.navbar nav ul li.auth-icons { /*로그인, 회원 아이콘*/
   display: flex;
   align-items: center;
+  margin-left: 110px;
 }
 
 .navbar nav ul li.auth-icons a {
-  margin-right: 50px;
+  margin-right: 60px;
 }
 
 .navbar nav ul li.auth-icons a img.login-icon {
+<<<<<<< Updated upstream
   height: 43px;
   width: 50px;
+=======
+  height: 55px;
+  width: 55px;
+  margin-top: 8px;
+>>>>>>> Stashed changes
 }
 
 .navbar nav ul li.auth-icons a img.signup-icon {
-  height: 40px;
-  width: 40px;
+  height: 37px;
+  width: 37px;
+}
+
+@media (max-width: 1279px) { /*반응형*/
+  .navbar nav ul li:not(:first-child):not(.auth-icons) {
+    display: none;
+  }
+
+  .navbar nav ul {
+    justify-content: center;
+  }
+
+  .navbar nav ul li:first-child {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .navbar nav ul li.auth-icons {
+    position: absolute;
+    right: -50px;
+  }
+
+  .navbar nav ul li.auth-icons a .login-icon {
+    display: none;
+  }
+
+  .navbar nav ul li.auth-icons a .signup-icon {
+    display: block;
+  }
 }
