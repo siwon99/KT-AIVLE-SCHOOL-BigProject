@@ -44,16 +44,20 @@
 
 .navbar nav ul li a img.whomeicon { /* 농부 로고 */
   width: 120px;
+  left: 0;
 }
 
 .navbar nav ul li.auth-icons { /* 로그인, 회원 아이콘 */
   display: flex;
   align-items: center;
-  margin-left: 7%;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .navbar nav ul li.auth-icons a {
-  margin-right: 50%; /* 간격 조정 */
+  margin-right: 60%; /* 간격 조정 */
 }
 
 .navbar nav ul li.auth-icons a img.login-icon {
@@ -79,10 +83,6 @@
   .navbar nav ul li:first-child {
     margin-left: 0;
     margin-right: 0;
-  }
-
-  .navbar nav ul li.auth-icons {
-    right: 20px; /* 화면 크기 줄어들 때도 오른쪽에 고정 */
   }
 
   .navbar nav ul li.auth-icons a .login-icon {
