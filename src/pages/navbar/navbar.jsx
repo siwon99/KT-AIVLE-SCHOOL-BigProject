@@ -1,4 +1,5 @@
 import React from "react"; // eslint-disable-line no-unused-vars
+import "./navbar.css";
 
 const Home = () => {
   return (
