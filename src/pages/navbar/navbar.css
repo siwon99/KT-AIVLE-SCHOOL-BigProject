@@ -22,12 +22,12 @@
 }
 
 .navbar nav ul li {
-  margin-right: 90px;
+  margin-right: 50px;
 }
 
 .navbar nav ul li:first-child {
-  margin-left: 5%; /*농부만 왼쪽 위치*/
-  margin-right: 40%; /*나머지 오른쪽 위치*/
+  margin-left: 20px; /*농부만 왼쪽 위치*/
+  margin-right: 890px; /*나머지 오른쪽 위치*/
 }
   
 .navbar nav ul li a {
@@ -36,6 +36,10 @@
   text-decoration: none; /* 링크의 밑줄 제거 */
   white-space: nowrap; /*텍스트 줄바끔 금지*/
   font-size: clamp(10px, 2vw, 15px); /*화면 크기에 따라 글자 크기 조정*/
+}
+
+.navbar nav ul li a:hover {
+  color: rgb(208, 216, 255);
 }
 
 .navbar nav ul li a img.whomeicon {
@@ -52,7 +56,7 @@
 }
 
 .navbar nav ul li.auth-icons a img.login-icon {
-  height: 50px;
+  height: 43px;
   width: 50px;
 }
 
