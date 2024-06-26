@@ -1,8 +1,8 @@
 import React from "react"; // eslint-disable-line no-unused-vars
 import "./navbar.css";
 import WhomeIcon from "../../assets/WhomeIcon.svg";
+import WlogIn from "../../assets/WlogIn.svg";
 import WsignUp from "../../assets/WsignUp.svg";
-import WlogOut from "../../assets/WlogOut.svg";
 
 const Navbar = () => {
   return (
@@ -11,7 +11,7 @@ const Navbar = () => {
         <ul>
           <li>
             <a href="#home">
-              <img src={WhomeIcon} alt="NongBu" />
+              <img src={WhomeIcon} alt="NongBu" className="whomeicon" />
             </a>
           </li>
           <li>
@@ -25,10 +25,10 @@ const Navbar = () => {
           </li>
           <li className="auth-icons">
             <a href="#login">
-              <img src={WsignUp} alt="Log In" />
+              <img src={WlogIn} alt="Log In" className="login-icon" />
             </a>
-            <a href="#logout">
-              <img src={WlogOut} alt="Log Out" />
+            <a href="#signup">
+              <img src={WsignUp} alt="SignUp" className="signup-icon" />
             </a>
           </li>
         </ul>

@@ -1,40 +1,62 @@
 .navbar {
-    display: flex;
-    position: fixed;
-    width: 100%;
-    height: 10vh;
-    top: 0;
-  }
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 10vh;
+  top: 0;
+}
 
-  .navbar nav {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    background-color: #00008C;
-  }
+.navbar nav {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: #00008C;
+}
 
-  .navbar nav ul {
-    display: flex;
-    width: 100%;
-    padding: 0;
-    align-items: center;
-    list-style-type: none; /*리스트 아이템 앞 점 제거*/
-  }
+.navbar nav ul {
+  display: flex;
+  width: 100%;
+  padding: 0;
+  align-items: center;
+  list-style-type: none; /*리스트 아이템 앞 점 제거*/
+}
 
-  .navbar nav ul li {
-    margin-right: 90px;
-  }
+.navbar nav ul li {
+  margin-right: 90px;
+}
 
-  .navbar nav ul li:first-child {
-    margin-left: 10%; /*농부만 왼쪽 위치*/
-    margin-right: 40%; /*나머지 오른쪽 위치*/
+.navbar nav ul li:first-child {
+  margin-left: 5%; /*농부만 왼쪽 위치*/
+  margin-right: 40%; /*나머지 오른쪽 위치*/
 }
   
-  .navbar nav ul li a {
-    font-size: 17px;
-    color: white;
-    text-decoration: none; /* 링크의 밑줄 제거 */
-    white-space: nowrap; /*텍스트 줄바끔 금지*/
-    font-size: clamp(10px, 2vw, 15px); /*화면 크기에 따라 글자 크기 조정*/
-  }
-  
+.navbar nav ul li a {
+  font-size: 17px;
+  color: white;
+  text-decoration: none; /* 링크의 밑줄 제거 */
+  white-space: nowrap; /*텍스트 줄바끔 금지*/
+  font-size: clamp(10px, 2vw, 15px); /*화면 크기에 따라 글자 크기 조정*/
+}
+
+.navbar nav ul li a img.whomeicon {
+  width: 120px;
+}
+
+.navbar nav ul li.auth-icons {
+  display: flex;
+  align-items: center;
+}
+
+.navbar nav ul li.auth-icons a {
+  margin-right: 50px;
+}
+
+.navbar nav ul li.auth-icons a img.login-icon {
+  height: 50px;
+  width: 50px;
+}
+
+.navbar nav ul li.auth-icons a img.signup-icon {
+  height: 40px;
+  width: 40px;
+}
