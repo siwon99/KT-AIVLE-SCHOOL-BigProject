@@ -1,31 +1,33 @@
-import React from 'react';
-import Navbar from '../navbar/navbar'; // 경로 수정
+import React from 'react'; // eslint-disable-line no-unused-vars
+import Navbar from '../navbar/Navbar'; // 경로 수정
+import Search from './Search.jsx'
 
+//메인 페이지 문구
 const HeroSection = () => (
   <section className="hero-section">
     <h1>NongBu<br />New Options, New Generation By Unity</h1>
   </section>
 );
 
-const SearchSection = () => (
-  <section className="search-section">
-    <input type="text" placeholder="검색어를 입력해 주세요." />
-  </section>
-);
-
+//메인 페이지 유튜브
 const VideoSection = () => (
   <section className="video-section">
     <h2>공식 영상</h2>
     <div className="video-container">
-      {/* YouTube video embed code:
+      {/* YouTube video embed code */}
       <iframe 
-          src="https://www.youtube.com/embed/VIDEO_ID" 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/VIDEO_ID" 
+        title="YouTube video player" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowFullScreen
       ></iframe>
-      */}
     </div>
   </section>
 );
 
+//메인 페이지 서비스 소개
 const ServiceIntroduction = () => (
   <section className="service-introduction">
     <h3>서비스 소개</h3>
@@ -34,6 +36,7 @@ const ServiceIntroduction = () => (
   </section>
 );
 
+//메인 페이지 푸터
 const Footer = () => (
   <footer className="footer">
     <p>© KT AILVE 20조 농지탐정단 ALL RIGHTS RESERVED.</p>
@@ -46,7 +49,7 @@ const HomePage = () => {
       <Navbar />
       <main className="main-content">
         <HeroSection />
-        <SearchSection />
+        <Search />
         <VideoSection />
         <ServiceIntroduction />
       </main>
