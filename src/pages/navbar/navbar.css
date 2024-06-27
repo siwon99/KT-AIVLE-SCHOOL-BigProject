@@ -2,7 +2,7 @@
   display: flex;
   position: fixed;
   width: 100%;
-  height: 10vh;
+  height: 10%; /*수정*/
   top: 0;
 }
 
@@ -74,6 +74,7 @@
 .navbar nav ul li.auth-icons a img.signup-icon {
   height: 37px;
   width: 37px;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 1279px) { /* 반응형 */
