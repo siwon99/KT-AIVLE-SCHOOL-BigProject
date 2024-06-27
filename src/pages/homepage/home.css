@@ -1,0 +1,42 @@
+.home {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr; /* 1개의 열 */
+    grid-template-rows: 1fr;    /* 1개의 행 */
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    margin-top: 10vh;
+}
+
+/* 각 섹션의 그리드 배치 정의 */
+.content .maintext {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.content .service-intro {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.content .search {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.content .youtube-container {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.content .footer {
+    grid-column: 1 / -1; /* 모든 열에 걸쳐 확장 */
+    grid-row: 3;
+}
