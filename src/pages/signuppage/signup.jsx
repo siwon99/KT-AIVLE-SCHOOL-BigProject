@@ -2,6 +2,7 @@ import React, { useState } from 'react'; // eslint-disable-line no-unused-vars
 import { useNavigate } from 'react-router-dom';
 import UserInput from '../loginpage/UserInput';
 import UserButton from '../loginpage/UserBtn';
+import Navbar from '../navbar/navbar';
 
 const Signup = () => {
   // 유저 정보
@@ -53,6 +54,12 @@ const Signup = () => {
         birthday: userInfo.birthday,
       }),
     })
+    console.log('user_realname:', userInfo.user_realname, 
+                'username:', userInfo.username, 
+                'password:', userInfo.password,
+                'confirm_password:', userInfo.confirm_password,
+                'birthday:', userInfo.birthday)
+
       .then(response => {
         if (response.ok) return response.json();
         throw new Error('서버 응답이 올바르지 않습니다.');
@@ -70,36 +77,38 @@ const Signup = () => {
   };
 
   return (
-    <div className="signup">
-      <div className="write-info" onChange={handleInputChange}>
-        <div className="backHome-Btn">
-          <button className="backBtn" onClick={goToHome}>뒤로가기</button>
-        </div>
+    <>
+      <Navbar />
+      <div className="signup">
+        <div className="write-info" onChange={handleInputChange}>
+          <div className="backHome-Btn">
+            <button className="backBtn" onClick={goToHome}>뒤로가기</button>
+          </div>
 
-        <div className="userInput">
-          <UserInput
-            type="text"
-            placeholder="이름"
-            value={userInfo.user_realname}
-            name="user_realname"
-          />
-          <UserInput
-            type="text"
-            placeholder="아이디"
-            value={userInfo.username}
-            name="username"
-          />
-          <UserInput
-            type="password"
-            placeholder="비밀번호"
-            value={userInfo.password}
-            name="password"
-          />
-          <UserInput
-            type="password"
-            placeholder="비밀번호 확인"
-            value={userInfo.confirm_password}
-            name="confirm_password"
+          <div className="userInput">
+            <UserInput
+              type="text"
+              placeholder="이름"
+              value={userInfo.user_realname}
+              name="user_realname"
+            />
+              <UserInput
+                type="text"
+              placeholder="아이디"
+              value={userInfo.username}
+              name="username"
+            />
+            <UserInput
+              type="password"
+              placeholder="비밀번호"
+              value={userInfo.password}
+              name="password"
+            />
+            <UserInput
+              type="password"
+              placeholder="비밀번호 확인"
+              value={userInfo.confirm_password}
+              name="confirm_password"
           />
           <UserInput
             type="birthday"
@@ -115,10 +124,11 @@ const Signup = () => {
             onClick={processSignUp}
             text="회원 가입"
           />
-
         </div>
+        
       </div>
     </div>
+  </>
   );
 };
 
