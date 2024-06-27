@@ -49,7 +49,7 @@ const HomePage = () => {
       <main className="content">
         <MainText/>
         <Search />
-        <YoutubeSection />
+        <Youtube />
         <ServiceIntroduction />
       </main>
       <Footer />
