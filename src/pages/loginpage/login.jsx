@@ -45,7 +45,7 @@ const Login = () => {
       console.log(data.token)
       if (data.token) {
         alert('로그인 되었습니다.');
-        localStorage.setItem('token', data.message);
+        localStorage.setItem('token', data.token);
         navigate('/');
       } else {
         console.log('username:' ,userInfo.username, 'password:', userInfo.password);
