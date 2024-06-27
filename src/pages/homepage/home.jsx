@@ -13,7 +13,7 @@ const MainText = () => (
 // 메인 페이지 유튜브
 const Youtube = () => (
   <section className="youtube-container">
-    <h2>공식 영상</h2>
+    <h3>공식 영상</h3>
     <div className="youtube">
       <iframe
         width="560"

@@ -3,6 +3,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .content {
@@ -10,20 +11,30 @@
     grid-template-columns: 1fr; /* 1개의 열 */
     grid-template-rows: 1fr;    /* 1개의 행 */
     gap: 20px;
-    width: 100%;
+    width: 90%;
     height: 100%;
     margin-top: 10vh;
 }
 
-/* 각 섹션의 그리드 배치 정의 */
+/* 그리드 영역별(행열로 구분) 배치 */
 .content .maintext {
     grid-column: 1;
     grid-row: 1;
+    display: flex;
+    justify-content: center;    /* 수평 중앙 */
+    align-items: center;        /* 수직 중앙 */
+    text-align: center;         /* 텍스트 수평 중앙 */
+    width: 90%;
 }
 
 .content .service-intro {
     grid-column: 1;
     grid-row: 2;
+    width: 90%;
+}
+
+.content .service-intro h3 {
+    text-align: center;
 }
 
 .content .search {
@@ -36,7 +47,6 @@
     grid-row: 2;
 }
 
-.content .footer {
-    grid-column: 1 / -1; /* 모든 열에 걸쳐 확장 */
-    grid-row: 3;
+.footer {
+    text-align: center;
 }
