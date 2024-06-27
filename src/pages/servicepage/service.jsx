@@ -1,6 +1,6 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
 import Navbar from '../navbar/navbar'; 
-import TeamInfo from './TeamInfo';
+import TeamInfo from './teamInfo';
 
 const ServicePage = () => {
   return (
