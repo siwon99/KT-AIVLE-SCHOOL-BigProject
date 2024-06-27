@@ -1,3 +1,4 @@
+// src/App.jsx
 import './App.css'; 
 import React from 'react'; // eslint-disable-line no-unused-vars
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -6,7 +7,8 @@ import Login from './pages/loginpage/login';
 import ListPage from './pages/listpage/listpage';
 import ServicePage from './pages/servicepage/service';
 import DetailPage from './pages/detailpage/detail';
-import Signup from './pages/signuppage/signup'
+import Signup from './pages/signuppage/signup';
+import FaqPage from './pages/faqpage/faq';
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
         <Route path="/land_list" element={<ListPage />} />
         <Route path="/service" element={<ServicePage />} />
         <Route path="/detail" element={<DetailPage />} />
+        <Route path="/faq" element={<FaqPage />} />
       </Routes>
     </Router>
   );
