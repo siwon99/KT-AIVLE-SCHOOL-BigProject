@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/homepage/home';
 import Login from './pages/loginpage/login';
 import ListPage from './pages/listpage/listpage';
-import DetailPage from './pages/detailpage/detail'; // 서비스 소개 추가
+import ServicePage from './pages/servicepage/service'; // ServicePage 컴포넌트 임포트
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/land_list" element={<ListPage />} />
-        <Route path="/service" element={<DetailPage />} /> {/* 서비스 소개 추가 */}
+        <Route path="/service" element={<ServicePage />} />
       </Routes>
     </Router>
   );
