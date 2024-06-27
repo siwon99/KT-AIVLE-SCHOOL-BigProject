@@ -1,7 +1,7 @@
 import React, { useState } from 'react'; // eslint-disable-line no-unused-vars
 import { useNavigate } from 'react-router-dom';
-import UserInput from '';
-import UserButton from '';
+import UserInput from '../loginpage/UserInput';
+import UserButton from '../loginpage/UserBtn';
 
 const Signup = () => {
   // 유저 정보
