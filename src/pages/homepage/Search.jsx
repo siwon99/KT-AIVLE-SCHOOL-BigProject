@@ -1,4 +1,5 @@
 import React, { useState } from 'react'; // eslint-disable-line no-unused-vars
+import "./Search.css"; // 권혜민 추가
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -15,6 +16,7 @@ const Search = () => {
         value={searchTerm}
         onChange={handleChange}
       />
+      <div className="search-icon"></div>
     </div>
   );
 };

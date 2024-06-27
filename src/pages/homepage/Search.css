@@ -1,0 +1,28 @@
+.search-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-section input {
+  padding: 12px;
+  font-size: 15px;
+  width: 520px;
+  border-radius: 20px;
+  border: 3px solid #00008C;
+  background-color: transparent;
+  padding-left: 25px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-image: url('../../assets/BsearchIcon.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
