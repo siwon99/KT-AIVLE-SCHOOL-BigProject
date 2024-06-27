@@ -1,6 +1,8 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
 import Navbar from '../navbar/navbar'; // navbar.jsx 파일 임포트
 
+// 토지 리스트 컴포넌트 정의
+// 추후 map() 방식으로 코드 최적화 예정
 const ListPage = () => {
   return (
     <div>
