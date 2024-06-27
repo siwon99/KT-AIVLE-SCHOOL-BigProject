@@ -1,35 +1,39 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
-import Navbar from '../navbar/navbar'; // navbar.jsx 파일 임포트
-
-// ListPage 컴포넌트 정의
-const ListPage = () => {
+import React from "react"; // eslint-disable-line no-unused-vars
+import "./navbar.css";
+import WhomeIcon from "../../assets/WhomeIcon.svg";
+import WlogIn from "../../assets/WlogIn.svg";
+import WsignUp from "../../assets/WsignUp.svg";
+ 
+const Navbar = () => {
   return (
-    <div>
-      <Navbar />
-      <main>
-        <h1>토지 리스트</h1>
-        <div>
-          <ul>
-            <li>
-              <span>No.1</span>
-              <span>[대전] 탄방동 100cm^2 농지</span>
-              <button>선택</button>
-            </li>
-            <li>
-              <span>No.2</span>
-              <span>[대전] 유성구 1000cm^2 농지</span>
-              <button>선택</button>
-            </li>
-            <li>
-              <span>No.3</span>
-              <span>[천안] 두정동 500cm^2 농지</span>
-              <button>선택</button>
-            </li>
-          </ul>
-        </div>
-      </main>
+    <div className="navbar">
+      <nav>
+        <ul>
+          <li>
+            <a href="/">
+              <img src={WhomeIcon} alt="NongBu" className="whomeicon" />
+            </a>
+          </li>
+ 
+          <div className="category">
+            <li><a href="/land_list">토지 리스트</a></li>
+            <li><a href="/service">서비스 소개</a></li>
+            <li><a href="/faq">FAQ</a></li>
+          </div>
+ 
+          <li className="auth-icons">
+            <a href="/login">
+              <img src={WlogIn} alt="Log In" className="login-icon" />
+            </a>
+            <a href="/signup">
+              <img src={WsignUp} alt="SignUp" className="signup-icon" />
+            </a>
+          </li>
+ 
+        </ul>
+      </nav>
     </div>
   );
 };
-
-export default ListPage; // ListPage 컴포넌트 내보내기
+ 
+export default Navbar;
