@@ -41,7 +41,7 @@ const Signup = () => {
   
   // 회원가입 로직
   const processSignUp = () => {
-    fetch('여기 url 주소 넣기', {
+    fetch('http://3.39.228.42/users/signup/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -54,25 +54,18 @@ const Signup = () => {
         birthday: userInfo.birthday,
       }),
     })
-    console.log('user_realname:', userInfo.user_realname, 
-                'username:', userInfo.username, 
-                'password:', userInfo.password,
-                'confirm_password:', userInfo.confirm_password,
-                'birthday:', userInfo.birthday)
 
       .then(response => {
-        if (response.ok) return response.json();
-        throw new Error('서버 응답이 올바르지 않습니다.');
-      })
-      .then(data => {
-        if (data.token) {
-          navigate('/login');
-        } else {
-          alert('회원가입에 실패했습니다. 다시 시도해주세요.');
+        if (response.ok) {
+          alert('회원가입에 성공했습니다. 로그인 해주세요.');
+          navigate('/login')
+        }
+        else {
+          throw new Error();
         }
       })
       .catch(error => {
-        alert('오류가 발생했습니다. 다시 시도해주세요.');
+        alert('회원가입에 실패했습니다. 다시 해주세요.');
       });
   };
 
