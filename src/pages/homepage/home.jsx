@@ -1,7 +1,8 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
-import "./home.css"; // 권혜민 추가
-import Navbar from '../navbar/navbar.jsx'; // 경로 수정
-import Search from './Search.jsx'
+import "./home.css";
+import Navbar from '../navbar/navbar.jsx';
+import Search from './Search.jsx';
+import WchatBot from "../../assets/WchatBot.svg"; // 권혜민 추가
  
 // 메인 페이지 문구
 const MainText = () => (
@@ -24,6 +25,9 @@ const Youtube = () => (
         allowFullScreen
       />
     </div>
+    <div className="chatbot">
+      <img src={WchatBot} alt="chatbot" />
+    </div>
   </section>
 );
  
@@ -39,7 +43,9 @@ const ServiceIntroduction = () => (
 // 메인 페이지 푸터
 const Footer = () => (
   <footer className="footer">
-    <p>© KT AILVE 20조 농지탐정단 ALL RIGHTS RESERVED.</p>
+    <p>이용약관 개인정보처리방침 뷰어다운로드 홍보리플릿</p>
+    <p>(58327) 전남 나주시 그린로 20(빛가람동 358) 전화번호:1577-7770 사업자등록번호 123-82-08470 개인정보관리책임자 농지은행처장</p>
+    <p>ⓒ 2024 20조. ALL RIGHTS RESERVED.</p>
   </footer>
 );
  
