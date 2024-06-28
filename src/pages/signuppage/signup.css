@@ -1,0 +1,69 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.write-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+}
+
+.userInput input { /* 이름 ~ 생년월일 칸 */
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 12px;
+  padding-left: 25px;
+  font-size: 15px;
+  border: 3px solid #00008C;
+  border-radius: 18px;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+.button-container { /* 버튼 상위 */
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.backHome-Btn,  /* 뒤로가기, 로그인 버튼 */
+.signUp-Btn {
+  flex: 1;
+}
+
+.backBtn,
+.signUp-Btn button {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 3px solid #00008C;
+  border-radius: 18px;
+  background-color: #00008C;
+  color: #FFFFFF;
+  box-sizing: border-box;
+}
+
+.backBtn:hover,
+.signUp-Btn button:hover {
+  cursor: pointer;
+}

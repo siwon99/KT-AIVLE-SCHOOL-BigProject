@@ -1,4 +1,5 @@
 import React, { useState } from 'react'; // eslint-disable-line no-unused-vars
+import "./signup.css"; //권혜민 추가
 import { useNavigate } from 'react-router-dom';
 import UserInput from '../loginpage/UserInput';
 import UserButton from '../loginpage/UserBtn';
@@ -74,10 +75,6 @@ const Signup = () => {
       <Navbar />
       <div className="signup">
         <div className="write-info" onChange={handleInputChange}>
-          <div className="backHome-Btn">
-            <button className="backBtn" onClick={goToHome}>뒤로가기</button>
-          </div>
-
           <div className="userInput">
             <UserInput
               type="text"
@@ -112,11 +109,17 @@ const Signup = () => {
           />
         </div>
 
-        <div className="signUp-Btn">
-          <UserButton
-            onClick={processSignUp}
-            text="회원 가입"
-          />
+        <div className="button-container">
+          <div className="backHome-Btn">
+              <button className="backBtn" onClick={goToHome}>뒤로가기</button>
+            </div>
+          <div className="wall"></div>
+          <div className="signUp-Btn">
+            <UserButton
+              onClick={processSignUp}
+              text="회원 가입"
+            />
+          </div>
         </div>
         
       </div>
