@@ -12,18 +12,6 @@ import FaqPage from './pages/faqpage/faq';
 import Logout from './pages/loginpage/logout';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      setIsLoggedIn(true);
-    } else {
-      setIsLoggedIn(false);
-      localStorage.removeItem('token');
-    }
-  }, []);
-
 
   return (
     <Router>

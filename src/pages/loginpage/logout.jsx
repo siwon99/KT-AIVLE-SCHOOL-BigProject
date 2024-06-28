@@ -41,7 +41,7 @@ const Logout = () => {
   }, [navigate]);
 
   return (
-    <div>
+    <div className='logout-info'>
       <p>로그아웃 중...</p>
     </div>
   );
