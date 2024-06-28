@@ -1,4 +1,5 @@
 import React, { useState } from 'react' // eslint-disable-line no-unused-vars
+import "./login.css"; //권혜민 추가
 import { useNavigate } from 'react-router-dom';
 import UserBtn from './UserBtn.jsx'
 import UserInput from './UserInput.jsx'
