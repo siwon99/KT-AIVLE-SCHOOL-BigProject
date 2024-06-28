@@ -71,11 +71,3 @@ body, html {
   margin-bottom: 10px;
   box-sizing: border-box;
 }
-
-.wall {
-  width: 1px;
-  height: 44px;
-  background-color: #6c757d;
-  margin: 10px;
-  margin-top: 2px;
-}

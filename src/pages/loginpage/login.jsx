@@ -72,16 +72,14 @@ const Login = () => {
             value={userInfo.password}
             name="password"
           />
-          <UserBtn
-            text="로그인"
-            onClick={loginProgcess}
-          />
-          <div className="buttonWrapper">
+          <div className='Wrapper'>
+            <UserBtn
+              text="로그인"
+              onClick={loginProgcess}
+            />
             <button className="actionButton" onClick={goSignupPage}>
               회원 가입
             </button>
-            <div className="wall"></div>
-            <button className="actionButton">비밀번호 찾기</button>
           </div>
         </div>
       </div>
