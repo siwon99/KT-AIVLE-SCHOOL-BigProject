@@ -31,6 +31,10 @@
   margin-right: auto;
 }
 
+.navbar nav ul .category:hover {
+  cursor: pointer;
+}
+
 .navbar nav ul .category li {
   margin-right: 160px;
 }
@@ -54,6 +58,10 @@
   margin-right: 300px; /* 나머지 항목을 오른쪽으로 밀기 */
 }
 
+.navbar nav ul li a img.whomeicon:hover {
+  cursor: pointer;
+}
+
 .navbar nav ul li.auth-icons { /* 로그인, 회원 아이콘 */
   right: 0;
   display: flex;
@@ -71,10 +79,18 @@
   margin-top: 10px;
 }
 
+.navbar nav ul li.auth-icons a img.login-icon:hover {
+  cursor: pointer;
+}
+
 .navbar nav ul li.auth-icons a img.signup-icon {
   height: 37px;
   width: 37px;
   margin-bottom: 10px;
+}
+
+.navbar nav ul li.auth-icons a img.signup-icon:hover {
+  cursor: pointer;
 }
 
 @media (max-width: 1279px) { /* 반응형 */
