@@ -1,6 +1,6 @@
 // src/App.jsx
 import './App.css'; 
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React, { useEffect, useState } from 'react'; // eslint-disable-line no-unused-vars
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/homepage/home';
 import Login from './pages/loginpage/login';
@@ -9,8 +9,22 @@ import ServicePage from './pages/servicepage/service';
 import DetailPage from './pages/detailpage/detail';
 import Signup from './pages/signuppage/signup';
 import FaqPage from './pages/faqpage/faq';
+import Logout from './pages/loginpage/logout';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+      localStorage.removeItem('token');
+    }
+  }, []);
+
+
   return (
     <Router>
       <Routes>
@@ -21,6 +35,7 @@ function App() {
         <Route path="/service" element={<ServicePage />} />
         <Route path="/detail" element={<DetailPage />} />
         <Route path="/faq" element={<FaqPage />} />
+        <Route path="/logout" element={<Logout />} />
       </Routes>
     </Router>
   );
