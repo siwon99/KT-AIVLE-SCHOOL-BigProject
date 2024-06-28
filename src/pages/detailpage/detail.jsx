@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../navbar/navbar';
+//import Navbar from '../navbar/navbar';
 
 // 상세 정보 페이지
 const DetailPage = () => {
@@ -55,7 +55,7 @@ const DetailPage = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="detail-info">
         <div className="title">농지 상세정보</div>
 

@@ -1,35 +1,68 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../navbar/navbar';
- 
-// 토지 리스트 컴포넌트 정의
-// 추후 map() 방식으로 코드 최적화 예정
+//import Navbar from '../navbar/navbar';
+
+// 상세 정보 페이지
 const ListPage = () => {
   const navigate = useNavigate();
- 
-  const handleSelect = () => {
-    navigate('/detail');
-  };
- 
+
+  const [farm, setFarm] = useState({
+    farm_status: 0,
+    farm_created: '',
+    user_id: 0
+  });
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    
+    if (token) {
+      fetch('http://3.39.228.42//farms/list/', { 
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Token  ${token}`,
+        }, 
+      })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error();
+        }
+      })
+      .then(data => {
+        console.log('data:', data);
+
+        setFarm(data);
+      })
+      .catch(error => {
+        alert('오류가 발생했습니다.');
+      });
+    } else {
+      navigate('/login');
+    }
+  }, [navigate]);
+
   return (
     <>
-      <Navbar />
-      <div className="main">
-        <div className="title">토지 리스트</div>
+      {/* <Navbar /> */}
+      <div className="detail-info">
+        <div className="title">농지 리스트</div>
 
-        <div className="list-info">
-          <ul className="farms">
-            <li className="farm-item">
-              <span className="number">No.1</span>
-              <span className="description">[대전] 탄방동 100cm^2 농지</span>
-              <button className="button" onClick={handleSelect}>선택</button>
-            </li>
-          </ul>
+        <div className='details'>
+          <span className="info">{setFarm.farm_owner}</span> 
+          <span className="info">{setFarm.farm_created}</span>
+          <span className="info">{setFarm.farm_status}</span>
         </div>
 
+        <div className="btn">
+          <button className="backBtn">선택</button>
+        </div>
       </div>
+
+      <div className="map"></div>
     </>
   );
 };
- 
+
 export default ListPage;

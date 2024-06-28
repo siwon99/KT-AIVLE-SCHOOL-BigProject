@@ -1,4 +1,3 @@
-// src/App.jsx
 import './App.css'; 
 import React, { useEffect, useState } from 'react'; // eslint-disable-line no-unused-vars
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
