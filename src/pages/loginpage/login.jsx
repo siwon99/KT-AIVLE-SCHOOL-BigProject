@@ -80,7 +80,7 @@ const Login = () => {
             <button className="actionButton" onClick={goSignupPage}>
               회원 가입
             </button>
-            <div className="wall">|</div>
+            <div className="wall"></div>
             <button className="actionButton">비밀번호 찾기</button>
           </div>
         </div>
