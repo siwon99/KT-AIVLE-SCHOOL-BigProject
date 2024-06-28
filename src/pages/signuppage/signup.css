@@ -43,10 +43,11 @@ body, html {
 .button-container { /* 버튼 상위 */
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 
-.backHome-Btn,  /* 뒤로가기, 로그인 버튼 */
+.backHome-Btn, /* 뒤로가기, 회원 가입 버튼 */
 .signUp-Btn {
   flex: 1;
 }
@@ -66,4 +67,11 @@ body, html {
 .backBtn:hover,
 .signUp-Btn button:hover {
   cursor: pointer;
+}
+
+.divider {
+  width: 3.5px;
+  height: 44px;
+  background-color: #757575;
+  margin: 0 10px;
 }
