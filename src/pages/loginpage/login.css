@@ -40,11 +40,11 @@ body, html {
   box-sizing: border-box;
 }
 
-.userFrame input {
+.userFrame input { /* 아이디, 비밀번호 칸 */
   background-color: transparent;
 }
 
-.userFrame button {
+.userFrame button { /* 로그인 버튼 */
   background-color: #00008C;
   color: #FFFFFF;
 }
@@ -53,14 +53,19 @@ body, html {
   cursor: pointer;
 }
 
-.Wrapper {
+.Wrapper { /* 버튼 컨테이너 */
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  gap: 10px;
 }
 
-.actionButton {
+.Wrapper > * {  /* > *: .Wrapper 클래스의 직접 자식 요소들을 모두 선택 */
+  flex: 1;
+}
+
+.actionButton { /* 회원가입 버튼 */
   width: 100%;
   padding: 12px;
   font-size: 14px;
@@ -69,12 +74,4 @@ body, html {
   background-color: #00008C;
   color: #FFFFFF;
   box-sizing: border-box;
-}
-
-.divider {
-  width: 3.5px;
-  height: 44px;
-  background-color: #757575;
-  margin: 10px;
-  margin-top: 2px;
 }

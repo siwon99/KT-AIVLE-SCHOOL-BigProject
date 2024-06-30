@@ -77,7 +77,6 @@ const Login = () => {
               text="로그인"
               onClick={loginProgcess}
             />
-            <div className="divider"></div> {/* 선 추가 */}
             <button className="actionButton" onClick={goSignupPage}>
               회원 가입
             </button>
