@@ -28,8 +28,7 @@ body, html {
   width: 500px;
 }
 
-.userFrame input,
-.userFrame button {
+.userFrame input {
   width: 100%;
   margin-bottom: 10px;
   padding: 12px;
@@ -44,15 +43,6 @@ body, html {
   background-color: transparent;
 }
 
-.userFrame button { /* 로그인 버튼 */
-  background-color: #00008C;
-  color: #FFFFFF;
-}
-
-.userFrame button:hover {
-  cursor: pointer;
-}
-
 .Wrapper { /* 버튼 컨테이너 */
   display: flex;
   justify-content: space-between;
@@ -65,7 +55,8 @@ body, html {
   flex: 1;
 }
 
-.actionButton { /* 회원가입 버튼 */
+.userFrame button, 
+.actionButton { /* 로그인, 회원가입 버튼 */
   width: 100%;
   padding: 12px;
   font-size: 14px;
@@ -74,4 +65,9 @@ body, html {
   background-color: #00008C;
   color: #FFFFFF;
   box-sizing: border-box;
+}
+
+.userFrame button,
+.actionButton:hover {
+  cursor: pointer;
 }
