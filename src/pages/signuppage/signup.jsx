@@ -113,7 +113,6 @@ const Signup = () => {
           <div className="backHome-Btn">
               <button className="backBtn" onClick={goToHome}>뒤로가기</button>
             </div>
-          <div className="divider"></div> {/* 선 추가 */}
           <div className="signUp-Btn">
             <UserButton
               onClick={processSignUp}

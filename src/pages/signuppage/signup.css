@@ -40,20 +40,20 @@ body, html {
   box-sizing: border-box;
 }
 
-.button-container { /* 버튼 상위 */
+.button-container { /* 버튼 컨테이너 */
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  gap: 10px;
 }
 
-.backHome-Btn, /* 뒤로가기, 회원 가입 버튼 */
-.signUp-Btn {
-  flex: 1;
+.button-container > * {
+    flex: 1;
 }
 
 .backBtn,
-.signUp-Btn button {
+.signUp-Btn button { /* 뒤로가기, 로그인 버튼 */
   width: 100%;
   padding: 12px;
   font-size: 14px;
@@ -67,11 +67,4 @@ body, html {
 .backBtn:hover,
 .signUp-Btn button:hover {
   cursor: pointer;
-}
-
-.divider {
-  width: 3.5px;
-  height: 44px;
-  background-color: #757575;
-  margin: 0 10px;
 }
