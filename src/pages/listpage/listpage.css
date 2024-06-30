@@ -57,19 +57,13 @@ body, html {
   box-sizing: border-box;
 }
 
-.info {
-  font-size: 1rem;
-  margin: 0.5rem 0;
-  color: #555;
-}
-
-.btn {
+.details .btn {
   display: flex;
   margin-left: auto;
   align-items: center;
 }
 
-.backBtn {
+.details .btn .backBtn {
   width: 90px;
   height: 40px;
   padding: 5px;
@@ -80,6 +74,6 @@ body, html {
   color: #FFFFFF;
 }
 
-.backBtn:hover {
+.details .btn .backBtn:hover {
   cursor: pointer;
 }
