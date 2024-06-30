@@ -57,7 +57,7 @@ const ListPage = () => {
 
           <div className="btn">
             <button className="backBtn">선택</button>
-        </div>
+          </div>
         </div>
       </div>
 
