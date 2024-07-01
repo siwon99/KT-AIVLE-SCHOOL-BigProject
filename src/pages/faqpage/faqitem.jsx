@@ -22,7 +22,7 @@ const FaqItem = ({ id, question, answer }) => {
       </div>
       {isOpen && (
         <div className="answer">
-          <span className="answerfaq">[답변]</span> {answer}
+          <span className="answerfaq">[답변]&nbsp;</span>{answer}
         </div>
       )}
     </div>
