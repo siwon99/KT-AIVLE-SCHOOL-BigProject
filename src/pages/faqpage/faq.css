@@ -19,6 +19,7 @@ body, html {
   align-items: center;
   width: 100%;
   height: 100%;
+  overflow: scroll;
 }
 
 .contents {
@@ -71,14 +72,14 @@ body, html {
   display: flex;
   align-items: center;
   width: 100%;
-  height: 55px;
+  height: 65px;
   padding: 20px;
-  background-color: #E6E6E6;
+  background-color: #fdfdfd;
   box-sizing: border-box;
 }
 
 .number {
-  font-size: 19px;
+  font-size: 15px;
   margin-right: 20px;
 }
 
@@ -86,8 +87,8 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 33px;
+  height: 33px;
   margin-left: auto;
   border: none;
   border-radius: 20px;
@@ -101,6 +102,7 @@ body, html {
 
 .button:hover {
   cursor: pointer;
+  background-color: #00008C;
 }
 
 .answer {
@@ -108,9 +110,9 @@ body, html {
   align-items: center;
   margin-top: 10px;
   width: 100%;
-  height: 55px;
+  height: 85px;
   padding: 20px;
-  background-color: #E6E6E6;
+  background-color: #f6f6f6;
   box-sizing: border-box;
 }
 
