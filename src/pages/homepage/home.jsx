@@ -14,14 +14,15 @@ const MainText = () => (
 // 메인 페이지 유튜브
 const Youtube = () => (
   <section className="youtube-container">
-    {/* <h3>공식 영상</h3> */}
     <div className="youtube">
       <iframe
-        width="560"
-        height="350"
-        src="https://www.youtube.com/embed/VIDEO_ID"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        width="650"
+        height="435"
+        src="https://www.youtube.com/embed/ImuWa3SJulY?autoplay=1&mute=1"
+        title="QWER '고민중독' Official MV"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
         allowFullScreen
       />
     </div>
