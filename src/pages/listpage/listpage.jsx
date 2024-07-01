@@ -58,9 +58,9 @@ const ListPage = () => {
         <div>
           {farms.length > 0 ? (
             farms.map((farm, index) => (
-              <div key={index} className='details'>
+              <div key={index} className='lists'>
                 <div className='farm-info'>
-                  <div className='num'>{index + 1}</div>
+                  <div className='num'>{index + 1}.</div>
                   <div className='farm-name'>[{farm.farm_name}]</div>
                   <div className='farm-owner'>소유자: {farm.farm_owner}</div>
                   <div className='farm-size'>농지 크기: {farm.farm_size}</div>

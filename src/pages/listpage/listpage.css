@@ -27,6 +27,7 @@ body, html {
   position: relative;
   text-align: center;
   margin-top: 100px;
+  margin-bottom: 50px;
   font-size: 30px;
   color: #000000;
   width: 100%;
@@ -45,56 +46,46 @@ body, html {
   transform: translateX(-50%);
 }
 
-.details {
+.lists {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   width: 800px;
-  height: 55px;
-  margin-top: 40px;
-  margin-bottom: 10px;
+  height: 50px;
   padding: 20px;
+  margin-bottom: 20px;
   background-color: #E6E6E6;
   box-sizing: border-box;
-  display: inline-block;
+}
+
+.farm-info {
+  display: flex;
+  align-items: center;
 }
 
 .num {
-  display: inline-block;
   margin-right: 10px;
 }
 
-.farm-name {
-  display: inline-block;
-  flex-grow: 1;
-  background-color: red;
+.farm-name, .farm-owner, .farm-size {
+  margin-right: 20px;
 }
 
-.farm-owner {
-  display: inline-block;
-  flex-grow: 1;
-  background-color: blue;
-}
-
-.farm-size {
-  display: inline-block;
-  flex-grow: 1;
-  background-color: yellow;
-}
-
-.details .backBtn {
+.lists .backBtn {
   display: flex;
-  margin-left: auto;
+  justify-content: center;
   align-items: center;
-  width: 90px;
-  height: 40px;
+  width: 85px;
+  height: 35px;
   padding: 5px;
   font-size: 14px;
   border: 3px solid #6E9FED;
   border-radius: 20px;
   background-color: #6E9FED;
   color: #FFFFFF;
+  text-decoration: none;
 }
 
-.details .backBtn:hover {
+.lists .backBtn:hover {
   cursor: pointer;
 }
