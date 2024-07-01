@@ -21,6 +21,7 @@ const TeamInfo = () => {
         <ul>
           {teamMembers.map((member, index) => (
             <li key={index}>
+              <div className="profile-pic"></div>
               <p>{member.name} <br /> {member.role}</p>
             </li>
           ))}

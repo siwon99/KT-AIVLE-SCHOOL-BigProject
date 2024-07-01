@@ -1,0 +1,83 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.team-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 950px;
+  height: 100%;
+  margin-top: 5.7%;
+  box-sizing: border-box;
+}
+
+.title {
+  position: relative;
+  text-align: center;
+  margin-top: 100px;
+  font-size: 30px;
+  color: #000000;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.title::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #00008C;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.teammate {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.teammate ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+}
+
+.teammate li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  background-color: #F24822;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.teammate p {
+  margin: 0;
+  text-align: center;
+}
