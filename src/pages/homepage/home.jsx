@@ -5,20 +5,12 @@ import Search from './Search.jsx';
 import WchatBot from "../../assets/WchatBot.svg"; // 권혜민 추가
  
 // 메인 페이지 문구
-const MainText = () => {
-  const text = "Next Our New Generation, Better then Us";
-  const highlightedText = text.split('').map((char, index) => (
-    char.match(/[A-Z]/) ? <span key={index} className="highlight">{char}</span> : char
-  ));
-
-  return (
-    <section className="maintext">
-      <h1><span className="highlight">NONGBU</span></h1>
-      <h2>{highlightedText}</h2>
-    </section>
-  );
-};
-
+const MainText = () => (
+  <section className="maintext">
+    <h1>NongBu<br />Next Our New Generation, Better then Us</h1>
+  </section>
+);
+ 
 // 메인 페이지 유튜브
 const Youtube = () => (
   <section className="youtube-container">

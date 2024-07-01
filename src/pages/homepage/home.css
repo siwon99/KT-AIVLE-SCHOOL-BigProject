@@ -46,7 +46,6 @@ body, html {
   grid-column: 1;
   grid-row: 1;
   display: flex;
-  flex-direction: column;
   justify-content: center;    /* 수평 중앙 */
   align-items: center;        /* 수직 중앙 */
   text-align: center;         /* 텍스트 수평 중앙 */
@@ -54,15 +53,15 @@ body, html {
   margin-top: 30px; 
 }
 
-.content .maintext .highlight {
-  color: #00008C; /* 네비게이션 바와 같은 색상 */
-}
-
 .content .service-intro {
   grid-column: 1;
   grid-row: 2;
   width: 90%;
 }
+
+/* .content .service-intro h3 {
+  text-align: center;
+} */
 
 .content .search {
   grid-column: 2;
