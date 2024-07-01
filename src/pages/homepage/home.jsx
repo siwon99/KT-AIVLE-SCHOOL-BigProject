@@ -17,9 +17,9 @@ const Youtube = () => (
     <div className="youtube">
       <iframe
         width="650"
-        height="435"
-        src="https://www.youtube.com/embed/ImuWa3SJulY?autoplay=1&mute=1"
-        title="QWER '고민중독' Official MV"
+        height="370"
+        src="https://www.youtube.com/embed/RKhsHGfrFmY?autoplay=1&mute=1"
+        title="New Video"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin"
