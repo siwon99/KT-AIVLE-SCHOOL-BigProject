@@ -3,6 +3,10 @@ body, html {
   padding: 0;
   width: 100%;
   height: 100%;
+  background-image: url('../assets/mainBackImage.jpg'); /* 배경 이미지 경로 설정 */
+  background-attachment: fixed; /* 배경 이미지 고정 */
+  background-size: cover; /* 배경 이미지 크기 조정 */
+  background-position: center; /* 배경 이미지 위치 설정 */
 }
 
 #root {
@@ -18,9 +22,9 @@ body, html {
   flex-direction: column;
   align-items: center;
   width: 950px;
-  height: 100%;
   margin-top: 4%;
   box-sizing: border-box;
+  padding: 20px;
 }
 
 .title {
@@ -45,19 +49,21 @@ body, html {
   transform: translateX(-50%);
 }
 
+.intro-text {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .teammate {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
   width: 100%;
 }
 
 .teammate ul {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 0;
-  list-style: none;
+  display: contents; /* Grid layout에서 ul 요소 제거 */
 }
 
 .teammate li {
@@ -65,7 +71,6 @@ body, html {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 20px;
 }
 
 .profile-pic {
@@ -79,4 +84,12 @@ body, html {
 .teammate p {
   margin: 0;
   text-align: center;
+}
+
+.future-message {
+  margin-top: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #2f4f4f; /* Dark Slate Gray */
 }
