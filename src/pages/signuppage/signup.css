@@ -34,10 +34,15 @@ body, html {
   padding: 12px;
   padding-left: 25px;
   font-size: 15px;
-  border: 3px solid #00008C;
+  border: 1px solid #757575;
   border-radius: 18px;
   background-color: transparent;
   box-sizing: border-box;
+}
+
+.userInput input:focus {
+  border: 3px solid #00008C;
+  outline: none;
 }
 
 .button-container { /* 버튼 컨테이너 */

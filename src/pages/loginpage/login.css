@@ -28,19 +28,21 @@ body, html {
   width: 500px;
 }
 
-.userFrame input {
+.userFrame input {  /* 아이디, 비밀번호 칸 */
   width: 100%;
   margin-bottom: 10px;
   padding: 12px;
   padding-left: 25px;
   font-size: 15px;
-  border: 3px solid #00008C;
+  border: 1px solid #757575;
   border-radius: 18px;
+  background-color: transparent;
   box-sizing: border-box;
 }
 
-.userFrame input { /* 아이디, 비밀번호 칸 */
-  background-color: transparent;
+.userFrame input:focus { 
+  border: 3px solid #00008C;
+  outline: none;
 }
 
 .Wrapper { /* 버튼 컨테이너 */
