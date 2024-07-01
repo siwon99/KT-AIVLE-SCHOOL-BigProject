@@ -66,7 +66,11 @@ body, html {
   margin-right: 10px;
 }
 
-.farm-name, .farm-owner, .farm-size {
+.farm-name {
+  margin-right: 50px;
+}
+
+.farm-owner, .farm-size {
   margin-right: 20px;
 }
 
