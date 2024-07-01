@@ -17,6 +17,8 @@ const Logout = () => {
         }, 
       })
       .then(response => {
+        localStorage.removeItem('token');
+        navigate('/');
         if (response.ok) {
           return response.json();
         } else {
@@ -25,7 +27,6 @@ const Logout = () => {
       })
       .then(data => {
         if (data.detail) {
-          localStorage.removeItem('token');
           navigate('/');
         }
         else {
@@ -33,7 +34,7 @@ const Logout = () => {
         }
       })
       .catch(error => {
-        alert('오류가 발생했습니다.');
+        // alert('오류가 발생했습니다.');
       });
     } else {
       navigate('/login');

@@ -1,23 +1,23 @@
 import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../navbar/navbar';
-import "./listpage.css";
 
 // 상세 정보 페이지
 const ListPage = () => {
   const navigate = useNavigate();
 
   const [farm, setFarm] = useState({
-    farm_status: 0,
-    farm_created: '',
-    user_id: 0
+    farm_id: '',
+    farm_owner: '',
+    latitude: '',
+    longitude: '',
   });
 
   useEffect(() => {
     const token = localStorage.getItem('token');
     
     if (token) {
-      fetch('http://3.39.228.42//farms/list/', { 
+      fetch('http://3.39.228.42/farms/list/', { 
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -33,7 +33,6 @@ const ListPage = () => {
       })
       .then(data => {
         console.log('data:', data);
-
         setFarm(data);
       })
       .catch(error => {
@@ -54,10 +53,10 @@ const ListPage = () => {
           <span className="info">{setFarm.farm_owner}</span> 
           <span className="info">{setFarm.farm_created}</span>
           <span className="info">{setFarm.farm_status}</span>
+        </div>
 
-          <div className="btn">
-            <button className="backBtn">선택</button>
-          </div>
+        <div className="btn">
+          <button className="backBtn">선택</button>
         </div>
       </div>
 
