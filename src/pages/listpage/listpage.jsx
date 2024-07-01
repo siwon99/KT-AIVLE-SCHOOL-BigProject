@@ -52,13 +52,13 @@ const ListPage = () => {
   return (
     <>
       <Navbar />
-      <div className="detail-info">
+      <div className="lists-info">
         <div className="title">농지 리스트</div>
 
         <div>
           {farms.length > 0 ? (
             farms.map((farm, index) => (
-              <div key={index} className='lists'>
+              <div className='lists' key={index}>
                 <div className='farm-info'>
                   <div className='num'>{index + 1}.</div>
                   <div className='farm-name'>[{farm.farm_name}]</div>

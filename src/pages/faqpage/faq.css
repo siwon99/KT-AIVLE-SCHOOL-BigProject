@@ -27,7 +27,7 @@ body, html {
   align-items: center;
   width: 950px;
   height: 100%;
-  margin-top: 5.7%;
+  margin-top: 4%;
   box-sizing: border-box;
 }
 
@@ -57,15 +57,14 @@ body, html {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 40px;
   box-sizing: border-box;
 }
 
 .item {
+  position: relative;
+  margin-bottom: 20px;
   width: 100%;
   box-sizing: border-box;
-  position: relative;
-  margin-bottom: 10px;
 }
 
 .question {
