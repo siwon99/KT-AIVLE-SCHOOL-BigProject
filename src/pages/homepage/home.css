@@ -36,9 +36,9 @@ body, html {
   position: absolute;
   background-color: #00008C;
   width: 2px;
-  height: 80%;
+  height: 70%;
   left: 49%;
-  top: 5%;
+  top: 15%;
   transform: translateX(-50%);
 }
 
