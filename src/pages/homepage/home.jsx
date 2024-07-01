@@ -7,7 +7,7 @@ import WchatBot from "../../assets/WchatBot.svg"; // 권혜민 추가
 // 메인 페이지 문구
 const MainText = () => (
   <section className="maintext">
-    <h1>NongBu<br />Next Our New Generation, Better then Us</h1>
+    <h1>NONGBU<br />Next Our New Generation, Better then Us</h1>
   </section>
 );
  
