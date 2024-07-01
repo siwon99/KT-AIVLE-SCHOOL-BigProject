@@ -41,7 +41,7 @@ body, html {
   content: '';
   display: block;
   width: 100%;
-  height: 3px;
+  height: 3px; /* 파란 막대의 높이를 동일하게 설정 */
   background-color: #00008C;
   position: absolute;
   bottom: -20px;
@@ -74,11 +74,18 @@ body, html {
 }
 
 .profile-pic {
-  width: 100px;
-  height: 100px;
+  width: 120px; /* 크기를 조금 키움 */
+  height: 120px; /* 크기를 조금 키움 */
   background-color: #F24822;
   border-radius: 50%;
   margin-bottom: 10px;
+  overflow: hidden; /* 원 모양으로 만들기 위해 넘치는 부분 숨김 */
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 이미지가 원 안에 꽉 차도록 설정 */
 }
 
 .teammate p {

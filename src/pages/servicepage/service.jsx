@@ -1,6 +1,6 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
 import Navbar from '../navbar/navbar'; 
-import TeamInfo from './teamInfo';
+import { TeamInfo, TeamMessage } from './teamInfo';
 import "./service.css"
 
 const ServicePage = () => {
@@ -8,6 +8,7 @@ const ServicePage = () => {
     <>
       <Navbar />
       <TeamInfo />
+      <TeamMessage />
     </>
   );
 };

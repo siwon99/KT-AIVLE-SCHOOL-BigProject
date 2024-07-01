@@ -31,13 +31,23 @@ const TeamInfo = () => {
         <ul>
           {groupedMembers.map((member, index) => (
             <li key={index} className={`member member-${index}`}>
-              <div className="profile-pic"></div>
+              <div className="profile-pic">
+                {/* 나중에 assets에서 프로필 사진을 첨부할 예정 */}
+                <img src={`/assets/${member.name}.jpg`} alt={member.name} />
+              </div>
               <p>{member.name} <br /> {member.role}</p>
             </li>
           ))}
         </ul>
       </div>
-      <div className="future-message">
+    </div>
+  );
+};
+
+const TeamMessage = () => {
+  return (
+    <div>
+      <div className="title">
         <h3>농업이 미래를 구한다</h3>
       </div>
       <div className="intro-text">
@@ -56,4 +66,4 @@ const TeamInfo = () => {
   );
 };
 
-export default TeamInfo;
+export { TeamInfo, TeamMessage };
