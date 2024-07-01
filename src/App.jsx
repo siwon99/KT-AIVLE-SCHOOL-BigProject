@@ -20,7 +20,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/land_list" element={<ListPage />} />
         <Route path="/service" element={<ServicePage />} />
-        <Route path="/detail" element={<DetailPage />} />
+        <Route path="/detail/:farm_id" element={<DetailPage />} />
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/logout" element={<Logout />} />
       </Routes>

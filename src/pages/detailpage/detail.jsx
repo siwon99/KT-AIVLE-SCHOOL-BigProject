@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import { useNavigate } from 'react-router-dom';
-//import Navbar from '../navbar/navbar';
+import { useNavigate, useParams } from 'react-router-dom';
+import Navbar from '../navbar/navbar';
 
 // 상세 정보 페이지
 const DetailPage = () => {
   const navigate = useNavigate();
+  const {farm_id} = useParams();
 
   const [landDetail, setLandDetail] = useState({
     farm_id: 0,
@@ -20,11 +21,11 @@ const DetailPage = () => {
   });
 
   useEffect(() => {
+    if (!farm_id) return;
     //사용자가 로그인할 때 저장된 토큰
     const token = localStorage.getItem('token');
-    
     if (token) {
-      fetch('http://3.39.228.42/farms/detail/1', { 
+      fetch(`http://3.39.228.42/farms/detail/${farm_id}`, { 
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -39,10 +40,7 @@ const DetailPage = () => {
         }
       })
       .then(data => {
-        console.log(data);
-        console.log(data.status_logs[0])
         setLandDetail(data);
-        // 임시
         setLandLog(data.status_logs[0])
       })
       .catch(error => {
@@ -55,7 +53,7 @@ const DetailPage = () => {
 
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <div className="detail-info">
         <div className="title">농지 상세정보</div>
 
@@ -67,7 +65,7 @@ const DetailPage = () => {
         </div>
 
         <div className="btn">
-          <button className="backBtn">이전</button>
+          <a href='/land_list' className="backBtn">이전</a>
           <button className="rentBtn">임대</button>
         </div>
       </div>

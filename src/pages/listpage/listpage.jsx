@@ -44,11 +44,6 @@ const ListPage = () => {
     console.log('farms:', farms);
   }, [farms]);
 
-  //선택한 index의 detail페이지 넘어가기
-  const handleFarmClick = (farm_id) => {
-    navigate(`/detail/${farm_id}`);
-  };
-
   return (
     <>
       <Navbar />
@@ -66,7 +61,7 @@ const ListPage = () => {
                   <div className='farm-size'>농지 크기: {farm.farm_size}</div>
                 </div>
 
-                <a href="" className="backBtn" onClick={() => handleFarmClick(farm.farm_id)}>선택</a>
+                <a href={`/detail/${farm.farm_id}`} className="backBtn">선택</a>
               </div>
             ))
           ) : (
