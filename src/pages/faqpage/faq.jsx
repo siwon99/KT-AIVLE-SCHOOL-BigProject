@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../navbar/navbar';
 import FaqItem from './faqitem';
+import "./faq.css";
 
 // FAQ 데이터 배열
 const faqData = [
@@ -17,8 +18,9 @@ const FaqPage = () => {
   return (
     <div className="page">
       <Navbar />
-      <main className="content">
-        <h1 className="title">FAQ</h1>
+      <main className="contents">
+        <div className="title">FAQ</div>
+        
         <div className="list">
           {faqData.map((faq) => (
             <FaqItem key={faq.id} id={faq.id} question={faq.question} answer={faq.answer} />

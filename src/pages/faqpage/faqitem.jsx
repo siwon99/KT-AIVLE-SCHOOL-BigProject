@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import WupArrow from "../../assets/WupArrow.svg";
+import WdownArrow from "../../assets/WdownArrow.svg";
 
 // FaqItem 컴포넌트 정의
 const FaqItem = ({ id, question, answer }) => {
@@ -14,7 +16,9 @@ const FaqItem = ({ id, question, answer }) => {
       <div className="question" onClick={toggleAnswer}>
         <span className="number">No.{id}</span>
         <span className="text">[문의] {question}</span>
-        <button className="button">{isOpen ? '⬆️' : '⬇️'}</button>
+        <button className="button">
+          <img src={isOpen ? WupArrow : WdownArrow} alt="toggle arrow" />
+        </button>
       </div>
       {isOpen && (
         <div className="answer">
