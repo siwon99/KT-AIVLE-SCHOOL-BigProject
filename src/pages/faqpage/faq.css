@@ -76,6 +76,7 @@ body, html {
   padding: 20px;
   background-color: #fdfdfd;
   box-sizing: border-box;
+  margin-bottom: 20px;
 }
 
 .number {
@@ -112,8 +113,9 @@ body, html {
   width: 100%;
   height: 85px;
   padding: 20px;
-  background-color: #f6f6f6;
+  background-color: #cdcdcd;
   box-sizing: border-box;
+  margin-bottom: 20px;
 }
 
 .answerfaq {
