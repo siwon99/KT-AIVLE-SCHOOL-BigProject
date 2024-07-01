@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../navbar/navbar';
+import "./listpage.css"
 
 // 상세 정보 페이지
 const ListPage = () => {
@@ -53,10 +54,10 @@ const ListPage = () => {
           <span className="info">{setFarm.farm_owner}</span> 
           <span className="info">{setFarm.farm_created}</span>
           <span className="info">{setFarm.farm_status}</span>
-        </div>
-
-        <div className="btn">
-          <button className="backBtn">선택</button>
+        
+          <div className="btn">
+            <button className="backBtn">선택</button>
+          </div>
         </div>
       </div>
 
