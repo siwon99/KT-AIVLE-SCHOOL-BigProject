@@ -16,11 +16,8 @@ const Youtube = () => (
   <section className="youtube-container">
     <div className="youtube">
       <iframe
-        width="650"
-        height="370"
-        src="https://www.youtube.com/embed/1TyYpFW8X9U"
-        title="fromis_9 (프로미스나인) 'DM' Performance Video"
-        frameBorder="0"
+        src="https://www.youtube.com/embed/RKhsHGfrFmY?autoplay=1&mute=1"
+        title="New Video"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin"
         allowFullScreen
