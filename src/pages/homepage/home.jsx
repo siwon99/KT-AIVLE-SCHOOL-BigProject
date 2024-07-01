@@ -16,10 +16,15 @@ const Youtube = () => (
   <section className="youtube-container">
     <div className="youtube">
       <iframe
+<<<<<<< Updated upstream
         width="650"
         height="370"
         src="https://www.youtube.com/embed/1TyYpFW8X9U"
         title="fromis_9 (프로미스나인) 'DM' Performance Video"
+=======
+        src="https://www.youtube.com/embed/RKhsHGfrFmY?autoplay=1&mute=1"
+        title="New Video"
+>>>>>>> Stashed changes
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin"
@@ -58,8 +63,8 @@ const HomePage = () => {
         <Search />
         <Youtube />
         <ServiceIntroduction />
+        <Footer />
       </main>
-      <Footer />
     </div>
   );
 };
