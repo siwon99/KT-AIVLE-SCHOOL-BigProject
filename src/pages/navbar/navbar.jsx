@@ -24,7 +24,7 @@ const Navbar = () => {
             </a>
           </li>
 
-          <li className="category"><a href="/land_list">토지 리스트</a></li>
+          <li className="category"><a href="/land_list">농지 리스트</a></li>
           <li className="category"><a href="/service">서비스 소개</a></li>
           <li className="category"><a href="/faq">FAQ</a></li>
           <li className="auth-icons">
