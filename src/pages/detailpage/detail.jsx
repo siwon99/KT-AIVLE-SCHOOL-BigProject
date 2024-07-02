@@ -34,6 +34,7 @@ const DetailPage = () => {
     farm_owner: '',
     latitude: 0,
     longitude: 0,
+    image: null,
   });
 
   const [landLog, setLandLog] = useState({
@@ -67,8 +68,18 @@ const DetailPage = () => {
         }
       })
       .then(data => {
+        console.log('data:', data)
+        // console.log('img', data.image.farm_image)
+
+        setLandDetail({
+          farm_id: data.farm_id,
+          farm_owner: data.farm_owner,
+          latitude: data.latitude,
+          longitude: data.longitude,
+          image: data.image ? { farm_image: data.image.farm_image } : null
+        })
+
         //날짜 및 시간
-        setLandDetail(data);
         setLandLog(data.status_logs[0]);
         setFarmDate(formatDate(data.status_logs[0].farm_created));
         setFarmTime(formatTime(data.status_logs[0].farm_created.split('T')[1].split('Z')[0]));
@@ -108,7 +119,15 @@ const DetailPage = () => {
             </div>
           </div>
         </div>
-        <div className="map">지도 사진</div>
+
+        <div className="map">
+          {landDetail.image ? (
+            <img src={landDetail.image.farm_image} alt="FarmImg" />
+          ) : (
+            <p className='noImg'>이미지가 등록되지 않았습니다.</p>
+          )}
+        </div>
+
       </div>
     </>
   );

@@ -117,5 +117,17 @@ body, html {
   width: 512px;
   height: 512px;
   margin-left: 20px;
-  background-color: red;
+  position: relative; 
+}
+
+.noImg {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  width: 100%;
+  height: 300px; 
 }
