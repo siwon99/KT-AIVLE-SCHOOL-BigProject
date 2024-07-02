@@ -7,9 +7,11 @@ const ServicePage = () => {
   return (
     <>
       <Navbar />
-      <TeamInfo />
-      <TeamIntro />
-      <ServiceIntro />
+      <main className="contents">
+        <TeamInfo />
+        <TeamIntro />
+        <ServiceIntro />
+      </main>
     </>
   );
 };
