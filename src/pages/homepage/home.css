@@ -27,14 +27,9 @@ body, html {
   gap: 20px;
   width: 100%;
   height: 100%;
-<<<<<<< Updated upstream
   /* margin-top: 5.7%; */
   box-sizing: border-box;
   overflow: hidden;
-=======
-  margin-top: 5.7%;
-  box-sizing: border-box;
->>>>>>> Stashed changes
 }
 
 .content::before { /* 홈페이지 중간 선 */
@@ -42,15 +37,9 @@ body, html {
   position: absolute;
   background-color: #00008C;
   width: 2px;
-<<<<<<< Updated upstream
   height: 70%;
   left: 49%;
   top: 15%;
-=======
-  height: 80%;
-  left: 49%;
-  top: 5%;
->>>>>>> Stashed changes
   transform: translateX(-50%);
 }
 
@@ -62,32 +51,20 @@ body, html {
   justify-content: center;    /* 수평 중앙 */
   align-items: center;        /* 수직 중앙 */
   text-align: center;         /* 텍스트 수평 중앙 */
-<<<<<<< Updated upstream
   width: 90%;
   padding: 2% 5%;
   margin-top: 100px;
   margin-left: 10%;
-=======
-  width: 100%;
-  padding: 5%;
-  margin-top: 30px;
->>>>>>> Stashed changes
   box-sizing: border-box;
 }
 
 .content .service-intro {
   grid-column: 1;
   grid-row: 2;
-<<<<<<< Updated upstream
   width: 90%;
   height: 100%;
   padding: 2% 5%;
   margin-left: 10%;
-=======
-  width: 100%;
-  height: 100%;
-  padding: 5%;
->>>>>>> Stashed changes
   box-sizing: border-box;
 }
 
@@ -99,16 +76,10 @@ body, html {
 .youtube-container {
   grid-column: 2;
   grid-row: 2;
-<<<<<<< Updated upstream
   width: 90%;
   height: 100%;
   padding: 2% 5%;
   margin-right: 10%;
-=======
-  width: 100%;
-  height: 100%;
-  padding: 5%;
->>>>>>> Stashed changes
   box-sizing: border-box;
 }
 
@@ -124,11 +95,7 @@ body, html {
   left: 0;
   width: 100%;
   height: 100%;
-<<<<<<< Updated upstream
   border: none;
-=======
-  border: none; /* 테두리 제거 */
->>>>>>> Stashed changes
 }
 
 .chatbot {

@@ -3,16 +3,10 @@
   justify-content: center;
   align-items: center;
   position: relative;
-<<<<<<< Updated upstream
   width: 90%;
   margin-top: 100px;
   margin-right: 10%;
   padding: 2% 5%;
-=======
-  width: 100%;
-  margin-top: 30px;
-  padding: 5%;
->>>>>>> Stashed changes
   box-sizing: border-box;
 }
 
