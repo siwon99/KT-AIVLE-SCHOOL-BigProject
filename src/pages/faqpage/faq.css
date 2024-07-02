@@ -112,8 +112,9 @@ body, html {
   height: 90%;
 }
 
-.button:hover {
+.button:focus {
   cursor: pointer;
+  background-color: #00008C;
 }
 
 .answer {
