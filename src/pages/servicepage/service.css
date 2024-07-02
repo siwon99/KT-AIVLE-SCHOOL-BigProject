@@ -124,3 +124,32 @@ body, html {
   height: 100%;
   object-fit: cover;
 }
+
+/* 서비스 소개 css 시작 */
+
+.service-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 100px;
+  box-sizing: border-box;
+}
+
+.service-info .title {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.service-info .intro,
+.service-info .features,
+.service-info .effects {
+  width: 80%;
+  box-sizing: border-box;
+}
+
+.service-info p {
+  width: 100%;
+  box-sizing: border-box;
+}

@@ -16,7 +16,7 @@ const sortedMembers = teamMembers.sort((a, b) => a.name.localeCompare(b.name));
 
 const TeamInfo = () => (
   <div className='team-info'>
-    <div className='title'>서비스 소개</div>
+    <div className='title'>조원 소개</div>
     <TeamIntro />
     <div className='teammate'>
       <div className='row-5'>
