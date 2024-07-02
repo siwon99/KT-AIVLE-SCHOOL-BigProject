@@ -31,14 +31,14 @@ const ServiceIntro = () => {
 
 const ServicePage = () => {
   return (
-    <>
+    <div className="page">
       <Navbar />
       <main className="contents">
         <TeamInfo />
         <TeamIntro />
         <ServiceIntro />
       </main>
-    </>
+    </div>
   );
 };
 
