@@ -23,11 +23,20 @@
 .search-icon {
   position: absolute;
   top: 50%;
-  right: 50px;
+  right: 55px;
   transform: translateY(-50%);
   width: 24px;
   height: 24px;
   background-image: url('../../assets/BsearchIcon.svg');
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.search-section input:focus {
+  outline: none;
+  border: 3px solid #00008C;
+}
+
+.search-icon:hover {
+  cursor: pointer;
 }
