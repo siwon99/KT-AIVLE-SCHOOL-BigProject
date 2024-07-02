@@ -45,7 +45,7 @@ const ListPage = () => {
   }, [farms]);
 
   return (
-    <>
+    <div className="page">
       <Navbar />
       <div className="lists-info">
         <div className="title">농지 리스트</div>
@@ -71,7 +71,7 @@ const ListPage = () => {
 
         <div><p></p></div>
       </div>
-    </>
+    </div>
   );
 };
 
