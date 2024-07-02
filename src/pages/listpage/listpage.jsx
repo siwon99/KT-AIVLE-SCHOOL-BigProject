@@ -16,7 +16,7 @@ const ListPage = () => {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Token  ${token}`,
+          'Authorization': `Token ${token}`,
         }, 
       })
       .then(response => {
@@ -39,7 +39,7 @@ const ListPage = () => {
     }
   }, [navigate]);
 
-  //farms 상태가 업데이트될 때마다 현재 상태를 출력
+  // farms 상태가 업데이트될 때마다 현재 상태를 출력
   useEffect(() => {
     console.log('farms:', farms);
   }, [farms]);
@@ -55,7 +55,7 @@ const ListPage = () => {
             farms.map((farm, index) => (
               <div className='lists' key={index}>
                 <div className='farm-info'>
-                  <div className='num'>{index + 1}.</div>
+                  <div className='num'>{farms.length - index}.</div>
                   <div className='farm-name'>[{farm.farm_name}]</div>
                   <div className='farm-owner'>소유자: {farm.farm_owner}</div>
                   <div className='farm-size'>농지 크기: {farm.farm_size}</div>
