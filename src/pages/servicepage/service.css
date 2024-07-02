@@ -37,7 +37,6 @@ body, html {
   align-items: center;
   width: 950px;
   height: 100%;
-  margin-top: 4%;
   box-sizing: border-box;
 }
 
@@ -52,10 +51,11 @@ body, html {
 .title {
   position: relative;
   text-align: center;
+  width: 100%;
+  margin-top: 150px;
   margin-bottom: 50px;
   font-size: 30px;
-  color: #000000;
-  width: 100%;
+  color: #323232;
   box-sizing: border-box;
 }
 
@@ -63,7 +63,7 @@ body, html {
   content: '';
   display: block;
   width: 100%;
-  height: 3px; /* 파란 막대의 높이를 동일하게 설정 */
+  height: 3px;
   background-color: #00008C;
   position: absolute;
   bottom: -20px;

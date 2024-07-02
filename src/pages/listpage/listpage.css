@@ -33,17 +33,17 @@ body, html {
   align-items: center;
   width: 950px;
   height: 100%;
-  margin-top: 4%;
   box-sizing: border-box;
 }
 
 .title {
   position: relative;
   text-align: center;
+  width: 100%;
+  margin-top: 150px;
   margin-bottom: 50px;
   font-size: 30px;
-  color: #000000;
-  width: 100%;
+  color: #323232;
   box-sizing: border-box;
 }
 
