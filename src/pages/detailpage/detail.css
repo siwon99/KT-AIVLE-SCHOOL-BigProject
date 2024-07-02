@@ -1,0 +1,105 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 950px;
+  height: 100%;
+  margin-top: 4%;
+  box-sizing: border-box;
+}
+
+.detail-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 40%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.d-title {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 24px;
+  margin-bottom: 80px;
+  border-radius: 5px;
+  background-color: #6E9FED;
+  border: 3px solid #6E9FED;
+  color: #E6E6E6;
+  box-sizing: border-box;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.info {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #E6E6E6;
+  border: 3px solid #757575;
+  color: #000000;
+  box-sizing: border-box;
+}
+
+.btn {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.btn > * {
+  flex: 1;
+}
+
+.btn .backBtn, .rentBtn {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  color: #6E9FED;
+  background-color: transparent;
+  border: 3px solid #6E9FED;
+  border-radius: 20px;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.backBtn:hover, .rentBtn:hover {
+  cursor: pointer;
+  background-color: #6E9FED;
+  color: white;
+}
+
+.map {
+  width: 60%;
+  height: 100%;
+  margin-top: 100px;
+}

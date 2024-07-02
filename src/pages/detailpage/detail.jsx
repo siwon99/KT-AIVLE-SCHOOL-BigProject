@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Navbar from '../navbar/navbar';
+import './detail.css'
 
 // 상세 정보 페이지
 const DetailPage = () => {
@@ -54,23 +55,22 @@ const DetailPage = () => {
   return (
     <>
       <Navbar />
-      <div className="detail-info">
-        <div className="title">농지 상세정보</div>
-
-        <div className='details'>
-          <span className="info">{landDetail.farm_owner}</span> 
-          <span className="info">{landDetail.latitude}, {landDetail.longitude}</span> 
-          <span className="info">{landLog.farm_created}</span>
-          <span className="info">{landLog.farm_status}</span>
+      <div className="container">
+        <div className="detail-info">
+          <div className="d-title">농지 상세정보</div>
+          <div className="details">
+            <span className="info">farm_owner: {landDetail.farm_owner}</span> 
+            <span className="info">위도/경도: {landDetail.latitude}, {landDetail.longitude}</span> 
+            <span className="info">farm_created: {landLog.farm_created}</span>
+            <span className="info">farm_status: {landLog.farm_status}</span>
+            <div className="btn">
+              <a href="/land_list" className="backBtn">이전</a>
+              <button className="rentBtn">임대</button>
+            </div>
+          </div>
         </div>
-
-        <div className="btn">
-          <a href='/land_list' className="backBtn">이전</a>
-          <button className="rentBtn">임대</button>
-        </div>
+        <div className="map"></div>
       </div>
-
-      <div className="map"></div>
     </>
   );
 };
