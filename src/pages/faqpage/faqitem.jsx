@@ -15,14 +15,14 @@ const FaqItem = ({ id, question, answer }) => {
     <div className="item">
       <div className="question" onClick={toggleAnswer}>
         <span className="number">No.{id}</span>
-        <span className="text">[문의] {question}</span>
+        <span className="text">[문의]&nbsp;&nbsp;{question}</span>
         <button className="button">
           <img src={isOpen ? WupArrow : WdownArrow} alt="toggle arrow" />
         </button>
       </div>
       {isOpen && (
         <div className="answer">
-          <span className="answerfaq">[답변]&nbsp;</span>{answer}
+          <span className="answerfaq">[답변]&nbsp;&nbsp;</span>{answer}
         </div>
       )}
     </div>

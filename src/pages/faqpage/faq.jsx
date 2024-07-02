@@ -55,13 +55,11 @@ const FaqPage = () => {
       <div className="contents-wrapper">
         <main className="contents">
           <div className="title">FAQ</div>
-          <div className="faq">
-            <div className="list">
+          <div className="list">
               {faqData.map((faq) => (
                 <FaqItem key={faq.id} id={faq.id} question={faq.question} answer={faq.answer} />
               ))}
             </div>
-          </div>
         </main>
       </div>
     </div>
