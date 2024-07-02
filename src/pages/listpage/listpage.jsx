@@ -29,7 +29,7 @@ const ListPage = () => {
       })
       .then(data => {
         console.log('data:', data.results);
-        setFarms(data.results);
+        setFarms(data.results.reverse());
       })
       .catch(error => {
         alert('오류가 발생했습니다.');
