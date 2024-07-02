@@ -22,7 +22,8 @@ const FaqItem = ({ id, question, answer }) => {
       </div>
       {isOpen && (
         <div className="answer">
-          <span className="answerfaq">[답변]&nbsp;&nbsp;</span>{answer}
+          <span className="answerfaq">[답변]&nbsp;&nbsp;</span>
+          <span dangerouslySetInnerHTML={{ __html: answer }} />
         </div>
       )}
     </div>
