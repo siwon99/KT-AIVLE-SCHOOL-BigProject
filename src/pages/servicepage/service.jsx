@@ -40,7 +40,6 @@ const ServicePage = () => {
       <Navbar />
       <main className="contents">
         <TeamInfo />
-        <TeamIntro />
         <ServiceIntro />
       </main>
     </div>

@@ -34,6 +34,7 @@ body, html {
   width: 950px;
   height: 100%;
   box-sizing: border-box;
+  color: #282828;
 }
 
 .title {
@@ -67,7 +68,6 @@ body, html {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  color: #282828;
 }
 
 .item {
