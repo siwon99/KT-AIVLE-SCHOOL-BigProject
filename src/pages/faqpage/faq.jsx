@@ -52,15 +52,18 @@ const FaqPage = () => {
   return (
     <div className="page">
       <Navbar />
-      <main className="contents">
-        <div className="title">FAQ</div>
-        
-        <div className="list">
-          {faqData.map((faq) => (
-            <FaqItem key={faq.id} id={faq.id} question={faq.question} answer={faq.answer} />
-          ))}
-        </div>
-      </main>
+      <div className="contents-wrapper">
+        <main className="contents">
+          <div className="title">FAQ</div>
+          <div className="faq">
+            <div className="list">
+              {faqData.map((faq) => (
+                <FaqItem key={faq.id} id={faq.id} question={faq.question} answer={faq.answer} />
+              ))}
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
   );
 };
