@@ -41,7 +41,7 @@ const Login = () => {
       .then(response => response.json())
       .then(data => {
         if (data.token) {
-          alert('로그인 되었습니다.');
+          //alert('로그인 되었습니다.');
           localStorage.setItem('token', data.token);
           navigate('/');
         } else {
@@ -65,7 +65,7 @@ const Login = () => {
             value={userInfo.username}
             name="username"
             onChange={handleInputChange}
-            onEnterPress={handleEnterPress} // 엔터 키 처리 함수 전달
+            onEnterPress={handleEnterPress}
           />
           <UserInput
             type="password"
@@ -73,7 +73,7 @@ const Login = () => {
             value={userInfo.password}
             name="password"
             onChange={handleInputChange}
-            onEnterPress={handleEnterPress} // 엔터 키 처리 함수 전달
+            onEnterPress={handleEnterPress}
           />
           <div className='Wrapper'>
             <UserBtn

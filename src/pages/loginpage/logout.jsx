@@ -27,7 +27,7 @@ const Logout = () => {
       })
       .then(data => {
         if (data.detail) {
-          alert('로그아웃 되었습니다.')
+          //alert('로그아웃 되었습니다.')
           navigate('/');
         }
         else {
