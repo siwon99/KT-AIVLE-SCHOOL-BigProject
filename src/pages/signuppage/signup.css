@@ -13,6 +13,39 @@ body, html {
   height: 100%;
 }
 
+.contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 950px;
+  height: 100%;
+  padding-bottom: 70px;
+  box-sizing: border-box;
+  color: #282828;
+}
+
+.signup-title {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  margin-top: 150px;
+  font-size: 30px;
+  color: #323232;
+  box-sizing: border-box;
+}
+
+.signup-title::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #00008C;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .signup {
   display: flex;
   justify-content: center;

@@ -73,56 +73,58 @@ const Signup = () => {
   return (
     <>
       <Navbar />
-      <div className="signup">
-        <div className="write-info" onChange={handleInputChange}>
-          <div className="userInput">
-            <UserInput
-              type="text"
-              placeholder="이름"
-              value={userInfo.user_realname}
-              name="user_realname"
-            />
+      <main className="contents">
+        <div className="signup-title">회원가입</div>
+        <div className="signup">
+          <div className="write-info" onChange={handleInputChange}>
+            <div className="userInput">
               <UserInput
                 type="text"
-              placeholder="아이디"
-              value={userInfo.username}
-              name="username"
+                placeholder="이름"
+                value={userInfo.user_realname}
+                name="user_realname"
+              />
+                <UserInput
+                  type="text"
+                placeholder="아이디"
+                value={userInfo.username}
+                name="username"
+              />
+              <UserInput
+                type="password"
+                placeholder="비밀번호"
+                value={userInfo.password}
+                name="password"
+              />
+              <UserInput
+                type="password"
+                placeholder="비밀번호 확인"
+                value={userInfo.confirm_password}
+                name="confirm_password"
             />
             <UserInput
-              type="password"
-              placeholder="비밀번호"
-              value={userInfo.password}
-              name="password"
-            />
-            <UserInput
-              type="password"
-              placeholder="비밀번호 확인"
-              value={userInfo.confirm_password}
-              name="confirm_password"
-          />
-          <UserInput
-            type="birthday"
-            placeholder="생년월일"
-            pattern="\d{4}\.\d{2}\.\d{2}" // 정규식을 이용하여 형식을 지정
-            value={userInfo.birthday}
-            name="birthday"
-          />
-        </div>
-
-        <div className="button-container">
-          <div className="backHome-Btn">
-              <button className="backBtn" onClick={goToHome}>뒤로가기</button>
-            </div>
-          <div className="signUp-Btn">
-            <UserButton
-              onClick={processSignUp}
-              text="회원 가입"
+              type="birthday"
+              placeholder="생년월일"
+              pattern="\d{4}\.\d{2}\.\d{2}" // 정규식을 이용하여 형식을 지정
+              value={userInfo.birthday}
+              name="birthday"
             />
           </div>
+
+          <div className="button-container">
+            <div className="backHome-Btn">
+                <button className="backBtn" onClick={goToHome}>뒤로가기</button>
+              </div>
+            <div className="signUp-Btn">
+              <UserButton
+                onClick={processSignUp}
+                text="회원 가입"
+              />
+            </div>
+          </div>
         </div>
-        
       </div>
-    </div>
+    </main>
   </>
   );
 };

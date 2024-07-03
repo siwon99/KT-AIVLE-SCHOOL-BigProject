@@ -57,35 +57,38 @@ const Login = () => {
   return (
     <>
       <Navbar />
-      <div className="login">
-        <div className="userFrame">
-          <UserInput
-            type="text"
-            placeholder="아이디를 입력하세요."
-            value={userInfo.username}
-            name="username"
-            onChange={handleInputChange}
-            onEnterPress={handleEnterPress}
-          />
-          <UserInput
-            type="password"
-            placeholder="비밀번호를 입력하세요."
-            value={userInfo.password}
-            name="password"
-            onChange={handleInputChange}
-            onEnterPress={handleEnterPress}
-          />
-          <div className='Wrapper'>
-            <UserBtn
-              text="로그인"
-              onClick={loginProgcess}
+      <main className="contents">
+        <div className="login-title">로그인</div>
+        <div className="login">
+          <div className="userFrame">
+            <UserInput
+              type="text"
+              placeholder="아이디를 입력하세요."
+              value={userInfo.username}
+              name="username"
+              onChange={handleInputChange}
+              onEnterPress={handleEnterPress}
             />
-            <button className="actionButton" onClick={goSignupPage}>
-              회원 가입
-            </button>
+            <UserInput
+              type="password"
+              placeholder="비밀번호를 입력하세요."
+              value={userInfo.password}
+              name="password"
+              onChange={handleInputChange}
+              onEnterPress={handleEnterPress}
+            />
+            <div className='Wrapper'>
+              <UserBtn
+                text="로그인"
+                onClick={loginProgcess}
+              />
+              <button className="actionButton" onClick={goSignupPage}>
+                회원 가입
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </main>
     </>
   );
 };
