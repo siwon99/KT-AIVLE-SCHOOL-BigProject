@@ -29,6 +29,7 @@ body, html {
   text-align: center;
   width: 100%;
   margin-top: 150px;
+  margin-bottom: 20px;
   font-size: 30px;
   color: #323232;
   box-sizing: border-box;
@@ -83,6 +84,7 @@ body, html {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  margin-top: 50px;
   gap: 10px;
 }
 
