@@ -1,18 +1,19 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React, { useState } from 'react'; // useState: 모달 열림상태 관리
 import "./home.css";
 import Navbar from '../navbar/navbar.jsx';
 import Search from './Search.jsx';
 import WchatBot from "../../assets/WchatBot.svg"; // 권혜민 추가
- 
+import ChatBot from './ChatBot.jsx'; // 이건우 추가
+
 // 메인 페이지 문구
 const MainText = () => (
   <section className="maintext">
     <h1>NONGBU<br />Next Our New Generation, Better then Us</h1>
   </section>
 );
- 
+
 // 메인 페이지 유튜브
-const Youtube = () => (
+const Youtube = ({ onChatBotClick }) => (
   <section className="youtube-container">
     <div className="youtube">
       <iframe
@@ -23,12 +24,12 @@ const Youtube = () => (
         allowFullScreen
       />
     </div>
-    <div className="chatbot">
+    <div className="chatbot" onClick={onChatBotClick}>
       <img src={WchatBot} alt="chatbot" />
     </div>
   </section>
 );
- 
+
 // 메인 페이지 서비스 소개
 const ServiceIntroduction = () => (
   <section className="service-intro">
@@ -38,7 +39,7 @@ const ServiceIntroduction = () => (
     <p>정부와 함께 농업의 미래를 만들어 가는 길!<br />지금 시작하세요.</p>
   </section>
 );
- 
+
 // 메인 페이지 푸터
 const Footer = () => (
   <footer className="footer">
@@ -46,20 +47,32 @@ const Footer = () => (
     <p>ⓒ 2024 20조. ALL RIGHTS RESERVED.</p>
   </footer>
 );
- 
+
+// 챗봇 이미지 클릭 시 모달 열고 닫기
 const HomePage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleChatBotClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="home">
       <Navbar />
       <main className="content">
-        <MainText/>
+        <MainText />
         <Search />
-        <Youtube />
+        <Youtube onChatBotClick={handleChatBotClick} />
         <ServiceIntroduction />
         <Footer />
       </main>
+      {isModalOpen && <ChatBot closeModal={closeModal} />}
     </div>
   );
 };
- 
+
 export default HomePage;
