@@ -18,16 +18,20 @@ const Navbar = () => {
     <div className="navbar">
       <nav>
         <ul>
-          <li>
+          <li className="home-icon">
             <a href="/">
               <img src={WhomeIcon} alt="NongBu" className="whomeicon" />
             </a>
           </li>
 
-          <li className="category"><a href="/land_list">농지 리스트</a></li>
-          <li className="category"><a href="/service">서비스 소개</a></li>
-          <li className="category"><a href="/faq">FAQ</a></li>
-          <li className="category"><a href="/map">지도</a></li>
+          <div className="categories">
+            <li className="category"><a href="/land_list">농지 리스트</a></li>
+            <li className="category"><a href="/service">서비스 소개</a></li>
+            <li className="category"><a href="/member">조원 소개</a></li>
+            <li className="category"><a href="/faq">FAQ</a></li>
+            <li className="category"><a href="/map">지도</a></li>
+          </div>
+          
           <li className="auth-icons">
             {!token ? (
                 <div>
