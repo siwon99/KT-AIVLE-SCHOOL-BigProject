@@ -31,7 +31,9 @@ const DetailPage = () => {
 
   const [landDetail, setLandDetail] = useState({
     farm_id: 0,
+    farm_name: '',
     farm_owner: '',
+    farm_size: 0,
     latitude: 0,
     longitude: 0,
     image: null,
@@ -73,7 +75,9 @@ const DetailPage = () => {
 
         setLandDetail({
           farm_id: data.farm_id,
+          farm_name: data.farm_name,
           farm_owner: data.farm_owner,
+          farm_size: data.farm_size,
           latitude: data.latitude,
           longitude: data.longitude,
           image: data.image ? { farm_image: data.image.farm_image } : null
@@ -108,8 +112,10 @@ const DetailPage = () => {
         <div className="detail-info">
           <div className="d-title">농지 상세정보</div>
           <div className="details">
+            <span className="info"><div className='info-title'>농지명:</div> {landDetail.farm_name}</span> 
             <span className="info"><div className='info-title'>소유주:</div> {landDetail.farm_owner}</span> 
-            <span className="info"><div className='info-title'>위도/경도:</div> {landDetail.latitude}, {landDetail.longitude}</span> 
+            <span className="info"><div className='info-title'>위도 / 경도:</div> {landDetail.latitude}, {landDetail.longitude}</span> 
+            <span className="info"><div className='info-title'>농지 크기:</div> {landDetail.farm_size}</span> 
             <span className="info"><div className='info-title'>게시 날짜:</div> {farmDate}</span>
             <span className="info"><div className='info-title'>게시 시간:</div> {farmTime}</span>
             <span className="info"><div className='info-title'>농지 상태:</div> {farmStatusText}</span>
