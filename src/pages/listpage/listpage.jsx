@@ -1,12 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../navbar/navbar';
-import './listpage.css'
+import './listpage.css';
 
 // 상세 정보 페이지
 const ListPage = () => {
   const navigate = useNavigate();
   const [farms, setFarms] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const farmsPerPage = 8;
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -44,6 +46,14 @@ const ListPage = () => {
     console.log('farms:', farms);
   }, [farms]);
 
+  // 현재 페이지에 맞는 농지 리스트를 반환
+  const indexOfLastFarm = currentPage * farmsPerPage;
+  const indexOfFirstFarm = indexOfLastFarm - farmsPerPage;
+  const currentFarms = farms.slice(indexOfFirstFarm, indexOfLastFarm);
+
+  // 페이지 번호 변경 핸들러
+  const paginate = pageNumber => setCurrentPage(pageNumber);
+
   return (
     <div className="page">
       <Navbar />
@@ -51,11 +61,11 @@ const ListPage = () => {
         <div className="title">농지 리스트</div>
 
         <div>
-          {farms.length > 0 ? (
-            farms.map((farm, index) => (
+          {currentFarms.length > 0 ? (
+            currentFarms.map((farm, index) => (
               <div className='lists' key={index}>
                 <div className='farm-info'>
-                  <div className='num'>{farms.length - index}.</div>
+                  <div className='num'>{farms.length - (indexOfFirstFarm + index)}.</div>
                   <div className='farm-name'>[{farm.farm_name}]</div>
                   <div className='farm-owner'>소유자: {farm.farm_owner}</div>
                   <div className='farm-size'>농지 크기: {farm.farm_size}</div>
@@ -69,7 +79,13 @@ const ListPage = () => {
           )}
         </div>
 
-        <div><p></p></div>
+        <div className="pagination">
+          {[...Array(Math.ceil(farms.length / farmsPerPage)).keys()].map(number => (
+            <button key={number + 1} onClick={() => paginate(number + 1)}>
+              {number + 1}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );

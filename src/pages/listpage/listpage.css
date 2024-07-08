@@ -110,3 +110,20 @@ body, html {
 .lists .backBtn:hover {
   cursor: pointer;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #6E9FED;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+}
