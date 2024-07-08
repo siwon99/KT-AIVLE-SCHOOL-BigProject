@@ -8,7 +8,7 @@ const ListPage = () => {
   const navigate = useNavigate();
   const [farms, setFarms] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const farmsPerPage = 8;
+  const farmsPerPage = 5; // 한 페이지에 나열할 목록 수
 
   useEffect(() => {
     const token = localStorage.getItem('token');
