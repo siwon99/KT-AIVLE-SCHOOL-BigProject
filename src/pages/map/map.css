@@ -1,0 +1,13 @@
+#map {
+    width: 500px;
+    height: 500px;
+}
+
+.memo {
+    width: 150px;
+    text-align: center;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
