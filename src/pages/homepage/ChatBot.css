@@ -1,0 +1,90 @@
+/* 배경 스타일 */
+.background {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* 모달 스타일 */
+  .modal-container {
+    background: white;
+    width: 600px;
+    max-width: 90%;
+    height: 700px;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    position: relative;
+    padding: 20px;
+  }
+  
+  /* 닫기 버튼 스타일 */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  /* 메시지 목록 스타일 */
+  .message-list {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+  }
+  
+  /* 메시지 기본 스타일 */
+  .message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+  
+  /* 봇 메시지 스타일 */
+  .message.bot {
+    background-color: #e6e6e6;
+    align-self: flex-start;
+  }
+  
+  /* 사용자 메시지 스타일 */
+  .message.user {
+    background-color: #c1dafb;
+    align-self: flex-end;
+  }
+  
+  /* 입력 영역 스타일 */
+  .input-container {
+    display: flex;
+  }
+  
+  /* 입력 필드 스타일 */
+  .input-container input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #757575;
+    border-radius: 8px 0 0 8px;
+  }
+  
+  /* 전송 버튼 스타일 */
+  .input-container button {
+    padding: 10px;
+    border: none;
+    background-color: #00008C;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+  }
+  
