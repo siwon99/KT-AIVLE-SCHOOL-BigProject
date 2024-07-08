@@ -37,6 +37,7 @@ const Navbar = () => {
     <div className="navbar">
       <nav>
         <ul>
+          {/* 햄버거 아이콘 */}
           <div className="hamburger-icon" onClick={toggleMenu}>
             <div></div>
             <div></div>
