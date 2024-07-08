@@ -8,7 +8,7 @@ const ListPage = () => {
   const navigate = useNavigate();
   const [farms, setFarms] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const farmsPerPage = 5; // 한 페이지에 나열할 목록 수
+  const pageSize = 5; // 한 페이지에 나열할 목록 수
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -47,9 +47,9 @@ const ListPage = () => {
   }, [farms]);
 
   // 현재 페이지에 맞는 농지 리스트를 반환
-  const indexOfLastFarm = currentPage * farmsPerPage;
-  const indexOfFirstFarm = indexOfLastFarm - farmsPerPage;
-  const currentFarms = farms.slice(indexOfFirstFarm, indexOfLastFarm);
+  const lastIndex = currentPage * pageSize;
+  const firstIndex = lastIndex - pageSize;
+  const currentItems = farms.slice(firstIndex, lastIndex);
 
   // 페이지 번호 변경 핸들러
   const paginate = pageNumber => setCurrentPage(pageNumber);
@@ -61,11 +61,11 @@ const ListPage = () => {
         <div className="title">농지 리스트</div>
 
         <div>
-          {currentFarms.length > 0 ? (
-            currentFarms.map((farm, index) => (
+          {currentItems.length > 0 ? (
+            currentItems.map((farm, index) => (
               <div className='lists' key={index}>
                 <div className='farm-info'>
-                  <div className='num'>{farms.length - (indexOfFirstFarm + index)}.</div>
+                  <div className='num'>{farms.length - (firstIndex + index)}.</div>
                   <div className='farm-name'>[{farm.farm_name}]</div>
                   <div className='farm-owner'>소유자: {farm.farm_owner}</div>
                   <div className='farm-size'>농지 크기: {farm.farm_size}</div>
@@ -80,7 +80,7 @@ const ListPage = () => {
         </div>
 
         <div className="pagination">
-          {[...Array(Math.ceil(farms.length / farmsPerPage)).keys()].map(number => (
+          {[...Array(Math.ceil(farms.length / pageSize)).keys()].map(number => (
             <button key={number + 1} onClick={() => paginate(number + 1)}>
               {number + 1}
             </button>
