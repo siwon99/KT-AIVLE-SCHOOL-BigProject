@@ -1,3 +1,4 @@
+/* 기존 코드 유지 */
 .navbar {
   display: flex;
   position: fixed;
@@ -14,6 +15,7 @@
   background-color: #00008C;
   align-items: center;
   justify-content: space-between; /* 좌우로 공간을 균등하게 배분 */
+  position: relative; /* 햄버거 아이콘을 절대 위치시키기 위해 상대 위치 설정 */
 }
 
 .navbar nav ul {
@@ -98,10 +100,77 @@
   cursor: pointer;
 }
 
+.hamburger-icon {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger-icon div {
+  width: 25px;
+  height: 3px;
+  background-color: #FFFFFF;
+  margin: 4px 0;
+}
+
+.sidebar {
+  display: none;
+  position: fixed;
+  padding-top: 90px;
+  width: 100%;
+  height: 100%;
+  background-color: #00008C;
+  overflow-x: hidden;
+}
+
+.sidebar a {
+  display: block;
+  padding: 15px 45px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+.sidebar a:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.sidebar.show {
+  display: block;
+}
+
+.sidebar .auth-links {
+  position: absolute;
+  width: 100%;
+  bottom: 120px;
+}
+
+.sidebar .auth-links a {
+  display: block;
+  text-decoration: none;
+  font-size: 15px;
+  color:#FFFFFF;
+}
+
 @media (max-width: 1279px) { /* 반응형 */
   .navbar nav ul .categories,
   .navbar nav ul li {
     display: none;
+  }
+
+  .hamburger-icon {
+    display: flex;
+    min-width: 120px;
+  }
+
+  .sidebar {
+    min-width: 172px;
   }
 
   .navbar nav ul li.home-icon {
@@ -109,7 +178,6 @@
     justify-content: center;
     align-items: center;
     min-width: 120px;
-    margin-left: 30px;
     flex-grow: 1;
   }
 
