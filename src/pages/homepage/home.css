@@ -28,7 +28,7 @@ body, html {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  z-index: 998;
+  z-index: 997;
 }
 
 .content::before { /* 홈페이지 중간 선 */
@@ -67,7 +67,7 @@ body, html {
   box-sizing: border-box;
 }
 
-.content .search-section {
+.content .circle-container {
   grid-column: 2;
   grid-row: 1;
   box-sizing: border-box;
@@ -110,6 +110,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 998;
 }
 
 .chatbot:hover {
@@ -135,6 +136,7 @@ body, html {
   background-color: #FFFFFF;
   bottom: 0;
   box-sizing: border-box;
+  z-index: 996;
 }
 
 .footer p {
@@ -174,7 +176,7 @@ body, html {
   }
 
   .content .maintext, 
-  .content .search-section,
+  .content .circle-container,
   .content .service-intro,
   .content .youtube-container {
     width: 80%;
@@ -185,6 +187,9 @@ body, html {
 
   .content .maintext {
     margin-top: 110px;
+  }
+
+  .content .circle-container {
   }
 
   .content .youtube-container {
