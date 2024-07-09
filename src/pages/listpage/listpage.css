@@ -111,19 +111,31 @@ body, html {
   cursor: pointer;
 }
 
+/* 페이지네이션 */
 .pagination {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .pagination button {
   margin: 0 5px;
-  padding: 10px 15px;
+  padding: 10px 0;
   font-size: 14px;
   cursor: pointer;
   background-color: #6E9FED;
   color: #FFFFFF;
   border: none;
   border-radius: 5px;
+  width: 40px;
+  text-align: center;
+}
+
+.pagination button.active {
+  background-color: #00008C;
+}
+
+.pagination button:disabled {
+  background-color: #D3D3D3;
+  cursor: not-allowed;
 }

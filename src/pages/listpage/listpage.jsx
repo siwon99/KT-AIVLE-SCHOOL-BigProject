@@ -3,12 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../navbar/navbar';
 import './listpage.css';
 
-// 상세 정보 페이지
+// 상세 정보 페이지 컴포넌트
 const ListPage = () => {
   const navigate = useNavigate();
   const [farms, setFarms] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 5; // 한 페이지에 나열할 목록 수
+  const pageCount = 5; // 표시할 페이지 번호 갯수
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -33,7 +34,7 @@ const ListPage = () => {
         console.log('data:', data.results);
         setFarms(data.results.reverse());
       })
-      //로컬 스토리지에만 토큰이 남아있어도 로그인 페이지로 유도 가능
+      // 로컬 스토리지에만 토큰이 남아있어도 로그인 페이지로 유도 가능
       .catch(error => {
         throw new Error();
       });
@@ -52,8 +53,26 @@ const ListPage = () => {
   const firstIndex = lastIndex - pageSize;
   const currentItems = farms.slice(firstIndex, lastIndex);
 
-  // 페이지 번호 변경 핸들러
-  const paginate = pageNumber => setCurrentPage(pageNumber);
+  // 총 페이지 수 계산
+  const totalPages = Math.ceil(farms.length / pageSize);
+
+  // 표시할 페이지 범위 계산
+  const startPage = Math.floor((currentPage - 1) / pageCount) * pageCount + 1;
+  const endPage = Math.min(startPage + pageCount - 1, totalPages);
+
+  // 페이지 변경 핸들러
+  const changePage = (newPage) => {
+    if (newPage > 0 && newPage <= totalPages) {
+      setCurrentPage(newPage);
+    }
+  };
+
+  // 페이지네이션 버튼 렌더링 함수
+  const Pagination = (page, symbol, isDisabled) => (
+    <button onClick={() => changePage(page)} disabled={isDisabled}>
+      {symbol}
+    </button>
+  );
 
   return (
     <div className="page">
@@ -81,11 +100,19 @@ const ListPage = () => {
         </div>
 
         <div className="pagination">
-          {[...Array(Math.ceil(farms.length / pageSize)).keys()].map(number => (
-            <button key={number + 1} onClick={() => paginate(number + 1)}>
-              {number + 1}
+          {Pagination(1, "<<", currentPage === 1)}
+          {Pagination(currentPage - 1, "<", currentPage === 1)}
+          {Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i).map(number => (
+            <button 
+              key={number} 
+              onClick={() => changePage(number)} 
+              className={number === currentPage ? 'active' : ''}
+            >
+              {number}
             </button>
           ))}
+          {Pagination(currentPage + 1, ">", currentPage === totalPages)}
+          {Pagination(totalPages, ">>", currentPage === totalPages)}
         </div>
       </div>
     </div>
