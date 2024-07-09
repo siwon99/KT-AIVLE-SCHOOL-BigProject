@@ -1,11 +1,21 @@
-/* 기존 코드 유지 */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
 .navbar {
   display: flex;
   position: fixed;
   width: 100%;
-  height: 10%;
+  height: 10vh;
   top: 0;
-  z-index: 1000;
 }
 
 .navbar nav {
@@ -16,6 +26,7 @@
   align-items: center;
   justify-content: space-between; /* 좌우로 공간을 균등하게 배분 */
   position: relative; /* 햄버거 아이콘을 절대 위치시키기 위해 상대 위치 설정 */
+  z-index: 1000;
 }
 
 .navbar nav ul {
@@ -121,13 +132,13 @@
 .sidebar {
   display: none;
   position: fixed;
-  padding-top: 40px;
   width: 250px;
-  height: 100%;
+  height: 90%;
   min-width: 250px;
-  margin-top: 73px;
+  padding-top: 10vh;
+  margin-top: 50px;
   background-color: #f6feff;
-  overflow-x: hidden;
+  z-index: 999;
 }
 
 .sidebar a {
@@ -150,7 +161,7 @@
 .sidebar .auth-links {
   position: absolute;
   width: 100%;
-  bottom: 140px;
+  bottom: 110px;
 }
 
 .sidebar .auth-links a {
