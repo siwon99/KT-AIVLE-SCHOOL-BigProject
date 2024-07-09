@@ -18,8 +18,9 @@ const Navbar = () => {
     const handleResize = () => {
       if (window.innerWidth > 1279) {
         setMenuOpen(false);
-      } else {
         document.querySelector('.content').classList.remove('sidebar-open');
+      } else if (menuOpen) {
+        document.querySelector('.content').classList.add('sidebar-open');
       }
     };
 
