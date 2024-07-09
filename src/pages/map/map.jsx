@@ -104,21 +104,6 @@ function Map() {
 
       overlay.setMap(null);
 
-      // kakao.maps.event.addListener(marker, 'mouseover', function () {
-      //   overlay.setMap(map);
-      // });
-
-      // kakao.maps.event.addListener(marker, 'mouseout', function () {
-      //   overlay.setMap(null);
-      // });
-
-      // kakao.maps.event.addListener(overlay, 'mouseover', function () {
-      //   overlay.setMap(map);
-      // });
-
-      // kakao.maps.event.addListener(overlay, 'mouseout', function () {
-      //   overlay.setMap(null);
-      // });
       kakao.maps.event.addListener(marker, 'click', function () {
         if (overlay.getMap()) {
             overlay.setMap(null);
@@ -142,7 +127,7 @@ function Map() {
   return (
     <>
       <Navbar />
-      <div id='map' style={{ width: '800px', height: '800px' }}>
+      <div id='map' style={{ width: '680px', height: '680px' }}>
       </div>
     </>
   );

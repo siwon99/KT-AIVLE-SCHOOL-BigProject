@@ -1,6 +1,6 @@
 #map {
     position: relative;
-    margin: 10px;
+    margin-top: 85px;
 }
 
 /* 카카오 지도 api css코드 */
@@ -57,7 +57,6 @@
 .link {
   align-self: flex-end; 
   margin-right: 10px; 
-  z-index: 5;
 }
 
 .link:hover {
