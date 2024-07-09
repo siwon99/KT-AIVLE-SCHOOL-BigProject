@@ -144,6 +144,11 @@ body, html {
 @media (max-width: 1279px) { /* 반응형 */
   .home {
     overflow-y: auto;
+    -ms-overflow-style: none;
+  }
+
+  .home::-webkit-scrollbar {
+    display: none;
   }
 
   .content::before {
@@ -159,6 +164,7 @@ body, html {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    height: auto;
     gap: 30px;
     box-sizing: border-box;
   }
@@ -177,108 +183,21 @@ body, html {
     margin-top: 110px;
   }
 
-  .content .youtube {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* 반응형 비디오 16:9 비율 */
-    height: 0;
-  }
-  
-  .content .youtube iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-
-  .footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background-color: #FFFFFF;
-    box-sizing: border-box;
-  }
-
-  .chatbot {
-    display: none;
-  }
-
-  /* .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-    gap: 30px;
-    box-sizing: border-box;
-  }
-
-  .content .maintext {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    margin-top: 110px;
-    box-sizing: border-box;
-  }
-
-  .content .search-section {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  .content .service-intro {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
   .content .youtube-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    height: 540px;
   }
 
   .content .youtube {
     position: relative;
     width: 100%;
-    height: 100%;
-  }
-  
-  .content .youtube iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
+    height: 0;
+    padding-bottom: 56.25%; /* 반응형 비디오 16:9 비율 */
   }
 
   .footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     width: 100%;
     background-color: #FFFFFF;
     box-sizing: border-box;
@@ -286,5 +205,5 @@ body, html {
 
   .chatbot {
     display: none;
-  } */
+  }
 }
