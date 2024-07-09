@@ -57,7 +57,7 @@ body, html {
   margin-top: -50px;
 }
 
-.info {
+.d-info {
   display: flex;
   align-items: center;
   width: 100%;

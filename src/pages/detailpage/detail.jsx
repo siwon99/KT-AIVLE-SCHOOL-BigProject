@@ -113,13 +113,13 @@ const DetailPage = () => {
         <div className="detail-info">
           <div className="d-title">농지 상세정보</div>
           <div className="details">
-            <span className="info"><div className='info-title'>농지명:</div> {landDetail.farm_name}</span> 
-            <span className="info"><div className='info-title'>소유주:</div> {landDetail.farm_owner}</span> 
-            <span className="info"><div className='info-title'>위도 / 경도:</div> {landDetail.latitude}, {landDetail.longitude}</span> 
-            <span className="info"><div className='info-title'>농지 크기:</div> {landDetail.farm_size}</span> 
-            <span className="info"><div className='info-title'>게시 날짜:</div> {farmDate}</span>
-            <span className="info"><div className='info-title'>게시 시간:</div> {farmTime}</span>
-            <span className="info"><div className='info-title'>농지 상태:</div> {farmStatusText}</span>
+            <span className="d-info"><div className='info-title'>농지명:</div> {landDetail.farm_name}</span> 
+            <span className="d-info"><div className='info-title'>소유주:</div> {landDetail.farm_owner}</span> 
+            <span className="d-info"><div className='info-title'>위도 / 경도:</div> {landDetail.latitude}, {landDetail.longitude}</span> 
+            <span className="d-info"><div className='info-title'>농지 크기:</div> {landDetail.farm_size}</span> 
+            <span className="d-info"><div className='info-title'>게시 날짜:</div> {farmDate}</span>
+            <span className="d-info"><div className='info-title'>게시 시간:</div> {farmTime}</span>
+            <span className="d-info"><div className='info-title'>농지 상태:</div> {farmStatusText}</span>
             <div className="btn">
               <a href="/land_list" className="backBtn">이전</a>
               <button className="rentBtn">임대</button>
