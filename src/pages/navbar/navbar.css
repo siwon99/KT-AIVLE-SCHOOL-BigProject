@@ -172,10 +172,6 @@
     min-width: 120px;
   }
 
-  .sidebar {
-    min-width: 172px;
-  }
-
   .navbar nav ul li.home-icon {
     display: flex;
     justify-content: center;

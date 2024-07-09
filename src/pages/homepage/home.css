@@ -28,7 +28,6 @@ body, html {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 .content::before { /* 홈페이지 중간 선 */
@@ -167,6 +166,14 @@ body, html {
     height: auto;
     gap: 30px;
     box-sizing: border-box;
+  }
+
+  .content.sidebar-open {
+    padding-left: 250px;
+  }
+
+  .content.sidebar-open .youtube-container {
+    height: 430px;
   }
 
   .content .maintext, 

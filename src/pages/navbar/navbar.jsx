@@ -18,6 +18,8 @@ const Navbar = () => {
     const handleResize = () => {
       if (window.innerWidth > 1279) {
         setMenuOpen(false);
+      } else {
+        document.querySelector('.content').classList.remove('sidebar-open');
       }
     };
 
@@ -31,6 +33,7 @@ const Navbar = () => {
   // 현재 메뉴 상태를 반전시키는 함수
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+    document.querySelector('.content').classList.toggle('sidebar-open', !menuOpen);
   };
 
   return (
