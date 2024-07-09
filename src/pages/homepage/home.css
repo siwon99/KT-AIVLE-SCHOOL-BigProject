@@ -52,7 +52,7 @@ body, html {
   text-align: center;         /* 텍스트 수평 중앙 */
   width: 90%;
   padding: 2% 5%;
-  margin-top: 100px;
+  margin-top: 110px;
   margin-left: 10%;
   box-sizing: border-box;
 }
@@ -61,34 +61,36 @@ body, html {
   grid-column: 1;
   grid-row: 2;
   width: 90%;
-  height: 100%;
+  height: 80%;
   padding: 2% 5%;
+  margin-top: -10px;
   margin-left: 10%;
   box-sizing: border-box;
 }
 
-.content .search {
+.content .search-section {
   grid-column: 2;
   grid-row: 1;
 }
 
-.youtube-container {
+.content .youtube-container {
   grid-column: 2;
   grid-row: 2;
   width: 90%;
-  height: 100%;
+  height: 80%;
   padding: 2% 5%;
+  margin-top: -10px;
   margin-right: 10%;
   box-sizing: border-box;
 }
 
-.youtube {
+.content .youtube {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-.youtube iframe {
+.content .youtube iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -120,8 +122,6 @@ body, html {
 }
 
 .footer {
-  grid-column: 1 / -1; /* 전체 너비 차지 */
-  grid-row: 3;
   width: 100%;
   height: 75px;
   display: flex;
@@ -131,8 +131,107 @@ body, html {
   text-align: center;
   font-size: 11px;
   background-color: #FFFFFF;
+  position: absolute;
+  bottom: 0;
 }
 
 .footer p {
   margin: 1px;
+}
+
+@media (max-width: 1279px) { /* 반응형 */
+  .home {
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+  }
+
+  .home::-webkit-scrollbar {
+    display: none;
+  }
+
+  .content::before {
+    display: none;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    gap: 30px;
+    box-sizing: border-box;
+  }
+
+  .content .maintext {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-top: 110px;
+    box-sizing: border-box;
+  }
+
+  .content .search-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .content .service-intro {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .content .youtube-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .content .youtube {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .content .youtube iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+  }
+
+  .chatbot {
+    display: none;
+  }
 }
