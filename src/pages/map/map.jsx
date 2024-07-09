@@ -9,6 +9,16 @@ function Map() {
   const navigate = useNavigate();
   const [farms, setFarms] = useState([]);
 
+  const [landDetail, setLandDetail] = useState({
+    farm_id: 0,
+    farm_name: '',
+    farm_owner: '',
+    farm_size: 0,
+    latitude: 0,
+    longitude: 0,
+    image: null,
+  });
+
   useEffect(() => {
     const token = localStorage.getItem('token');
 
@@ -31,10 +41,15 @@ function Map() {
       })
       .then(data => {
         if(data && data.results) {
-          // for (let i = 0; i < data.results.length; i++) {
-          //   console.log(`Longitude${i}:`, data.results[i].longitude);
-          //   console.log(`Latitude${i}:`, data.results[i].latitude);
-          // }
+          setLandDetail({
+            farm_id: data.farm_id,
+            farm_name: data.farm_name,
+            farm_owner: data.farm_owner,
+            farm_size: data.farm_size,
+            latitude: data.latitude,
+            longitude: data.longitude,
+            image: data.image ? { farm_image: data.image.farm_image } : null
+          })
           setFarms(data.results);
         }
       })
@@ -70,14 +85,59 @@ function Map() {
         });
         marker.setMap(map);
 
-        //장소 표시
-        var infowindow = new kakao.maps.InfoWindow({
-          content: `<div class="memo">${farm.farm_name}</div>`
-        });
-      });
-    }
-  }, [farms]);
+        const content = `
+        <div class="wrap">
+          <div class="info">
+            <div class="title">${farm.farm_name}</div>
+            <a class="link" data-id="${farm.farm_id}">더 보기 ></a>
+          </div>   
+        </div>
+        `
 
+      const overlay = new kakao.maps.CustomOverlay({
+        content: content,
+        position: marker.getPosition(),
+        map: map,
+        yAnchor: 1.5,
+        zIndex: 3
+      });
+
+      overlay.setMap(null);
+
+      // kakao.maps.event.addListener(marker, 'mouseover', function () {
+      //   overlay.setMap(map);
+      // });
+
+      // kakao.maps.event.addListener(marker, 'mouseout', function () {
+      //   overlay.setMap(null);
+      // });
+
+      // kakao.maps.event.addListener(overlay, 'mouseover', function () {
+      //   overlay.setMap(map);
+      // });
+
+      // kakao.maps.event.addListener(overlay, 'mouseout', function () {
+      //   overlay.setMap(null);
+      // });
+      kakao.maps.event.addListener(marker, 'click', function () {
+        if (overlay.getMap()) {
+            overlay.setMap(null);
+        } else {
+            overlay.setMap(map);
+        }
+      });
+    
+      // 더보기 링크 클릭 시 디테일 페이지로 이동
+      document.addEventListener('click', function (e) {
+        if (e.target && e.target.className === 'link') {
+          const farmId = e.target.getAttribute('data-id');
+          navigate(`/detail/${farmId}`);
+        }
+      });
+
+    });
+  }
+}, [farms,  landDetail.image, navigate]);
 
   return (
     <>
