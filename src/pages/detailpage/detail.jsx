@@ -97,8 +97,9 @@ const DetailPage = () => {
           setFarmStatusText('알 수 없음');
         }
       })
+      //로컬 스토리지에만 토큰이 남아있어도 로그인 페이지로 유도 가능
       .catch(error => {
-        alert('오류가 발생했습니다.');
+        throw new Error();
       });
     } else {
       navigate('/login');
