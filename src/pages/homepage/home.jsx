@@ -24,9 +24,6 @@ const Youtube = ({ onChatBotClick }) => (
         allowFullScreen
       />
     </div>
-    <div className="chatbot" onClick={onChatBotClick}>
-      <img src={WchatBot} alt="chatbot" />
-    </div>
   </section>
 );
 
@@ -66,13 +63,17 @@ const HomePage = () => {
       <main className="content">
         <MainText />
         <Search />
-        <Youtube onChatBotClick={handleChatBotClick} />
         <ServiceIntroduction />
+        <Youtube />
         <Footer />
       </main>
       {isModalOpen && <ChatBot closeModal={closeModal} />}
+      <div className="chatbot" onClick={handleChatBotClick}>
+        <img src={WchatBot} alt="chatbot" />
+      </div>
     </div>
   );
+
 };
 
 export default HomePage;
