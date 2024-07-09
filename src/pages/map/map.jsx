@@ -31,16 +31,19 @@ function Map() {
       })
       .then(data => {
         if(data && data.results) {
-          for (let i = 0; i < data.results.length; i++) {
-            console.log(`Longitude${i}:`, data.results[i].longitude);
-            console.log(`Latitude${i}:`, data.results[i].latitude);
-          }
+          // for (let i = 0; i < data.results.length; i++) {
+          //   console.log(`Longitude${i}:`, data.results[i].longitude);
+          //   console.log(`Latitude${i}:`, data.results[i].latitude);
+          // }
           setFarms(data.results);
         }
       })
+      //로컬 스토리지에만 토큰이 남아있어도 로그인 페이지로 유도 가능
       .catch(error => {
-        alert('오류 발생')
+        throw new Error();
       });
+    } else {
+      navigate('/login');
     }
   }, [navigate]);
 
@@ -53,8 +56,8 @@ function Map() {
     if (typeof window.kakao !== "undefined" && farms.length > 0) {
       const container = document.getElementById('map');
       const options = {
-        center: new kakao.maps.LatLng(0, 0),
-        level: 3
+        center: new kakao.maps.LatLng(farms[0].latitude, farms[0].longitude),
+        level: 10
       };
       //지도 불러오기
       const map = new kakao.maps.Map(container, options);
@@ -67,11 +70,10 @@ function Map() {
         });
         marker.setMap(map);
 
-      //장소 표시
-      var infowindow = new kakao.maps.InfoWindow({
-        content: `<div class="memo">${farm.farm_name}</div>`
-      });
-      infowindow.open(map, marker);
+        //장소 표시
+        var infowindow = new kakao.maps.InfoWindow({
+          content: `<div class="memo">${farm.farm_name}</div>`
+        });
       });
     }
   }, [farms]);
