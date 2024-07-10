@@ -110,12 +110,12 @@ body, html {
   align-items: center;
   text-align: center;
   box-sizing: border-box;
+  margin-top: 20px;
 }
 
 .profile-pic {
   width: 120px;
   height: 120px;
-  background-color: #F24822;
   border-radius: 50%;
 }
 

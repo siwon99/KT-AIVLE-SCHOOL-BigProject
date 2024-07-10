@@ -57,7 +57,7 @@ const Navbar = () => {
           <div className="categories">
             <li className="category"><a href="/land_list">농지 리스트</a></li>
             <li className="category"><a href="/service">서비스 소개</a></li>
-            <li className="category"><a href="/member">조원 소개</a></li>
+            <li className="category"><a href="/teamInfo">조원 소개</a></li>
             <li className="category"><a href="/faq">FAQ</a></li>
             <li className="category"><a href="/map">지도</a></li>
           </div>
@@ -85,7 +85,7 @@ const Navbar = () => {
         <a href="/">홈</a>
         <a href="/land_list">농지 리스트</a>
         <a href="/service">서비스 소개</a>
-        <a href="/member">조원 소개</a>
+        <a href="/teamInfo">조원 소개</a>
         <a href="/faq">FAQ</a>
         <a href="/map">지도</a>
         <div className="auth-links">

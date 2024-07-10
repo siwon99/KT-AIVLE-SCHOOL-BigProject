@@ -10,6 +10,7 @@ import Signup from './pages/signuppage/signup';
 import FaqPage from './pages/faqpage/faq';
 import Logout from './pages/loginpage/logout';
 import Map from './pages/map/map'
+import TeamInfo from './pages/servicepage/teamInfo';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/map" element={<Map />} />
+        <Route path="/teaminfo" element={<TeamInfo />} />
       </Routes>
     </Router>
   );
