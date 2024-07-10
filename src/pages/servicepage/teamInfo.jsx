@@ -3,15 +3,15 @@ import Navbar from '../navbar/navbar';
 import './service.css';
 
 const teamMembers = [
-  { name: '강병관', role: 'BE', image: '/src/assets/김시원.png' },
-  { name: '권혜민', role: 'FE', image: '/src/assets/김시원.png' },
+  { name: '강병관', role: 'BE', image: '/src/assets/강병관.png' },
+  { name: '권혜민', role: 'FE', image: '/src/assets/.png' },
   { name: '김시원', role: 'FE', image: '/src/assets/김시원.png' },
-  { name: '이건우', role: 'FE', image: '/src/assets/김시원.png' },
-  { name: '김찬희', role: 'BE', image: '/src/assets/김시원.png' },
-  { name: '송유경', role: 'BE', image: '/src/assets/김시원.png' },
-  { name: '문주원', role: 'AI', image: '/src/assets/김시원.png' },
-  { name: '진희원', role: 'AI', image: '/src/assets/김시원.png' },
-  { name: '한덕구', role: 'AI', image: '/src/assets/김시원.png' },
+  { name: '이건우', role: 'FE', image: '/src/assets/이건우.png' },
+  { name: '김찬희', role: 'BE', image: '/src/assets/김찬희.png' },
+  { name: '송유경', role: 'BE', image: '/src/assets/송유경.png' },
+  { name: '문주원', role: 'AI', image: '/src/assets/.png' },
+  { name: '진희원', role: 'AI', image: '/src/assets/진희원.png' },
+  { name: '한덕구', role: 'AI', image: '/src/assets/한덕구.png' },
 ];
 
 const sortedMembers = teamMembers.sort((a, b) => a.name.localeCompare(b.name));

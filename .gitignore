@@ -25,3 +25,6 @@ dist-ssr
 
 # Key
 .env
+
+# png 사진들
+*.png
