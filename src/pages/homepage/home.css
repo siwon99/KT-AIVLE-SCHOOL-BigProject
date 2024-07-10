@@ -36,7 +36,7 @@ body, html {
   position: absolute;
   background-color: #00008C;
   width: 2px;
-  height: 70%;
+  height: calc(100vh - 30%);  /* 뷰포트 높이의 70% */
   left: 49%;
   top: 15%;
   transform: translateX(-50%);
@@ -198,7 +198,6 @@ body, html {
   .content .circle-container .circle {
     width: clamp(50px, 15vw, 130px); 
     height: clamp(50px, 15vw, 130px);
-    border-radius: 50%;
   }
 
   .content .youtube-container {

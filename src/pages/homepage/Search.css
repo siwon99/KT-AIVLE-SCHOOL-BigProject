@@ -13,10 +13,30 @@
 .circle {
   width: 85px;
   height: 85px;
-  background-color: orange;
+  background-color: #FFFFFF;
+  border: 3px solid #6E9FED;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-@media (max-width: 1279px) {
+.circle:hover {
+  cursor: pointer;
+}
 
+.circle img {
+  width: 60%;
+  height: 60%;
+}
+
+.circle img.nongsaro {
+  width: 55%;
+  height: 55%;
+}
+
+.circle img.government {
+  width: 65%;
+  height: 25%;
 }
