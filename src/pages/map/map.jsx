@@ -77,6 +77,10 @@ function Map() {
       //지도 불러오기
       const map = new kakao.maps.Map(container, options);
 
+      //열려있는 모달창 & 마커 추적하기
+      let currentOverlay = null;
+      let currentMarker = null;
+
       //마커 생성
       farms.forEach(farm => {
         const position = new kakao.maps.LatLng(farm.latitude, farm.longitude);
@@ -105,10 +109,17 @@ function Map() {
       overlay.setMap(null);
 
       kakao.maps.event.addListener(marker, 'click', function () {
-        if (overlay.getMap()) {
-            overlay.setMap(null);
+        if (currentOverlay && currentMarker === marker) {
+          currentOverlay.setMap(null);
+          currentOverlay = null;
+          currentMarker = null;
         } else {
-            overlay.setMap(map);
+          if (currentOverlay) {
+            currentOverlay.setMap(null); 
+          }
+          overlay.setMap(map);
+          currentOverlay = overlay; 
+          currentMarker = marker;  
         }
       });
     
