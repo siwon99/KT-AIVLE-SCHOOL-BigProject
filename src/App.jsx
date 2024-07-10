@@ -11,6 +11,7 @@ import FaqPage from './pages/faqpage/faq';
 import Logout from './pages/loginpage/logout';
 import Map from './pages/map/map'
 import TeamInfo from './pages/servicepage/teamInfo';
+import ListAll from './pages/listpage/listall';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/listall" element={<ListAll />} />
         <Route path="/land_list" element={<ListPage />} />
         <Route path="/service" element={<ServicePage />} />
         <Route path="/detail/:farm_id" element={<DetailPage />} />
