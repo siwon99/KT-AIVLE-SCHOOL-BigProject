@@ -1,23 +1,23 @@
 import React from 'react';
 import "./Search.css"; // 권혜민 추가
-import nongsaro from "../../assets/nongsaro.png";
-import agriedu from "../../assets/agriedu.svg";
-import green from "../../assets/green.svg";
-import government from "../../assets/government.png";
+import Nongsaro from "../../assets/nongsaro.jpg";
+import Agriedu from "../../assets/agriedu.svg";
+import Green from "../../assets/green.svg";
+import Government from "../../assets/government.jpg";
 
 const Search = () => (
   <div className="circle-container">
     <div className="circle" onClick={() => window.open('https://www.nongsaro.go.kr/portal/portalMain.ps?menuId=PS00001', '_blank')}>
-      <img src={nongsaro} alt="Nongsaro" className='nongsaro' />
+      <img src={Nongsaro} alt="Nongsaro" className='nongsaro' />
     </div>
     <div className="circle" onClick={() => window.open('https://agriedu.net/', '_blank')}>
-      <img src={agriedu} alt="Agriedu" />
+      <img src={Agriedu} alt="Agriedu" />
     </div>
     <div className="circle" onClick={() => window.open('https://www.greendaero.go.kr/', '_blank')}>
-      <img src={green} alt="Greendaero" />
+      <img src={Green} alt="Greendaero" />
     </div>
     <div className="circle" onClick={() => window.open('https://www.rda.go.kr/main/mainPage.do', '_blank')}>
-      <img src={government} alt="Government" className="government" />
+      <img src={Government} alt="Government" className="government" />
     </div>
   </div>
 );
