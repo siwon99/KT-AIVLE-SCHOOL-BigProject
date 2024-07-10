@@ -190,6 +190,15 @@ body, html {
   }
 
   .content .circle-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+
+  .content .circle-container .circle {
+    width: clamp(50px, 15vw, 130px); 
+    height: clamp(50px, 15vw, 130px);
+    border-radius: 50%;
   }
 
   .content .youtube-container {
