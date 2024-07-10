@@ -1,5 +1,3 @@
-// Login.jsx
-
 import React, { useState } from 'react';
 import "./login.css";
 import { useNavigate } from 'react-router-dom';
@@ -43,6 +41,7 @@ const Login = () => {
         if (data.token) {
           //alert('로그인 되었습니다.');
           localStorage.setItem('token', data.token);
+          localStorage.setItem('username', userInfo.username);
           navigate('/');
         } else {
           alert('가입되지 않은 정보입니다.');

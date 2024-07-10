@@ -11,9 +11,15 @@ import FaqPage from './pages/faqpage/faq';
 import Logout from './pages/loginpage/logout';
 import Map from './pages/map/map'
 import TeamInfo from './pages/servicepage/teamInfo';
+import BuildingPage from './pages/listpage/buildingpage';
 import ListAll from './pages/listpage/listall';
 
 function App() {
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    setIsAdmin(true);
+  }, []);
 
   return (
     <Router>
@@ -29,6 +35,7 @@ function App() {
         <Route path="/logout" element={<Logout />} />
         <Route path="/map" element={<Map />} />
         <Route path="/teaminfo" element={<TeamInfo />} />
+        <Route path="/buildingpage" element={<BuildingPage />} />
       </Routes>
     </Router>
   );

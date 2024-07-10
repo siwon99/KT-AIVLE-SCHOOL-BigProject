@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Navbar from '../navbar/navbar.jsx';
 import './listpage.css';
 
@@ -23,7 +22,7 @@ const ListAll = () => {
         </div>
 
         <div className='listbox_building' style={{ backgroundImage: `url(${BUILDING_IMAGE})` }}>
-            <a href="/list_land">불법 건축물 리스트</a>
+            <a href="/buildingpage">불법 건축물 리스트</a>
         </div>
       </div>
     </>
