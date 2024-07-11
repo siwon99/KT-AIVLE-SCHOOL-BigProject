@@ -147,64 +147,6 @@ body, html {
   cursor: not-allowed;
 }
 
-/* ListAll 페이지 css */
-.list-container {
-  display: flex;
-  justify-content: center;  
-  align-items: center;      
-  gap: 20px;                
-  height: 100vh;            
-}
-
-.listbox_farm {
-  width: 350px;
-  height: 350px;
-  background-color: #D3D3D3;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 5px solid #00008C;
-  margin-right: 40px;
-  margin-left: 40px;
-  background-size: cover; 
-  background-position: center; 
-}
-
-.listbox_building {
-  width: 350px;
-  height: 350px;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 5px solid #00008C;
-  margin-right: 40px;
-  margin-left: 40px;
-  background-size: cover; 
-  background-position: center; 
-  transition: background-image 0.3s ease-in-out; 
-}
-
-.list-container a {
-  padding: 10px 20px;
-  border-radius: 10px;
-  /* opacity: .9; */
-  background-color: #fff;
-  color: #00008C;
-  text-decoration: none; 
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.list-container a:hover {
-  color: #fff;
-  background-color: #00008C;
-  /* opacity: .8; */
-}
-
 @media (max-width: 1279px) { /* 반응형 */
   .title {
     /* calc(최솟값 + 변화값 * 변화비율) */
