@@ -28,7 +28,7 @@
    overflow: hidden;
    border-right: 2px solid black; 
    white-space: nowrap;
-   animation: typing 10s steps(40, end), blink-caret .75s step-end infinite;
+   animation: typing 200s steps(40, end), blink-caret .75s step-end infinite;
 }
 
 .typed-text.finished {
