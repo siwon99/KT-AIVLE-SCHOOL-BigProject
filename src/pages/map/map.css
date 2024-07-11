@@ -44,10 +44,10 @@
     margin-top: -5px;
 }
 
-.title::after {
+/* .title::after {
     content: '';
     background-color: #fff;
-}
+} */
 
 .info {
     display: flex;
