@@ -5,6 +5,37 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'NanumBarunGothic';
+  font-style: normal;
+  font-weight: 300;
+  src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+  src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+ }
+
+/* 깜박이는 커서 애니메이션 */
+@keyframes blink-caret {
+  50% { border-color: transparent; }
+}
+
+/* 커서 깜빡임 중지 애니메이션 */
+@keyframes blink-caret-end {
+  0%, 100% { border-color: transparent; }
+}
+
+.typed-text {
+   display: inline-block;
+   overflow: hidden;
+   border-right: 2px solid black; 
+   white-space: nowrap;
+   animation: typing 10s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+.typed-text.finished {
+  animation: none;
+  border-right: none;
+}
+
 body, html {
   margin: 0;
   padding: 0;
@@ -40,6 +71,25 @@ body, html {
 .mainsub {
   font-size: 20px;
   font-weight: 100;
+}
+
+.introtitle {
+  font-family: 'NanumBarunGothic';
+  font-size: 22px;
+  margin-top: 40px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.introsub {
+  font-family: 'NanumBarunGothic';
+  font-size: 17px;
+  line-height: 2.2; 
+  word-break: keep-all; 
+  white-space: normal; 
+  text-align: center;
 }
 
 .content {

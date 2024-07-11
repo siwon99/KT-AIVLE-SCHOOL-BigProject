@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; // useState: 모달 열림상태 관리
+import React, { useEffect, useState } from 'react'; // useState: 모달 열림상태 관리
 import "./home.css";
 import Navbar from '../navbar/navbar.jsx';
 import Search from './Search.jsx';
@@ -6,12 +6,31 @@ import WchatBot from "../../assets/WchatBot.svg"; // 권혜민 추가
 import ChatBot from './ChatBot.jsx'; // 이건우 추가
 
 // 메인 페이지 문구
-const MainText = () => (
-  <section className="maintext">
-    <p className='maintitle'>NONGBU</p>
-      <p className='mainsub'>Next Our New Generation, Better then Us</p>
-  </section>
-);
+const MainText = () => {
+  const [displayText, setDisplayText] = useState('');
+  const [isFinished, setIsFinished] = useState(false);
+  const fullText = 'Next Our New Generation, Better then Us';
+
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      setDisplayText(fullText.slice(0, index));
+      index++;
+      if (index > fullText.length) {
+        clearInterval(interval);
+        setIsFinished(true);
+      }
+    }, 200);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section className="maintext">
+      <p className='maintitle'>NONGBU</p>
+      <p className='mainsub typed-text'>{displayText}</p>
+    </section>
+  );
+};
 
 // 메인 페이지 유튜브
 const Youtube = () => (
@@ -31,10 +50,10 @@ const Youtube = () => (
 // 메인 페이지 서비스 소개
 const ServiceIntroduction = () => (
   <section className="service-intro">
-    <h3>NONGBU란?</h3>
-    <p>농촌 지역의 인구 고령화와 도시화로 인해 사용되지 않는 농지가 증가하고 있습니다.<br />NONGBU는 AI 기반 농지 조사 시스템으로 저활용 농지를 파악하여 임대 서비스를 제공합니다.</p>
-    <p>이를 통해 청년 농업인들은 농지를 임대하여 활용하고 정부는 비활용 농지를 효율적으로 활용할 수 있습니다.</p>
-    <p>정부와 함께 농업의 미래를 만들어 가는 길! 지금 시작하세요.</p>
+    <p className='introtitle'>NONGBU란?</p>
+    <p className='introsub'>농촌 지역의 인구 고령화와 도시화로 사용되지 않는 농지가 증가하고 있습니다. <br />
+      NONGBU는 AI 기반 농지 조사 시스템으로 저활용 농지를 파악하여<br /> 청년 농업인에게 임대 서비스를 제공합니다. <br />
+      이를 통해 비활용 농지를 효율적으로 활용하고, 농업의 미래를 만들어갑니다.</p>
   </section>
 );
 
