@@ -95,7 +95,7 @@ const ListPage = () => {
               </div>
             ))
           ) : (
-            <p>게시된 농지가 없습니다.</p>
+            <p className="no-farms">게시된 농지가 없습니다.</p>
           )}
         </div>
 
