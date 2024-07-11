@@ -116,6 +116,13 @@ body, html {
   display: flex;
   justify-content: center;
   margin-top: 10px;
+  margin-bottom: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0; 
+  z-index: 1000; 
 }
 
 .pagination button {
