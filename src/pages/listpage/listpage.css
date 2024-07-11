@@ -19,16 +19,24 @@ body, html {
   align-items: center;
   width: 100%;
   height: 100%;
-  overflow-y: scroll;
+}
+
+.listpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   -ms-overflow-style: none;
   color: #282828;
+  box-sizing: border-box;
 }
 
 .page::-webkit-scrollbar {
   display: none;
 }
 
-.lists-info {
+.lists-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,12 +68,13 @@ body, html {
   transform: translateX(-50%);
 }
 
-.lists-container {
+.lists-info {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
-  height: 100%;
+  height: 55%;
   box-sizing: border-box;
 }
 
@@ -74,8 +83,7 @@ body, html {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 13%;
-  margin-bottom: 15px;
+  height: 17%;
   border-radius: 10px;
   font-size: 14px;
   background-color: #E6E6E6;
@@ -130,17 +138,22 @@ body, html {
 }
 
 /* 페이지네이션 */
+.pagination-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 20%;
+  box-sizing: border-box;
+}
+
 .pagination {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
   width: 100%;
-  padding: 10px 0; 
-  z-index: 1000; 
+  padding-bottom: 35px;
+  box-sizing: border-box;
 }
 
 .pagination button {
@@ -166,6 +179,10 @@ body, html {
 }
 
 @media (max-width: 1279px) { /* 반응형 */
+  .listpage.sidebar-open {
+    padding-left: 20%;
+  }
+
   .title {
     font-size: calc(28px + (30 - 28) * ((100vw - 768px) / (1279 - 768))) !important;
   }
@@ -182,6 +199,16 @@ body, html {
 
   .no-farms {
     font-size: calc(15px + (16 - 15) * ((100vw - 768px) / (1279 - 768)));
+  }
+
+  .pagination button {
+    font-size: calc(12px + (14 - 12) * ((100vw - 768px) / (1279 - 768)));;
+  }
+}
+
+@media(max-width: 1024px) {
+  .listpage.sidebar-open {
+    padding-left: 210px;
   }
 }
 

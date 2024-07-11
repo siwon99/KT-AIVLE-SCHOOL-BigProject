@@ -93,42 +93,46 @@ const ListPage = () => {
   return (
     <div className="page">
       <Navbar />
-      <div className="lists-info">
-        <div className="title">농지 리스트</div>
+      <div className='listpage'>
+        <div className="lists-container">
+          <div className="title">농지 리스트</div>
 
-        <div className='lists-container'>
-          {currentItems.length > 0 ? (
-            currentItems.map((farm, index) => (
-              <div className='lists' key={index}>
-                <div className='farm-info'>
-                  <div className='num'>{farms.length - (firstIndex + index)}.</div>
-                  <div className='farm-name'>[{farm.farm_name}]</div>
-                  <div className='farm-owner'>소유자: {farm.farm_owner}</div>
-                  <div className='farm-size'>농지 크기: {farm.farm_size}</div>
+          <div className='lists-info'>
+            {currentItems.length > 0 ? (
+              currentItems.map((farm, index) => (
+                <div className='lists' key={index}>
+                  <div className='farm-info'>
+                    <div className='num'>{farms.length - (firstIndex + index)}.</div>
+                    <div className='farm-name'>[{farm.farm_name}]</div>
+                    <div className='farm-owner'>소유자: {farm.farm_owner}</div>
+                    <div className='farm-size'>농지 크기: {farm.farm_size}</div>
 
-                  <a href={`/detail/${farm.farm_id}`} className="backBtn">선택</a>
+                    <a href={`/detail/${farm.farm_id}`} className="backBtn">선택</a>
+                  </div>
                 </div>
-              </div>
-            ))
-          ) : (
-            <p className="no-farms">게시된 농지가 없습니다.</p>
-          )}
-        </div>
+              ))
+            ) : (
+              <p className="no-farms">게시된 농지가 없습니다.</p>
+            )}
+          </div>
 
-        <div className="pagination">
-          {Pagination(1, "<<", currentPage === 1)}
-          {Pagination(currentPage - 1, "<", currentPage === 1)}
-          {Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i).map(number => (
-            <button 
-              key={number} 
-              onClick={() => changePage(number)} 
-              className={number === currentPage ? 'active' : ''}
-            >
-              {number}
-            </button>
-          ))}
-          {Pagination(currentPage + 1, ">", currentPage === totalPages)}
-          {Pagination(totalPages, ">>", currentPage === totalPages)}
+          <div className='pagination-container'>
+            <div className="pagination">
+              {Pagination(1, "<<", currentPage === 1)}
+              {Pagination(currentPage - 1, "<", currentPage === 1)}
+              {Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i).map(number => (
+                <button 
+                  key={number} 
+                  onClick={() => changePage(number)} 
+                  className={number === currentPage ? 'active' : ''}
+                >
+                  {number}
+                </button>
+              ))}
+              {Pagination(currentPage + 1, ">", currentPage === totalPages)}
+              {Pagination(totalPages, ">>", currentPage === totalPages)}
+            </div>
+          </div>
         </div>
       </div>
     </div>

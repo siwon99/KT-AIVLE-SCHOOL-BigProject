@@ -19,9 +19,11 @@ const Navbar = () => {
         setMenuOpen(false);
         document.querySelector('.content')?.classList.remove('sidebar-open');
         document.querySelector('.list-container')?.classList.remove('sidebar-open');
+        document.querySelector('.listpage')?.classList.remove('sidebar-open');
       } else if (menuOpen) {
         document.querySelector('.content')?.classList.add('sidebar-open');
         document.querySelector('.list-container')?.classList.add('sidebar-open');
+        document.querySelector('.listpage')?.classList.add('sidebar-open');
       }
     };
 
@@ -36,7 +38,8 @@ const Navbar = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
     document.querySelector('.content')?.classList.toggle('sidebar-open', !menuOpen);
-    document.querySelector('.list-container')?.classList.toggle('sidebar-open', !menuOpen);    
+    document.querySelector('.list-container')?.classList.toggle('sidebar-open', !menuOpen);  
+    document.querySelector('.listpage')?.classList.toggle('sidebar-open', !menuOpen);    
   };
 
   return (
