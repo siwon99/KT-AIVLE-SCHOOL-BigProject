@@ -16,7 +16,6 @@ const Iblist = () => {
     const username = localStorage.getItem('username');
     
     if (token && username) {
-      
       fetch('http://3.39.228.42/farms/iblist/', { 
         method: 'GET',
         headers: {
@@ -35,6 +34,16 @@ const Iblist = () => {
       .then(data => {
         console.log('data:', data.results);
         setFarms(data.results.reverse());
+        //currentFarmId에 맞는 페이지 설정
+        const currentFarmId = localStorage.getItem('currentFarmId');
+        if (currentFarmId) {
+            const index = data.results.findIndex(farm => farm.farm_id.toString() === currentFarmId);
+            if (index !== -1) {
+                const page = Math.ceil((index + 1) / pageSize);
+                setCurrentPage(page);
+                localStorage.removeItem('currentFarmId');
+            }
+        }
       })
       // 로컬 스토리지에만 토큰이 남아있어도 로그인 페이지로 유도 가능
       .catch(error => {
@@ -76,6 +85,12 @@ const Iblist = () => {
     </button>
   );
 
+   // 농지 선택 시 해당 farm_id localStorage에 저장
+  const handleFarmDetail = (farmId) => {
+    localStorage.setItem('selectedFarmId', farmId);
+    navigate(`/ibdetail/${farmId}`);
+  };
+
   return (
     <div className="page">
       <Navbar />
@@ -93,7 +108,7 @@ const Iblist = () => {
                   <div className='farm-size'>농지 크기: {farm.farm_size}</div>
                 </div>
 
-                <a href={`/ibdetail/${farm.farm_id}`} className="backBtn">선택</a>
+                <button onClick={() => handleFarmDetail(farm.farm_id)} className="backBtn">선택</button>
               </div>
             ))
           ) : (

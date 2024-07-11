@@ -108,6 +108,11 @@ const DetailPage = () => {
     }
   }, [farm_id, navigate]);
 
+  const handleBackClick =() => {
+    localStorage.setItem('currentFarmId', farm_id);
+    navigate('/land_list');
+  }
+
   return (
     <>
       <Navbar />
@@ -123,7 +128,7 @@ const DetailPage = () => {
             <span className="d-info"><div className='info-title'>게시 시간:</div> {farmTime}</span>
             <span className="d-info"><div className='info-title'>농지 상태:</div> {farmStatusText}</span>
             <div className="btn">
-              <a href="/land_list" className="backBtn">이전</a>
+              <button onClick={handleBackClick} className="backBtn">이전</button>
               <button className="rentBtn">임대</button>
             </div>
           </div>
