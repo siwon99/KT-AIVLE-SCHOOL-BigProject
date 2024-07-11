@@ -10,8 +10,6 @@ const Iblist = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 5; 
   const pageCount = 5; 
-  const [isAdmin, setIsAdmin] = useState(false)
-
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -40,7 +38,7 @@ const Iblist = () => {
       })
       // 로컬 스토리지에만 토큰이 남아있어도 로그인 페이지로 유도 가능
       .catch(error => {
-        throw new Error();
+        navigate('/login');
       });
     } else {
       navigate('/login');
@@ -95,7 +93,7 @@ const Iblist = () => {
                   <div className='farm-size'>농지 크기: {farm.farm_size}</div>
                 </div>
 
-                <a href={`/detail/${farm.farm_id}`} className="backBtn">선택</a>
+                <a href={`/ibdetail/${farm.farm_id}`} className="backBtn">선택</a>
               </div>
             ))
           ) : (

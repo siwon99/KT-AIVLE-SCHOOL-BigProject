@@ -53,9 +53,9 @@ function Map() {
           setFarms(data.results);
         }
       })
-      //로컬 스토리지에만 토큰이 남아있어도 로그인 페이지로 유도 가능
+      // 로컬 스토리지에만 토큰이 남아있어도 로그인 페이지로 유도 가능
       .catch(error => {
-        throw new Error();
+        navigate('/login');
       });
     } else {
       navigate('/login');

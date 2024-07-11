@@ -49,7 +49,6 @@ const DetailPage = () => {
   const [farmDate, setFarmDate] = useState('');
   const [farmTime, setFarmTime] = useState('');
   const [farmStatusText, setFarmStatusText] = useState('');
-  const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
     if (!farm_id) return;
@@ -100,22 +99,14 @@ const DetailPage = () => {
           setFarmStatusText('알 수 없음');
         }
       })
-      //로컬 스토리지에만 토큰이 남아있어도 로그인 페이지로 유도 가능
+      // 로컬 스토리지에만 토큰이 남아있어도 로그인 페이지로 유도 가능
       .catch(error => {
-        throw new Error();
+        navigate('/login');
       });
     } else {
       navigate('/login');
     }
   }, [farm_id, navigate]);
-
-  const handleRentBtnClick = () => {
-    setShowAlert(true);
-    setTimeout(() => {
-      setShowAlert(false);
-      navigate('/land_list');
-    }, 5000)
-  };
 
   return (
     <>
@@ -147,11 +138,6 @@ const DetailPage = () => {
         </div>
 
       </div>
-      {showAlert && (
-        <div className='alert'>
-          <p>임대 신청이 완료되었습니다!</p>
-        </div>
-      )}
     </>
   );
 };
