@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Navbar from '../navbar/navbar.jsx';
-import './listpage.css';
+import './listall.css';
 
 const FARM_IMAGE = '/src/assets/농지.gif';
 const BUILDING_IMAGE = '/src/assets/빌딩.gif';
