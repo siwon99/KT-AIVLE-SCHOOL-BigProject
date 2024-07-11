@@ -96,7 +96,7 @@ const ListPage = () => {
       <div className="lists-info">
         <div className="title">농지 리스트</div>
 
-        <div>
+        <div className='lists-container'>
           {currentItems.length > 0 ? (
             currentItems.map((farm, index) => (
               <div className='lists' key={index}>

@@ -34,7 +34,6 @@ body, html {
   align-items: center;
   width: 75%;
   height: 100%;
-  padding-bottom: 70px;
   box-sizing: border-box;
 }
 
@@ -42,7 +41,7 @@ body, html {
   position: relative;
   text-align: center;
   width: 100%;
-  margin-top: 150px;
+  margin-top: 145px;
   margin-bottom: 50px;
   font-size: 30px;
   color: #323232;
@@ -61,16 +60,25 @@ body, html {
   transform: translateX(-50%);
 }
 
+.lists-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
 .lists {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 950px;
-  height: 65px;
-  padding: 20px;
+  width: 100%;
+  height: 13%;
+  padding-right: 2%;
   margin-bottom: 15px;
   border-radius: 10px;
-  font-size: 15px;
+  font-size: 14px;
   background-color: #E6E6E6;
   box-sizing: border-box;
 }
@@ -78,18 +86,29 @@ body, html {
 .farm-info {
   display: flex;
   align-items: center;
+  width: 90%;
+  height: 100%;
+  padding-right: 2%;
+  box-sizing: border-box;
 }
 
 .num {
-  margin-right: 10px;
+  align-items: center;
+  text-align: center;
+  width: 50px;
+  min-width: 50px;
 }
 
 .farm-name {
-  margin-right: 50px;
+  width: 430px;
 }
 
-.farm-owner, .farm-size {
-  margin-right: 20px;
+.farm-owner {
+  width: 160px;
+}
+
+.farm-size {
+  width: 170px;
 }
 
 .lists .backBtn {
@@ -149,7 +168,6 @@ body, html {
 
 @media (max-width: 1279px) { /* 반응형 */
   .title {
-    /* calc(최솟값 + 변화값 * 변화비율) */
     font-size: calc(28px + (30 - 28) * ((100vw - 768px) / (1279 - 768))) !important;
   }
 
@@ -162,8 +180,15 @@ body, html {
   }
 }
 
-/* @media (max-width: 1024px) {
-}*/
+@media (max-width: 850px) {
+  .farm-owner, .farm-size {
+    display: none;
+  }
+
+  .farm-name {
+    width: auto;
+  }  
+}
 
 @media (max-width: 768px) {
   .title {
