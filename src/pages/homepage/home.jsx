@@ -13,7 +13,7 @@ const MainText = () => (
 );
 
 // 메인 페이지 유튜브
-const Youtube = ({ onChatBotClick }) => (
+const Youtube = () => (
   <section className="youtube-container">
     <div className="youtube">
       <iframe

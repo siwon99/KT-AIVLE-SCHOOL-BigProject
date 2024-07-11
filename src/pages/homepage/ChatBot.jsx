@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import "./ChatBot.css";
 
 const ChatBot = ({ closeModal }) => {
@@ -45,13 +46,18 @@ const ChatBot = ({ closeModal }) => {
             value={input} 
             onChange={(e) => setInput(e.target.value)} 
             onKeyPress={handleKeyPress} 
-            placeholder="메시지를 입력하세요..." 
+            placeholder="메시지를 입력하세요." 
           />
           <button onClick={handleSendMessage}>전송</button>
         </div>
       </div>
     </div>
   );
+};
+
+// closeModal prop의 타입을 함수로 지정하고 필수 요소로 설정
+ChatBot.propTypes = {
+  closeModal: PropTypes.func.isRequired, 
 };
 
 export default ChatBot;
