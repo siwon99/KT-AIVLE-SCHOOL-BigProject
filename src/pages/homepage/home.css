@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'MoveSans-Bold';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/MoveSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
 body, html {
   margin: 0;
   padding: 0;
@@ -16,6 +23,23 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.maintext {
+  font-family: 'MoveSans-Bold';
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.maintitle {
+  font-size: 35px;
+  margin-bottom: 0px;
+}
+
+.mainsub {
+  font-size: 20px;
+  font-weight: 100;
 }
 
 .content {
