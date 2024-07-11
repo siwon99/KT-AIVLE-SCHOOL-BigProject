@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react"; // eslint-disable-line no-unused-vars
+import React, {useEffect, useState} from "react";
 import "./navbar.css";
 import WhomeIcon from "../../assets/WhomeIcon.svg";
 import WlogIn from "../../assets/WlogIn.svg";
@@ -14,13 +14,14 @@ const Navbar = () => {
     const token = localStorage.getItem("token");
     setToken(token);
 
-    // 화면 크기가 1279px 이상이 되면 사이드바가 닫히는 코드
     const handleResize = () => {
       if (window.innerWidth > 1279) {
         setMenuOpen(false);
-        document.querySelector('.content').classList.remove('sidebar-open');
+        document.querySelector('.content')?.classList.remove('sidebar-open');
+        document.querySelector('.list-container')?.classList.remove('sidebar-open');
       } else if (menuOpen) {
-        document.querySelector('.content').classList.add('sidebar-open');
+        document.querySelector('.content')?.classList.add('sidebar-open');
+        document.querySelector('.list-container')?.classList.add('sidebar-open');
       }
     };
 
@@ -29,12 +30,13 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [menuOpen]);
 
   // 현재 메뉴 상태를 반전시키는 함수
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-    document.querySelector('.content').classList.toggle('sidebar-open', !menuOpen);
+    document.querySelector('.content')?.classList.toggle('sidebar-open', !menuOpen);
+    document.querySelector('.list-container')?.classList.toggle('sidebar-open', !menuOpen);    
   };
 
   return (
