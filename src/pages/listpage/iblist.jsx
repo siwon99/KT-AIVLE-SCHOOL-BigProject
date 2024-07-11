@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../navbar/navbar';
-import './listpage.css';
+import './iblist.css';
 
 // 상세 정보 페이지 컴포넌트
-const BuildingPage = () => {
+const Iblist = () => {
   const navigate = useNavigate();
   const [farms, setFarms] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -19,8 +19,7 @@ const BuildingPage = () => {
     
     if (token && username) {
       
-
-      fetch('http://3.39.228.42/farms/list/', { 
+      fetch('http://3.39.228.42/farms/iblist/', { 
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -100,7 +99,7 @@ const BuildingPage = () => {
               </div>
             ))
           ) : (
-            <p>게시된 불법 건물이 없습니다.</p>
+            <div className='noelemnt'>게시된 불법 건물이 없습니다.</div>
           )}
         </div>
 
@@ -124,4 +123,4 @@ const BuildingPage = () => {
   );
 };
 
-export default BuildingPage;
+export default Iblist;

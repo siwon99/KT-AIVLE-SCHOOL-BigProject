@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Navbar from '../navbar/navbar';
-import './detail.css';
+import './ibdetailpage.css';
 
 // 날짜함수
 const formatDate = (dateString) => {
@@ -25,7 +25,7 @@ const formatTime = (timeString) => {
 };
 
 // 상세 정보 페이지
-const DetailPage = () => {
+const IbDetailPage = () => {
   const navigate = useNavigate();
   const { farm_id } = useParams();
 
@@ -49,14 +49,13 @@ const DetailPage = () => {
   const [farmDate, setFarmDate] = useState('');
   const [farmTime, setFarmTime] = useState('');
   const [farmStatusText, setFarmStatusText] = useState('');
-  const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
     if (!farm_id) return;
     // 사용자가 로그인할 때 저장된 토큰
     const token = localStorage.getItem('token');
     if (token) {
-      fetch(`http://3.39.228.42/farms/detail/${farm_id}`, { 
+      fetch(`http://3.39.228.42/farms/ibdetail/${farm_id}`, { 
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -109,20 +108,12 @@ const DetailPage = () => {
     }
   }, [farm_id, navigate]);
 
-  const handleRentBtnClick = () => {
-    setShowAlert(true);
-    setTimeout(() => {
-      setShowAlert(false);
-      navigate('/land_list');
-    }, 5000)
-  };
-
   return (
     <>
       <Navbar />
       <div className="container">
         <div className="detail-info">
-          <div className="d-title">농지 상세정보</div>
+          <div className="d-title">불법 건축물(농지) 상세정보</div>
           <div className="details">
             <span className="d-info"><div className='info-title'>농지명:</div> {landDetail.farm_name}</span> 
             <span className="d-info"><div className='info-title'>소유주:</div> {landDetail.farm_owner}</span> 
@@ -133,7 +124,7 @@ const DetailPage = () => {
             <span className="d-info"><div className='info-title'>농지 상태:</div> {farmStatusText}</span>
             <div className="btn">
               <a href="/land_list" className="backBtn">이전</a>
-              <button className="rentBtn">임대</button>
+              <button className="rentBtn">완료</button>
             </div>
           </div>
         </div>
@@ -147,13 +138,8 @@ const DetailPage = () => {
         </div>
 
       </div>
-      {showAlert && (
-        <div className='alert'>
-          <p>임대 신청이 완료되었습니다!</p>
-        </div>
-      )}
     </>
   );
 };
 
-export default DetailPage;
+export default IbDetailPage;

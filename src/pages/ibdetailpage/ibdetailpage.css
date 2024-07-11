@@ -1,0 +1,133 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  height: 60%;
+  margin-top: 11.3%;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.detail-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 34%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.d-title {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 24px;
+  margin-bottom: 80px;
+  border-radius: 5px;
+  background-color: #6E9FED;
+  border: 3px solid #6E9FED;
+  color: #E6E6E6;
+  box-sizing: border-box;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: -50px;
+}
+
+.d-info {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 55px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #E6E6E6;
+  border: 3px solid #757575;
+  color: #000000;
+  box-sizing: border-box;
+}
+
+.info-title {
+  display: inline-block;
+  flex-basis: 30%;
+  text-align: center;
+  padding-right: 10px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.btn {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.btn > * {
+  flex: 1;
+}
+
+.btn .backBtn, .rentBtn {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  background-color: #6E9FED;
+  border-radius: 20px;
+  text-decoration: none;
+  border: none;
+}
+
+.backBtn:hover, .rentBtn:hover {
+  cursor: pointer;
+  background-color: #00008C;
+  color: white;
+  border: none;
+}
+
+/* 지도 사진 들어올 영역 */
+/* 데이터에서 사용할 사진 크기 512px * 512px */
+.map {
+  width: 512px;
+  height: 512px;
+  margin-left: 20px;
+  position: relative; 
+}
+
+.noImg {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  width: 100%;
+  height: 300px; 
+}

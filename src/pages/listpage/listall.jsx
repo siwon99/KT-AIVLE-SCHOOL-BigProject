@@ -22,7 +22,7 @@ const ListAll = () => {
         </div>
 
         <div className='listbox_building' style={{ backgroundImage: `url(${BUILDING_IMAGE})` }}>
-            <a href="/buildingpage">불법 건축물 리스트</a>
+            <a href="/iblist">불법 건축물 리스트</a>
         </div>
       </div>
     </>
