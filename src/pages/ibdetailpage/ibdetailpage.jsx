@@ -36,7 +36,7 @@ const IbDetailPage = () => {
     farm_size: 0,
     latitude: 0,
     longitude: 0,
-    image: null,
+    pd_image: null,
   });
 
   const [landLog, setLandLog] = useState({
@@ -80,7 +80,7 @@ const IbDetailPage = () => {
           farm_size: data.farm_size,
           latitude: data.latitude,
           longitude: data.longitude,
-          image: data.image ? { farm_image: data.image.farm_image } : null
+          pd_image: data.pd_image ? { farm_pd_image: data.pd_image.farm_pd_image } : null
         })
 
         //날짜 및 시간
@@ -123,15 +123,15 @@ const IbDetailPage = () => {
             <span className="d-info"><div className='info-title'>게시 시간:</div> {farmTime}</span>
             <span className="d-info"><div className='info-title'>농지 상태:</div> {farmStatusText}</span>
             <div className="btn">
-              <a href="/land_list" className="backBtn">이전</a>
+              <a href="/iblist" className="backBtn">이전</a>
               <button className="rentBtn">완료</button>
             </div>
           </div>
         </div>
 
         <div className="map">
-          {landDetail.image ? (
-            <img src={landDetail.image.farm_image} alt="FarmImg" />
+          {landDetail.pd_image ? (
+            <img src={landDetail.pd_image.farm_pd_image} alt="FarmImg" />
           ) : (
             <p className='noImg'>이미지가 등록되지 않았습니다.</p>
           )}
