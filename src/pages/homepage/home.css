@@ -246,7 +246,7 @@ body, html {
   }
 
   .content.sidebar-open {
-    padding-left: 245px;
+    padding-left: 20%;
   }
 
   .content .maintext, 
@@ -327,7 +327,11 @@ body, html {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1050px) {
+  .content.sidebar-open {
+    padding-left: 210px;
+  }
+  
   .content .circle-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
