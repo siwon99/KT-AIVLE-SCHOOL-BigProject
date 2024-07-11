@@ -105,9 +105,9 @@ const ListPage = () => {
                   <div className='farm-name'>[{farm.farm_name}]</div>
                   <div className='farm-owner'>소유자: {farm.farm_owner}</div>
                   <div className='farm-size'>농지 크기: {farm.farm_size}</div>
-                </div>
 
-                <a href={`/detail/${farm.farm_id}`} className="backBtn">선택</a>
+                  <a href={`/detail/${farm.farm_id}`} className="backBtn">선택</a>
+                </div>
               </div>
             ))
           ) : (
