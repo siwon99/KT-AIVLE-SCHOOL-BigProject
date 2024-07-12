@@ -1,23 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import "./ChatBot.css";
 
 // ChatBot 컴포넌트 정의
-const ChatBot = ({ closeModal }) => {
+const ChatBot = ({ closeChat }) => {
   // 입력된 메시지를 상태로 관리
-  const [input, setInput] = useState('');
+  const [message, setMessage] = useState('');
   // 메시지 목록을 상태로 관리
-  const [messages, setMessages] = useState([
+  const [chatHistory, setChatHistory] = useState([
     { text: "안녕하세요! 무엇을 도와드릴까요?", sender: "bot" }
   ]);
 
+  // 메시지 목록 끝에 대한 참조 생성
+  const scrollView = useRef(null);
+
+  // 메시지가 추가될 때마다 자동 스크롤
+  useEffect(() => {
+    scrollView.current?.scrollIntoView({ behavior: "smooth" });
+  }, [chatHistory]);
+
   // 메시지 전송 함수
-  const handleSendMessage = () => {
-    if (input.trim()) { // 입력이 있을 때
+  const sendMessage = () => {
+    if (message.trim()) { // 입력이 있을 때
       // 사용자가 입력한 메시지를 메시지 목록에 추가
-      setMessages(prevMessages => [...prevMessages, { text: input, sender: "user" }]);
+      setChatHistory(prevMessages => [...prevMessages, { text: message, sender: "user" }]);
       // 입력 필드 초기화
-      setInput('');
+      setMessage('');
     }
 
     // 서버로 메시지 전송
@@ -27,7 +35,7 @@ const ChatBot = ({ closeModal }) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        question: input,
+        question: message,
       }),
     })
     .then(response => {
@@ -42,10 +50,10 @@ const ChatBot = ({ closeModal }) => {
       let result = data.result;
       if (result === 'irrelevant') {
         result = '답변할 수 없는 질문입니다.';
-        // TODO: 답변할 수 없는 질문을 받았을 때 추가적인 처리
+        // TODO: 답변할 수 없는 질문을 받았을 때 추가 처리 필요
       }
       // 서버의 응답 메시지를 메시지 목록에 추가
-      setMessages(prevMessages => [...prevMessages, { text: result, sender: "bot" }]);
+      setChatHistory(prevMessages => [...prevMessages, { text: result, sender: "bot" }]);
     })
     .catch(error => {
       console.log('error'); // 에러 로그 출력
@@ -53,9 +61,9 @@ const ChatBot = ({ closeModal }) => {
   };
 
   // Enter 키를 눌렀을 때 메시지 전송
-  const handleKeyPress = (e) => {
+  const handleEnterPress = (e) => {
     if (e.key === 'Enter') {
-      handleSendMessage();
+      sendMessage();
     }
   };
 
@@ -63,35 +71,37 @@ const ChatBot = ({ closeModal }) => {
     <div className="background">
       <div className="modal-container">
         {/* 모달 닫기 버튼 */}
-        <button className="close-button" onClick={closeModal}>X</button>
+        <button className="close-button" onClick={closeChat}>X</button>
         <h2>ChatBot</h2>
         {/* 메시지 목록 */}
         <div className="message-list">
-          {messages.map((msg, index) => (
+          {chatHistory.map((msg, index) => (
             <div key={index} className={`message ${msg.sender}`}>
               {msg.text}
             </div>
           ))}
+          {/* 메시지 목록 끝에 대한 참조 요소 추가 */}
+          <div ref={scrollView} />
         </div>
         {/* 메시지 입력 및 전송 */}
         <div className="input-container">
           <input 
             type="text" 
-            value={input} 
-            onChange={(e) => setInput(e.target.value)} 
-            onKeyPress={handleKeyPress} 
+            value={message} 
+            onChange={(e) => setMessage(e.target.value)} 
+            onKeyPress={handleEnterPress} 
             placeholder="메시지를 입력하세요." 
           />
-          <button onClick={handleSendMessage}>전송</button>
+          <button onClick={sendMessage}>전송</button>
         </div>
       </div>
     </div>
   );
 };
 
-// closeModal prop의 타입을 함수로 지정하고 필수 요소로 설정
+// closeChat prop의 타입을 함수로 지정하고 필수 요소로 설정
 ChatBot.propTypes = {
-  closeModal: PropTypes.func.isRequired, 
+  closeChat: PropTypes.func.isRequired, 
 };
 
 export default ChatBot;
