@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import "./ChatBot.css";
 
 // ChatBot 컴포넌트 정의
-const ChatBot = ({ closeChat }) => {
+const ChatBot = ({ closeModal }) => {
   // 입력된 메시지를 상태로 관리
   const [message, setMessage] = useState('');
   // 메시지 목록을 상태로 관리
@@ -12,11 +12,11 @@ const ChatBot = ({ closeChat }) => {
   ]);
 
   // 메시지 목록 끝에 대한 참조 생성
-  const scrollView = useRef(null);
+  const endMessage = useRef(null);
 
-  // 메시지가 추가될 때마다 자동 스크롤
+  // 메시지가 추가될 때마다 자동 스크롤을 가장 아래로 이동
   useEffect(() => {
-    scrollView.current?.scrollIntoView({ behavior: "smooth" });
+    endMessage.current?.scrollIntoView({ behavior: "smooth" });
   }, [chatHistory]);
 
   // 메시지 전송 함수
@@ -50,7 +50,7 @@ const ChatBot = ({ closeChat }) => {
       let result = data.result;
       if (result === 'irrelevant') {
         result = '답변할 수 없는 질문입니다.';
-        // TODO: 답변할 수 없는 질문을 받았을 때 추가 처리 필요
+        // TODO: 답변할 수 없는 질문을 받았을 때 추가적인 처리
       }
       // 서버의 응답 메시지를 메시지 목록에 추가
       setChatHistory(prevMessages => [...prevMessages, { text: result, sender: "bot" }]);
@@ -67,11 +67,15 @@ const ChatBot = ({ closeChat }) => {
     }
   };
 
+  const closeModalHandler = () => {
+    closeModal(); // 상위 컴포넌트에서 전달받은 닫기 함수 호출
+  };
+
   return (
     <div className="background">
       <div className="modal-container">
         {/* 모달 닫기 버튼 */}
-        <button className="close-button" onClick={closeChat}>X</button>
+        <button className="close-button" onClick={closeModalHandler}>X</button>
         <h2>ChatBot</h2>
         {/* 메시지 목록 */}
         <div className="message-list">
@@ -81,7 +85,7 @@ const ChatBot = ({ closeChat }) => {
             </div>
           ))}
           {/* 메시지 목록 끝에 대한 참조 요소 추가 */}
-          <div ref={scrollView} />
+          <div ref={endMessage} />
         </div>
         {/* 메시지 입력 및 전송 */}
         <div className="input-container">
@@ -97,6 +101,12 @@ const ChatBot = ({ closeChat }) => {
       </div>
     </div>
   );
+};
+
+ // 모달 창 닫기
+ const closeModalHandler = () => {
+  setIsOpen(false); 
+  closeModal(); // 상위 컴포넌트에서 전달받은 닫기 함수 호출
 };
 
 // closeChat prop의 타입을 함수로 지정하고 필수 요소로 설정
