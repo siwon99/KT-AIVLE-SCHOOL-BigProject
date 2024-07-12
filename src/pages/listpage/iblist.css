@@ -106,15 +106,15 @@ body, html {
 }
 
 .farm-name {
-  width: 50%;
+  width: 500px;
 }
 
 .farm-owner {
-  width: 15%;
+  width: 200px;
 }
 
 .farm-size {
-  width: 25%;
+  width: 250px;
 }
 
 .lists .backBtn {

@@ -107,7 +107,7 @@ const ListPage = () => {
                     <div className='farm-owner'>소유자: {farm.farm_owner}</div>
                     <div className='farm-size'>농지 크기: {farm.farm_size}</div>
 
-                    <a href={`/detail/${farm.farm_id}`} className="backBtn">선택</a>
+                    <button onClick={() => handleFarmDetail(farm.farm_id)} className="backBtn">선택</button>
                   </div>
                 </div>
               ))

@@ -107,9 +107,9 @@ const Iblist = () => {
                     <div className='farm-name'>[{farm.farm_name}]</div>
                     <div className='farm-owner'>소유자: {farm.farm_owner}</div>
                     <div className='farm-size'>농지 크기: {farm.farm_size}</div>
-                  </div>
 
-                  <button onClick={() => handleFarmDetail(farm.farm_id)} className="backBtn">선택</button>
+                    <button onClick={() => handleFarmDetail(farm.farm_id)} className="backBtn">선택</button>
+                  </div>
                 </div>
               ))
             ) : (
