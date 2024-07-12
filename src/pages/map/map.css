@@ -9,7 +9,7 @@
     left: 0;
     bottom: 30px;
     width: 280px;
-    height: 100px;
+    height: 120px;
     margin-left: -144px;
     text-align: left;
     overflow: hidden;
@@ -23,12 +23,13 @@
 }
 
 .wrap .info {
-    height: 75px;
+    height: 95px;
     padding: 5px 3px;
-    border-radius: 5px;
+    border-radius: 10px;
     border-right: 1px solid #ccc;
     background: #fff;
     padding: 20px 5px;
+    background-color: blue;
 }
 
 .wrap .info:nth-child(1) {
@@ -36,7 +37,7 @@
     box-shadow: 0px 1px 2px #888;
 }
 
-.info .title {
+.info .content-title {
     height: 30px;
     font-size: 14px;
     font-weight: bold;
@@ -54,12 +55,19 @@
     flex-direction: column;
   }
   
-.link {
+.content-link {
   align-self: flex-end; 
   margin-right: 10px; 
-  z-index: 1;
+  z-index: 10;
 }
 
-.link:hover {
+.content-link:hover {
     color: #6E9FED;
+}
+
+.content-img p {
+    background-color: red;
+    width: 80px;
+    height: 80px;
+    margin: 10px;
 }

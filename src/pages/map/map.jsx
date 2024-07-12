@@ -92,11 +92,11 @@ function Map() {
         const content = `
         <div class="wrap">
           <div class="info">
-            <div class="title">${farm.farm_name}</div>
-            <a class="link" data-id="${farm.farm_id}">더 보기 ></a>
+            <div class="content-title">${farm.farm_name}</div>
+            <a class="content-link" data-id="${farm.farm_id}">더 보기 ></a>
           </div>   
         </div>
-        `
+        `;
 
       const overlay = new kakao.maps.CustomOverlay({
         content: content,

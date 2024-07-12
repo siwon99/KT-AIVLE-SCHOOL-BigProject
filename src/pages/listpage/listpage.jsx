@@ -87,7 +87,7 @@ const ListPage = () => {
   // 농지 선택 시 해당 farm_id localStorage에 저장
   const handleFarmDetail = (farmId) => {
     localStorage.setItem('selectedFarmId', farmId);
-    navigate(`/ibdetail/${farmId}`);
+    navigate(`/detail/${farmId}`);
   };
 
   return (
