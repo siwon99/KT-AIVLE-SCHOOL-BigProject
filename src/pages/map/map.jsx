@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'; // eslint-disable-line no-un
 import Navbar from '../navbar/navbar';
 import { useNavigate } from 'react-router-dom';
 import './map.css';
+import Modal from './modal';
 
 const { kakao } = window;
 
@@ -18,6 +19,9 @@ function Map() {
     longitude: 0,
     image: null,
   });
+
+  // 모달 관련 상태
+  const [modalFarmId, setModalFarmId] = useState(null);
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -72,7 +76,7 @@ function Map() {
       const container = document.getElementById('map');
       const options = {
         center: new kakao.maps.LatLng(farms[0].latitude, farms[0].longitude),
-        level: 10
+        level: 8
       };
       //지도 불러오기
       const map = new kakao.maps.Map(container, options);
@@ -93,6 +97,11 @@ function Map() {
         <div class="wrap">
           <div class="info">
             <div class="content-title">${farm.farm_name}</div>
+            <hr class="content-hr" />
+            <div>
+              <div class="content-owner">소유자: ${farm.farm_owner}</div>
+              <div class="content-size">면적: ${farm.farm_size}</div>
+            </div>
             <a class="content-link" data-id="${farm.farm_id}">더 보기 ></a>
           </div>   
         </div>
@@ -123,11 +132,11 @@ function Map() {
         }
       });
     
-      // 더보기 링크 클릭 시 디테일 페이지로 이동
+      // 더보기 링크 클릭 시 모달창 띄우기
       document.addEventListener('click', function (e) {
-        if (e.target && e.target.className === 'link') {
+        if (e.target && e.target.className === 'content-link') {
           const farmId = e.target.getAttribute('data-id');
-          navigate(`/detail/${farmId}`);
+          setModalFarmId(farmId);
         }
       });
 
@@ -135,11 +144,15 @@ function Map() {
   }
 }, [farms,  landDetail.image, navigate]);
 
+const closeModal = () => {
+  setModalFarmId(null);
+};
+
   return (
     <>
       <Navbar />
-      <div id='map' style={{ width: '680px', height: '680px' }}>
-      </div>
+      <div id='map' style={{ width: '1180px', height: '620px' }} />
+      {modalFarmId && <Modal farm_id={modalFarmId} closeModal={closeModal} />}
     </>
   );
 }
