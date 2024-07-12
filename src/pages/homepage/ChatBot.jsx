@@ -50,34 +50,38 @@ const ChatBot = ({ closeModal }) => {
       let result = data.result;
       if (result === 'irrelevant') {
         result = (
-          <table>
-            <thead>
-              <tr>
-                <th>기관</th>
-                <th>내용</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>농림축산식품부</td>
-                <td>농림수산정책, 귀농정책</td>
-              </tr>
-              <tr>
-                <td>농촌진흥청</td>
-                <td>품목별 농업기술정보 및 지역별 농업정보</td>
-              </tr>
-              <tr>
-                <td>농림수산식품교육문화정보원</td>
-                <td>농산물 품목별 종합정보, 농업인 정보화교육, 농어업정보화지원사업, 농산물안전정보</td>
-              </tr>
-              <tr>
-                <td>귀농·귀촌종합센터</td>
-                <td>귀농·귀촌 희망자에게 정보 탐색부터 정착 단계까지 필요한 정보 종합적 제공</td>
-              </tr>
-            </tbody>
-          </table>
+          <div>
+            <p>NONGBU 서비스가 답변하기 어려운 질문입니다. 관련 부서를 참고해주세요.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>정부 기관</th>
+                  <th>내용</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>농림축산식품부</td>
+                  <td>농림수산정책, 귀농정책</td>
+                </tr>
+                <tr>
+                  <td>농촌진흥청</td>
+                  <td>품목별 농업기술정보 및 지역별 농업정보</td>
+                </tr>
+                <tr>
+                  <td>농림수산식품교육문화정보원</td>
+                  <td>농산물 품목별 종합정보, 농업인 정보화교육, 농어업정보화지원사업, 농산물안전정보</td>
+                </tr>
+                <tr>
+                  <td>귀농·귀촌종합센터</td>
+                  <td>귀농·귀촌 희망자에게 정보 탐색부터 정착 단계까지 필요한 정보 종합적 제공</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         );
       }
+      
       // 서버의 응답 메시지를 메시지 목록에 추가
       setChatHistory(prevMessages => [...prevMessages, { text: result, sender: "bot" }]);
     })
@@ -99,7 +103,7 @@ const ChatBot = ({ closeModal }) => {
 
   return (
     <div className="background">
-      <div className="modal-container">
+      <div className="chat-container">
         {/* 모달 닫기 버튼 */}
         <button className="close-button" onClick={closeModalHandler}>X</button>
         <h2>ChatBot</h2>
