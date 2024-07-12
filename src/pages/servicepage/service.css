@@ -126,6 +126,19 @@ body, html {
 }
 
 /* 서비스 소개 css 시작 */
+@font-face {
+  font-family: 'TTTogether';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/TTTogetherA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .service-info {
   display: flex;
@@ -137,9 +150,49 @@ body, html {
   box-sizing: border-box;
 }
 
-.service-info .title {
+.service-title {
   width: 100%;
   box-sizing: border-box;
+  text-align: center;
+  font-size: 35px;
+  margin: 20px 0 60px 0;
+  font-family: 'TTTogether';
+}
+
+.number {
+  display: inline-block;
+  background-color: red;
+  vertical-align: top;
+}
+
+.service-intro {
+  display: inline-block;
+  vertical-align: top; 
+  word-break: break-all;
+}
+
+.features-title {
+  font-family: 'GmarketSansMedium';
+  text-align: center;
+  font-size: 30px;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.effects-title {
+  font-family: 'GmarketSansMedium';
+  text-align: center;
+  font-size: 30px;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.service-hr {
+  margin-top: 80px;
+  width: 40%;
+  border-bottom: 3px solid #00008C;
 }
 
 .service-info .intro,
