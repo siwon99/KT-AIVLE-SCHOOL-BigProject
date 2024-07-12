@@ -113,6 +113,12 @@ const IbDetailPage = () => {
     navigate('/iblist');
   }
 
+  const handleRentClick = () => {
+    alert('해당 게시물 처리가 완료되었습니다.');
+    localStorage.setItem('currentFarmId', farm_id);
+    navigate('/iblist');
+  };
+
   return (
     <>
       <Navbar />
@@ -129,7 +135,7 @@ const IbDetailPage = () => {
             <span className="d-info"><div className='info-title'>농지 상태:</div> {farmStatusText}</span>
             <div className="btn">
               <button onClick={handleBackClick} className="backBtn">이전</button>
-              <button className="rentBtn">완료</button>
+              <button onClick={handleRentClick} className="rentBtn">완료</button>
             </div>
           </div>
         </div>

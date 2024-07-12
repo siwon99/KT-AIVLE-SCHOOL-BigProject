@@ -113,6 +113,12 @@ const DetailPage = () => {
     navigate('/land_list');
   }
 
+  const handleRentClick = () => {
+    alert('임대 신청이 완료되었습니다.');
+    localStorage.setItem('currentFarmId', farm_id);
+    navigate('/land_list');
+  };
+
   return (
     <>
       <Navbar />
@@ -129,7 +135,7 @@ const DetailPage = () => {
             <span className="d-info"><div className='info-title'>농지 상태:</div> {farmStatusText}</span>
             <div className="btn">
               <button onClick={handleBackClick} className="backBtn">이전</button>
-              <button className="rentBtn">임대</button>
+              <button onClick={handleRentClick} className="rentBtn">임대</button>
             </div>
           </div>
         </div>
