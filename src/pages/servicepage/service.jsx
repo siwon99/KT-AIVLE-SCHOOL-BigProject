@@ -37,7 +37,7 @@ const ServicePage = () => {
   return (
     <div className="page">
       <Navbar />
-      <main className="contents">
+      <main className="service-contents">
         <ServiceIntro />
       </main>
     </div>
