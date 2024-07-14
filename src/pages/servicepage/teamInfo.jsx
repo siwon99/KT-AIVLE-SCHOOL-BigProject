@@ -1,6 +1,6 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
 import Navbar from '../navbar/navbar';
-import './service.css';
+import './teamInfo.css';
 
 const teamMembers = [
   { name: '강병관', role: 'BE', image: '/src/assets/강병관.png' },
@@ -21,7 +21,7 @@ const TeamInfo = () => {
     <>
       <Navbar />
       <div className='team-info'>
-        <div className='title'>조원 소개</div>
+        <div className='team-title'>조원 소개</div>
         <div className='teammate'>
 
           <div className='row-5'>
