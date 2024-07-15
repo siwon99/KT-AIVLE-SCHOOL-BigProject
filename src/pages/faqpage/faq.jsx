@@ -54,7 +54,7 @@ const FaqPage = () => {
       <Navbar />
       <div className="contents-wrapper">
         <main className="contents">
-          <div className="title">FAQ</div>
+          <div className="faq-title">FAQ</div>
           <div className="list">
               {faqData.map((faq) => (
                 <FaqItem key={faq.id} id={faq.id} question={faq.question} answer={faq.answer} />

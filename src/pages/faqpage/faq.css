@@ -38,18 +38,18 @@ body, html {
   color: #282828;
 }
 
-.title {
+.faq-title {
   position: relative;
   text-align: center;
   width: 100%;
-  margin-top: 150px;
+  margin-top: 145px;
   margin-bottom: 50px;
   font-size: 30px;
   color: #323232;
   box-sizing: border-box;
 }
 
-.title::after {
+.faq-title::after {
   content: '';
   display: block;
   width: 100%;
@@ -135,4 +135,35 @@ body, html {
 
 .answerfaq {
   white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+@media (max-width: 1279px) { /* 반응형 */
+  /* .team-contents.sidebar-open {
+    padding-left: 210px;
+  } */
+
+  .faq-title {
+    font-size: calc(28px + (30 - 28) * ((100vw - 768px) / (1279 - 768))) !important;
+  }
+
+  .faq-title::after {
+    height: calc(2px + (3 - 2) * ((100vw - 768px) / (1279 - 768))) !important;
+  }
+}
+
+@media(max-width: 1024px) {
+  /* .team-contents.sidebar-open {
+    padding-left: 210px;
+  } */
+}
+
+@media(max-width: 768px) {
+  .faq-title {
+    min-width: 260px;
+    font-size: 28px !important;
+  }
+
+  .faq-title::after {
+    height: 2px !important;
+  }
 }

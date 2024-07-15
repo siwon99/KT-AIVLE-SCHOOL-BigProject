@@ -51,7 +51,7 @@ body, html {
   position: relative;
   text-align: center;
   width: 100%;
-  margin-top: 150px;
+  margin-top: 145px;
   margin-bottom: 50px;
   font-size: 30px;
   color: #323232;
@@ -127,6 +127,14 @@ body, html {
   .team-contents.sidebar-open {
     padding-left: 210px;
   }
+
+  .team-title {
+    font-size: calc(28px + (30 - 28) * ((100vw - 768px) / (1279 - 768))) !important;
+  }
+
+  .team-title::after {
+    height: calc(2px + (3 - 2) * ((100vw - 768px) / (1279 - 768))) !important;
+  }
 }
 
 @media(max-width: 1024px) {
@@ -148,6 +156,11 @@ body, html {
 @media(max-width: 768px) {
   .team-title {
     min-width: 260px;
+    font-size: 28px !important;
+  }
+
+  .team-title::after {
+    height: 2px !important;
   }
 
   .teammate {
