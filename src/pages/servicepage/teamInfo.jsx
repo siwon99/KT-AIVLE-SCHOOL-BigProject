@@ -18,43 +18,41 @@ const sortedMembers = teamMembers.sort((a, b) => a.name.localeCompare(b.name));
 
 const TeamInfo = () => {
   return (
-    <>
+    <div className="page">
       <Navbar />
-      <div className='team-info'>
-        <div className='team-title'>조원 소개</div>
-        <div className='teammate'>
+      <div className='team-contents'>
+        <div className='team-info'>
+          <div className='team-title'>조원 소개</div>
+          <div className='teammate'>
+            <div className='row-5'>
+              <ul>
+                {sortedMembers.slice(0, 5).map((member, index) => (
+                  <li key={index} className={`member member-${index}`}>
+                    <div className="profile-pic">
+                      <img src={member.image} alt={member.name} />
+                    </div>
+                    <p>{member.name} <br /> {member.role}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div className='row-5'>
-            <ul>
-              {sortedMembers.slice(0, 5)
-              .map((member, index) => (
-                <li key={index} className={`member member-${index}`}>
-                  <div className="profile-pic">
-                    <img src={member.image} alt={member.name} />
-                  </div>
-                  <p>{member.name} <br /> {member.role}</p>
-                </li>
-              ))}
-            </ul>
+            <div className='row-4'>
+              <ul>
+                {sortedMembers.slice(5).map((member, index) => (
+                  <li key={index + 5} className={`member member-${index + 5}`}>
+                    <div className="profile-pic">
+                      <img src={member.image} alt={member.name} />
+                    </div>
+                    <p>{member.name} <br /> {member.role}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-
-          <div className='row-4'>
-            <ul>
-              {sortedMembers.slice(5)
-              .map((member, index) => (
-                <li key={index} className={`member member-${index + 5}`}>
-                  <div className="profile-pic">
-                    <img src={member.image} alt={member.name} />
-                  </div>
-                  <p>{member.name} <br /> {member.role}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
