@@ -86,7 +86,7 @@ const Signup = () => {
   return (
     <>
       <Navbar />
-      <main className="contents">
+      <main className="signup-content">
         <div className="signup-title">회원가입</div>
         <div className="signup">
           <div className="write-info" onChange={handleInputChange}>
@@ -143,7 +143,7 @@ const Signup = () => {
             <div className="backHome-Btn">
                 <button className="backBtn" onClick={goToHome}>뒤로가기</button>
               </div>
-            <div className="signUp-Btn">
+            <div className="signup-Btn">
               <UserButton
                 onClick={processSignUp}
                 text="회원 가입"
