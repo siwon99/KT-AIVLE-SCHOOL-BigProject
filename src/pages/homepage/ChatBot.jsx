@@ -10,9 +10,13 @@ const ChatBot = ({ closeModal }) => {
   const [chatHistory, setChatHistory] = useState([
     { text: "안녕하세요! 무엇을 도와드릴까요?", sender: "bot" }
   ]);
+  // 로딩 상태를 관리
+  const [loading, setLoading] = useState(false);
 
   // 메시지 목록 끝에 대한 참조 생성
   const endMessage = useRef(null);
+  // 입력 필드에 대한 참조 생성
+  const inputRef = useRef(null);
 
   // 메시지가 추가될 때마다 자동 스크롤을 가장 아래로 이동
   useEffect(() => {
@@ -26,6 +30,8 @@ const ChatBot = ({ closeModal }) => {
       setChatHistory(prevMessages => [...prevMessages, { text: message, sender: "user" }]);
       // 입력 필드 초기화
       setMessage('');
+      // 로딩 상태를 true로 설정
+      setLoading(true);
     }
 
     // 서버로 메시지 전송
@@ -84,15 +90,23 @@ const ChatBot = ({ closeModal }) => {
       
       // 서버의 응답 메시지를 메시지 목록에 추가
       setChatHistory(prevMessages => [...prevMessages, { text: result, sender: "bot" }]);
+      // 로딩 상태를 false로 설정
+      setLoading(false);
+      // 입력 필드에 포커스 설정
+      inputRef.current.focus();
     })
     .catch(error => {
       console.log('error'); // 에러 로그 출력
+      // 로딩 상태를 false로 설정
+      setLoading(false);
+      // 입력 필드에 포커스 설정
+      inputRef.current.focus();
     });
   };
 
   // Enter 키를 눌렀을 때 메시지 전송
   const handleEnterPress = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && !loading) {
       sendMessage();
     }
   };
@@ -124,17 +138,18 @@ const ChatBot = ({ closeModal }) => {
             value={message} 
             onChange={(e) => setMessage(e.target.value)} 
             onKeyPress={handleEnterPress} 
-            placeholder="메시지를 입력하세요." 
+            placeholder={loading ? "로딩 중..." : "메시지를 입력하세요."} // 로딩 상태에 따른 플레이스홀더 변경
+            ref={inputRef} // 입력 필드 참조 설정
           />
-          <button onClick={sendMessage}>전송</button>
+          <button onClick={sendMessage} disabled={loading}>전송</button> {/* 전송 버튼 */}
         </div>
       </div>
     </div>
   );
 };
 
- // 모달 창 닫기
- const closeModalHandler = () => {
+// 모달 창 닫기
+const closeModalHandler = () => {
   setIsOpen(false); 
   closeModal(); // 상위 컴포넌트에서 전달받은 닫기 함수 호출
 };
