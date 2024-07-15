@@ -56,7 +56,7 @@ const Login = () => {
   return (
     <>
       <Navbar />
-      <main className="contents">
+      <main className="login-content">
         <div className="login-title">로그인</div>
         <div className="login">
           <div className="userFrame">
