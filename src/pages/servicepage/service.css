@@ -223,6 +223,25 @@ body, html {
   transform: translateX(-50%);
 }
 
+.language {
+  width: 100%;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+.language p {
+  padding-top: 20px;
+  padding-left: 80px;
+  margin: 0;
+  position: relative;
+}
+
+.language p::before {
+  content: attr(Species) ": ";
+  position: absolute;
+  left: 0;
+}
+
 @media (max-width: 1279px) { /* 반응형 */
   .service-contents.sidebar-open {
     padding-left: 20%;
@@ -254,9 +273,24 @@ body, html {
     font-size: 28px !important;
   }
 
+  .service-title,
+  .features-title,
+  .effects-title,
+  .subtitle {
+    min-width: 300px;
+    margin-left: auto;
+  }
+
   .service-title::after,
   .features-title::after,
   .effects-title::after {
     height: 2px !important;
+  }
+
+  .intro,
+  .features,
+  .effects {
+    min-width: 300px;
+    margin-left: auto;
   }
 }

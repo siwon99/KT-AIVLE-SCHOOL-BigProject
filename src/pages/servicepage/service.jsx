@@ -31,11 +31,11 @@ const ServiceIntro = () => {
       </div>
 
       <div className="language-title">사용 언어</div>
-      <div className="effects">
-        <p number="FE">React, CSS</p>
-        <p number="BE">Django</p>
-        <p number="AI">YOLO</p>
-        <p number="Server">AWS</p>
+      <div className="language">
+        <p Species="FE">React, CSS</p>
+        <p Species="BE">Django</p>
+        <p Species="AI">YOLO</p>
+        <p Species="Server">AWS</p>
       </div>
     </div>
   );
