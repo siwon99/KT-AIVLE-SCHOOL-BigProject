@@ -89,19 +89,23 @@ const DetailPage = () => {
         setFarmTime(formatTime(data.status_logs[0].farm_created.split('T')[1].split('Z')[0]));
 
         //분양 상태 설정
-        if (data.status_logs[0].farm_status === 0) {
-          setFarmStatusText('유휴 농지');
-        } else if (data.status_logs[0].farm_status === 1) {
-          setFarmStatusText('분양 완료');
-        } else if (data.status_logs[0].farm_status === 2) {
-          setFarmStatusText('불법 건축물');
-        } else {
-          setFarmStatusText('알 수 없음');
+        if (data.status_logs.length > 0) {
+          const lastLog = data.status_logs[data.status_logs.length - 1];
+          
+          if (lastLog.farm_status === 0) {
+            setFarmStatusText('분양 완료');
+          } else if (lastLog.farm_status === 1) {
+            setFarmStatusText('유휴 농지');
+          } else if (lastLog.farm_status === 2) {
+            setFarmStatusText('불법 건축물');
+          } else {
+            setFarmStatusText('알 수 없음');
+          }
         }
       })
       // 로컬 스토리지에만 토큰이 남아있어도 로그인 페이지로 유도 가능
       .catch(error => {
-        navigate('/login');
+        navigate('/notfound');
       });
     } else {
       navigate('/login');

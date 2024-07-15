@@ -16,6 +16,7 @@ const TeamInfo = lazy(() => import('./pages/servicepage/teamInfo'));
 const ListAll = lazy(() => import('./pages/listpage/listall'));
 const Iblist = lazy(() => import('./pages/listpage/iblist'));
 const IbDetailPage = lazy(() => import('./pages/ibdetailpage/ibdetailpage'));
+const Notfound = lazy(() => import('./pages/notfound'));
 
 function App() {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -41,6 +42,7 @@ function App() {
           <Route path="/logout" element={<Logout />} />
           <Route path="/map" element={<Map />} />
           <Route path="/teaminfo" element={<TeamInfo />} />
+          <Route path="/notfound" element={<Notfound />} />
         </Routes>
       </Suspense>
     </Router>
