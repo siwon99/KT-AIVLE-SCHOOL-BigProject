@@ -13,11 +13,12 @@ body, html {
   height: 100%;
 }
 
-.contents {
+.signup-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 950px;
+  justify-content: center;
+  width: 75%;
   height: 100%;
   padding-bottom: 70px;
   box-sizing: border-box;
@@ -28,8 +29,8 @@ body, html {
   position: relative;
   text-align: center;
   width: 100%;
-  margin-top: 150px;
-  margin-bottom: 20px;
+  margin-top: 145px;
+  margin-bottom: 50px;
   font-size: 30px;
   color: #323232;
   box-sizing: border-box;
@@ -85,7 +86,7 @@ body, html {
   align-items: center;
   width: 100%;
   margin-top: 50px;
-  gap: 10px;
+  gap: 40px;
 }
 
 .button-container > * {
@@ -93,19 +94,19 @@ body, html {
 }
 
 .backBtn,
-.signUp-Btn button { /* 뒤로가기, 로그인 버튼 */
+.signup-Btn button { /* 뒤로가기, 로그인 버튼 */
   width: 100%;
   padding: 12px;
   font-size: 14px;
   border: 3px solid #00008C;
-  border-radius: 18px;
+  border-radius: 20px;
   background-color: #00008C;
   color: #FFFFFF;
   box-sizing: border-box;
 }
 
 .backBtn:hover,
-.signUp-Btn button:hover {
+.signup-Btn button:hover {
   cursor: pointer;
 }
 
@@ -116,4 +117,41 @@ body, html {
 
 .password-match {
   color: green;
+}
+
+@media (max-width: 1279px) { /* 반응형 */
+  .signup-content.sidebar-open {
+    padding-left: 20%;
+  }
+
+  .signup-title {
+    font-size: calc(28px + (30 - 28) * ((100vw - 768px) / (1279 - 768))) !important;
+  }
+
+  .signup-title::after {
+    height: calc(2px + (3 - 2) * ((100vw - 768px) / (1279 - 768))) !important;
+  }
+}
+
+@media(max-width: 1024px) {
+  .signup-content.sidebar-open {
+    padding-left: 210px;
+  }
+}
+
+@media(max-width: 768px) {
+  .signup-title {
+    font-size: 28px !important;
+    min-width: 300px; 
+    margin-left: auto;
+  }
+
+  .signup-title::after {
+    height: 2px !important;
+  }
+
+  .signup {
+    min-width: 300px;
+    margin-left: auto;
+  }
 }
