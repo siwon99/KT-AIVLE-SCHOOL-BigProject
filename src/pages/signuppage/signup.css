@@ -108,3 +108,12 @@ body, html {
 .signUp-Btn button:hover {
   cursor: pointer;
 }
+
+.password-message {
+  color: red; 
+  transition: color 0.3s; 
+}
+
+.password-match {
+  color: green;
+}

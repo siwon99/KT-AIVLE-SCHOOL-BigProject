@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; // eslint-disable-line no-unused-vars
+import React, { useEffect, useState } from 'react'; // eslint-disable-line no-unused-vars
 import "./signup.css"; //권혜민 추가
 import { useNavigate } from 'react-router-dom';
 import UserInput from '../loginpage/UserInput';
@@ -17,6 +17,7 @@ const Signup = () => {
 
   //생년월일 정보
   const [birthday, setBirthday] = useState('');
+  const [passwordMatch, setPasswordMatch] = useState(null);
 
   // 아아디, 비밀번호, 비밀번호 확인
   const handleInputChange = event => {
@@ -26,6 +27,18 @@ const Signup = () => {
       [name]: value,
     }));
   };
+
+  useEffect(() => {
+    if(userInfo.password && userInfo.confirm_password) {
+      if(userInfo.password === userInfo.confirm_password) {
+        setPasswordMatch(true);
+      } else {
+        setPasswordMatch(false);
+      }
+    } else {
+      setPasswordMatch(null);
+    }
+  }, [userInfo.password, userInfo.confirm_password]);
 
   // 페이지 이동
   const navigate = useNavigate();
@@ -83,32 +96,42 @@ const Signup = () => {
                 placeholder="이름"
                 value={userInfo.user_realname}
                 name="user_realname"
+                onEnterPress={processSignUp}
               />
-                <UserInput
-                  type="text"
+              <UserInput
+                type="birthday"
+                placeholder="생년월일"
+                pattern="\d{4}\.\d{2}\.\d{2}" // 정규식을 이용하여 형식을 지정
+                value={userInfo.birthday}
+                name="birthday"
+                onEnterPress={processSignUp}
+              />
+              <UserInput
+                type="text"
                 placeholder="아이디"
                 value={userInfo.username}
                 name="username"
+                onEnterPress={processSignUp}
               />
               <UserInput
                 type="password"
                 placeholder="비밀번호"
                 value={userInfo.password}
                 name="password"
+                onEnterPress={processSignUp}
               />
               <UserInput
                 type="password"
                 placeholder="비밀번호 확인"
                 value={userInfo.confirm_password}
                 name="confirm_password"
+                onEnterPress={processSignUp}
             />
-            <UserInput
-              type="birthday"
-              placeholder="생년월일"
-              pattern="\d{4}\.\d{2}\.\d{2}" // 정규식을 이용하여 형식을 지정
-              value={userInfo.birthday}
-              name="birthday"
-            />
+            <div className={`password-message ${passwordMatch === true ? 'password-match' : ''}`}>
+              {passwordMatch === false && "비밀번호가 일치하지 않습니다."}
+              {passwordMatch === true && "비밀번호가 일치합니다."}
+            </div>
+            
           </div>
 
           <div className="button-container">
