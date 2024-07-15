@@ -16,7 +16,7 @@ const TeamInfo = lazy(() => import('./pages/servicepage/teamInfo'));
 const ListAll = lazy(() => import('./pages/listpage/listall'));
 const Iblist = lazy(() => import('./pages/listpage/iblist'));
 const IbDetailPage = lazy(() => import('./pages/ibdetailpage/ibdetailpage'));
-const Notfound = lazy(() => import('./pages/notfound'));
+const Notfound = lazy(() => import('./pages/notfoundpage/notfound'));
 
 function App() {
   const [isAdmin, setIsAdmin] = useState(false);
