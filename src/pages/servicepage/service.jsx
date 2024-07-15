@@ -29,6 +29,14 @@ const ServiceIntro = () => {
         <p number="3">지역의 농지 활용을 통해 지역사회의 활력을 증진시킵니다. 이는 농업 생산성을 높이고, 지역 경제를 활성화하는 데 기여합니다.</p>
         <p number="4">농업 기술의 발전과 지속 가능한 농업 모델 구축을 통해 환경 보호와 경제적 성장을 동시에 추구합니다.</p>
       </div>
+
+      <div className="language-title">사용 언어</div>
+      <div className="effects">
+        <p number="FE">React, CSS</p>
+        <p number="BE">Django</p>
+        <p number="AI">YOLO</p>
+        <p number="Server">AWS</p>
+      </div>
     </div>
   );
 };
