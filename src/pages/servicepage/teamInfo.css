@@ -125,7 +125,7 @@ body, html {
 
 @media (max-width: 1279px) { /* 반응형 */
   .team-contents.sidebar-open {
-    padding-left: 210px;
+    padding-left: 20%;
   }
 
   .team-title {
@@ -155,8 +155,9 @@ body, html {
 
 @media(max-width: 768px) {
   .team-title {
-    min-width: 260px;
     font-size: 28px !important;
+    min-width: 300px;
+    margin-left: auto;
   }
 
   .team-title::after {
@@ -165,5 +166,7 @@ body, html {
 
   .teammate {
     grid-template-columns: 1fr;
+    min-width: 300px;
+    margin-left: auto;
   }
 }
