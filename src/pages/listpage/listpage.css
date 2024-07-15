@@ -103,6 +103,7 @@ body, html {
   text-align: center;
   width: 50px;
   min-width: 50px;
+  font-size: 15px;
 }
 
 .farm-name {

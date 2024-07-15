@@ -19,34 +19,43 @@ body, html {
   align-items: center;
   width: 100%;
   height: 100%;
-  overflow-y: scroll;
-  -ms-overflow-style: none; /* 엣지 스크롤바 x */
 }
 
-.page::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera 스크롤바 x*/
-}
-
-.contents {
+.faqpage {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 950px;
+  width: 100%;
   height: 100%;
-  padding-bottom: 70px;
-  box-sizing: border-box;
   color: #282828;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  box-sizing: border-box;
+}
+
+.faqpage::-webkit-scrollbar {
+  display: none;
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  padding-bottom: 100px;
+  box-sizing: border-box;
 }
 
 .faq-title {
   position: relative;
   text-align: center;
-  width: 100%;
   margin-top: 145px;
   margin-bottom: 50px;
   font-size: 30px;
   color: #323232;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .faq-title::after {
@@ -64,45 +73,56 @@ body, html {
 .list {
   display: flex;
   flex-direction: column;
-  width: 100%;
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
+  width: 100%;
   margin: 0 auto;
 }
 
 .item {
   position: relative;
-  margin-bottom: 20px;
   width: 100%;
   box-sizing: border-box;
+  font-size: 14px;
+}
+
+.number {
+  text-align: center;
+  width: 60px;
+  min-width: 60px;
+  font-size: 15px;
 }
 
 .question {
   display: flex;
   align-items: center;
-  width: 100%;
-  height: 65px;
-  padding: 20px;
+  position: relative;
+  padding: 15px;
   background-color: #e6e6e6;
   box-sizing: border-box;
   margin-bottom: 10px;
   border-radius: 10px;
-  font-size: 15px;
 }
 
-.number {
-  font-size: 17px;
-  margin-right: 20px;
+.question .text {
+  margin-right: 50px;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .button {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
   width: 33px;
   height: 33px;
-  margin-left: auto;
+  min-width: 33px;
+  min-height: 33px;
+  right: 10px;
   border: none;
   border-radius: 20px;
   background-color: #6E9FED;
@@ -123,24 +143,25 @@ body, html {
   align-items: center;
   margin-top: 10px;
   width: 100%;
-  min-height: 65px;
-  padding: 20px;
-  padding-left: 75px;
+  max-height: 104px;
+  padding: 15px;
+  padding-right: 20px;
+  padding-left: 72px;
   background-color: #C1DAFB;
   box-sizing: border-box;
   margin-bottom: 20px;
   border-radius: 10px;
-  font-size: 15px;
 }
 
 .answerfaq {
-  white-space: nowrap; /* 줄바꿈 방지 */
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 @media (max-width: 1279px) { /* 반응형 */
-  /* .team-contents.sidebar-open {
+  .faq-container.sidebar-open {
     padding-left: 210px;
-  } */
+  }
 
   .faq-title {
     font-size: calc(28px + (30 - 28) * ((100vw - 768px) / (1279 - 768))) !important;
@@ -152,18 +173,54 @@ body, html {
 }
 
 @media(max-width: 1024px) {
-  /* .team-contents.sidebar-open {
+  .faq-container.sidebar-open {
     padding-left: 210px;
-  } */
+  }
+
+  .question .text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .answer {
+    height: 104px;
+    overflow: hidden;
+  }
+
+  .answer span {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 @media(max-width: 768px) {
   .faq-title {
-    min-width: 260px;
     font-size: 28px !important;
+    min-width: 300px;
+    margin-left: auto;
   }
 
   .faq-title::after {
     height: 2px !important;
+  }
+
+  .question,
+  .answer {
+    min-width: 300px;
+  }
+
+  .question .text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+ .answer span {
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
