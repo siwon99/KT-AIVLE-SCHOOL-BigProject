@@ -94,8 +94,8 @@ function Map() {
         marker.setMap(map);
 
         const content = `
-        <div class="wrap">
-          <div class="info">
+        <div class="content-wrap">
+          <div class="content-info">
             <div class="content-title">${farm.farm_name}</div>
             <hr class="content-hr" />
             <div>
