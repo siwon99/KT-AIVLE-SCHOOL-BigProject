@@ -87,3 +87,40 @@
   cursor: pointer;
   border-radius: 0 8px 8px 0;
 }
+
+/* 로딩 인디케이터 스타일 */
+.loading-indicator {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #00008C;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  animation: slideDown 0.5s forwards, slideUp 0.5s 2.5s forwards;
+}
+
+/* 로딩 인디케이터 애니메이션 */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -100%);
+  }
+}

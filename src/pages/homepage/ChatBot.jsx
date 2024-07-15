@@ -121,6 +121,8 @@ const ChatBot = ({ closeModal }) => {
         {/* 모달 닫기 버튼 */}
         <button className="close-button" onClick={closeModalHandler}>X</button>
         <h2>ChatBot</h2>
+        {/* 로딩 인디케이터 */}
+        {loading && <div className="loading-indicator">로딩 중...</div>}
         {/* 메시지 목록 */}
         <div className="message-list">
           {chatHistory.map((msg, index) => (
@@ -138,7 +140,7 @@ const ChatBot = ({ closeModal }) => {
             value={message} 
             onChange={(e) => setMessage(e.target.value)} 
             onKeyPress={handleEnterPress} 
-            placeholder={loading ? "로딩 중..." : "메시지를 입력하세요."} // 로딩 상태에 따른 플레이스홀더 변경
+            placeholder="메시지를 입력하세요." 
             ref={inputRef} // 입력 필드 참조 설정
           />
           <button onClick={sendMessage} disabled={loading}>전송</button> {/* 전송 버튼 */}
