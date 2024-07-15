@@ -44,7 +44,7 @@ function Map() {
         }
       })
       .then(data => {
-        if(data && data.results) {
+        if(data) {
           setLandDetail({
             farm_id: data.farm_id,
             farm_name: data.farm_name,
@@ -54,7 +54,7 @@ function Map() {
             longitude: data.longitude,
             image: data.image ? { farm_image: data.image.farm_image } : null
           })
-          setFarms(data.results);
+          setFarms(data);
         }
       })
       // 로컬 스토리지에만 토큰이 남아있어도 로그인 페이지로 유도 가능
