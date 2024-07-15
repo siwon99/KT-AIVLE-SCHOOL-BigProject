@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import "./ChatBot.css";
+import botProfile from '../../assets/BchatBot.svg';
 
 // ChatBot 컴포넌트 정의
 const ChatBot = ({ closeModal }) => {
@@ -26,11 +27,8 @@ const ChatBot = ({ closeModal }) => {
   // 메시지 전송 함수
   const sendMessage = () => {
     if (message.trim()) { // 입력이 있을 때
-      // 사용자가 입력한 메시지를 메시지 목록에 추가
       setChatHistory(prevMessages => [...prevMessages, { text: message, sender: "user" }]);
-      // 입력 필드 초기화
       setMessage('');
-      // 로딩 상태를 true로 설정
       setLoading(true);
     }
 
@@ -57,7 +55,7 @@ const ChatBot = ({ closeModal }) => {
       if (result === 'irrelevant') {
         result = (
           <div>
-            <p>NONGBU 서비스가 답변하기 어려운 질문입니다. 관련 부서를 참고해주세요.</p>
+            <p>NONGBU 서비스가 답변하기 어려운 질문입니다.<br/> 관련 부서를 참고해주세요.</p>
             <table>
               <thead>
                 <tr>
@@ -127,7 +125,8 @@ const ChatBot = ({ closeModal }) => {
         <div className="message-list">
           {chatHistory.map((msg, index) => (
             <div key={index} className={`message ${msg.sender}`}>
-              {msg.text}
+              {msg.sender === "bot" && <img src={botProfile} alt="bot profile" className="profile bot" />}
+              <div className="text">{msg.text}</div>
             </div>
           ))}
           {/* 메시지 목록 끝에 대한 참조 요소 추가 */}
@@ -153,7 +152,7 @@ const ChatBot = ({ closeModal }) => {
 // 모달 창 닫기
 const closeModalHandler = () => {
   setIsOpen(false); 
-  closeModal(); // 상위 컴포넌트에서 전달받은 닫기 함수 호출
+  closeModal();
 };
 
 // closeChat prop의 타입을 함수로 지정하고 필수 요소로 설정

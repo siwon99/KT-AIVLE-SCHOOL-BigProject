@@ -48,21 +48,80 @@
 
 /* 메시지 기본 스타일 */
 .message {
+  display: flex;
+  align-items: flex-start;
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 8px;
+  position: relative;
+  max-width: 70%;
 }
 
 /* 봇 메시지 스타일 */
 .message.bot {
   background-color: #e6e6e6;
   align-self: flex-start;
+  border-top-left-radius: 0;
+  margin-right: auto;
+  position: relative;
+  padding-left: 20px;
 }
-  
+
+.message.bot::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #e6e6e6;
+}
+
 /* 사용자 메시지 스타일 */
 .message.user {
   background-color: #c1dafb;
   align-self: flex-end;
+  border-top-right-radius: 0;
+  margin-left: auto;
+  position: relative;
+  padding-right: 20px;
+}
+
+.message.user::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #c1dafb;
+}
+
+/* 말풍선 텍스트 스타일 */
+.text {
+  margin-left: 10px;
+  word-break: break-word;
+}
+
+/* 프로필 이미지 스타일 */
+.profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* 봇 프로필 스타일 */
+.profile.bot {
+  margin-right: 10px;
+}
+
+/* 사용자 프로필 스타일 */
+.profile.user {
+  display: none; /* 사용자 프로필 이미지를 숨깁니다. 필요에 따라 사용자 이미지를 추가할 수 있습니다. */
 }
 
 /* 입력 영역 스타일 */
@@ -91,7 +150,7 @@
 /* 로딩 인디케이터 스타일 */
 .loading-indicator {
   position: absolute;
-  top: 10px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #00008C;
@@ -99,14 +158,14 @@
   padding: 10px;
   border-radius: 8px;
   font-size: 1rem;
-  animation: slideDown 0.5s forwards, slideUp 0.5s 2.5s forwards;
+  animation: slideUp 0.5s forwards, slideDown 0.5s 2.5s forwards;
 }
 
 /* 로딩 인디케이터 애니메이션 */
-@keyframes slideDown {
+@keyframes slideUp {
   0% {
     opacity: 0;
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, 100%);
   }
   100% {
     opacity: 1;
@@ -114,13 +173,13 @@
   }
 }
 
-@keyframes slideUp {
+@keyframes slideDown {
   0% {
     opacity: 1;
     transform: translate(-50%, 0);
   }
   100% {
     opacity: 0;
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, 100%);
   }
 }
