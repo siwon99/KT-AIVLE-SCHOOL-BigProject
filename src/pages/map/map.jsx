@@ -27,7 +27,7 @@ function Map() {
     const token = localStorage.getItem('token');
 
     if(token) {
-      fetch('http://3.39.228.42/farms/list/', { 
+      fetch('http://3.39.228.42/farms/user/list/', { 
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
