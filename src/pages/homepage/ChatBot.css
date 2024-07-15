@@ -11,7 +11,7 @@
   align-items: center;
   z-index: 1000;
 }
-  
+
 /* 모달 스타일 */
 .chat-container {
   background: white;
@@ -44,17 +44,20 @@
   flex: 1;
   overflow-y: auto;
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* 메시지 기본 스타일 */
 .message {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 30px; /* 시간을 위한 하단 여백 추가 */
   border-radius: 8px;
-  position: relative;
-  max-width: 70%;
+  max-width: 70%; /* 최대 너비를 70%로 설정 */
+  word-wrap: break-word; /* 긴 단어가 있을 때 자동 줄바꿈 */
 }
 
 /* 봇 메시지 스타일 */
@@ -63,20 +66,6 @@
   align-self: flex-start;
   border-top-left-radius: 0;
   margin-right: auto;
-  position: relative;
-  padding-left: 20px;
-}
-
-.message.bot::before {
-  content: '';
-  position: absolute;
-  top: 10px;
-  left: -10px;
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-right: 10px solid #e6e6e6;
 }
 
 /* 사용자 메시지 스타일 */
@@ -85,26 +74,37 @@
   align-self: flex-end;
   border-top-right-radius: 0;
   margin-left: auto;
-  position: relative;
-  padding-right: 20px;
-}
-
-.message.user::before {
-  content: '';
-  position: absolute;
-  top: 10px;
-  right: -10px;
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid #c1dafb;
 }
 
 /* 말풍선 텍스트 스타일 */
 .text {
-  margin-left: 10px;
   word-break: break-word;
+  margin-left: 10px;
+  margin-top: 5px; /* 텍스트와 닉네임 간의 간격 */
+  position: relative;
+}
+
+/* 시간 스타일을 말풍선 밖 하단으로 설정 */
+.time {
+  display: block;
+  font-size: 0.75rem;
+  color: #757575;
+  margin-top: 5px; /* 말풍선과 시간 간의 간격 추가 */
+  text-align: right; /* 시간을 오른쪽에 정렬 */
+}
+
+/* 닉네임 스타일 */
+.nickname {
+  font-size: 0.9rem;
+  color: #000;
+  margin-left: 10px;
+}
+
+/* 닉네임 컨테이너 스타일 */
+.nickname-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
 }
 
 /* 프로필 이미지 스타일 */
@@ -112,6 +112,8 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
 }
 
 /* 봇 프로필 스타일 */

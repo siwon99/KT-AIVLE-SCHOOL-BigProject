@@ -9,7 +9,7 @@ const ChatBot = ({ closeModal }) => {
   const [message, setMessage] = useState('');
   // 메시지 목록을 상태로 관리
   const [chatHistory, setChatHistory] = useState([
-    { text: "안녕하세요! 무엇을 도와드릴까요?", sender: "bot" }
+    { text: "안녕하세요! 무엇을 도와드릴까요?", sender: "bot", time: new Date().toLocaleTimeString() }
   ]);
   // 로딩 상태를 관리
   const [loading, setLoading] = useState(false);
@@ -27,7 +27,8 @@ const ChatBot = ({ closeModal }) => {
   // 메시지 전송 함수
   const sendMessage = () => {
     if (message.trim()) { // 입력이 있을 때
-      setChatHistory(prevMessages => [...prevMessages, { text: message, sender: "user" }]);
+      const currentTime = new Date().toLocaleTimeString();
+      setChatHistory(prevMessages => [...prevMessages, { text: message, sender: "user", time: currentTime }]);
       setMessage('');
       setLoading(true);
     }
@@ -85,9 +86,11 @@ const ChatBot = ({ closeModal }) => {
           </div>
         );
       }
+
+      const currentTime = new Date().toLocaleTimeString();
       
       // 서버의 응답 메시지를 메시지 목록에 추가
-      setChatHistory(prevMessages => [...prevMessages, { text: result, sender: "bot" }]);
+      setChatHistory(prevMessages => [...prevMessages, { text: result, sender: "bot", time: currentTime }]);
       // 로딩 상태를 false로 설정
       setLoading(false);
       // 입력 필드에 포커스 설정
@@ -125,8 +128,16 @@ const ChatBot = ({ closeModal }) => {
         <div className="message-list">
           {chatHistory.map((msg, index) => (
             <div key={index} className={`message ${msg.sender}`}>
-              {msg.sender === "bot" && <img src={botProfile} alt="bot profile" className="profile bot" />}
-              <div className="text">{msg.text}</div>
+              {msg.sender === "bot" && (
+                <div className="nickname-container">
+                  <img src={botProfile} alt="bot profile" className="profile bot" />
+                  <span className="nickname">NONGBU</span>
+                </div>
+              )}
+              <div className="text">
+                {msg.text}
+              </div>
+              <div className="time">{msg.time}</div>
             </div>
           ))}
           {/* 메시지 목록 끝에 대한 참조 요소 추가 */}
