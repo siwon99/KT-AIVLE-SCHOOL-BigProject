@@ -41,3 +41,21 @@ export const getUserMypage = async (token) => {
 		throw error;
 	}
 };
+
+export const rentFarm = async (fid, token) => {
+  try {
+		const res = await fetchWithToken(`/farms/user/detail/${fid}`, token, 'POST');
+		return res;
+	} catch (error) {
+		throw error;
+	}
+};
+
+export const approveRent = async (lid, token) => {
+  try {
+		const res = await fetchWithToken(`/farms/admin/mypage/detail/${lid}`, token, 'POST');
+		return res;
+	} catch (error) {
+		throw error;
+	}
+};
