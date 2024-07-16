@@ -20,15 +20,22 @@ body, html {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+}
+
+.list-container::-webkit-scrollbar {
+  display: none;
 }
 
 .listbox {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  width: 75%;
+  width: 55%;
   height: 100%;
-  gap: 5%;
+  padding-top: 5%;
+  gap: 20px;
   box-sizing: border-box;
 }
 
@@ -37,8 +44,8 @@ body, html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 35%;
-  height: 50%;
+  width: 40%;
+  height: 55%;
   margin: 0;
   padding-left: 3%;
   padding-right: 3%;
@@ -53,8 +60,8 @@ body, html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 35%;
-  height: 50%;
+  width: 40%;
+  height: 55%;
   margin: 0;
   padding-left: 3%;
   padding-right: 3%;
@@ -100,6 +107,13 @@ body, html {
 
   .listbox a {
     font-size: calc(17px + (19 - 17) * ((100vw - 768px) / (1279 - 768)));
+  }
+}
+
+@media (max-width: 1024px) {
+  .listbox_farm,
+  .listbox_building {
+    min-width: 215px;
   }
 }
 
