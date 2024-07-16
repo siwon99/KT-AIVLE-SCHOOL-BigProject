@@ -17,6 +17,9 @@ const ListAll = lazy(() => import('./pages/listpage/listall'));
 const Iblist = lazy(() => import('./pages/listpage/iblist'));
 const IbDetailPage = lazy(() => import('./pages/ibdetailpage/ibdetailpage'));
 const Notfound = lazy(() => import('./pages/notfoundpage/notfound'));
+const MyPage = lazy(() => import('./pages/mypage/mypage'));
+const AdminMyPage = lazy(() => import('./pages/mypage/adminmypage'));
+const UserMyPage = lazy(() => import('./pages/mypage/usermypage'));
 
 function App() {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -38,6 +41,9 @@ function App() {
           <Route path="/detail/:farm_id" element={<DetailPage />} />
           <Route path="/iblist" element={<Iblist />} />
           <Route path="/ibdetail/:farm_id" element={<IbDetailPage />} />
+          <Route path="/mypage" element={<MyPage />} />
+          <Route path="/mypage/admin" element={<AdminMyPage />} />
+          <Route path="/mypage/user" element={<UserMyPage />} />
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/map" element={<Map />} />

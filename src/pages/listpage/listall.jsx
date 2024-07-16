@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../navbar/navbar.jsx';
 import './listall.css';
+import { getUser } from '../../service/apiService.js';
 
 const FARM_IMAGE = '/src/assets/농지.gif';
 const BUILDING_IMAGE = '/src/assets/빌딩.gif';
@@ -18,20 +19,7 @@ const ListAll = () => {
     });
     
     if (token) {
-      fetch('http://3.39.228.42/users/authorization/', { 
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Token ${token}`,
-        }, 
-      })
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error();
-        }
-      })
+      getUser(token)
       .then(data => {
         console.log('data:', data);
         // 관리자가 아니라면 바로 유휴농지 페이지를 보여줌
