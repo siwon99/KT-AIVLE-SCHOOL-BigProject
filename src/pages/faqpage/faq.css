@@ -42,7 +42,7 @@ body, html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 75%;
+  width: 65%;
   padding-bottom: 100px;
   box-sizing: border-box;
 }
@@ -89,8 +89,8 @@ body, html {
 
 .number {
   text-align: center;
-  width: 60px;
-  min-width: 60px;
+  width: 50px;
+  min-width: 50px;
   font-size: 15px;
 }
 
@@ -98,6 +98,7 @@ body, html {
   display: flex;
   align-items: center;
   position: relative;
+  height: 60px;
   padding: 15px;
   background-color: #e6e6e6;
   box-sizing: border-box;
@@ -143,10 +144,10 @@ body, html {
   align-items: center;
   margin-top: 10px;
   width: 100%;
-  max-height: 104px;
+  min-height: 64px;
   padding: 15px;
   padding-right: 20px;
-  padding-left: 72px;
+  padding-left: 65px;
   background-color: #C1DAFB;
   box-sizing: border-box;
   margin-bottom: 20px;
@@ -200,17 +201,10 @@ body, html {
 @media(max-width: 768px) {
   .faq-title {
     font-size: 28px !important;
-    min-width: 300px; 
-    margin-left: auto;
   }
 
   .faq-title::after {
     height: 2px !important;
-  }
-
-  .question,
-  .answer {
-    min-width: 300px;
   }
 
   .question .text {
