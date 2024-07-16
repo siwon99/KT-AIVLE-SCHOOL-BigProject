@@ -23,6 +23,7 @@ body, html {
 
 .detailpage {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
   width: 100%;
@@ -38,12 +39,12 @@ body, html {
 
 .detail-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   width: 75%;
   height: 100%;
   margin-top: 135px;
-  /* margin-bottom: 100px; */
+  gap: 20px;
   box-sizing: border-box;
 }
 
@@ -130,11 +131,16 @@ body, html {
 
 /* 지도 사진 크기: 512px * 512px */
 .map {
-  width: 512px;
-  height: 512px;
-  margin-left: 20px;
-  position: relative; 
+  width: auto;
+  height: auto;
+  max-width: 512px;
+  min-width: 440px;
   box-sizing: border-box;
+}
+
+.map img {
+  width: 100%;
+  height: 100%;
 }
 
 .noImg {
@@ -157,8 +163,7 @@ body, html {
     font-size: calc(18px + (20 - 18) * ((100vw - 768px) / (1279 - 768))) !important;
   }
 
-  .detail-title,
-  .d-info {
+  .detail-info {
     min-width: 150px;
     margin-left: auto;
   }
