@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import './map.css';
+import './modal.css';
 
 // 날짜함수
 const formatDate = (dateString) => {

@@ -1,0 +1,94 @@
+/* 지도 모달창 css
+.map-container {
+    position: absolute;
+    top: 55%;
+    right: 20px; 
+    transform: translate(0, -50%); 
+    width: 350px; 
+    height: 550px;
+    border-radius: 10px;
+    z-index: 1000;
+    justify-content: center;
+    background-color: #fff;
+    padding: 20px 10px;
+    margin-right: 20px;
+  }
+
+  .map-content::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  
+  .map-closebtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    padding: 0 5px;
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+
+  .map-closebtn:hover {
+    color: red;
+  }
+  
+  .map-info {
+    font-size: 15px;
+    padding: 0;
+  }
+
+  .map-infotitle {
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .map-title1 {
+    margin-left: 10px;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .map-title {
+    margin-left: 10px;
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+  
+  .map-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .map-map {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 100%; 
+  }
+  
+  .map-map img {
+    max-width: 300px; 
+    max-height: 300px; 
+    width: auto; 
+    height: auto; 
+    border-radius: 3px; 
+  }
+  
+  .map-noImg {
+    font-size: 14px;
+  }
+
+  .map-hr {
+    width: 93%;
+    margin-top: 10px;
+    background-color: #00008C; 
+    height: 1px; 
+  } */

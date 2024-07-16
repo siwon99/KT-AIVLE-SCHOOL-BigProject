@@ -97,11 +97,8 @@ function Map() {
         <div class="content-wrap">
           <div class="content-info">
             <div class="content-title">${farm.farm_name}</div>
-            <hr class="content-hr" />
-            <div>
-              <div class="content-owner">소유자: ${farm.farm_owner}</div>
-              <div class="content-size">면적: ${farm.farm_size}</div>
-            </div>
+            <div class="content-owner">소유자: ${farm.farm_owner}</div>
+            <div class="content-size">면적: ${farm.farm_size}</div>
             <a class="content-link" data-id="${farm.farm_id}">더 보기 ></a>
           </div>   
         </div>
@@ -151,8 +148,13 @@ const closeModal = () => {
   return (
     <>
       <Navbar />
-      <div id='map' style={{ width: '1180px', height: '620px' }} />
-      {modalFarmId && <Modal farm_id={modalFarmId} closeModal={closeModal} />}
+      <div className="map-container">
+        <div className="map-title">지도</div>
+        <div className='mapbox'>
+          <div id='map'/> {/* style={{ width: '1180px', height: '620px' }} */}
+          {modalFarmId && <Modal farm_id={modalFarmId} closeModal={closeModal} />}
+        </div>
+      </div>
     </>
   );
 }
