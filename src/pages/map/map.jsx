@@ -9,7 +9,6 @@ const { kakao } = window;
 function Map() {
   const navigate = useNavigate();
   const [farms, setFarms] = useState([]);
-
   const [landDetail, setLandDetail] = useState({
     farm_id: 0,
     farm_name: '',
@@ -22,6 +21,7 @@ function Map() {
 
   // 모달 관련 상태
   const [modalFarmId, setModalFarmId] = useState(null);
+  const [isExpanded, setIsExpanded] = useState(false); // 확장 상태 관리
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -129,26 +129,28 @@ function Map() {
         }
       });
     
-      // 더보기 링크 클릭 시 모달창 띄우기
+      // 더보기 링크 클릭 시 모달창 띄우기 및 확장 상태로 변경
       document.addEventListener('click', function (e) {
         if (e.target && e.target.className === 'content-link') {
           const farmId = e.target.getAttribute('data-id');
           setModalFarmId(farmId);
+          setIsExpanded(true); // 상태 변경
         }
       });
 
     });
   }
-}, [farms,  landDetail.image, navigate]);
+}, [farms, landDetail.image, navigate]);
 
 const closeModal = () => {
   setModalFarmId(null);
+  setIsExpanded(false); // 상태 초기화
 };
 
   return (
     <>
       <Navbar />
-      <div className="map-container">
+      <div className={`map-container ${isExpanded ? 'expanded' : ''}`}>
         <div className="map-title">지도</div>
         <div className='mapbox'>
           <div id='map'/> {/* style={{ width: '1180px', height: '620px' }} */}
