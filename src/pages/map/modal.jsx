@@ -111,27 +111,30 @@ const Modal = ({farm_id, closeModal}) => {
   }
 
   return (
-    <div className="map-container">
-        <button className="map-closebtn" onClick={closeModalHandler}>X</button>
-        <div className="map-info">
-          <div className="map-infotitle">농지 상세정보</div>
-          <hr className='map-hr'/>
-          <div className="map-details">
-            <span className="map-info"><div className='map-title1'>{landDetail.farm_name}</div> </span> 
-            <span className="map-info"><div className='map-title'>소유주: {landDetail.farm_owner}</div> </span> 
-            <span className="map-info"><div className='map-title'>농지 면적: {landDetail.farm_size}</div> </span> 
-            <span className="map-info"><div className='map-title'>게시 날짜: {farmDate}</div> </span>
-            <span className="map-info"><div className='map-title'>농지 상태: {farmStatusText}</div> </span>
+    <div className="modal-container">
+      <div className="modal-content">
+        <button className="modal-closebtn" onClick={closeModalHandler}>
+          X
+        </button>
+        <div className="modal-info">
+          <div className="modal-title">농지 상세정보</div>
+          <div className="modal-details">
+            <span className="modal-info"><div className='m-subtitle'>상세 주소: {landDetail.farm_name}</div> </span> 
+            <span className="modal-info"><div className='m-subtitle'>소유주: {landDetail.farm_owner}</div> </span> 
+            <span className="modal-info"><div className='m-subtitle'>농지 면적: {landDetail.farm_size}</div> </span> 
+            <span className="modal-info"><div className='m-subtitle'>게시 날짜: {farmDate}</div> </span>
+            <span className="modal-info"><div className='m-subtitle'>농지 상태: {farmStatusText}</div> </span>
           </div>
         </div>
 
-        <div className="map-map">
+        <div className="modal-map">
           {landDetail.image ? (
             <img src={landDetail.image.farm_image} alt="FarmImg" />
           ) : (
-            <p className='map-noImg'>이미지 없음</p>
+            <p className='modal-noImg'>이미지 없음</p>
           )}
         </div>
+      </div>
     </div>
   );
 };

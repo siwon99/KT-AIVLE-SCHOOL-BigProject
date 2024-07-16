@@ -1,94 +1,85 @@
-/* 지도 모달창 css
-.map-container {
-    position: absolute;
-    top: 55%;
-    right: 20px; 
-    transform: translate(0, -50%); 
-    width: 350px; 
-    height: 550px;
-    border-radius: 10px;
-    z-index: 1000;
-    justify-content: center;
-    background-color: #fff;
-    padding: 20px 10px;
-    margin-right: 20px;
-  }
+.modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  width: 40%;
+  height: 100%;
+  margin-top: 145px;
+  margin-left: auto;
+}
 
-  .map-content::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-  }
-  
-  .map-closebtn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 25px;
-    cursor: pointer;
-    padding: 0 5px;
-    margin-top: 5px;
-    margin-right: 5px;
-  }
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  padding: 20px;
+  background: #FFFFFF;
+  color: #282828;
+  border-radius: 10px;
+  font-size: 13px;
+  position: relative;
+}
 
-  .map-closebtn:hover {
-    color: red;
-  }
-  
-  .map-info {
-    font-size: 15px;
-    padding: 0;
-  }
+.modal-closebtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  padding: 2px;
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+  color: #282828;
+  font-size: 16px;
+}
 
-  .map-infotitle {
-    font-size: 23px;
-    font-weight: bold;
-    text-align: center;
-  }
+.modal-closebtn:hover {
+  cursor: pointer;
+}
 
-  .map-title1 {
-    margin-left: 10px;
-    font-size: 18px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  .map-title {
-    margin-left: 10px;
-    font-size: 17px;
-    margin-bottom: 10px;
-  }
-  
-  .map-details {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  
-  .map-map {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    width: 100%; 
-  }
-  
-  .map-map img {
-    max-width: 300px; 
-    max-height: 300px; 
-    width: auto; 
-    height: auto; 
-    border-radius: 3px; 
-  }
-  
-  .map-noImg {
-    font-size: 14px;
-  }
+.modal-info {
+  width: 100%;
+}
 
-  .map-hr {
-    width: 93%;
-    margin-top: 10px;
-    background-color: #00008C; 
-    height: 1px; 
-  } */
+.modal-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.m-subtitle {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.modal-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.modal-map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.modal-map img {
+  max-width: 300px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  border-radius: 3px;
+}
+
+.modal-noImg {
+  font-size: 14px;
+}

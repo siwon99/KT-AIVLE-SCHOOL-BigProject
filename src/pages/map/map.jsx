@@ -150,12 +150,14 @@ const closeModal = () => {
   return (
     <>
       <Navbar />
-      <div className={`map-container ${isExpanded ? 'expanded' : ''}`}>
-        <div className="map-title">지도</div>
-        <div className='mapbox'>
-          <div id='map'/> {/* style={{ width: '1180px', height: '620px' }} */}
-          {modalFarmId && <Modal farm_id={modalFarmId} closeModal={closeModal} />}
+      <div className="mappage">
+        <div className={`map-container ${isExpanded ? 'expanded' : ''}`}>
+          <div className="map-title">지도</div>
+          <div className='mapbox'>
+            <div id='map'/> {/* style={{ width: '1180px', height: '620px' }} */}
+          </div>
         </div>
+        {modalFarmId && <Modal farm_id={modalFarmId} closeModal={closeModal} />}
       </div>
     </>
   );
