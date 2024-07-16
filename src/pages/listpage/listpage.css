@@ -40,7 +40,7 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 75%;
+  width: 65%;
   height: 100%;
   box-sizing: border-box;
 }
@@ -118,7 +118,7 @@ body, html {
   width: 250px;
 }
 
-.lists .backBtn {
+.lists .choiceBtn {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -132,10 +132,9 @@ body, html {
   background-color: #6E9FED;
   color: #FFFFFF;
   text-decoration: none;
-  margin-left: 50px;
 }
 
-.lists .backBtn:hover {
+.lists .choiceBtn:hover {
   cursor: pointer;
 }
 
@@ -193,7 +192,9 @@ body, html {
     height: calc(2px + (3 - 2) * ((100vw - 768px) / (1279 - 768))) !important;
   }
 
-  .farm-name, .farm-owner, .farm-size {
+  .farm-name,
+  .farm-owner,
+  .farm-size {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -215,7 +216,8 @@ body, html {
 }
 
 @media (max-width: 850px) {
-  .farm-owner, .farm-size {
+  .farm-owner,
+  .farm-size {
     display: none;
   }
 
