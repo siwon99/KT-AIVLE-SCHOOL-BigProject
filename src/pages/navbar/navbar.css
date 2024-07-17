@@ -98,12 +98,14 @@ body, html {
   gap: 40px;
 }
 
-.navbar nav ul li.auth-icons a img.login-icon {
+.navbar nav ul li.auth-icons a img.login-icon,
+.navbar nav ul li.auth-icons a img.logout-icon {
   height: 50px;
   width: 50px;
 }
 
-.navbar nav ul li.auth-icons a img.signup-icon {
+.navbar nav ul li.auth-icons a img.signup-icon,
+.navbar nav ul li.auth-icons a img.mypage-icon {
   height: 40px;
   width: 40px;
 }
@@ -206,7 +208,7 @@ body, html {
     gap: 20px;
   }
 
-  .navbar nav ul li.auth-icons a .login-icon {
+  /* .navbar nav ul li.auth-icons a .login-icon {
     display: block;
-  }
+  } */
 }

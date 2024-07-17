@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import "./navbar.css";
 import WhomeIcon from "/assets/WhomeIcon.svg";
 import WlogIn from "/assets/WlogIn.svg";
 import WlogOut from "/assets/WlogOut.svg";
-import WsignUp from "/assets/Wsignup.png";
-//import Wmypage from "../../assets/wmypage.png";
+import WsignUp from "/assets/Wsignup.jpg";
+import WmyPage from "/assets/Wmypage.jpg";
 
 // Navbar 컴포넌트 정의
 const Navbar = () => {
@@ -95,20 +95,24 @@ const Navbar = () => {
           
           <li className="auth-icons">
             {!token ? (
-                <div>
-                  <a href="/login">
-                    <img src={WlogIn} alt="Log In" className="login-icon" />
-                  </a>
-                  <a href="/signup">
-                    <img src={WsignUp} alt="SignUp" className="signup-icon" />
-                  </a>
-                </div>
-              ) : (
+              <div>
+                <a href="/login">
+                  <img src={WlogIn} alt="Log In" className="login-icon" />
+                </a>
+                <a href="/signup">
+                  <img src={WsignUp} alt="Sign Up" className="signup-icon" />
+                </a>
+              </div>
+            ) : (
+              <div>
+                <a href="/mypage">
+                  <img src={WmyPage} alt="My Page" className="mypage-icon" />
+                </a>
                 <a href="/logout">
                   <img src={WlogOut} alt="Log Out" className="logout-icon" />
                 </a>
-              )
-            }
+              </div>
+            )}
           </li>
         </ul>
       </nav>
@@ -120,8 +124,14 @@ const Navbar = () => {
         <a href="/faq">FAQ</a>
         <a href="/map">지도</a>
         <div className="auth-links">
-          <a href="/login">로그인하세요  &gt;</a>
-          <a href="/signup">회원가입하세요  &gt;</a>
+          {!token ? (
+            <>
+              <a href="/login">로그인하세요 &gt;</a>
+              <a href="/signup">회원가입하세요 &gt;</a>
+            </>
+          ) : (
+            <a href="/mypage">마이페이지 &gt;</a>
+          )}
         </div>
       </div>
     </div>
