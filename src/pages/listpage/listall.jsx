@@ -4,8 +4,8 @@ import Navbar from '../navbar/navbar.jsx';
 import './listall.css';
 import { getUser } from '../../service/apiService.js';
 
-const FARM_IMAGE = '/src/assets/농지.gif';
-const BUILDING_IMAGE = '/src/assets/빌딩.gif';
+const FARM_IMAGE = '/assets/농지.gif';
+const BUILDING_IMAGE = '/assets/빌딩.gif';
 
 const ListAll = () => {
   const navigate = useNavigate();

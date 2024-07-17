@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import WupArrow from "../../assets/WupArrow.svg";
-import WdownArrow from "../../assets/WdownArrow.svg";
+import WupArrow from "/assets/WupArrow.svg";
+import WdownArrow from "/assets/WdownArrow.svg";
+import PropTypes from 'prop-types';
 
 // FaqItem 컴포넌트 정의
 const FaqItem = ({ id, question, answer }) => {
@@ -28,6 +29,12 @@ const FaqItem = ({ id, question, answer }) => {
       )}
     </div>
   );
+};
+
+FaqItem.propTypes = {
+  id: PropTypes.string,
+  question: PropTypes.string,
+  answer: PropTypes.string
 };
 
 export default FaqItem;

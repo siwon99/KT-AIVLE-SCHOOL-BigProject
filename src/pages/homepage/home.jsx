@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'; // useState: 모달 열림�
 import "./home.css";
 import Navbar from '../navbar/navbar.jsx';
 import Search from './Search.jsx';
-import WchatBot from "../../assets/WchatBot.svg"; // 권혜민 추가
+import WchatBot from "/public/assets/WchatBot.svg"
 import ChatBot from './ChatBot.jsx'; // 이건우 추가
 
 // 메인 페이지 문구

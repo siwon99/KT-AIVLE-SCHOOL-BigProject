@@ -167,8 +167,9 @@ function Map() {
   };
 
   return (
-    <>
+    <div className='page'>
       <Navbar />
+<<<<<<< Updated upstream
       <div className="mappage">
         <div className={`map-container ${isExpanded ? 'expanded' : ''}`}>
           <div className="map-title">지도</div>
@@ -179,6 +180,11 @@ function Map() {
         {modalFarmId && <Modal farm_id={modalFarmId} closeModal={closeModal} currentOverlay={currentOverlayRef.current} />}
       </div>
     </>
+=======
+      <div id='map' style={{ width: '1180px', height: '620px' }} />
+      {modalFarmId && <Modal farm_id={modalFarmId} closeModal={closeModal} />}
+    </div>
+>>>>>>> Stashed changes
   );
 }
 

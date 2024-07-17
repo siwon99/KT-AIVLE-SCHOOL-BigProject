@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import "./ChatBot.css";
-import botProfile from '../../assets/BchatBot.svg';
+import botProfile from "../../../public/assets/BchatBot.svg";
 
 // ChatBot 컴포넌트 정의
 const ChatBot = ({ closeModal }) => {
@@ -160,15 +160,14 @@ const ChatBot = ({ closeModal }) => {
   );
 };
 
-// 모달 창 닫기
-const closeModalHandler = () => {
-  setIsOpen(false); 
-  closeModal();
-};
+// // 모달 창 닫기
+// const closeModalHandler = () => {
+//   setIsOpen(false); 
+//   closeModal();
+// };
 
-// closeChat prop의 타입을 함수로 지정하고 필수 요소로 설정
 ChatBot.propTypes = {
-  closeChat: PropTypes.func.isRequired, 
+  closeModal: PropTypes.func.isRequired, 
 };
 
 export default ChatBot;
