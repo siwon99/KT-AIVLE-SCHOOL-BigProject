@@ -101,7 +101,7 @@ const Signup = () => {
               />
               <UserInput
                 type="birthday"
-                placeholder="생년월일"
+                placeholder="생년월일 (YYYY.MM.DD)"
                 pattern="\d{4}\.\d{2}\.\d{2}" // 정규식을 이용하여 형식을 지정
                 value={userInfo.birthday}
                 name="birthday"
