@@ -18,16 +18,16 @@ function Map() {
     longitude: 0,
     image: null,
   });
-
+ 
   // 모달 관련 상태
   const [modalFarmId, setModalFarmId] = useState(null);
   const [isExpanded, setIsExpanded] = useState(false); // 확장 상태 관리
   const currentOverlayRef = useRef(null);
   const currentMarkerRef = useRef(null);
-
+ 
   useEffect(() => {
     const token = localStorage.getItem('token');
-
+ 
     if (token) {
       fetch('http://3.39.228.42/farms/user/list/', {
         method: 'GET',
@@ -38,7 +38,7 @@ function Map() {
       })
         .then(response => {
           console.log('response:', response);
-
+ 
           if (response.ok) {
             return response.json();
           } else {
@@ -67,12 +67,12 @@ function Map() {
       navigate('/login');
     }
   }, [navigate]);
-
+ 
   // farms 상태가 업데이트될 때마다 현재 상태를 출력
   useEffect(() => {
     console.log('farms:', farms);
   }, [farms]);
-
+ 
   useEffect(() => {
     if (typeof window.kakao !== "undefined" && farms.length > 0) {
       const container = document.getElementById('map');
@@ -82,7 +82,7 @@ function Map() {
       };
       //지도 불러오기
       const map = new kakao.maps.Map(container, options);
-
+ 
       //마커 생성
       farms.forEach(farm => {
         const position = new kakao.maps.LatLng(farm.latitude, farm.longitude);
@@ -90,7 +90,7 @@ function Map() {
           position: position
         });
         marker.setMap(map);
-
+ 
         const content = `
         <div class="content-wrap">
           <div class="content-info">
@@ -98,10 +98,10 @@ function Map() {
             <div class="content-owner">소유자: ${farm.farm_owner}</div>
             <div class="content-size">면적: ${farm.farm_size}</div>
             <a class="content-link" data-id="${farm.farm_id}">더 보기 ></a>
-          </div>   
+          </div>  
         </div>
         `;
-
+ 
         const overlay = new kakao.maps.CustomOverlay({
           content: content,
           position: marker.getPosition(),
@@ -109,9 +109,9 @@ function Map() {
           yAnchor: 1.5,
           zIndex: 3
         });
-
+ 
         overlay.setMap(null);
-
+ 
         kakao.maps.event.addListener(marker, 'click', function () {
           if (currentOverlayRef.current && currentMarkerRef.current === marker) {
             currentOverlayRef.current.setMap(null);
@@ -126,7 +126,7 @@ function Map() {
             currentMarkerRef.current = marker;
           }
         });
-
+ 
         // 더보기 링크 클릭 시 모달창 띄우기 및 확장 상태로 변경
         document.addEventListener('click', function (e) {
           if (e.target && e.target.className === 'content-link') {
@@ -135,29 +135,29 @@ function Map() {
             setIsExpanded(true); // 상태 변경
           }
         });
-
+ 
       });
     }
   }, [farms, landDetail.image, navigate]);
-
+ 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 1024 && modalFarmId) {
         closeModal();
       }
     };
-
+ 
     window.addEventListener('resize', handleResize);
-
+ 
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, [modalFarmId]);
-
+ 
   const closeModal = () => {
     setModalFarmId(null);
     setIsExpanded(false); // 상태 초기화
-
+ 
     // 열려있는 overlay 닫기
     if (currentOverlayRef.current) {
       currentOverlayRef.current.setMap(null);
@@ -165,11 +165,10 @@ function Map() {
       currentMarkerRef.current = null;
     }
   };
-
+ 
   return (
-    <div className='page'>
+    <>
       <Navbar />
-<<<<<<< Updated upstream
       <div className="mappage">
         <div className={`map-container ${isExpanded ? 'expanded' : ''}`}>
           <div className="map-title">지도</div>
@@ -180,12 +179,7 @@ function Map() {
         {modalFarmId && <Modal farm_id={modalFarmId} closeModal={closeModal} currentOverlay={currentOverlayRef.current} />}
       </div>
     </>
-=======
-      <div id='map' style={{ width: '1180px', height: '620px' }} />
-      {modalFarmId && <Modal farm_id={modalFarmId} closeModal={closeModal} />}
-    </div>
->>>>>>> Stashed changes
   );
 }
-
+ 
 export default Map;
