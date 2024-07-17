@@ -3,7 +3,7 @@ import "./navbar.css";
 import WhomeIcon from "/assets/WhomeIcon.svg";
 import WlogIn from "/assets/WlogIn.svg";
 import WlogOut from "/assets/WlogOut.svg";
-import WsignUp from "../../assets/wsignup.png";
+import WsignUp from "/assets/Wsignup.png";
 //import Wmypage from "../../assets/wmypage.png";
 
 // Navbar 컴포넌트 정의
