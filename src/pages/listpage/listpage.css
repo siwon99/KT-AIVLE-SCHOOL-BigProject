@@ -192,6 +192,15 @@ body, html {
     height: calc(2px + (3 - 2) * ((100vw - 768px) / (1279 - 768))) !important;
   }
 
+  .farm-info,
+  .choiceBtn {
+    font-size: calc(13px + (14 - 13) * ((100vw - 768px) / (1279 - 768))) !important;
+  }
+
+  .num {
+    font-size: calc(14px + (15 - 14) * ((100vw - 768px) / (1279 - 768))) !important;
+  }
+
   .farm-name,
   .farm-owner,
   .farm-size {
@@ -234,6 +243,19 @@ body, html {
 
   .title::after {
     height: 2px !important;
+  }
+
+  .farm-info,
+  .choiceBtn {
+    font-size: 13px !important;
+  }
+
+  .num {
+    font-size: 14px !important;
+  }
+  
+  .pagination button {
+    font-size: 12px !important;
   }
 
   .no-farms {
