@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./navbar.css";
-import WhomeIcon from "/assets/WhomenewIcon.png";
-import WlogIn from "/assets/WlogIn.svg";
-import WlogOut from "/assets/WlogOut.svg";
+import WhomeIcon from "/assets/WhomeIcon.svg";
+import WlogIn from "/assets/Wlogin.jpg";
+import WlogOut from "/assets/Wlogout.jpg";
 import WsignUp from "/assets/Wsignup.jpg";
 import WmyPage from "/assets/Wmypage.jpg";
 

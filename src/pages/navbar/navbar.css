@@ -98,16 +98,20 @@ body, html {
   gap: 40px;
 }
 
-.navbar nav ul li.auth-icons a img.login-icon,
+.navbar nav ul li.auth-icons a img.login-icon {
+  height: 50px;
+  width: 45px;
+}
+
 .navbar nav ul li.auth-icons a img.logout-icon {
   height: 50px;
-  width: 50px;
+  width: 58px;
 }
 
 .navbar nav ul li.auth-icons a img.signup-icon,
 .navbar nav ul li.auth-icons a img.mypage-icon {
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
 }
 
 .navbar nav ul li.auth-icons a:hover {
