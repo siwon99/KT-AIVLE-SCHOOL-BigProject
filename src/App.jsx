@@ -21,6 +21,7 @@ const Notfound = lazy(() => import('./pages/notfoundpage/notfound'));
 const MyPage = lazy(() => import('./pages/mypage/mypage'));
 const AdminMyPage = lazy(() => import('./pages/mypage/adminmypage'));
 const UserMyPage = lazy(() => import('./pages/mypage/usermypage'));
+const PrivacyPolicy = lazy(() => import('./pages/privacypolicy/policypage'));
 
 function App() {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -51,6 +52,7 @@ function App() {
           <Route path="/teaminfo" element={<TeamInfo />} />
           <Route path="/notfound" element={<Notfound />} />
           <Route path="/listadmin" element={<ListAdmin/>} />
+          <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
         </Routes>
       </Suspense>
     </Router>
