@@ -1,9 +1,9 @@
 import React from 'react';
 import "./Search.css"; // 권혜민 추가
-import Nongsaro from "../../../public/assets/nongsaro.jpg";
-import Agriedu from "../../../public/assets/agriedu.svg";
-import Green from "../../../public/assets/green.svg";
-import Government from "../../../public/assets/government.jpg";
+import Nongsaro from "/assets/nongsaro.jpg";
+import Agriedu from "/assets/agriedu.svg";
+import Green from "/assets/green.svg";
+import Government from "/assets/government.jpg";
 
 const Search = () => (
   <div className="circle-container">
