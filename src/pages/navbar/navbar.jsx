@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./navbar.css";
-import WhomeIcon from "/assets/WhomeIcon.svg";
+import WhomeIcon from "/assets/WhomenewIcon.svg";
 import WlogIn from "/assets/Wlogin.jpg";
 import WlogOut from "/assets/Wlogout.jpg";
 import WsignUp from "/assets/Wsignup.jpg";
