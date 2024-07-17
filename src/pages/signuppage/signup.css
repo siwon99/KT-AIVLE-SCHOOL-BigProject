@@ -63,6 +63,14 @@ body, html {
   width: 500px;
 }
 
+.userInput {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  min-height: 330px;
+}
+
 .userInput input { /* 이름 ~ 생년월일 칸 */
   width: 100%;
   margin-bottom: 10px;
@@ -85,8 +93,8 @@ body, html {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-top: 50px;
-  gap: 40px;
+  /* margin-top: 50px; */
+  gap: 30px;
 }
 
 .button-container > * {
@@ -112,7 +120,7 @@ body, html {
 
 .password-message {
   color: red; 
-  transition: color 0.3s; 
+  transition: color 0.3s;
 }
 
 .password-match {

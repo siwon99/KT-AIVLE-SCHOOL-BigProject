@@ -206,8 +206,7 @@ body, html {
     gap: 20px;
   }
 
-  .navbar nav ul li.auth-icons a .login-icon,
-  .navbar nav ul li.auth-icons a .signup-icon {
+  .navbar nav ul li.auth-icons a .login-icon {
     display: block;
   }
 }

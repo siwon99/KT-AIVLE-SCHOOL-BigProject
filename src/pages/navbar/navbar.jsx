@@ -2,8 +2,9 @@ import React, {useEffect, useState} from "react";
 import "./navbar.css";
 import WhomeIcon from "/assets/WhomeIcon.svg";
 import WlogIn from "/assets/WlogIn.svg";
-import WsignUp from "/assets/WsignUp.svg";
 import WlogOut from "/assets/WlogOut.svg";
+import WsignUp from "../../assets/wsignup.png";
+//import Wmypage from "../../assets/wmypage.png";
 
 // Navbar 컴포넌트 정의
 const Navbar = () => {
