@@ -4,7 +4,7 @@ body {
   place-items: center;
   /* min-width: 320px;
   min-height: 100vh; */
-  background-image: url('./assets/mainBackImage.jpg');
+  background-image: url('/assets/mainBackImage.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
