@@ -166,10 +166,29 @@ body, html {
     padding-left: 20%;
     width: 100%;
   }
+
+  .map-title {
+    font-size: calc(28px + (30 - 28) * ((100vw - 768px) / (1279 - 768))) !important;
+  }
+
+  .map-title::after {
+    height: calc(2px + (3 - 2) * ((100vw - 768px) / (1279 - 768))) !important;
+  }
+
 }
 
 @media(max-width: 1024px) {
   .map-container.sidebar-open {
     padding-left: 210px;
+  }
+}
+
+@media (max-width: 768px) {
+  .map-title {
+    font-size: 28px !important;
+  }
+
+  .map-title::after {
+    height: 2px !important;
   }
 }
