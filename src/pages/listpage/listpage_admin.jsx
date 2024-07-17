@@ -32,19 +32,18 @@ const ListPage = () => {
       })
       .then(data => {
         console.log('data:', data);
-        setFarms(data.reverse());
+        setFarms(data.results.reverse());
 
         //currentFarmId에 맞는 페이지 설정
         const currentFarmId = localStorage.getItem('currentFarmId');
         if (currentFarmId) {
-          const index = data.findIndex(farm => farm.farm_id.toString() === currentFarmId);
+          const index = data.results.findIndex(farm => farm.farm_id.toString() === currentFarmId);
           if (index !== -1) {
             const page = Math.ceil((index + 1) / pageSize);
             setCurrentPage(page);
             localStorage.removeItem('currentFarmId');
           }
         }
-
       })
       // 로컬 스토리지에만 토큰이 남아있어도 로그인 페이지로 유도 가능
       .catch(error => {

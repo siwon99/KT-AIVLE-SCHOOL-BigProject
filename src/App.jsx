@@ -15,6 +15,7 @@ const Map = lazy(() => import('./pages/map/map'));
 const TeamInfo = lazy(() => import('./pages/servicepage/teamInfo'));
 const ListAll = lazy(() => import('./pages/listpage/listall'));
 const Iblist = lazy(() => import('./pages/listpage/iblist'));
+const ListAdmin = lazy(() => import('./pages/listpage/listpage_admin'));
 const IbDetailPage = lazy(() => import('./pages/ibdetailpage/ibdetailpage'));
 const Notfound = lazy(() => import('./pages/notfoundpage/notfound'));
 const MyPage = lazy(() => import('./pages/mypage/mypage'));
@@ -49,6 +50,7 @@ function App() {
           <Route path="/map" element={<Map />} />
           <Route path="/teaminfo" element={<TeamInfo />} />
           <Route path="/notfound" element={<Notfound />} />
+          <Route path="/listadmin" element={<ListAdmin/>} />
         </Routes>
       </Suspense>
     </Router>

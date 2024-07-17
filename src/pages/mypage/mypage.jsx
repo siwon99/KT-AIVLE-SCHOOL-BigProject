@@ -15,11 +15,10 @@ const MyPage = () => {
       getUser(token)
       .then(user => {
         if (user.is_staff) {
-					navigate('/mypage/admin');
-        }
-				else {
-					navigate('/mypage/user');
-				}
+			navigate('/mypage/admin');
+        } else {
+			navigate('/mypage/user');
+		}
       })
       .catch(error => {
         navigate('/notfound');
