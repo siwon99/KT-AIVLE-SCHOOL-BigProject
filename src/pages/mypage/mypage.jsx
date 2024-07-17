@@ -10,7 +10,6 @@ const MyPage = () => {
 
 	useEffect(() => {
 		const token = localStorage.getItem('token');
-
 		if (token) {
       getUser(token)
       .then(user => {
