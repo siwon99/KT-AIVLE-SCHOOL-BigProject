@@ -98,10 +98,9 @@ const DetailPage = () => {
             setFarmStatusText('유휴 농지');
           } else if (lastLog.farm_status === 2) {
             setFarmStatusText('분양 신청');
-          } else if (landLog.farm_status === 3) {
+          } else if (lastLog.farm_status === 3) {
             setFarmStatusText('분양(승인) 완료')
-          } 
-          else {
+          } else {
             setFarmStatusText('알 수 없음');
           }
         }
