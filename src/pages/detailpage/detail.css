@@ -41,9 +41,9 @@ body, html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 75%;
-  height: 100%;
-  margin-top: 135px;
+  width: 60%;
+  height: auto;
+  margin-top: 5%;
   gap: 20px;
   box-sizing: border-box;
 }
@@ -100,6 +100,11 @@ body, html {
   padding-right: 10px;
   font-size: 15px;
   flex-shrink: 0;
+}
+
+.d-info span {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .btn {
@@ -170,11 +175,6 @@ body, html {
 
   .btn {
     min-width: 150px;
-  }
-
-  .d-info span {
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 }
 

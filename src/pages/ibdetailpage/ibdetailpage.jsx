@@ -120,36 +120,37 @@ const IbDetailPage = () => {
   };
 
   return (
-    <>
+    <div className="page">
       <Navbar />
-      <div className="container">
-        <div className="detail-info">
-          <div className="d-title">불법 건축물(농지) 상세정보</div>
-          <div className="details">
-            <span className="d-info"><div className='info-title'>농지명:</div> {landDetail.farm_name}</span> 
-            <span className="d-info"><div className='info-title'>소유주:</div> {landDetail.farm_owner}</span> 
-            <span className="d-info"><div className='info-title'>위도 / 경도:</div> {landDetail.latitude}, {landDetail.longitude}</span> 
-            <span className="d-info"><div className='info-title'>농지 크기:</div> {landDetail.farm_size}</span> 
-            <span className="d-info"><div className='info-title'>게시 날짜:</div> {farmDate}</span>
-            <span className="d-info"><div className='info-title'>게시 시간:</div> {farmTime}</span>
-            <span className="d-info"><div className='info-title'>농지 상태:</div> {farmStatusText}</span>
-            <div className="btn">
-              <button onClick={handleBackClick} className="backBtn">이전</button>
-              <button onClick={handleRentClick} className="rentBtn">완료</button>
+      <div className='detailpage'>
+        <div className="detail-container">
+          <div className="detail-info">
+            <div className="detail-title">불법 건축물(농지) 상세정보</div>
+            <div className="details">
+              <span className="d-info" info-title="농지명"><span>{landDetail.farm_name}</span></span> 
+              <span className="d-info" info-title="소유주"><span>{landDetail.farm_owner}</span></span> 
+              <span className="d-info" info-title="위도 / 경도"><span>{landDetail.latitude}, {landDetail.longitude}</span></span> 
+              <span className="d-info" info-title="농지 크기"><span>{landDetail.farm_size}</span></span> 
+              <span className="d-info" info-title="게시 날짜"><span>{farmDate}</span></span>
+              <span className="d-info" info-title="게시 시간"><span>{farmTime}</span></span>
+              <span className="d-info" info-title="농지 상태"><span>{farmStatusText}</span></span>
+              <div className="btn">
+                <button onClick={handleBackClick} className="backBtn">이전</button>
+                <button onClick={handleRentClick} className="rentBtn">완료</button>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="map">
-          {landDetail.pd_image ? (
-            <img src={landDetail.pd_image.farm_pd_image} alt="FarmImg" />
-          ) : (
-            <p className='noImg'>이미지가 등록되지 않았습니다.</p>
-          )}
+          <div className="map">
+            {landDetail.pd_image ? (
+              <img src={landDetail.pd_image.farm_pd_image} alt="FarmImg" />
+            ) : (
+              <p className='noImg'>이미지가 등록되지 않았습니다.</p>
+            )}
+          </div>
         </div>
-
       </div>
-    </>
+    </div>
   );
 };
 
