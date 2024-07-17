@@ -80,6 +80,7 @@ body, html {
   border-radius: 50px;
   background-color: #FFFFFF;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .listbox_farm a {
@@ -106,14 +107,28 @@ body, html {
   }
 
   .listbox a {
-    font-size: calc(17px + (19 - 17) * ((100vw - 768px) / (1279 - 768)));
+    font-size: calc(15px + (17 - 15) * ((100vw - 768px) / (1279 - 768)));
+  }
+  
+  .listbox_farm,
+  .listbox_building {
+    min-width: 215px;
   }
 }
 
 @media (max-width: 1024px) {
+  .listbox {
+    flex-direction: column; /* Flex direction changed to column */
+    justify-content: center;
+    gap: 20px; /* Adjust gap if needed */
+    box-sizing: border-box;
+  }
+  
   .listbox_farm,
   .listbox_building {
-    min-width: 215px;
+    width: 100%;
+    height: 40%;
+    box-sizing: border-box;
   }
 }
 
@@ -123,6 +138,6 @@ body, html {
   }
 
   .listbox a {
-    font-size: 17px;
+    font-size: 15px;
   }
 }
