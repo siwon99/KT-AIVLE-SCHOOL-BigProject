@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import "./ChatBot.css";
-import botProfile from "../../../public/assets/BchatBot.svg";
+import botProfile from "/assets/BchatBot.svg";
 
 // ChatBot 컴포넌트 정의
 const ChatBot = ({ closeModal }) => {
