@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSwipeable } from 'react-swipeable'; // react-swipeable 라이브러리 추가
 import './slidebanner.css';
 
 // 슬라이드 데이터 배열
@@ -37,10 +38,18 @@ const SlideBanner = () => {
     };
   }, []);
 
+  // 스와이프 핸들러 함수
+  const handlers = useSwipeable({
+    onSwipedLeft: () => setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length),
+    onSwipedRight: () => setCurrentIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length),
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true
+  });
+
   return (
-    <div className="slider" tabIndex="0">
+    <div className="slider" tabIndex="0" {...handlers}>
       <div className="slide-container" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-        {slides.map((slide, index) => (
+        {slides.map((slide) => (
           <div
             key={slide.id}
             className="slide"
