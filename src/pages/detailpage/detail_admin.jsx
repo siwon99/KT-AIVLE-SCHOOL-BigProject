@@ -25,7 +25,7 @@ const formatTime = (timeString) => {
 };
  
 // 상세 정보 페이지
-const DetailPage = () => {
+const DetailAdmin = () => {
   const navigate = useNavigate();
   const { farm_id } = useParams();
  
@@ -116,14 +116,8 @@ const DetailPage = () => {
  
   const handleBackClick =() => {
     localStorage.setItem('currentFarmId', farm_id);
-    navigate('/land_list');
+    navigate('/listadmin');
   }
- 
-  const handleRentClick = () => {
-    alert('임대 신청이 완료되었습니다.');
-    localStorage.setItem('currentFarmId', farm_id);
-    navigate('/land_list');
-  };
  
   return (
     <>
@@ -132,18 +126,35 @@ const DetailPage = () => {
         <div className="detail-info">
           <div className="d-title">농지 상세정보</div>
           <div className="details">
-            <span className="d-info"><div className='info-title'>농지명:</div> {landDetail.farm_name}</span>
-            <span className="d-info"><div className='info-title'>소유주:</div> {landDetail.farm_owner}</span>
-            <span className="d-info"><div className='info-title'>위도 / 경도:</div> {landDetail.latitude}, {landDetail.longitude}</span>
-            <span className="d-info"><div className='info-title'>농지 크기:</div> {landDetail.farm_size}</span>
-            <span className="d-info"><div className='info-title'>게시 날짜:</div> {farmDate}</span>
-            <span className="d-info"><div className='info-title'>게시 시간:</div> {farmTime}</span>
-            <span className="d-info"><div className='info-title'>농지 상태:</div> {farmStatusText}</span>
-            <div className="btn">
-              <button onClick={handleBackClick} className="backBtn">이전</button>
-              <button onClick={handleRentClick} className="rentBtn">임대</button>
+              <span className="d-info" info-title="농지명">
+                <span>{landDetail.farm_name}</span>
+              </span>
+              <span className="d-info" info-title="소유주">
+                <span>{landDetail.farm_owner}</span>
+              </span>
+              <span className="d-info" info-title="위도 / 경도">
+                <span>
+                  {landDetail.latitude}, {landDetail.longitude}
+                </span>
+              </span>
+              <span className="d-info" info-title="농지 크기">
+                <span>{landDetail.farm_size}</span>
+              </span>
+              <span className="d-info" info-title="게시 날짜">
+                <span>{farmDate}</span>
+              </span>
+              <span className="d-info" info-title="게시 시간">
+                <span>{farmTime}</span>
+              </span>
+              <span className="d-info" info-title="농지 상태">
+                <span>{farmStatusText}</span>
+              </span>
+              <div className="btn">
+                <button onClick={handleBackClick} className="backBtn">
+                  이전
+                </button>
+              </div>
             </div>
-          </div>
         </div>
  
         <div className="map">
@@ -159,4 +170,4 @@ const DetailPage = () => {
   );
 };
  
-export default DetailPage;
+export default DetailAdmin;

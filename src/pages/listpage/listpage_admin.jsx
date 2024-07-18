@@ -31,7 +31,7 @@ const ListPage = () => {
         }
       })
       .then(data => {
-        console.log('data:', data);
+        console.log('data.results:', data.results);
         setFarms(data.results.reverse());
 
         //currentFarmId에 맞는 페이지 설정
@@ -88,7 +88,7 @@ const ListPage = () => {
   // 농지 선택 시 해당 farm_id localStorage에 저장
   const handleFarmDetail = (farmId) => {
     localStorage.setItem('selectedFarmId', farmId);
-    navigate(`/detail/${farmId}`);
+    navigate(`/detailadmin/${farmId}`);
   };
 
   return (
