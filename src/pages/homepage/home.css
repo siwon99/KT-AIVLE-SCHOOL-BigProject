@@ -189,6 +189,7 @@ body, html {
 
 .chatbot:hover {
   cursor: pointer;
+  transform: scale(1.1);
 }
 
 .chatbot img {
