@@ -95,27 +95,27 @@ const Navbar = () => {
           
           <li className="auth-icons">
             {!token ? (
-              <div>
-              <a href="/login" className="auth-link login-link">
-                <img src={WlogIn} alt="Log In" className="login-icon" />
-                <span>Login</span>
-              </a>
-              <a href="/signup" className="auth-link signup-link">
-                <img src={WsignUp} alt="Sign Up" className="signup-icon" />
-                <span>Signup</span>
-              </a>
-            </div>
-          ) : (
-            <div>
-              <a href="/mypage" className="auth-link mypage-link">
-                <img src={WmyPage} alt="My Page" className="mypage-icon" />
-                <span>Mypage</span>
-              </a>
-              <a href="/logout" className="auth-link logout-link">
-                <img src={WlogOut} alt="Log Out" className="logout-icon" />
-                <span>Logout</span>
-              </a>
-            </div>
+              <div className="first-icons">
+                <a href="/login" className="login-link">
+                  <img src={WlogIn} alt="Log In" className="login-icon"/>
+                  <span>Login</span>
+                </a>
+                <a href="/signup" className="signup-link">
+                  <img src={WsignUp} alt="Sign Up" className="signup-icon"/>
+                  <span>Signup</span>
+                </a>
+              </div>
+            ) : (
+              <div className="second-icons">
+                <a href="/mypage" className="mypage-link">
+                  <img src={WmyPage} alt="My Page" className="mypage-icon"/>
+                  <span>Mypage</span>
+                </a>
+                <a href="/logout" className="logout-link">
+                  <img src={WlogOut} alt="Log Out" className="logout-icon"/>
+                  <span>Logout</span>
+                </a>
+              </div>
             )}
           </li>
         </ul>

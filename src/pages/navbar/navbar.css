@@ -57,6 +57,7 @@ body, html {
   align-items: center;
   width: 20%;
   height: 100%;
+  box-sizing: border-box;
 }
 
 .navbar nav ul li.home-icon a {
@@ -72,9 +73,10 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60%;
+  /* width: 60%; */
   height: 100%;
   gap: 80px;
+  box-sizing: border-box;
 }
 
 .navbar nav ul li.category:hover {
@@ -82,59 +84,73 @@ body, html {
   font-weight: bold;
 }
 
-.navbar nav ul li.auth-icons { /* 로그인, 회원 아이콘 */
+.auth-icons { /* 로그인, 회원 아이콘 */
   display: flex;
   justify-content: center;
   align-items: center;
-  align-items: flex-end;
-  width: 20%;
+  width: 10%;
   height: 100%;
+  margin-right: 5%;
+  box-sizing: border-box;
 }
 
-.navbar nav ul li.auth-icons div {
+.first-icons,
+.second-icons {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  align-items: flex-end;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
-  gap: 40px;
+  width: 90%;
+  height: 90%;
+  gap: 20px;
+  box-sizing: border-box;
 }
 
-.navbar nav ul li.auth-icons a.auth-link {
+.login-link,
+.signup-link,
+.mypage-link,
+.logout-link {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-decoration: none;
   color: #FFFFFF;
-  font-size: 12px;
+  height: 100%;
 }
 
-.navbar nav ul li.auth-icons a.auth-link.mypage-link,
-.navbar nav ul li.auth-icons a.auth-link.signup-link {
-  gap: 7px;
+.signup-link,
+.mypage-link{
+  margin-top: 5px;
+  gap: 5px;
 }
 
-.navbar nav ul li.auth-icons a img.login-icon {
-  height: 50px;
-  width: 45px;
+.logout-link {
+  margin-left: 11px;
 }
 
-.navbar nav ul li.auth-icons a img.logout-icon {
-  height: 50px;
-  width: 58px;
+.login-link span,
+.signup-link span,
+.mypage-link span,
+.logout-link span {
+  font-size: 13px;
 }
 
-.navbar nav ul li.auth-icons a img.signup-icon,
-.navbar nav ul li.auth-icons a img.mypage-icon {
-  /* height: 35px; */
-  width: 35px;
-  height: auto;
+.signup-link img,
+.mypage-link img {
+  max-width: 30px;
+  max-height: 30px;
 }
 
-.navbar nav ul li.auth-icons a:hover {
-  cursor: pointer;
+.login-link img {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.logout-link img {
+  width: 51px;
+  max-width: 51px;
+  max-height: 43px;
+  image-rendering: -webkit-optimize-contrast; /*크롬기준 이미지 선명하게*/
 }
 
 .hamburger-icon {
