@@ -100,57 +100,63 @@ const UserMyPage = () => {
 		return `${year}년 ${month}월 ${day}일 ${period} ${hours}:${minutes}`;
 	};
 
-
 	return (
-    <div className="page">
-      {/* <Navbar /> */}
-      <div className='listpage'>
-        <div className="lists-container">
-          <div className="title">농지 임대 신청 리스트</div>
-
-          <div className='lists-info'>
-            {currentItems.length > 0 ? (
-              currentItems.map((farm, index) => (
-                <div className='lists' key={index}>
-                  <div className='farmsign-info'>
-                    <div className='num'>{logs.length - (firstIndex + index)}.</div>
-                    <div key={index} className='admin-mypage-content'>
-                      <div className="farmsign-date"> 임대 신청 시간 {formatDate(farm.farm_created)} </div>
-                      <div className="farmsign-id"> 농지 번호 {farm.farm_id} </div>
-                      <div className="farmsign-name"> 농지명 {farm.farm_name} </div>
-                      <div className="farmsign-logID"> 농지 상태 {getStatusText(farm.farm_status)} </div>
-                      <div className="farmsign-user"> 임대 신청인 {farm.user_id} </div>
-                    </div>
-                    {/* <button onClick={() => handleFarmDetail(farm.farm_id)} className="choiceBtn">선택</button> */}
-                  </div>
-                </div>
-              ))
-            ) : (
-              <p className="no-farms">임대 신청된 농지가 없습니다.</p>
-            )}
-          </div>
-
-          <div className='pagination-container'>
-            <div className="pagination">
-              {Pagination(1, "<<", currentPage === 1)}
-              {Pagination(currentPage - 1, "<", currentPage === 1)}
-              {Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i).map(number => (
-                <button 
-                  key={number} 
-                  onClick={() => changePage(number)} 
-                  className={number === currentPage ? 'active' : ''}
-                >
-                  {number}
-                </button>
-              ))}
-              {Pagination(currentPage + 1, ">", currentPage === totalPages)}
-              {Pagination(totalPages, ">>", currentPage === totalPages)}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+		<div className="page">
+			<Navbar />
+			<div className='mypage'>
+				<div className="amypage-container">
+					<div className="amypage-title">농지 임대 신청 리스트</div>
+					<table className="mypage-info">
+						<thead>
+							<tr>
+								<th className="wide-column">임대<br/>신청 시간</th>
+								<th className="narrow-column">농지<br/>번호</th>
+								<th className="wide-column">농지명</th>
+								<th className="narrow-column">농지<br/>상태</th>
+								<th className="narrow-column">임대<br/>신청인</th>
+								<th className="narrow-column">선택 버튼</th>
+							</tr>
+						</thead>
+						<tbody>
+							{currentItems.length > 0 ? (
+								currentItems.map((farm, index) => (
+									<tr key={index}>
+										<td className="wide-column">{formatDate(farm.farm_created)}</td>
+										<td className="narrow-column">{farm.farm_id}</td>
+										<td className="wide-column">{farm.farm_name}</td>
+										<td className="narrow-column">{farm.farm_status_log_id}</td>
+										<td className="narrow-column">{farm.user_id}</td>
+										<td className="narrow-column"><button onClick={() => handleFarmDetail(farm.farm_id)} className="choiceBtn">선택</button></td>
+									</tr>
+								))
+							) : (
+								<tr>
+									<td colSpan="7" className="no-farms">임대 신청된 농지가 없습니다.</td>
+								</tr>
+							)}
+						</tbody>
+					</table>
+					<div className='pagination-container'>
+						<div className="pagination">
+							{Pagination(1, "<<", currentPage === 1)}
+							{Pagination(currentPage - 1, "<", currentPage === 1)}
+							{Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i).map(number => (
+								<button 
+									key={number} 
+									onClick={() => changePage(number)} 
+									className={number === currentPage ? 'active' : ''}
+								>
+									{number}
+								</button>
+							))}
+							{Pagination(currentPage + 1, ">", currentPage === totalPages)}
+							{Pagination(totalPages, ">>", currentPage === totalPages)}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 }
 
 export default UserMyPage;
