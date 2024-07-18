@@ -109,24 +109,26 @@ const UserMyPage = () => {
 					<table className="mypage-info">
 						<thead>
 							<tr>
-								<th className="wide-column">임대<br/>신청 시간</th>
-								<th className="narrow-column">농지<br/>번호</th>
+                <th className='narrow-column'>No</th>
+								<th className="wide-column">임대 신청 시간</th>
+								<th className="narrow-column">농지 번호</th>
 								<th className="wide-column">농지명</th>
-								<th className="narrow-column">농지<br/>상태</th>
-								<th className="narrow-column">임대<br/>신청인</th>
-								<th className="narrow-column">선택 버튼</th>
+								<th className="narrow-column">농지 상태</th>
+								<th className="narrow-column">임대 신청인</th>
 							</tr>
 						</thead>
 						<tbody>
 							{currentItems.length > 0 ? (
 								currentItems.map((farm, index) => (
 									<tr key={index}>
+										<td className='narrow-column'>
+											<div className='No'>{logs.length - (firstIndex + index)}.</div>
+										</td>
 										<td className="wide-column">{formatDate(farm.farm_created)}</td>
 										<td className="narrow-column">{farm.farm_id}</td>
 										<td className="wide-column">{farm.farm_name}</td>
 										<td className="narrow-column">{farm.farm_status_log_id}</td>
 										<td className="narrow-column">{farm.user_id}</td>
-										<td className="narrow-column"><button onClick={() => handleFarmDetail(farm.farm_id)} className="choiceBtn">선택</button></td>
 									</tr>
 								))
 							) : (
