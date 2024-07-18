@@ -86,28 +86,28 @@ const AdminMyPage = () => {
 
   return (
     <div className="page">
-      {/* <Navbar /> */}
-      <div className='listpage'>
-        <div className="lists-container">
+      <Navbar />
+      <div className='mypage'>
+        <div className="amypage-container">
           <div className="title">농지 임대 신청 리스트</div>
 
-          <div className='lists-info'>
+          <div className='mypage-info'>
             {currentItems.length > 0 ? (
               currentItems.map((farm, index) => (
-                <div className='lists' key={index}>
-                  <div className='farmsign-info'>
-                    <div className='num'>{logs.length - (firstIndex + index)}.</div>
-                    <div key={index} className='admin-mypage-content'>
-                      <div className="farmsign-date"> 농지 등록 날짜: {formatDate(farm.farm_created)} </div>
-                      <div className="farmsign-id"> 농지 아이디: {farm.farm_id} </div>
-                      <div className="farmsign-name"> 농지명: {farm.farm_name} </div>
-                      <div className="farmsign-status"> 농지 현재 상태: {farm.farm_status} </div>
-                      <div className="farmsign-logID"> 농지 상태 기록: {farm.farm_status_log_id} </div>
-                      <div className="farmsign-user"> 임대 신청인: {farm.user_id} </div>
+                  <div className='lists' key={index}>
+                    <div className='farmsign-info'>
+                      <div className='num'>{logs.length - (firstIndex + index)}.</div>
+                      <div key={index} className='admin-mypage-content'>
+                        <div className="farmsign-date"> 농지 등록 날짜: {formatDate(farm.farm_created)} </div>
+                        <div className="farmsign-id"> 농지 아이디: {farm.farm_id} </div>
+                        <div className="farmsign-name"> 농지명: {farm.farm_name} </div>
+                        <div className="farmsign-status"> 농지 현재 상태: {farm.farm_status} </div>
+                        <div className="farmsign-logID"> 농지 상태 기록: {farm.farm_status_log_id} </div>
+                        <div className="farmsign-user"> 임대 신청인: {farm.user_id} </div>
+                      </div>
+                      <button onClick={() => handleFarmDetail(farm.farm_id)} className="choiceBtn">선택</button>
                     </div>
-                    <button onClick={() => handleFarmDetail(farm.farm_id)} className="choiceBtn">선택</button>
                   </div>
-                </div>
               ))
             ) : (
               <p className="no-farms">임대 신청된 농지가 없습니다.</p>
