@@ -75,15 +75,26 @@ export const rentFarm = async (fid, token) => {
 	}
 };
 
-// 관리자가 특정 임대 신청을 승인하기 위해 해당 신청 ID, 사용자 ID, 토큰을 사용하여 POST 요청
+// 관리자가 특정 임대 신청을 승인하기 위해 사용자 ID, 토큰을 사용하여 POST 요청
 export const approveRent = async (lid, uid, token) => {
 	try {
 		const res = await postWithToken(`/farms/admin/mypage/detail/${lid}/`, token, {
-			'user_id' : uid,
-			'farm_status_log_id' : lid
+			'user_id' : uid
 		});
 		return res;
 	} catch (error) {
 		throw error;
 	}
 };
+
+// 관리자가 특정 임대 신청을 거절
+export const refuseRent = async (lid, uid, token) => {
+	try {
+		const res = await postWithToken(`/farms/admin/mypage/detail/${lid}/`, token, {
+			'user_id' : uid
+		}, 'DELETE');
+		return res;
+	} catch (error) {
+		throw error;
+	}
+}
