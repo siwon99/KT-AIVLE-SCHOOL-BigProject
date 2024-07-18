@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../navbar/navbar';
+import SlideBanner from './slidebanner';
 import "./service.css";
 import serviceFlowImage from '/assets/serviceflow.webp';
 
@@ -66,6 +67,7 @@ const ServiceIntro = () => {
       <ParagraphList items={introItems} />
 
       <SectionTitle title="주요 기능" />
+      <SlideBanner /> {/* 슬라이드 배너 추가 */}
       <ParagraphList items={featuresItems} />
 
       <SectionTitle title="기대 효과" />
