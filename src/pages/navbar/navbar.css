@@ -86,6 +86,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+  align-items: flex-end;
   width: 20%;
   height: 100%;
 }
@@ -94,20 +95,42 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+  align-items: flex-end;
   flex-direction: row;
+  width: 100%;
+  height: 100%;
   gap: 40px;
 }
 
-.navbar nav ul li.auth-icons a img.login-icon,
+.navbar nav ul li.auth-icons a.auth-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 12px;
+}
+
+.navbar nav ul li.auth-icons a.auth-link.mypage-link,
+.navbar nav ul li.auth-icons a.auth-link.signup-link {
+  gap: 7px;
+}
+
+.navbar nav ul li.auth-icons a img.login-icon {
+  height: 50px;
+  width: 45px;
+}
+
 .navbar nav ul li.auth-icons a img.logout-icon {
   height: 50px;
-  width: 50px;
+  width: 58px;
 }
 
 .navbar nav ul li.auth-icons a img.signup-icon,
 .navbar nav ul li.auth-icons a img.mypage-icon {
-  height: 40px;
-  width: 40px;
+  /* height: 35px; */
+  width: 35px;
+  height: auto;
 }
 
 .navbar nav ul li.auth-icons a:hover {
@@ -173,7 +196,7 @@ body, html {
   padding: 10px 45px;
   text-decoration: none;
   font-size: 13px;
-  color:#00008C;
+  color: #00008C;
 }
 
 @media (max-width: 1279px) { /* 반응형 */
