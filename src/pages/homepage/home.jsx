@@ -69,13 +69,15 @@ const Footer = () => (
 // 챗봇 이미지 클릭 시 모달 열고 닫기
 const HomePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isToolTipOpen, setIsToolTipOpen] = useState(true);
 
-  const handleChatBotClick = () => {
+  const openChatBot = () => {
     setIsModalOpen(true);
   };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
+  // 챗봇 옆 말풍선 닫기
+  const closeToolTip = () => {
+    setIsToolTipOpen(false);
   };
 
   return (
@@ -88,13 +90,24 @@ const HomePage = () => {
         <Youtube />
         <Footer />
       </main>
-      {isModalOpen && <ChatBot closeModal={closeModal} />}
-      <div className="chatbot" onClick={handleChatBotClick}>
-        <img src={WchatBot} alt="chatbot" />
+      {isModalOpen && <ChatBot closeModal={() => setIsModalOpen(false)} />}
+      <div className="chatbot">
+        <img src={WchatBot} alt="chatbot" onClick={openChatBot} />
+        {/* 챗봇 옆 말풍선 추가 */}
+        {isToolTipOpen && (
+          <div className="chatBot-tooltip" id="chatBotToolTip">
+            <button type="button" className="chatBot-tooltip-close" title="닫기" onClick={closeToolTip}>
+              닫기
+            </button>
+            안녕하세요. 챗봇입니다.
+            <br/> 
+            챗봇 아이콘을 눌러 챗봇을 시작해주세요!
+          </div>
+        )}
       </div>
     </div>
   );
-
+  
 };
 
 export default HomePage;

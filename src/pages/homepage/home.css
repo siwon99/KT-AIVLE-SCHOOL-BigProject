@@ -196,6 +196,72 @@ body, html {
   height: 60%;
 }
 
+/* 챗봇 말풍선 추가 */
+.chatBot-tooltip {
+  position: absolute;
+  top: 50%;
+  right: 80px;/*calc(82px + 10px);*/
+  padding: 1rem .85rem .85rem;
+  width: max-content;
+  font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+  font-size: 14px;
+  color: #454545;
+  letter-spacing: -0.06rem;
+  word-break: keep-all;
+  background-color: #f3f6f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transform: translateY(-50%);
+}
+
+.chatBot-tooltip:after, .chatBot-tooltip:before {
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.chatBot-tooltip:after {
+  border-color: rgba(243, 246, 249, 0);
+  border-left-color: #f3f6f9;
+  border-width: 10px;
+  margin-top: -10px;
+}
+
+.chatBot-tooltip:before {
+  border-color: rgba(221, 221, 221, 0);
+  border-left-color: #ddd;
+  border-width: 11px;
+  margin-top: -11px;
+}
+
+.chatBot-tooltip-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  background-color: transparent;
+  border-width: 0;
+  cursor: pointer;
+}
+
+.chatBot-tooltip-close::after {
+  content: "\02DF";
+  width: 25px;
+  height: 25px;
+  font-size: 20px;
+  color: #454545;
+  line-height: 27px;
+  display: inline-block;
+}
+
+/*------------------ */
 .footer {
   grid-column: 1 / span 2;  /* 1열~2열 */
   grid-row: 3;
