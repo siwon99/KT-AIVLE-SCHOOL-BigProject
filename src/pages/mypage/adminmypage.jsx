@@ -58,13 +58,6 @@ const AdminMyPage = () => {
     }
   };
 
-  // 페이지네이션 버튼 렌더링 함수
-  const Pagination = (page, symbol, isDisabled) => (
-    <button onClick={() => changePage(page)} disabled={isDisabled}>
-      {symbol}
-    </button>
-  );
-
   // 농지 선택 시 해당 farm_id localStorage에 저장
   const handleFarmDetail = (farmId) => {
     localStorage.setItem('selectedFarmId', farmId);
@@ -127,8 +120,8 @@ const AdminMyPage = () => {
 
             <div className='pagination-container'>
               <div className="pagination">
-                {Pagination(1, "<<", currentPage === 1)}
-                {Pagination(currentPage - 1, "<", currentPage === 1)}
+                <button onClick={() => changePage(1)} disabled={currentPage === 1}>{"<<"}</button>
+                <button onClick={() => changePage(currentPage - 1)} disabled={currentPage === 1}>{"<"}</button>
                 {Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i).map(number => (
                   <button 
                     key={number} 
@@ -138,8 +131,8 @@ const AdminMyPage = () => {
                     {number}
                   </button>
                 ))}
-                {Pagination(currentPage + 1, ">", currentPage === totalPages)}
-                {Pagination(totalPages, ">>", currentPage === totalPages)}
+                <button onClick={() => changePage(currentPage + 1)} disabled={currentPage === totalPages}>{">"}</button>
+                <button onClick={() => changePage(totalPages)} disabled={currentPage === totalPages}>{">>"}</button>
               </div>
             </div>
           </div>
