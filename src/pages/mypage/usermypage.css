@@ -96,12 +96,27 @@ body, html {
   padding: 10px;
 }
 
+.num-column {
+  width: 5%;
+  text-align: center;
+}
+
 .wide-column {
-  width: 32%;
+  width: 25%;
+  text-align: left;
+}
+
+.wide1-column {
   text-align: left;
 }
 
 .narrow-column {
+  width: 12%;
+  text-align: center;
+}
+
+.narrow1-column {
+  width: 11%;
   text-align: center;
 }
 

@@ -109,10 +109,10 @@ const UserMyPage = () => {
 					<table className="mypage-info">
 						<thead>
 							<tr>
-                <th className='narrow-column'>No</th>
+                				<th className='num-column'>No</th>
 								<th className="wide-column">임대 신청 시간</th>
-								<th className="narrow-column">농지 번호</th>
-								<th className="wide-column">농지명</th>
+								<th className="narrow1-column">농지 번호</th>
+								<th className="wide1-column">농지명</th>
 								<th className="narrow-column">농지 상태</th>
 								<th className="narrow-column">임대 신청인</th>
 							</tr>
@@ -121,12 +121,12 @@ const UserMyPage = () => {
 							{currentItems.length > 0 ? (
 								currentItems.map((farm, index) => (
 									<tr key={index}>
-										<td className='narrow-column'>
+										<td className='num-column'>
 											<div className='No'>{logs.length - (firstIndex + index)}.</div>
 										</td>
 										<td className="wide-column">{formatDate(farm.farm_created)}</td>
-										<td className="narrow-column">{farm.farm_id}</td>
-										<td className="wide-column">{farm.farm_name}</td>
+										<td className="narrow1-column">{farm.farm_id}</td>
+										<td className="wide1-column">{farm.farm_name}</td>
 										<td className="narrow-column">{getStatusText(farm.farm_status)}</td>
 										<td className="narrow-column">{farm.user_id}</td>
 									</tr>
