@@ -82,10 +82,10 @@ const UserMyPage = () => {
 	);
 	
 	// 농지 선택 시 해당 farm_id localStorage에 저장
-	const handleFarmDetail = (farmId) => {
-		localStorage.setItem('selectedFarmId', farmId);
-		navigate(`/detail/${farmId}`);
-	};
+	// const handleFarmDetail = (farmId) => {
+	// 	localStorage.setItem('selectedFarmId', farmId);
+	// 	navigate(`/detail/${farmId}`);
+	// };
 
 	// 날짜 및 시간 포맷팅 함수
 	const formatDate = (dateString) => {
@@ -121,7 +121,7 @@ const UserMyPage = () => {
                       <div className="farmsign-logID"> 농지 상태 {getStatusText(farm.farm_status)} </div>
                       <div className="farmsign-user"> 임대 신청인 {farm.user_id} </div>
                     </div>
-                    <button onClick={() => handleFarmDetail(farm.farm_id)} className="choiceBtn">선택</button>
+                    {/* <button onClick={() => handleFarmDetail(farm.farm_id)} className="choiceBtn">선택</button> */}
                   </div>
                 </div>
               ))
