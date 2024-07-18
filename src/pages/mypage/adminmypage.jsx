@@ -89,46 +89,58 @@ const AdminMyPage = () => {
       <Navbar />
       <div className='mypage'>
         <div className="amypage-container">
-          <div className="title">농지 임대 신청 리스트</div>
+          <div className="amypage-title">농지 임대 신청 리스트</div>
 
           <div className='mypage-info'>
             {currentItems.length > 0 ? (
               currentItems.map((farm, index) => (
-                  <div className='lists' key={index}>
-                    <div className='farmsign-info'>
-                      <div className='num'>{logs.length - (firstIndex + index)}.</div>
-                      <div key={index} className='admin-mypage-content'>
-                        <div className="farmsign-date"> 농지 등록 날짜: {formatDate(farm.farm_created)} </div>
-                        <div className="farmsign-id"> 농지 아이디: {farm.farm_id} </div>
-                        <div className="farmsign-name"> 농지명: {farm.farm_name} </div>
-                        <div className="farmsign-status"> 농지 현재 상태: {farm.farm_status} </div>
-                        <div className="farmsign-logID"> 농지 상태 기록: {farm.farm_status_log_id} </div>
-                        <div className="farmsign-user"> 임대 신청인: {farm.user_id} </div>
+                <div className='lists' key={index}>
+                  <div className='farmsign-info'>
+                    <div className='num'>{logs.length - (firstIndex + index)}.</div>
+                    <div key={index} className='amypage-content'>
+                      <div className="farmsign-date">
+                        <span className="label">농지 등록 날짜</span> {formatDate(farm.farm_created)}
                       </div>
-                      <button onClick={() => handleFarmDetail(farm.farm_id)} className="choiceBtn">선택</button>
+                      <div className="farmsign-id">
+                        <span className="label">농지 아이디</span> {farm.farm_id}
+                      </div>
+                      <div className="farmsign-name">
+                        <span className="label">농지명</span> {farm.farm_name}
+                      </div>
+                      <div className="farmsign-status">
+                        <span className="label">농지 현재 상태</span> {farm.farm_status}
+                      </div>
+                      <div className="farmsign-logID">
+                        <span className="label">농지 상태 기록</span> {farm.farm_status_log_id}
+                      </div>
+                      <div className="farmsign-user">
+                        <span className="label">임대 신청인</span> {farm.user_id}
+                      </div>
                     </div>
+                    <button onClick={() => handleFarmDetail(farm.farm_id)} className="choiceBtn">선택</button>
                   </div>
+                </div>
               ))
             ) : (
               <p className="no-farms">임대 신청된 농지가 없습니다.</p>
             )}
-          </div>
 
-          <div className='pagination-container'>
-            <div className="pagination">
-              {Pagination(1, "<<", currentPage === 1)}
-              {Pagination(currentPage - 1, "<", currentPage === 1)}
-              {Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i).map(number => (
-                <button 
-                  key={number} 
-                  onClick={() => changePage(number)} 
-                  className={number === currentPage ? 'active' : ''}
-                >
-                  {number}
-                </button>
-              ))}
-              {Pagination(currentPage + 1, ">", currentPage === totalPages)}
-              {Pagination(totalPages, ">>", currentPage === totalPages)}
+            <div className='pagination-container'>
+              <div className="pagination">
+                {Pagination(1, "<<", currentPage === 1)}
+                {Pagination(currentPage - 1, "<", currentPage === 1)}
+                {Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i).map(number => (
+                  <button 
+                    key={number} 
+                    onClick={() => changePage(number)} 
+                    className={number === currentPage ? 'active' : ''}
+                  >
+                    {number}
+                  </button>
+                ))}
+                {Pagination(currentPage + 1, ">", currentPage === totalPages)}
+                {Pagination(totalPages, ">>", currentPage === totalPages)}
+              </div>
             </div>
           </div>
         </div>
