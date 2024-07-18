@@ -173,7 +173,7 @@ const DetailPage = () => {
                   이전
                 </button>
                 <button onClick={handleRentClick} className="rentBtn">
-                  임대
+                  신청
                 </button>
               </div>
             </div>
