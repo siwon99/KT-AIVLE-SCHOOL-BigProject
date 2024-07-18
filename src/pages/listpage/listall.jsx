@@ -20,11 +20,25 @@ const ListAll = () => {
     });
     
     if (token) {
-      getUser(token)
+      fetch('http://3.39.228.42/users/authorization/', { 
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Token ${token}`,
+        }, 
+      })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error();
+        }
+      })
       .then(data => {
         console.log('data:', data);
-        if (data.is_staff) {
-          setIsadmin(true);
+        // 관리자가 아니라면 바로 유휴농지 페이지를 보여줌
+        if (!data.is_staff) {
+          navigate('/land_list')
         }
         setLoading(false);
       })
