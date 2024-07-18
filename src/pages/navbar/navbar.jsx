@@ -29,6 +29,7 @@ const Navbar = () => {
         document.querySelector('.detailpage')?.classList.remove('sidebar-open');
         document.querySelector('.map-container')?.classList.remove('sidebar-open');
         document.querySelector('.modal-container')?.classList.remove('sidebar-open');
+        document.querySelector('.umypage-container')?.classList.remove('sidebar-open');
       } else if (menuOpen) {
         document.querySelector('.content')?.classList.add('sidebar-open');
         document.querySelector('.list-container')?.classList.add('sidebar-open');
@@ -41,6 +42,7 @@ const Navbar = () => {
         document.querySelector('.detailpage')?.classList.add('sidebar-open');
         document.querySelector('.map-container')?.classList.add('sidebar-open');
         document.querySelector('.modal-container')?.classList.add('sidebar-open');
+        document.querySelector('.umypage-container')?.classList.add('sidebar-open');
       }
     };
 
@@ -55,16 +57,17 @@ const Navbar = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
     document.querySelector('.content')?.classList.toggle('sidebar-open', !menuOpen);
-    document.querySelector('.list-container')?.classList.toggle('sidebar-open', !menuOpen);  
-    document.querySelector('.listpage')?.classList.toggle('sidebar-open', !menuOpen);  
-    document.querySelector('.service-contents')?.classList.toggle('sidebar-open', !menuOpen); 
-    document.querySelector('.team-contents')?.classList.toggle('sidebar-open', !menuOpen);    
-    document.querySelector('.faq-container')?.classList.toggle('sidebar-open', !menuOpen); 
-    document.querySelector('.signup-content')?.classList.toggle('sidebar-open', !menuOpen);  
-    document.querySelector('.login-content')?.classList.toggle('sidebar-open', !menuOpen); 
-    document.querySelector('.detailpage')?.classList.toggle('sidebar-open', !menuOpen); 
-    document.querySelector('.map-container')?.classList.toggle('sidebar-open', !menuOpen); 
-    document.querySelector('.modal-container')?.classList.toggle('sidebar-open', !menuOpen);   
+    document.querySelector('.list-container')?.classList.toggle('sidebar-open', !menuOpen);
+    document.querySelector('.listpage')?.classList.toggle('sidebar-open', !menuOpen);
+    document.querySelector('.service-contents')?.classList.toggle('sidebar-open', !menuOpen);
+    document.querySelector('.team-contents')?.classList.toggle('sidebar-open', !menuOpen);
+    document.querySelector('.faq-container')?.classList.toggle('sidebar-open', !menuOpen);
+    document.querySelector('.signup-content')?.classList.toggle('sidebar-open', !menuOpen);
+    document.querySelector('.login-content')?.classList.toggle('sidebar-open', !menuOpen);
+    document.querySelector('.detailpage')?.classList.toggle('sidebar-open', !menuOpen);
+    document.querySelector('.map-container')?.classList.toggle('sidebar-open', !menuOpen);
+    document.querySelector('.modal-container')?.classList.toggle('sidebar-open', !menuOpen);
+    document.querySelector('.umypage-container')?.classList.toggle('sidebar-open', !menuOpen);
   };
 
   return (

@@ -8,7 +8,7 @@ const UserMyPage = () => {
 	const navigate = useNavigate();
 	const [logs, setLogs] = useState([]);
 	const [currentPage, setCurrentPage] = useState(1);
-	const pageSize = 5; // 한 페이지에 나열할 목록 수
+	const pageSize = 7; // 한 페이지에 나열할 목록 수
 	const pageCount = 5; // 표시할 페이지 번호 갯수
 
   const getStatusText = (status) => {
@@ -104,31 +104,31 @@ const UserMyPage = () => {
 		<div className="page">
 			<Navbar />
 			<div className='mypage'>
-				<div className="amypage-container">
-					<div className="amypage-title">농지 임대 신청 리스트</div>
+				<div className="umypage-container">
+					<div className="umypage-title">농지 임대 신청 리스트</div>
 					<table className="mypage-info">
 						<thead>
 							<tr>
-                				<th className='num-column'>No</th>
-								<th className="wide-column">임대 신청 시간</th>
-								<th className="narrow1-column">농지 번호</th>
-								<th className="wide1-column">농지명</th>
-								<th className="narrow-column">농지 상태</th>
-								<th className="narrow-column">임대 신청인</th>
+                				<th className='no-column'>No</th>
+								<th className="time-column">임대 신청 시간</th>
+								<th className="num-column">농지 번호</th>
+								<th className="name-column">농지명</th>
+								<th className="status-column">농지 상태</th>
+								<th className="me-column">임대 신청인</th>
 							</tr>
 						</thead>
 						<tbody>
 							{currentItems.length > 0 ? (
 								currentItems.map((farm, index) => (
 									<tr key={index}>
-										<td className='num-column'>
-											<div className='No'>{logs.length - (firstIndex + index)}.</div>
+										<td className='no-column'>
+											<div className='No'>{logs.length - (firstIndex + index)}</div>
 										</td>
-										<td className="wide-column">{formatDate(farm.farm_created)}</td>
-										<td className="narrow1-column">{farm.farm_id}</td>
-										<td className="wide1-column">{farm.farm_name}</td>
-										<td className="narrow-column">{getStatusText(farm.farm_status)}</td>
-										<td className="narrow-column">{farm.user_id}</td>
+										<td className="time-column">{formatDate(farm.farm_created)}</td>
+										<td className="num-column">{farm.farm_id}</td>
+										<td className="name-column">{farm.farm_name}</td>
+										<td className="status-column">{getStatusText(farm.farm_status)}</td>
+										<td className="me-column">{farm.user_id}</td>
 									</tr>
 								))
 							) : (
