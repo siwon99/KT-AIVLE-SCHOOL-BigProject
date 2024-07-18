@@ -127,7 +127,7 @@ const UserMyPage = () => {
 										<td className="wide-column">{formatDate(farm.farm_created)}</td>
 										<td className="narrow-column">{farm.farm_id}</td>
 										<td className="wide-column">{farm.farm_name}</td>
-										<td className="narrow-column">{farm.farm_status_log_id}</td>
+										<td className="narrow-column">{getStatusText(farm.farm_status)}</td>
 										<td className="narrow-column">{farm.user_id}</td>
 									</tr>
 								))
