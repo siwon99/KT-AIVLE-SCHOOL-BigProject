@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../navbar/navbar';
 import "./service.css";
+import serviceFlowImage from '/assets/serviceflow.webp';
 
 // 섹션 타이틀 컴포넌트
 const SectionTitle = ({ title }) => (
@@ -71,6 +72,7 @@ const ServiceIntro = () => {
       <ParagraphList items={effectsItems} />
 
       <SectionTitle title="기술 스택" />
+      <img src={serviceFlowImage} alt="Service Flow" className="service-flow-image" />
       <div className="tech-stack">
         {techStack.map((item, index) => (
           <p key={index} className="tech-item">
