@@ -11,6 +11,22 @@ const UserMyPage = () => {
 	const pageSize = 5; // 한 페이지에 나열할 목록 수
 	const pageCount = 5; // 표시할 페이지 번호 갯수
 
+  const getStatusText = (status) => {
+    switch (status) {
+      case 0:
+        return '분양 완료';
+      case 1:
+        return '승인 거절';
+      case 2:
+        return '분양 신청';
+      case 3:
+        return '승인 완료';
+      default:
+        return '알 수 없음';
+    }
+  };
+
+
 	useEffect(() => {
 		const token = localStorage.getItem('token');
 		
@@ -99,12 +115,11 @@ const UserMyPage = () => {
                   <div className='farmsign-info'>
                     <div className='num'>{logs.length - (firstIndex + index)}.</div>
                     <div key={index} className='admin-mypage-content'>
-                      <div className="farmsign-date"> 농지 등록 날짜: {formatDate(farm.farm_created)} </div>
-                      <div className="farmsign-id"> 농지 아이디: {farm.farm_id} </div>
-                      <div className="farmsign-name"> 농지명: {farm.farm_name} </div>
-                      <div className="farmsign-status"> 농지 현재 상태: {farm.farm_status} </div>
-                      <div className="farmsign-logID"> 농지 상태 기록: {farm.farm_status_log_id} </div>
-                      <div className="farmsign-user"> 임대 신청인: {farm.user_id} </div>
+                      <div className="farmsign-date"> 임대 신청 시간 {formatDate(farm.farm_created)} </div>
+                      <div className="farmsign-id"> 농지 번호 {farm.farm_id} </div>
+                      <div className="farmsign-name"> 농지명 {farm.farm_name} </div>
+                      <div className="farmsign-logID"> 농지 상태 {getStatusText(farm.farm_status)} </div>
+                      <div className="farmsign-user"> 임대 신청인 {farm.user_id} </div>
                     </div>
                     <button onClick={() => handleFarmDetail(farm.farm_id)} className="choiceBtn">선택</button>
                   </div>
