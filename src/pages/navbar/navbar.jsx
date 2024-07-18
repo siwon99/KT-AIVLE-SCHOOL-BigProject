@@ -90,7 +90,6 @@ const Navbar = () => {
             <li className="category"><a href="/teamInfo">조원 소개</a></li>
             <li className="category"><a href="/faq">FAQ</a></li>
             <li className="category"><a href="/map">지도</a></li>
-            <li className="mypage"><a href="/mypage">마페</a></li>
           </div>
           
           <li className="auth-icons">

@@ -75,7 +75,7 @@ body, html {
   justify-content: center;
   /* width: 60%; */
   height: 100%;
-  gap: 80px;
+  gap: 100px;
   box-sizing: border-box;
 }
 
@@ -125,7 +125,7 @@ body, html {
 }
 
 .logout-link {
-  margin-left: 11px;
+  padding-left: 30px;
 }
 
 .login-link span,
@@ -147,9 +147,9 @@ body, html {
 }
 
 .logout-link img {
-  width: 51px;
-  max-width: 51px;
-  max-height: 43px;
+  width: 51.5px;
+  max-width: 51.5px;
+  max-height: 42px;
   image-rendering: -webkit-optimize-contrast; /*크롬기준 이미지 선명하게*/
 }
 
