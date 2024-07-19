@@ -1,3 +1,4 @@
+/* 전체 페이지에 기본 스타일 적용 */
 body, html {
   margin: 0;
   padding: 0;
@@ -6,6 +7,7 @@ body, html {
   box-sizing: border-box;
 }
 
+/* 루트 컨테이너 설정 */
 #root {
   display: flex;
   flex-direction: column;
@@ -14,6 +16,7 @@ body, html {
   height: 100%;
 }
 
+/* 페이지의 기본 레이아웃 설정 */
 .page {
   display: flex;
   flex-direction: column;
@@ -22,6 +25,7 @@ body, html {
   height: 100%;
 }
 
+/* 상세 페이지 레이아웃 설정 */
 .detailpage {
   display: flex;
   justify-content: center;
@@ -31,13 +35,15 @@ body, html {
   height: 100%;
   color: #282828;
   box-sizing: border-box;
-  overflow: hidden; /* 스크롤바를 숨깁니다. */
+  overflow: hidden;
 }
 
+/* 스크롤바 숨기기 */
 .detailpage::-webkit-scrollbar {
-  display: none; /* Webkit 기반 브라우저에서 스크롤바를 숨깁니다. */
+  display: none;
 }
 
+/* 상세 정보 컨테이너 */
 .detail-container {
   display: flex;
   justify-content: space-between;
@@ -48,6 +54,7 @@ body, html {
   box-sizing: border-box;
 }
 
+/* 상세 정보 박스 */
 .detail-info {
   display: flex;
   flex-direction: column;
@@ -58,6 +65,7 @@ body, html {
   white-space: nowrap;
 }
 
+/* 상세 제목 스타일 */
 .detail-title {
   width: 100%;
   padding: 10px;
@@ -70,6 +78,7 @@ body, html {
   box-sizing: border-box;
 }
 
+/* 세부사항 리스트 */
 .details {
   display: flex;
   flex-direction: column;
@@ -78,6 +87,7 @@ body, html {
   box-sizing: border-box;
 }
 
+/* 상세 정보 아이템 */
 .d-info {
   display: flex;
   align-items: center;
@@ -92,6 +102,7 @@ body, html {
   box-sizing: border-box;
 }
 
+/* 상세 정보 아이템의 제목 스타일 */
 .d-info::before {
   content: attr(info-title) ": ";
   width: 75px;
@@ -100,11 +111,13 @@ body, html {
   flex-shrink: 0;
 }
 
+/* 상세 정보 아이템의 내용 스타일 */
 .d-info span {
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
+/* 버튼 컨테이너 */
 .btn {
   display: flex;
   justify-content: space-between;
@@ -113,6 +126,7 @@ body, html {
   box-sizing: border-box;
 }
 
+/* 버튼 스타일 */
 .btn > * {
   text-align: center;
   margin: 0 5px;
@@ -124,32 +138,36 @@ body, html {
   text-decoration: none;
   border: none;
   flex: 1;
-  transition: background-color 0.3s ease, color 0.3s ease; /* 호버 효과를 위한 부드러운 전환 추가 */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* 버튼 호버 상태 */
 .btn > *:hover {
   cursor: pointer;
   background-color: #00008C;
   color: white;
 }
 
-/* 지도와 텍스트를 포함하는 컨테이너 */
+/* 지도 컨테이너 */
 .map-container {
   width: 100%;
   max-width: 512px;
   box-sizing: border-box;
 }
 
+/* 지도 스타일 */
 .map {
   width: 100%;
   box-sizing: border-box;
 }
 
+/* 지도 이미지 스타일 */
 .map img {
   width: 100%;
   height: auto;
 }
 
+/* 이미지가 없는 경우의 스타일 */
 .noImg {
   display: flex;
   justify-content: center;
@@ -157,8 +175,8 @@ body, html {
   box-sizing: border-box;
 }
 
-/* 지도 하단에 텍스트를 표시하기 위한 CSS */
-.map-legend {
+/* 지도 정보 박스 */
+.map-Info {
   margin-top: 10px;
   background-color: #6E9FED;
   padding: 5px;
@@ -166,15 +184,45 @@ body, html {
   box-sizing: border-box;
   text-align: center;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.map-legend-item {
-  display: block;
-  margin: 2px 0;
+/* 지도 정보 텍스트 */
+.map-Info .info-text {
+  color: #FFFFFF;
+  margin-left: 10px;
 }
 
-/* 미디어 쿼리 */
-@media (max-width: 1279px) { /* 반응형 */
+/* 색상 박스 스타일 */
+.map-Info .red-box,
+.map-Info .green-box {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+
+/* 빨간 박스 스타일 */
+.map-Info .red-box {
+  border: 2px solid red;
+}
+
+/* 초록 박스 스타일 */
+.map-Info .green-box {
+  border: 2px solid green;
+}
+
+/* 지도 정보의 인라인 텍스트 스타일 */
+.map-Info span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1279px) {
   .detailpage.sidebar-open {
     padding-left: 20%;
   }

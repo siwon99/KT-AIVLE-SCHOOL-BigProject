@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Navbar from '../navbar/navbar';
 import './ibdetailpage.css';
 
-// 날짜함수
+// 날짜 함수
 const formatDate = (dateString) => {
   const date = new Date(dateString);
   const year = date.getFullYear();
@@ -12,9 +12,9 @@ const formatDate = (dateString) => {
   return `${year}년 ${month}월 ${day}일`;
 };
 
-// 시간함수
+// 시간 함수
 const formatTime = (timeString) => {
-  const time = new Date(`1970-01-01T${timeString}Z`); 
+  const time = new Date(`1970-01-01T${timeString}Z`);
   let hours = time.getHours();
   const minutes = time.getMinutes();
   const period = hours >= 12 ? '오후' : '오전';
@@ -45,7 +45,7 @@ const IbDetailPage = () => {
     user_id: 0
   });
 
-  //농지 상세정보 변수
+  // 농지 상세정보 변수
   const [farmDate, setFarmDate] = useState('');
   const [farmTime, setFarmTime] = useState('');
   const [farmStatusText, setFarmStatusText] = useState('');
@@ -70,7 +70,7 @@ const IbDetailPage = () => {
         }
       })
       .then(data => {
-        console.log('data:', data)
+        console.log('data:', data);
         // console.log('img', data.image.farm_image)
 
         setLandDetail({
@@ -83,7 +83,7 @@ const IbDetailPage = () => {
           pd_image: data.pd_image ? { farm_pd_image: data.pd_image.farm_pd_image } : null
         })
 
-        //날짜 및 시간
+        // 날짜 및 시간
         setLandLog(data.status_logs[0]);
         setFarmDate(formatDate(data.status_logs[0].farm_created));
         setFarmTime(formatTime(data.status_logs[0].farm_created.split('T')[1].split('Z')[0]));
@@ -108,7 +108,7 @@ const IbDetailPage = () => {
     }
   }, [farm_id, navigate]);
 
-  const handleBackClick =() => {
+  const handleBackClick = () => {
     localStorage.setItem('currentFarmId', farm_id);
     navigate('/iblist');
   }
@@ -149,9 +149,9 @@ const IbDetailPage = () => {
                 <p className='noImg'>이미지가 등록되지 않았습니다.</p>
               )}
             </div>
-            <div className="map-legend">
-              <span className="map-legend-item">빨간 네모칸 = 불법 건축물</span>
-              <span className="map-legend-item">초록 네모칸 = 비닐 하우스</span>
+            <div className="map-Info">
+              <span className="red-box"></span> <span className="info-text">불법 건축물 가능성</span>
+              <span className="green-box"></span> <span className="info-text">비닐 하우스 가능성</span>
             </div>
           </div>
         </div>
