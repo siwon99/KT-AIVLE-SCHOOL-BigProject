@@ -121,10 +121,12 @@ body, html {
 .password-message {
   color: red; 
   transition: color 0.3s;
+  margin-bottom: 10px; /* 마진 추가 */
 }
 
 .password-match {
   color: green;
+  margin-bottom: 10px; /* 마진 추가 */
 }
 
 @media (max-width: 1279px) { /* 반응형 */
