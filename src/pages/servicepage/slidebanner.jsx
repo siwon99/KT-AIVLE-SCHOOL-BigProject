@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useSwipeable } from 'react-swipeable'; // react-swipeable 라이브러리 추가
+import React, { useState, useEffect, useRef } from 'react';
+import { useSwipeable } from 'react-swipeable';
 import './slidebanner.css';
 
 // 슬라이드 데이터 배열
@@ -7,64 +7,96 @@ const slides = [
   { id: 1, color: '#6E9FED', content: 'Slide 1' },
   { id: 2, color: '#C1DAFB', content: 'Slide 2' },
   { id: 3, color: '#6E9FED', content: 'Slide 3' },
-  { id: 4, color: '#C1DAFB', content: 'Slide 4' },
-  { id: 5, color: '#6E9FED', content: 'Slide 5' }
+  { id: 4, color: '#C1DAFB', content: 'Slide 4' }
 ];
 
 const SlideBanner = () => {
-  const [currentIndex, setCurrentIndex] = useState(0); // 현재 슬라이드 인덱스 상태
+  // 현재 슬라이드 인덱스를 관리하는 상태
+  const [currentIndex, setCurrentIndex] = useState(1);
+  // 애니메이션 중인지 여부를 관리하는 상태
+  const [isAnimating, setIsAnimating] = useState(false);
+  // 슬라이드 컨테이너를 참조하기 위한 ref
+  const slideContainerRef = useRef(null);
+
+  // 슬라이드 전환 애니메이션이 끝났을 때 호출되는 함수
+  const handleTransitionEnd = () => {
+    setIsAnimating(false);
+    const newIndex = currentIndex === 0 ? slides.length : currentIndex === slides.length + 1 ? 1 : currentIndex;
+    setCurrentIndex(newIndex);
+    // 애니메이션 없이 슬라이드 위치를 재설정
+    slideContainerRef.current.style.transition = 'none';
+    slideContainerRef.current.style.transform = `translateX(-${newIndex * 100}%)`;
+  };
 
   // 특정 슬라이드로 이동하는 함수
   const goToSlide = (index) => {
-    setCurrentIndex(index);
+    if (!isAnimating) {
+      setIsAnimating(true);
+      setCurrentIndex(index);
+    }
   };
 
   // 키보드 이벤트 핸들러 함수
   const handleKeyDown = (event) => {
     if (event.key === 'ArrowRight') {
-      // 오른쪽 화살표 키를 눌렀을 때
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+      goToSlide(currentIndex + 1);
     } else if (event.key === 'ArrowLeft') {
-      // 왼쪽 화살표 키를 눌렀을 때
-      setCurrentIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
+      goToSlide(currentIndex - 1);
     }
   };
 
-  // 키보드 이벤트 리스너 추가 및 제거
+  // 키보드 이벤트 리스너를 추가하고 제거하는 useEffect 훅
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [currentIndex, isAnimating]);
 
-  // 스와이프 핸들러 함수
+  // 스와이프 이벤트를 처리하기 위한 핸들러
   const handlers = useSwipeable({
-    onSwipedLeft: () => setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length),
-    onSwipedRight: () => setCurrentIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length),
+    onSwipedLeft: () => goToSlide(currentIndex + 1),
+    onSwipedRight: () => goToSlide(currentIndex - 1),
     preventDefaultTouchmoveEvent: true,
     trackMouse: true
   });
 
+  // 슬라이드 컨테이너에 애니메이션 속성과 이벤트 리스너를 추가하는 useEffect 훅
+  useEffect(() => {
+    if (slideContainerRef.current) {
+      slideContainerRef.current.style.transition = 'transform 0.4s ease-in-out';
+      slideContainerRef.current.addEventListener('transitionend', handleTransitionEnd);
+    }
+    return () => {
+      if (slideContainerRef.current) {
+        slideContainerRef.current.removeEventListener('transitionend', handleTransitionEnd);
+      }
+    };
+  }, [currentIndex]);
+
   return (
-    <div className="slider" tabIndex="0" {...handlers}>
-      <div className="slide-container" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-        {slides.map((slide) => (
+    <div className="slider-container" tabIndex="0" {...handlers}>
+      <div
+        ref={slideContainerRef}
+        className="slides-wrapper"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {[slides[slides.length - 1], ...slides, slides[0]].map((slide, index) => (
           <div
-            key={slide.id}
-            className="slide"
+            key={index}
+            className="individual-slide"
             style={{ backgroundColor: slide.color }}
           >
             {slide.content}
           </div>
         ))}
       </div>
-      <div className="pagination">
+      <div className="pagination-indicators">
         {slides.map((_, index) => (
           <span
             key={index}
-            className={`dot ${index === currentIndex ? 'active' : ''}`}
-            onClick={() => goToSlide(index)}
+            className={`pagination-dot ${index + 1 === currentIndex || (currentIndex === 0 && index === slides.length - 1) || (currentIndex === slides.length + 1 && index === 0) ? 'active' : ''}`}
+            onClick={() => goToSlide(index + 1)}
             aria-label={`Go to slide ${index + 1}`}
           ></span>
         ))}

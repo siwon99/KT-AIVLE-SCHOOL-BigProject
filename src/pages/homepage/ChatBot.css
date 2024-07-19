@@ -90,8 +90,8 @@
   font-size: 0.75rem;
   color: #757575;
   margin-top: 5px;
-  align-self: flex-end; /* 시간을 오른쪽 하단에 맞추기 */
-  text-align: right; /* Changed from left to right */
+  align-self: flex-end;
+  text-align: right;
 }
 
 /* 닉네임 스타일 */
