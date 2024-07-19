@@ -105,23 +105,22 @@ body, html {
 }
 
 .time-column {
-  width: 22%;
-  max-width: 240px;
+  width: 21%;
+  /* max-width: 240px; */
   text-align: center;
   box-sizing: border-box;
 }
 
 .status-column,
 .num-column {
-  width: 10%;
-  min-width: 105px;
+  width: 11%;
+  /* min-width: 120px; */
   text-align: center;
   box-sizing: border-box;
 }
 
 .name-column {
-  /* width: 35%; */
-  max-width: 340px;
+  width: auto;
   text-align: left;
   padding-left: 20px !important;
   box-sizing: border-box;
@@ -129,7 +128,7 @@ body, html {
 
 .me-column {
   width: 12%;
-  max-width: 115px;
+  /* max-width: 115px; */
   text-align: center;
   box-sizing: border-box;
 }
@@ -197,8 +196,38 @@ body, html {
     font-size: calc(13px + (14 - 13) * ((100vw - 768px) / (1279 - 768))) !important;
   }
 
+  /* 테이블 */
+  .time-column {
+    display: none;
+  }
+
+  .num-column,
+  .status-column {
+    width: 13%;
+  }
+
+  .me-column {
+    width: 15%;
+  }
+
   .pagination button {
     font-size: calc(12px + (14 - 12) * ((100vw - 768px) / (1279 - 768)));;
+  }
+}
+
+@media(max-width: 1136px) {
+  .num-column {
+    display: none;
+  }
+
+  .status-column {
+    width: 96px;
+    min-width: 96px;
+  }
+
+  .me-column {
+    width: 111px;
+    min-width: 111px;
   }
 }
 
@@ -223,6 +252,11 @@ body, html {
 
   .mypage-info td {
     font-size: 13px !important;
+  }
+
+  /* 테이블 */
+  .me-column {
+    display: none;
   }
 
   .pagination button {
