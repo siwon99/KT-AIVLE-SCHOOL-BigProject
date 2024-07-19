@@ -141,12 +141,18 @@ const IbDetailPage = () => {
             </div>
           </div>
 
-          <div className="map">
-            {landDetail.pd_image ? (
-              <img src={landDetail.pd_image.farm_pd_image} alt="FarmImg" />
-            ) : (
-              <p className='noImg'>이미지가 등록되지 않았습니다.</p>
-            )}
+          <div className="map-container">
+            <div className="map">
+              {landDetail.pd_image ? (
+                <img src={landDetail.pd_image.farm_pd_image} alt="FarmImg" />
+              ) : (
+                <p className='noImg'>이미지가 등록되지 않았습니다.</p>
+              )}
+            </div>
+            <div className="map-legend">
+              <span className="map-legend-item">빨간 네모칸 = 불법 건축물</span>
+              <span className="map-legend-item">초록 네모칸 = 비닐 하우스</span>
+            </div>
           </div>
         </div>
       </div>

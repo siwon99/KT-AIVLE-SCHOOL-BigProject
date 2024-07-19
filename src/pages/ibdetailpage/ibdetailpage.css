@@ -3,6 +3,7 @@ body, html {
   padding: 0;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
 }
 
 #root {
@@ -28,13 +29,13 @@ body, html {
   align-items: center;
   width: 100%;
   height: 100%;
-  -ms-overflow-style: none;
   color: #282828;
   box-sizing: border-box;
+  overflow: hidden; /* 스크롤바를 숨깁니다. */
 }
 
 .detailpage::-webkit-scrollbar {
-  display: none;
+  display: none; /* Webkit 기반 브라우저에서 스크롤바를 숨깁니다. */
 }
 
 .detail-container {
@@ -42,7 +43,6 @@ body, html {
   justify-content: space-between;
   align-items: center;
   width: 60%;
-  height: auto;
   margin-top: 5%;
   gap: 20px;
   box-sizing: border-box;
@@ -54,7 +54,6 @@ body, html {
   align-items: center;
   text-align: center;
   width: 40%;
-  height: 100%;
   box-sizing: border-box;
   white-space: nowrap;
 }
@@ -82,7 +81,6 @@ body, html {
 .d-info {
   display: flex;
   align-items: center;
-  position: relative;
   width: 100%;
   height: 55px;
   padding: 10px;
@@ -126,39 +124,56 @@ body, html {
   text-decoration: none;
   border: none;
   flex: 1;
+  transition: background-color 0.3s ease, color 0.3s ease; /* 호버 효과를 위한 부드러운 전환 추가 */
 }
 
-.backBtn:hover, .rentBtn:hover {
+.btn > *:hover {
   cursor: pointer;
   background-color: #00008C;
   color: white;
 }
 
-/* 지도 사진 크기: 512px * 512px */
-.map {
-  width: auto;
-  height: auto;
+/* 지도와 텍스트를 포함하는 컨테이너 */
+.map-container {
+  width: 100%;
   max-width: 512px;
-  min-width: 440px;
+  box-sizing: border-box;
+}
+
+.map {
+  width: 100%;
   box-sizing: border-box;
 }
 
 .map img {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 .noImg {
   display: flex;
-  justify-content: center; 
-  align-items: center; 
-  position: absolute; 
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
 }
 
+/* 지도 하단에 텍스트를 표시하기 위한 CSS */
+.map-legend {
+  margin-top: 10px;
+  background-color: #6E9FED;
+  padding: 5px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  width: 100%;
+}
+
+.map-legend-item {
+  display: block;
+  margin: 2px 0;
+}
+
+/* 미디어 쿼리 */
 @media (max-width: 1279px) { /* 반응형 */
   .detailpage.sidebar-open {
     padding-left: 20%;
@@ -178,7 +193,7 @@ body, html {
   }
 }
 
-@media(max-width: 1024px) {
+@media (max-width: 1024px) {
   .detailpage.sidebar-open {
     padding-left: 210px;
   }
