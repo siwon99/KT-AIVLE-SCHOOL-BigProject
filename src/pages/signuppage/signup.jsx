@@ -18,8 +18,8 @@ const Signup = () => {
   //생년월일 정보
   const [birthday, setBirthday] = useState('');
   const [passwordMatch, setPasswordMatch] = useState(null);
-  const [passwordValid, setPasswordValid] = useState(true); // 비밀번호 유효성 상태 추가
-  const [usernameExists, setUsernameExists] = useState(false); // 아이디 중복 여부 상태 추가
+  const [passwordValid, setPasswordValid] = useState(false); // 비밀번호 유효성 상태 추가
+  const [usernameValid, setUsernameValid] = useState(-1); // 아이디 중복 여부 상태 추가 -1: 글자수 부족
 
   // 아아디, 비밀번호, 비밀번호 확인
   const handleInputChange = event => {
@@ -43,7 +43,7 @@ const Signup = () => {
   // 비밀번호 유효성 검사 함수
   const validatePassword = password => {
     // 비밀번호 조건: 최소 8자 이상, 대소문자, 숫자, 특수문자 포함
-    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
+    const regex = /^.{8,20}$/;
     return regex.test(password);
   };
 
@@ -60,6 +60,20 @@ const Signup = () => {
     }
   }, [userInfo.password, userInfo.confirm_password]);
 
+  useEffect(() => {
+    if (!isUsernameValid(userInfo.username)) {
+      setUsernameValid(-1)
+    }
+    else {
+      checkUsernameValid(userInfo.username);
+    }
+  }, [userInfo.username])
+
+  const isUsernameValid = (uname) => {
+    if (uname.length < 4)
+      return false
+    return true
+  }
   // 페이지 이동
   const navigate = useNavigate();
 
@@ -74,9 +88,9 @@ const Signup = () => {
   };
 
   // 아이디 유효성 검사(중복 여부)
-  /*
-  const checkUsernameExists = () => {
-    fetch(`http://0.00.000.00/users/check-username/${userInfo.username}`, {
+  
+  const checkUsernameValid = (uname) => {
+    fetch(`http://3.39.228.42/users/check-dup?username=${uname}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -84,21 +98,19 @@ const Signup = () => {
     })
     .then(response => response.json())
     .then(data => {
-      setUsernameExists(data.exists); // 서버에서 받은 데이터로 아이디 중복 여부 상태 업데이트
+      setUsernameValid(!data.isExist); // 서버에서 받은 데이터로 아이디 중복 여부 상태 업데이트
     })
     .catch(error => {
-      console.error('Error checking username existence:', error);
-      setUsernameExists(false); // 오류 발생 시 기본적으로 중복 없음으로 설정
+      console.log(error);
     });
   };
-  */
 
   // 회원가입 로직
   const processSignUp = () => {
     // 아이디 중복 체크
-    //checkUsernameExists();
+    //checkUsernameValid();
 
-    if (passwordValid && passwordMatch /* && !usernameExists*/){
+    if (passwordValid && passwordMatch && usernameValid == 1){
       fetch('http://3.39.228.42/users/signup/', {
         method: 'POST',
         headers: {
@@ -161,6 +173,21 @@ const Signup = () => {
                 onChange={handleInputChange}
                 onEnterPress={processSignUp}
               />
+              {usernameValid === true && (
+                <p style={{ color: 'green', marginTop: '0px', marginBottom: '10px' }}>
+                  사용 가능한 아이디입니다.
+                </p>
+              )}
+              {usernameValid === false && (
+                <p style={{ color: 'red', marginTop: '0px', marginBottom: '10px' }}>
+                  이미 사용중인 아이디입니다.
+                </p>
+              )}
+              {usernameValid === -1 && (
+                <p style={{ color: 'red', marginTop: '0px', marginBottom: '10px' }}>
+                  사용 불가능한 아이디입니다.
+                </p>
+              )}
               <UserInput
                 type="password"
                 placeholder="비밀번호"
@@ -170,9 +197,13 @@ const Signup = () => {
                 onEnterPress={processSignUp}
               />
               {/* 비밀번호 유효성 검사 메세지 */}
-              {!passwordValid && (
-                <p style={{ color: 'red', marginTop:'0px', marginBottom:'10px' }}>
-                  비밀번호는 영어 대소문자, 숫자, 특수문자(@,$,!,%,*,?,&)를 포함하여 8자 이상 20자 이하로 입력해야 합니다.
+              {passwordValid ? (
+                <p style={{ color: 'green', marginTop: '0px', marginBottom: '10px' }}>
+                  안전한 비밀번호입니다.
+                </p>
+              ) : (
+                <p style={{ color: 'red', marginTop: '0px', marginBottom: '10px' }}>
+                  비밀번호는 8자 이상 20자 이하로 입력해야 합니다.
                 </p>
               )}
               
@@ -187,17 +218,9 @@ const Signup = () => {
             />
             
             <div className={`password-message ${passwordMatch === true ? 'password-match' : ''}`}>
-              {passwordMatch === false && "비밀번호가 일치하지 않습니다."}
+              {(passwordMatch === false || passwordMatch === null) && "비밀번호가 일치하지 않습니다."}
               {passwordMatch === true && "비밀번호가 일치합니다."}
             </div>
-          
-          {/* 아이디 중복 시 메시지 
-            {usernameExists && (
-              <p style={{ color: 'red', marginTop:'0px', marginBottom:'10px' }}>
-                이미 존재하는 아이디입니다.
-              </p>
-            )}
-          */}
           </div>
 
           <div className="button-container">
