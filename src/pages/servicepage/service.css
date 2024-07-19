@@ -146,6 +146,14 @@ body, html {
   font-weight: bold;
 }
 
+/* 서비스 플로우 이미지 스타일 */
+.service-flow-image {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  display: block;
+}
+
 /* 반응형 스타일 */
 @media (max-width: 1279px) {
   .content-container.sidebar-open {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../navbar/navbar.jsx';
-import { getAdminMypage } from '../../service/apiService.js';
+import { getAdminMypage, approveRent, refuseRent } from '../../service/apiService.js';
 import './adminmypage.css';
 
 const AdminMyPage = () => {
@@ -10,7 +10,22 @@ const AdminMyPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 5; // 한 페이지에 나열할 목록 수
   const pageCount = 5; // 표시할 페이지 번호 갯수
-  
+
+  const getStatusText = (status) => {
+    switch (status) {
+      case 0:
+        return '분양 완료';
+      case 1:
+        return '유휴 농지';
+      case 2:
+        return '분양 신청';
+      case 3:
+        return '승인 완료';
+      default:
+        return '알 수 없음';
+    }
+  };
+
   useEffect(() => {
     const token = localStorage.getItem('token');
 
@@ -19,7 +34,7 @@ const AdminMyPage = () => {
         .then(data => {
           const reversedData = data.reverse();
           setLogs(reversedData);
-          
+
           // currentFarmId에 맞는 페이지 설정
           const currentFarmId = localStorage.getItem('currentFarmId');
           if (currentFarmId) {
@@ -58,18 +73,48 @@ const AdminMyPage = () => {
     }
   };
 
-  // 페이지네이션 버튼 렌더링 함수
-  const Pagination = (page, symbol, isDisabled) => (
-    <button onClick={() => changePage(page)} disabled={isDisabled}>
-      {symbol}
-    </button>
-  );
-
   // 농지 선택 시 해당 farm_id localStorage에 저장
   const handleFarmDetail = (farmId) => {
     localStorage.setItem('selectedFarmId', farmId);
     navigate(`/detail/${farmId}`);
   };
+
+  // 농지 상세페이지로 이동
+  const handleDetailPage = (farmId) => {
+    localStorage.setItem('selectedFarmId', farmId);
+    navigate(`/detailadmin/${farmId}`);
+  }
+
+  // 임대 신청 버튼 허가
+  const handleApproveRent = async (farmId, userId) => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      try {
+        await approveRent(farmId, userId, token);
+        alert('임대 신청이 허가되었습니다.');
+        window.location.reload();
+      } catch (error) {
+        console.log('임대 신청 허가 오류', error);
+      }
+    } else {
+      navigate('/mypage/admin');
+    }
+  }
+
+  // 임대 신청 버튼 거절
+  const handleRefuseRent = async (farmId, userId) => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      try {
+        await refuseRent(farmId, userId, token);
+        window.location.reload();
+      } catch (error) {
+        console.log('임대 신청 거절 오류', error);
+      }
+    } else {
+      navigate('/mypage/admin');
+    }
+  }
 
   // 날짜 및 시간 포맷팅 함수
   const formatDate = (dateString) => {
@@ -99,25 +144,24 @@ const AdminMyPage = () => {
                     <div className='num'>{logs.length - (firstIndex + index)}.</div>
                     <div key={index} className='amypage-content'>
                       <div className="farmsign-date">
-                        <span className="label">농지 등록 날짜</span> {formatDate(farm.farm_created)}
+                        <span className="label">임대 신청 시간</span> {formatDate(farm.farm_created)}
                       </div>
                       <div className="farmsign-id">
-                        <span className="label">농지 아이디</span> {farm.farm_id}
+                        <span className="label">농지 번호</span> {farm.farm_id}
                       </div>
                       <div className="farmsign-name">
                         <span className="label">농지명</span> {farm.farm_name}
                       </div>
                       <div className="farmsign-status">
-                        <span className="label">농지 현재 상태</span> {farm.farm_status}
-                      </div>
-                      <div className="farmsign-logID">
-                        <span className="label">농지 상태 기록</span> {farm.farm_status_log_id}
+                        <span className="label">농지 상태</span> {getStatusText(farm.farm_status)}
                       </div>
                       <div className="farmsign-user">
                         <span className="label">임대 신청인</span> {farm.user_id}
                       </div>
                     </div>
-                    <button onClick={() => handleFarmDetail(farm.farm_id)} className="choiceBtn">선택</button>
+                    <button onClick={() => handleDetailPage(farm.farm_id)} className="detailBtn">상세페이지</button>
+                    <button onClick={() => handleApproveRent(farm.farm_id, farm.user_id)} className="rentBtn">임대 허가</button>
+                    <button onClick={() => handleRefuseRent(farm.farm_id, farm.user_id)} className="rejectBtn">임대 거절</button>
                   </div>
                 </div>
               ))
@@ -127,8 +171,8 @@ const AdminMyPage = () => {
 
             <div className='pagination-container'>
               <div className="pagination">
-                {Pagination(1, "<<", currentPage === 1)}
-                {Pagination(currentPage - 1, "<", currentPage === 1)}
+                <button onClick={() => changePage(1)} disabled={currentPage === 1}>{"<<"}</button>
+                <button onClick={() => changePage(currentPage - 1)} disabled={currentPage === 1}>{"<"}</button>
                 {Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i).map(number => (
                   <button 
                     key={number} 
@@ -138,8 +182,8 @@ const AdminMyPage = () => {
                     {number}
                   </button>
                 ))}
-                {Pagination(currentPage + 1, ">", currentPage === totalPages)}
-                {Pagination(totalPages, ">>", currentPage === totalPages)}
+                <button onClick={() => changePage(currentPage + 1)} disabled={currentPage === totalPages}>{">"}</button>
+                <button onClick={() => changePage(totalPages)} disabled={currentPage === totalPages}>{">>"}</button>
               </div>
             </div>
           </div>

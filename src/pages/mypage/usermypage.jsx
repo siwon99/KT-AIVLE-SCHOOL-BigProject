@@ -8,8 +8,24 @@ const UserMyPage = () => {
 	const navigate = useNavigate();
 	const [logs, setLogs] = useState([]);
 	const [currentPage, setCurrentPage] = useState(1);
-	const pageSize = 5; // 한 페이지에 나열할 목록 수
+	const pageSize = 7; // 한 페이지에 나열할 목록 수
 	const pageCount = 5; // 표시할 페이지 번호 갯수
+
+  const getStatusText = (status) => {
+    switch (status) {
+      case 0:
+        return '분양 완료';
+      case 1:
+        return '승인 거절';
+      case 2:
+        return '분양 신청';
+      case 3:
+        return '승인 완료';
+      default:
+        return '알 수 없음';
+    }
+  };
+
 
 	useEffect(() => {
 		const token = localStorage.getItem('token');
@@ -66,10 +82,10 @@ const UserMyPage = () => {
 	);
 	
 	// 농지 선택 시 해당 farm_id localStorage에 저장
-	const handleFarmDetail = (farmId) => {
-		localStorage.setItem('selectedFarmId', farmId);
-		navigate(`/detail/${farmId}`);
-	};
+	// const handleFarmDetail = (farmId) => {
+	// 	localStorage.setItem('selectedFarmId', farmId);
+	// 	navigate(`/detail/${farmId}`);
+	// };
 
 	// 날짜 및 시간 포맷팅 함수
 	const formatDate = (dateString) => {
@@ -84,58 +100,65 @@ const UserMyPage = () => {
 		return `${year}년 ${month}월 ${day}일 ${period} ${hours}:${minutes}`;
 	};
 
-
 	return (
-    <div className="page">
-      {/* <Navbar /> */}
-      <div className='listpage'>
-        <div className="lists-container">
-          <div className="title">농지 임대 신청 리스트</div>
-
-          <div className='lists-info'>
-            {currentItems.length > 0 ? (
-              currentItems.map((farm, index) => (
-                <div className='lists' key={index}>
-                  <div className='farmsign-info'>
-                    <div className='num'>{logs.length - (firstIndex + index)}.</div>
-                    <div key={index} className='admin-mypage-content'>
-                      <div className="farmsign-date"> 농지 등록 날짜: {formatDate(farm.farm_created)} </div>
-                      <div className="farmsign-id"> 농지 아이디: {farm.farm_id} </div>
-                      <div className="farmsign-name"> 농지명: {farm.farm_name} </div>
-                      <div className="farmsign-status"> 농지 현재 상태: {farm.farm_status} </div>
-                      <div className="farmsign-logID"> 농지 상태 기록: {farm.farm_status_log_id} </div>
-                      <div className="farmsign-user"> 임대 신청인: {farm.user_id} </div>
-                    </div>
-                    <button onClick={() => handleFarmDetail(farm.farm_id)} className="choiceBtn">선택</button>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <p className="no-farms">임대 신청된 농지가 없습니다.</p>
-            )}
-          </div>
-
-          <div className='pagination-container'>
-            <div className="pagination">
-              {Pagination(1, "<<", currentPage === 1)}
-              {Pagination(currentPage - 1, "<", currentPage === 1)}
-              {Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i).map(number => (
-                <button 
-                  key={number} 
-                  onClick={() => changePage(number)} 
-                  className={number === currentPage ? 'active' : ''}
-                >
-                  {number}
-                </button>
-              ))}
-              {Pagination(currentPage + 1, ">", currentPage === totalPages)}
-              {Pagination(totalPages, ">>", currentPage === totalPages)}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+		<div className="page">
+			<Navbar />
+			<div className='mypage'>
+				<div className="umypage-container">
+					<div className="umypage-title">농지 임대 신청 리스트</div>
+					<table className="mypage-info">
+						<thead>
+							<tr>
+                				<th className='no-column'>No</th>
+								<th className="time-column">임대 신청 시간</th>
+								<th className="num-column">농지 번호</th>
+								<th className="name-column">농지명</th>
+								<th className="status-column">농지 상태</th>
+								<th className="me-column">임대 신청인</th>
+							</tr>
+						</thead>
+						<tbody>
+							{currentItems.length > 0 ? (
+								currentItems.map((farm, index) => (
+									<tr key={index}>
+										<td className='no-column'>
+											<div className='No'>{logs.length - (firstIndex + index)}</div>
+										</td>
+										<td className="time-column">{formatDate(farm.farm_created)}</td>
+										<td className="num-column">{farm.farm_id}</td>
+										<td className="name-column">{farm.farm_name}</td>
+										<td className="status-column">{getStatusText(farm.farm_status)}</td>
+										<td className="me-column">{farm.user_id}</td>
+									</tr>
+								))
+							) : (
+								<tr>
+									<td colSpan="7" className="no-farms">임대 신청된 농지가 없습니다.</td>
+								</tr>
+							)}
+						</tbody>
+					</table>
+					<div className='pagination-container'>
+						<div className="pagination">
+							{Pagination(1, "<<", currentPage === 1)}
+							{Pagination(currentPage - 1, "<", currentPage === 1)}
+							{Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i).map(number => (
+								<button 
+									key={number} 
+									onClick={() => changePage(number)} 
+									className={number === currentPage ? 'active' : ''}
+								>
+									{number}
+								</button>
+							))}
+							{Pagination(currentPage + 1, ">", currentPage === totalPages)}
+							{Pagination(totalPages, ">>", currentPage === totalPages)}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 }
 
 export default UserMyPage;
