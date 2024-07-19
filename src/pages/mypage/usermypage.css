@@ -105,8 +105,7 @@ body, html {
 }
 
 .time-column {
-  width: 24%;
-  /* width: 240px; */
+  width: 22%;
   max-width: 240px;
   text-align: center;
   box-sizing: border-box;
@@ -114,16 +113,14 @@ body, html {
 
 .status-column,
 .num-column {
-  /* width: 11%; */
-  /* width: 105px; */
+  width: 10%;
   min-width: 105px;
   text-align: center;
   box-sizing: border-box;
 }
 
 .name-column {
-  width: 35%;
-  /* width: 340px; */
+  /* width: 35%; */
   max-width: 340px;
   text-align: left;
   padding-left: 20px !important;
@@ -132,7 +129,6 @@ body, html {
 
 .me-column {
   width: 12%;
-  /* width: 115px; */
   max-width: 115px;
   text-align: center;
   box-sizing: border-box;
