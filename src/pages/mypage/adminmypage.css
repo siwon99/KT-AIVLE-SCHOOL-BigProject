@@ -90,10 +90,7 @@ body, html {
 .mypage-info td {
   border: 2px solid #E6E6E6;
   box-sizing: border-box;
-  vertical-align: middle;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .mypage-info th {
@@ -108,6 +105,10 @@ body, html {
 .mypage-info td {
   padding: 10px;
   font-size: 14px;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* .check-column {
@@ -135,7 +136,7 @@ body, html {
 
 .status-column,
 .num-column {
-  width: 10%;
+  width: 11%;
   /* min-width: 120px; */
   text-align: center;
   box-sizing: border-box;
@@ -160,6 +161,7 @@ body, html {
   vertical-align: middle;
   text-align: center;
   width: 11%;
+  min-width: 92px;
   padding: 5px;
 }
 
@@ -217,7 +219,27 @@ body, html {
   cursor: not-allowed;
 }
 
-@media (max-width: 1279px) { /* 반응형 */
+@media (max-width: 1286px) { /* 반응형 */
+  .mypage-info th.num-column,
+  .mypage-info td.num-column {
+    display: none;
+  }
+
+  .mypage-info th.status-column,
+  .mypage-info td.status-column {
+    width: 13%;
+  }
+
+  .mypage-info th.me-column,
+  .mypage-info td.me-column {
+    width: 15%;
+  }
+  
+  .mypage-info th.management-column,
+  .mypage-info td.management-column {
+    width: 13.5%;
+  }
+
   .umypage-container.sidebar-open {
     padding-left: 20%;
   }
@@ -240,6 +262,32 @@ body, html {
 
   .pagination button {
     font-size: calc(12px + (14 - 12) * ((100vw - 768px) / (1279 - 768)));;
+  }
+}
+
+@media(max-width: 1136px) {
+  .mypage-info th.status-column,
+  .mypage-info td.status-column {
+    display: none;
+  }
+}
+
+@media(max-width: 1125px) {
+  .mypage-info th.time-column,
+  .mypage-info td.time-column {
+    display: none;
+  }
+
+  .mypage-info th.me-column,
+  .mypage-info td.me-column {
+    width: 110px;
+    min-width: 110px;
+  }
+
+  .mypage-info th.management-column,
+  .mypage-info td.management-column {
+    width: 98px;
+    min-width: 98px;
   }
 }
 
@@ -268,5 +316,12 @@ body, html {
 
   .pagination button {
     font-size: 12px !important;
+  }
+}
+
+@media(max-width: 670px) {
+  .mypage-info th.me-column,
+  .mypage-info td.me-column {
+    display: none;
   }
 }
