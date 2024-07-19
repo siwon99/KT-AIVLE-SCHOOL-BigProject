@@ -4,8 +4,8 @@ import './slidebanner.css';
 
 // 슬라이드 데이터 배열
 const slides = [
-  { id: 1, color: '#6E9FED', content: 'Slide 1' },
-  { id: 2, color: '#C1DAFB', content: 'Slide 2' },
+  { id: 1, image: '/assets/slide1.webp' },
+  { id: 2, image: '/assets/slide2.webp' },
   { id: 3, color: '#6E9FED', content: 'Slide 3' },
   { id: 4, color: '#C1DAFB', content: 'Slide 4' }
 ];
@@ -87,7 +87,7 @@ const SlideBanner = () => {
             className="individual-slide"
             style={{ backgroundColor: slide.color }}
           >
-            {slide.content}
+            {slide.image ? <img src={slide.image} alt={slide.content} /> : slide.content}
           </div>
         ))}
       </div>
