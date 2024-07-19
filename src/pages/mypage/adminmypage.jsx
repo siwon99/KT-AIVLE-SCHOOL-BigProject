@@ -135,56 +135,66 @@ const AdminMyPage = () => {
       <div className='mypage'>
         <div className="amypage-container">
           <div className="amypage-title">농지 임대 신청 리스트</div>
-
-          <div className='mypage-info'>
-            {currentItems.length > 0 ? (
-              currentItems.map((farm, index) => (
-                <div className='lists' key={index}>
-                  <div className='farmsign-info'>
-                    <div className='num'>{logs.length - (firstIndex + index)}.</div>
-                    <div key={index} className='amypage-content'>
-                      <div className="farmsign-date">
-                        <span className="label">임대 신청 시간</span> {formatDate(farm.farm_created)}
-                      </div>
-                      <div className="farmsign-id">
-                        <span className="label">농지 번호</span> {farm.farm_id}
-                      </div>
-                      <div className="farmsign-name">
-                        <span className="label">농지명</span> {farm.farm_name}
-                      </div>
-                      <div className="farmsign-status">
-                        <span className="label">농지 상태</span> {getStatusText(farm.farm_status)}
-                      </div>
-                      <div className="farmsign-user">
-                        <span className="label">임대 신청인</span> {farm.user_id}
-                      </div>
-                    </div>
-                    <button onClick={() => handleDetailPage(farm.farm_id)} className="detailBtn">상세페이지</button>
-                    <button onClick={() => handleApproveRent(farm.farm_id, farm.user_id)} className="rentBtn">임대 허가</button>
-                    <button onClick={() => handleRefuseRent(farm.farm_id, farm.user_id)} className="rejectBtn">임대 거절</button>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <p className="no-farms">임대 신청된 농지가 없습니다.</p>
-            )}
-
-            <div className='pagination-container'>
-              <div className="pagination">
-                <button onClick={() => changePage(1)} disabled={currentPage === 1}>{"<<"}</button>
-                <button onClick={() => changePage(currentPage - 1)} disabled={currentPage === 1}>{"<"}</button>
-                {Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i).map(number => (
-                  <button 
-                    key={number} 
-                    onClick={() => changePage(number)} 
-                    className={number === currentPage ? 'active' : ''}
-                  >
-                    {number}
-                  </button>
-                ))}
-                <button onClick={() => changePage(currentPage + 1)} disabled={currentPage === totalPages}>{">"}</button>
-                <button onClick={() => changePage(totalPages)} disabled={currentPage === totalPages}>{">>"}</button>
-              </div>
+          <div className="button-container">
+            <button onClick={() => handleDetailPage(farm.farm_id)} className="detailBtn">상세페이지</button>
+            <button onClick={() => handleApproveRent(farm.farm_id, farm.user_id)} className="rentBtn">임대 허가</button>
+            <button onClick={() => handleRefuseRent(farm.farm_id, farm.user_id)} className="rejectBtn">임대 거절</button>
+          </div>
+          <table className="mypage-info">
+            <thead>
+              <tr>
+                <th className='check-column'></th>
+                <th className='no-column'>No</th>
+                <th className="time-column">임대 신청 시간</th>
+                <th className="num-column">농지 번호</th>
+                <th className="name-column">농지명</th>
+                <th className="status-column">농지 상태</th>
+                <th className="me-column">임대 신청인</th>
+                {/* <th className="management-column">관리</th> */}
+              </tr>
+            </thead>
+            <tbody>
+              {currentItems.length > 0 ? (
+                currentItems.map((farm, index) => (
+                  <tr key={index}>
+                    <td className='check-column'><input type="checkbox" /></td>
+                    <td className='no-column'>
+                      <div className='No'>{logs.length - (firstIndex + index)}</div>
+                    </td>
+                    <td className="time-column">{formatDate(farm.farm_created)}</td>
+                    <td className="num-column">{farm.farm_id}</td>
+                    <td className="name-column">{farm.farm_name}</td>
+                    <td className="status-column">{getStatusText(farm.farm_status)}</td>
+                    <td className="me-column">{farm.user_id}</td>
+                    {/* <td className="management-column">
+                      <button onClick={() => handleDetailPage(farm.farm_id)} className="detailBtn">상세페이지</button>
+                      <button onClick={() => handleApproveRent(farm.farm_id, farm.user_id)} className="rentBtn">임대 허가</button>
+                      <button onClick={() => handleRefuseRent(farm.farm_id, farm.user_id)} className="rejectBtn">임대 거절</button>
+                    </td> */}
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="7" className="no-farms">임대 신청된 농지가 없습니다.</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+          <div className='pagination-container'>
+            <div className="pagination">
+              <button onClick={() => changePage(1)} disabled={currentPage === 1}>{"<<"}</button>
+              <button onClick={() => changePage(currentPage - 1)} disabled={currentPage === 1}>{"<"}</button>
+              {Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i).map(number => (
+                <button 
+                  key={number} 
+                  onClick={() => changePage(number)} 
+                  className={number === currentPage ? 'active' : ''}
+                >
+                  {number}
+                </button>
+              ))}
+              <button onClick={() => changePage(currentPage + 1)} disabled={currentPage === totalPages}>{">"}</button>
+              <button onClick={() => changePage(totalPages)} disabled={currentPage === totalPages}>{">>"}</button>
             </div>
           </div>
         </div>
