@@ -166,11 +166,11 @@ const AdminMyPage = () => {
                     <td className="name-column">{farm.farm_name}</td>
                     <td className="status-column">{getStatusText(farm.farm_status)}</td>
                     <td className="me-column">{farm.user_id}</td>
-                    {/* <td className="management-column">
-                      <button onClick={() => handleDetailPage(farm.farm_id)} className="detailBtn">상세페이지</button>
+                    <td className="management-column">
+                      {/* <button onClick={() => handleDetailPage(farm.farm_id)} className="detailBtn">상세페이지</button> */}
                       <button onClick={() => handleApproveRent(farm.farm_id, farm.user_id)} className="rentBtn">임대 허가</button>
                       <button onClick={() => handleRefuseRent(farm.farm_id, farm.user_id)} className="rejectBtn">임대 거절</button>
-                    </td> */}
+                    </td>
                   </tr>
                 ))
               ) : (
