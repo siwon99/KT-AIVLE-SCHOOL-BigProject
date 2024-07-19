@@ -8,7 +8,7 @@ const AdminMyPage = () => {
   const navigate = useNavigate();
   const [logs, setLogs] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 5; // 한 페이지에 나열할 목록 수
+  const pageSize = 3; // 한 페이지에 나열할 목록 수
   const pageCount = 5; // 표시할 페이지 번호 갯수
 
   const getStatusText = (status) => {
@@ -135,29 +135,29 @@ const AdminMyPage = () => {
       <div className='mypage'>
         <div className="amypage-container">
           <div className="amypage-title">농지 임대 신청 리스트</div>
-          <div className="button-container">
+          {/* <div className="button-container">
             <button onClick={() => handleDetailPage(farm.farm_id)} className="detailBtn">상세페이지</button>
             <button onClick={() => handleApproveRent(farm.farm_id, farm.user_id)} className="rentBtn">임대 허가</button>
             <button onClick={() => handleRefuseRent(farm.farm_id, farm.user_id)} className="rejectBtn">임대 거절</button>
-          </div>
+          </div> */}
           <table className="mypage-info">
             <thead>
               <tr>
-                <th className='check-column'></th>
+                {/* <th className='check-column'></th> */}
                 <th className='no-column'>No</th>
                 <th className="time-column">임대 신청 시간</th>
                 <th className="num-column">농지 번호</th>
                 <th className="name-column">농지명</th>
                 <th className="status-column">농지 상태</th>
                 <th className="me-column">임대 신청인</th>
-                {/* <th className="management-column">관리</th> */}
+                <th className="management-column">관리</th>
               </tr>
             </thead>
             <tbody>
               {currentItems.length > 0 ? (
                 currentItems.map((farm, index) => (
                   <tr key={index}>
-                    <td className='check-column'><input type="checkbox" /></td>
+                    {/* <td className='check-column'><input type="checkbox" /></td> */}
                     <td className='no-column'>
                       <div className='No'>{logs.length - (firstIndex + index)}</div>
                     </td>
