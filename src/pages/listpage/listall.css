@@ -75,6 +75,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   padding: 3.5% 10%;
   font-size: 17px;
   border-radius: 50px;

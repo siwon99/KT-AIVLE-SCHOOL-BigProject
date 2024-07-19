@@ -88,7 +88,7 @@ const Navbar = () => {
           </li>
 
           <div className="categories">
-            <li className="category"><a href="/listall">리스트</a></li>
+            <li className="category"><a href="/listall">농지 임대</a></li>
             <li className="category"><a href="/service">서비스 소개</a></li>
             <li className="category"><a href="/teamInfo">조원 소개</a></li>
             <li className="category"><a href="/faq">FAQ</a></li>
@@ -124,7 +124,7 @@ const Navbar = () => {
       </nav>
       <div className={`sidebar ${menuOpen ? "show" : ""}`}>
         <a href="/">홈</a>
-        <a href="/listall">리스트</a>
+        <a href="/listall">농지 임대</a>
         <a href="/service">서비스 소개</a>
         <a href="/teamInfo">조원 소개</a>
         <a href="/faq">FAQ</a>

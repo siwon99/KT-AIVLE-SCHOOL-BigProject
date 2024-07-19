@@ -97,7 +97,7 @@ const ListPage = () => {
       <Navbar />
       <div className='listpage'>
         <div className="lists-container">
-          <div className="title">농지 리스트</div>
+          <div className="title">농지 임대 리스트</div>
 
           <div className='lists-info'>
             {currentItems.length > 0 ? (
