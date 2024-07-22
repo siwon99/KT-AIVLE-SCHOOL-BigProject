@@ -133,7 +133,7 @@ const IbDetailPage = () => {
               <span className="d-info" info-title="농지 크기"><span>{landDetail.farm_size}</span></span> 
               <span className="d-info" info-title="게시 날짜"><span>{farmDate}</span></span>
               <span className="d-info" info-title="게시 시간"><span>{farmTime}</span></span>
-              <span className="d-info" info-title="농지 상태"><span>{farmStatusText}</span></span>
+              {/* <span className="d-info" info-title="농지 상태"><span>{farmStatusText}</span></span> */}
               <div className="btn">
                 <button onClick={handleBackClick} className="backBtn">이전</button>
                 <button onClick={handleRentClick} className="rentBtn">완료</button>
@@ -152,11 +152,11 @@ const IbDetailPage = () => {
             <div className="map-label">
               <div className="label-box">
                 <div className="red-box"></div>
-                <span>불법 건축물 가능성</span>
+                <span>불법 건축물 라벨링</span>
               </div>
               <div className="label-box">
                 <div className="green-box"></div>
-                <span>비닐하우스 가능성</span>
+                <span>비닐하우스 라벨링</span>
               </div>
             </div>
           </div>
