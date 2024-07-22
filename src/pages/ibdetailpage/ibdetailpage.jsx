@@ -150,8 +150,8 @@ const IbDetailPage = () => {
               )}
             </div>
             <div className="map-Info">
-              <span className="red-box"></span> <span className="info-text">불법 건축물 가능성</span>
-              <span className="green-box"></span> <span className="info-text">비닐 하우스 가능성</span>
+              <span className="red-box"><span className="info-text">불법 건축물 가능성</span></span> 
+              <span className="green-box"><span className="info-text">비닐 하우스 가능성</span></span>
             </div>
           </div>
         </div>
