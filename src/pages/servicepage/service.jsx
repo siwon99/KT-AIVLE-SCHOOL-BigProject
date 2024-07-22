@@ -33,14 +33,6 @@ const ServiceIntro = () => {
     "NONGBU의 목표는 농업을 혁신하고, 지속 가능한 발전을 이루는 것입니다."
   ];
 
-  // 주요 기능 문단 목록
-  const featuresItems = [
-    "저활용 농지 탐지: AI 기술을 활용하여 사용되지 않거나 저활용된 농지를 정확하게 파악합니다.",
-    "농지 임대 서비스: 탐지된 농지를 필요한 농업 인재들에게 임대하여 생산성을 높입니다.",
-    "데이터 시각화 및 관리: 농지 데이터를 시각화하고 효율적으로 관리할 수 있는 도구를 제공합니다. 이를 통해 농업 인재들이 쉽게 농지 정보를 파악하고 활용할 수 있습니다.",
-    "실시간 모니터링: 농지 상태를 실시간으로 모니터링하여 필요한 조치를 적시에 취할 수 있습니다."
-  ];
-
   // 기대 효과 문단 목록
   const effectsItems = [
     "사용되지 않는 농지를 매입하여 청년 농업 인재들에게 제공함으로써, 지역 농업의 지속 가능성을 높이고, 젊은 세대가 농업에 참여할 수 있는 기회를 제공합니다.",
@@ -67,8 +59,7 @@ const ServiceIntro = () => {
       <ParagraphList items={introItems} />
 
       <SectionTitle title="주요 기능" />
-      <SlideBanner /> {/* 슬라이드 배너 추가 */}
-      <ParagraphList items={featuresItems} />
+      <SlideBanner />
 
       <SectionTitle title="기대 효과" />
       <ParagraphList items={effectsItems} />

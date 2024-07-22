@@ -6,8 +6,8 @@ import './slidebanner.css';
 const slides = [
   { id: 1, image: '/assets/slide1.webp' },
   { id: 2, image: '/assets/slide2.webp' },
-  { id: 3, color: '#6E9FED', content: 'Slide 3' },
-  { id: 4, color: '#C1DAFB', content: 'Slide 4' }
+  { id: 3, image: '/assets/slide3.webp' },
+  { id: 4, image: '/assets/slide4.webp' }
 ];
 
 const SlideBanner = () => {
@@ -85,9 +85,8 @@ const SlideBanner = () => {
           <div
             key={index}
             className="individual-slide"
-            style={{ backgroundColor: slide.color }}
           >
-            {slide.image ? <img src={slide.image} alt={slide.content} /> : slide.content}
+            {slide.image && <img src={slide.image} alt={`Slide ${index}`} className="slide-image" />}
           </div>
         ))}
       </div>
