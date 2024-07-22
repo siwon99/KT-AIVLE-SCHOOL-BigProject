@@ -105,6 +105,19 @@ body, html {
   box-sizing: border-box;
 }
 
+.no-info {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 5px 10px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
 /* 각 상세 정보 항목의 레이블 스타일 */
 .d-info::before {
   content: attr(info-title) " ";
@@ -223,37 +236,41 @@ body, html {
   align-items: center;
   margin: 0 10px;
   font-size: 15px;
-  font-weight: bold;
+  width: 450px;
+  justify-content: space-around;
 }
 
 /* 레드 박스 스타일 */
 .red-box {
-  padding: 2px 10px;
-  margin-right: 5px;
+  width: 100px;
+  padding: 4px 10px;
   border: 2px solid red;
+  background-color: red;
   text-align: center;
   font-size: 12px;
-  color: red;
+  color: #fff;
 }
 
 /* 오렌지 박스 스타일 */
 .orange-box {
-  padding: 2px 10px;
-  margin-right: 5px;
+  width: 100px;
+  padding: 4px 10px;
   border: 2px solid orange;
+  background-color: orange;
   text-align: center;
   font-size: 12px;
-  color: orange;
+  color: #fff;
 }
 
 /* 그린 박스 스타일 */
 .green-box {
-  padding: 2px 10px;
-  margin-right: 5px;
-  border: 2px solid green;
+  width: 100px;
+  padding: 4px 10px;
+  border: 2px solid yellowgreen;
+  background-color: yellowgreen;
   text-align: center;
   font-size: 12px;
-  color: green;
+  color: #fff;
 }
 
 /* 반응형 스타일: 최대 너비 1279px */

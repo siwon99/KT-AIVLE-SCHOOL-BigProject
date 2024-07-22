@@ -50,6 +50,10 @@ const IbDetailPage = () => {
   const [farmTime, setFarmTime] = useState('');
   const [farmStatusText, setFarmStatusText] = useState('');
 
+  // 이미지 로딩 상태
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
+
   useEffect(() => {
     if (!farm_id) return;
     // 사용자가 로그인할 때 저장된 토큰
@@ -87,17 +91,6 @@ const IbDetailPage = () => {
         setLandLog(data.status_logs[0]);
         setFarmDate(formatDate(data.status_logs[0].farm_created));
         setFarmTime(formatTime(data.status_logs[0].farm_created.split('T')[1].split('Z')[0]));
-
-        //분양 상태 설정
-        // if (data.status_logs[0].farm_status === 0) {
-        //   setFarmStatusText('유휴 농지');
-        // } else if (data.status_logs[0].farm_status === 1) {
-        //   setFarmStatusText('분양 완료');
-        // } else if (data.status_logs[0].farm_status === 2) {
-        //   setFarmStatusText('불법 건축물');
-        // } else {
-        //   setFarmStatusText('알 수 없음');
-        // }
       })
       // 로컬 스토리지에만 토큰이 남아있어도 로그인 페이지로 유도 가능
       .catch(error => {
@@ -133,7 +126,7 @@ const IbDetailPage = () => {
               <span className="d-info" info-title="농지 크기"><span>{landDetail.farm_size}</span></span> 
               <span className="d-info" info-title="게시 날짜"><span>{farmDate}</span></span>
               <span className="d-info" info-title="게시 시간"><span>{farmTime}</span></span>
-              {/* <span className="d-info" info-title="농지 상태"><span>{farmStatusText}</span></span> */}
+              <div className="no-info"/>
               <div className="btn">
                 <button onClick={handleBackClick} className="backBtn">이전</button>
                 <button onClick={handleRentClick} className="rentBtn">완료</button>
@@ -143,21 +136,23 @@ const IbDetailPage = () => {
 
           <div className="map-container">
             <div className="map">
-              {landDetail.pd_image ? (
-                <img src={landDetail.pd_image.farm_pd_image} alt="FarmImg" />
+              {landDetail.pd_image && !imageError ? (
+                <img
+                  src={landDetail.pd_image.farm_pd_image}
+                  alt="FarmImg"
+                  onLoad={() => setImageLoaded(true)}
+                  onError={() => setImageError(true)}
+                />
               ) : (
-                <p className='noImg'>이미지가 등록되지 않았습니다.</p>
+                !imageLoaded && <p className='loading'>이미지를 로딩 중입니다...</p>
               )}
+              {imageError && <p className='noImg'>이미지가 등록되지 않았습니다.</p>}
             </div>
             <div className="map-label">
               <div className="label-box">
-                <div className="red-box">불법 건축물 라벨링</div>
-              </div>
-              <div className="label-box">
-                <div className="orange-box">농지 라벨링</div>
-              </div>
-              <div className="label-box">
-                <div className="green-box">비닐하우스·태양광 라벨링</div>
+                <div className="red-box">불법 건축물</div>
+                <div className="orange-box">농지</div>
+                <div className="green-box">비닐하우스·태양광</div>
               </div>
             </div>
           </div>
