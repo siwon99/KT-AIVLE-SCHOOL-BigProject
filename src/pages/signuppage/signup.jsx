@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import UserInput from '../loginpage/UserInput';
 import UserButton from '../loginpage/UserBtn';
 import Navbar from '../navbar/navbar';
+import SignupModal from '../signupmodal/signupmodal'; // Import the SignupModal component
 
 const Signup = () => {
   // 유저 정보
@@ -20,6 +21,8 @@ const Signup = () => {
   const [passwordMatch, setPasswordMatch] = useState(null);
   const [passwordValid, setPasswordValid] = useState(false); // 비밀번호 유효성 상태 추가
   const [usernameValid, setUsernameValid] = useState(-1); // 아이디 중복 여부 상태 추가 -1: 글자수 부족
+  const [agreementChecked, setAgreementChecked] = useState(false); // 동의 여부 상태
+  const [modalOpen, setModalOpen] = useState(true); // 모달 열기/닫기 상태
 
   // 아아디, 비밀번호, 비밀번호 확인
   const handleInputChange = event => {
@@ -105,12 +108,21 @@ const Signup = () => {
     });
   };
 
+  // 개인정보 약관 동의 확인
+  const handleAgreeChange = (isChecked) => {
+    setAgreementChecked(isChecked); // 체크박스 상태 업데이트
+  };
+
+  const closeAgreementModal = () => {
+    setModalOpen(false);
+  };
+
   // 회원가입 로직
   const processSignUp = () => {
     // 아이디 중복 체크
     //checkUsernameValid();
 
-    if (passwordValid && passwordMatch && usernameValid == 1){
+    if (passwordValid && passwordMatch && usernameValid == 1 && agreementChecked){
       fetch('http://3.39.228.42/users/signup/', {
         method: 'POST',
         headers: {
@@ -136,13 +148,18 @@ const Signup = () => {
         alert('회원가입에 실패했습니다. 다시 해주세요.');
       });
     } else {
-      alert ('입력한 정보를 다시 확인해주세요.');
+      alert ('입력한 정보를 다시 확인하고 필수 동의 사항에 동의해주세요.');
     }
   };
 
   return (
     <>
       <Navbar />
+      <SignupModal
+        isOpen={modalOpen}
+        onClose={closeAgreementModal}
+        onAgreeChange={handleAgreeChange} // 콜백 함수 전달
+      />
       <main className="signup-content">
         <div className="signup-title">회원가입</div>
         <div className="signup">
