@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Navbar from '../navbar/navbar';
+import DetailModal from './modal_admin.jsx';
+import DetailImages from './DetailImage.jsx';
+import { getChangeLog, makeChangeLog } from '../../service/apiService.js';
 import './detail.css';
  
 // 날짜함수
@@ -49,6 +52,9 @@ const DetailAdmin = () => {
   const [farmDate, setFarmDate] = useState('');
   const [farmTime, setFarmTime] = useState('');
   const [farmStatusText, setFarmStatusText] = useState('');
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [logData, setLogData] = useState(null);
  
   useEffect(() => {
     if (!farm_id) return;
@@ -118,6 +124,22 @@ const DetailAdmin = () => {
     localStorage.setItem('currentFarmId', farm_id);
     navigate('/listadmin');
   }
+
+  const handleChangeLogClick = () => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      makeChangeLog(farm_id, token)
+        .then(() => getChangeLog(farm_id, token))
+        .then(data => {
+          console.log('Change Log Data:', data); // 변경 로그 데이터 확인
+          setLogData(data);
+          setIsModalOpen(true);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
+  };
  
   return (
     <div className="page">
@@ -154,6 +176,9 @@ const DetailAdmin = () => {
                   <button onClick={handleBackClick} className="backBtn">
                     이전
                   </button>
+                  <button onClick={handleChangeLogClick} className="changeBtn">
+                    변화탐지 확인
+                  </button>
                 </div>
               </div>
           </div>
@@ -165,9 +190,13 @@ const DetailAdmin = () => {
               <p className='noImg'>이미지가 등록되지 않았습니다.</p>
             )}
           </div>
-  
         </div>
       </div>
+
+      <DetailModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <DetailImages logData={logData} />
+      </DetailModal>
+
     </div>
   );
 };
