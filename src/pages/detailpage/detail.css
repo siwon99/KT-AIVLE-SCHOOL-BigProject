@@ -208,7 +208,12 @@ body, html {
   }
 
   .detail-title {
-    font-size: calc(18px + (20 - 18) * ((100vw - 768px) / (1279 - 768))) !important;
+    font-size: calc(16px + (17 - 16) * ((100vw - 768px) / (1279 - 768))) !important;
+  }
+
+  .d-info,
+  .backBtn {
+    font-size: calc(13px + (14 - 13) * ((100vw - 768px) / (1279 - 768))) !important;
   }
 
   .detail-info {
@@ -225,5 +230,16 @@ body, html {
 @media(max-width: 1024px) {
   .detailpage.sidebar-open {
     padding-left: 210px;
+  }
+}
+
+@media(max-width: 768px) {
+  .detail-title {
+    font-size: 16px !important;
+  }
+
+  .d-info,
+  .backBtn {
+    font-size: 13px !important;
   }
 }
