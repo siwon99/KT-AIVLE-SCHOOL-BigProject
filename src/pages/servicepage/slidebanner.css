@@ -1,4 +1,4 @@
-/* 슬라이더 컨테이너 스타일 - 중앙 정렬 및 최대 너비 설정 */
+/* 슬라이더 컨테이너 스타일 */
 .slider-container {
   display: flex;
   flex-direction: column;
@@ -9,16 +9,17 @@
   margin: 20px auto;
   outline: none;
   overflow: hidden;
+  position: relative;
 }
 
-/* 슬라이드 컨테이너 스타일 - 슬라이드 전환 효과 적용 */
+/* 슬라이드를 감싸는 래퍼 */
 .slides-wrapper {
   display: flex;
   transition: transform 0.4s ease-in-out;
   width: 100%;
 }
 
-/* 개별 슬라이드 스타일 - 중앙 정렬, 둥근 모서리 및 전환 효과 */
+/* 개별 슬라이드 스타일 */
 .individual-slide {
   display: flex;
   align-items: center;
@@ -39,15 +40,16 @@
   border-radius: 20px;
 }
 
-/* 페이지네이션 스타일 - 중앙 정렬 및 간격 조정 */
+/* 페이지네이션 인디케이터 스타일 */
 .pagination-indicators {
   display: flex;
+  align-items: center;
   justify-content: center;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-/* 페이지네이션 점 스타일 */
+/* 개별 페이지네이션 점 스타일 */
 .pagination-dot {
   height: 15px;
   width: 15px;
@@ -59,12 +61,34 @@
   cursor: pointer;
 }
 
-/* 활성화된 페이지네이션 점 스타일 */
 .pagination-dot.active {
   background-color: #717171;
 }
 
-/* 미디어 쿼리: 최대 너비 1024px 이하 - 슬라이드 높이 조정 */
+/* 컨트롤 버튼 스타일 */
+.control-button {
+  background: none;
+  border: none;
+  color: #bbb;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 10px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  justify-content: center;
+}
+
+.control-button:hover {
+  color: #717171;
+}
+
+/* 미디어 쿼리: 최대 너비 1024px */
 @media (max-width: 1024px) {
   .individual-slide {
     height: 50vw;
@@ -72,7 +96,7 @@
   }
 }
 
-/* 미디어 쿼리: 최대 너비 768px 이하 - 슬라이드 높이 조정 */
+/* 미디어 쿼리: 최대 너비 768px */
 @media (max-width: 768px) {
   .individual-slide {
     height: 45vw;
@@ -80,7 +104,7 @@
   }
 }
 
-/* 미디어 쿼리: 최대 너비 600px 이하 - 슬라이드 높이 자동 조정 및 비율 유지 */
+/* 미디어 쿼리: 최대 너비 600px */
 @media (max-width: 600px) {
   .individual-slide {
     height: auto;
