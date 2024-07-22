@@ -168,6 +168,7 @@ body, html {
 
 /* 지도 컨테이너 */
 .map-container {
+  text-align: center;
   width: auto;
   height: auto;
   max-width: 512px;
@@ -199,41 +200,36 @@ body, html {
   box-sizing: border-box;
 }
 
-/* 지도 정보 박스 */
-.map-Info {
+/* 레이블 컨테이너 스타일 */
+.map-label {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  width: 100%;
-  padding: 10px;
-  font-size: 12px;
-  box-sizing: border-box;
+  margin-top: 10px;
+  font-size: 11px;
   gap: 20px;
 }
 
-/* 색상 박스 스타일 */
-.map-Info .red-box,
-.map-Info .green-box {
-  width: 15px;
-  height: 15px;
-  background-color: transparent;
-  border-radius: 3px;
+/* 레이블 상자 스타일 */
+.label-box {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
 }
 
-/* 빨간 박스 스타일 */
-.map-Info .red-box {
+/* 레드 박스 스타일 */
+.red-box {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
   border: 2px solid red;
 }
 
-/* 초록 박스 스타일 */
-.map-Info .green-box {
+/* 그린 박스 스타일 */
+.green-box {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
   border: 2px solid green;
-}
-
-.info-text{
-  margin-left: -10px;
 }
 
 /* 반응형 스타일: 최대 너비 1279px */

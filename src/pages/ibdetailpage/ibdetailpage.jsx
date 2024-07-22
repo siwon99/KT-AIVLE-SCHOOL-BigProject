@@ -149,9 +149,15 @@ const IbDetailPage = () => {
                 <p className='noImg'>이미지가 등록되지 않았습니다.</p>
               )}
             </div>
-            <div className="map-Info">
-              <span className="red-box"><span className="info-text">불법 건축물 가능성</span></span> 
-              <span className="green-box"><span className="info-text">비닐 하우스 가능성</span></span>
+            <div className="map-label">
+              <div className="label-box">
+                <div className="red-box"></div>
+                <span>불법 건축물 가능성</span>
+              </div>
+              <div className="label-box">
+                <div className="green-box"></div>
+                <span>비닐하우스 가능성</span>
+              </div>
             </div>
           </div>
         </div>
