@@ -156,7 +156,7 @@ const IbDetailPage = () => {
               </div>
               <div className="label-box">
                 <div className="green-box"></div>
-                <span>비닐하우스 라벨링</span>
+                <span>비닐하우스·태양광 라벨링</span>
               </div>
             </div>
           </div>
