@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const DetailImages = ({ logData }) => {
+  console.log('logData:', logData);
+  console.log(logData.cd_log.change_rating_result)
+
   return (
     <div>
       {logData ? (
@@ -40,6 +43,7 @@ const DetailImages = ({ logData }) => {
           {/* 각각 변화탐지한 이미지 보여주기 */}
           {logData.cd_log && logData.cd_log.length > 0 ? (
             <div>
+              {/* 첫 번째 cd_log 항목만 처리 */}
               {logData.cd_log.slice(0, 1).map((log, index) => (
                 <div key={log.id} className="change-log-result">
                   {log.farm_change_detection_result_image1 && (
@@ -61,6 +65,11 @@ const DetailImages = ({ logData }) => {
                       <p>결과 이미지 2</p>
                     </div>
                   )}
+
+                  {/* "3년 평균 변화율" 추가 */}
+                  <div className="change-rating-result">
+                    <span>3년 평균 변화율: <p>{log.change_rating_result !== undefined ? log.change_rating_result : '정보 없음'}</p></span>
+                  </div>
                 </div>
               ))}
             </div>
@@ -90,6 +99,7 @@ DetailImages.propTypes = {
         farm_change_detection_result_image2: PropTypes.string,
       })
     ),
+    change_rating_result: PropTypes.string, 
   }),
 };
 
