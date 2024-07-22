@@ -98,3 +98,25 @@ export const refuseRent = async (lid, uid, token) => {
 		throw error;
 	}
 }
+
+// 관리자가 유휴농지를 판별하는 버튼
+// 정상 작동시 201, {'msg': 'success'}
+export const makeChangeLog = async (lid, token) => {
+	try {
+		const res = await postWithToken(`/farms/admin/detail/${lid}/`, token, {
+		});
+		return res;
+	} catch (error) {
+		throw error;
+	}
+}
+
+// 불법건축물이 아닌 토지를 대상으로 유휴농지 판별한 로그를 보여줌
+export const getChangeLog = async (lid, token) => {
+	try {
+		const logs = await fetchWithToken(`/farms/cddetail/${lid}/`, token);
+		return logs
+	} catch (error) {
+		throw error;
+	}
+}
