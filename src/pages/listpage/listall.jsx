@@ -9,7 +9,6 @@ const BUILDING_IMAGE = '/assets/빌딩.gif';
 const ListAll = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
-  const [isadmin, setIsadmin] = useState(false);
   
   useEffect(() => {
     const token = localStorage.getItem('token');
