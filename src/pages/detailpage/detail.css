@@ -32,9 +32,10 @@ body, html {
   align-items: center;
   width: 100%;
   height: 100%;
-  -ms-overflow-style: none;  /* IE 및 Edge용 스크롤바 스타일 제거 */
   color: #282828;
   box-sizing: border-box;
+  overflow-y: scroll;
+  -ms-overflow-style: none;  /* IE 및 Edge용 스크롤바 스타일 제거 */
 }
 
 /* 상세 페이지의 스크롤바 제거 (웹킷 브라우저용) */

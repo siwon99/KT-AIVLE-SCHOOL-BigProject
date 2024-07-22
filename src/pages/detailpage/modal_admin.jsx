@@ -8,8 +8,8 @@ const DetailModal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="adminModal">
-      <div className="adminModal-content">
+    <div className="adminModal-page">
+      <div className="adminModal">
         <button className="adminModal-Btn" onClick={onClose}>X</button>
         {children}
       </div>
@@ -22,6 +22,5 @@ DetailModal.propTypes = {
   onClose: PropTypes.func.isRequired,
   children: PropTypes.node,
 };
-
 
 export default DetailModal;
