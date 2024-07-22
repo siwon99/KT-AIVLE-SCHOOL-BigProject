@@ -14,7 +14,7 @@ const SignupModal = ({ isOpen, onClose, onAgreeChange }) => {
       <div className="modal-content">
         <h2>개인정보 수집 및 이용에 대한 안내</h2>
         <div class="textArea" tabindex="0">
-				<p>NOGBU는 (이하 '자사'는) NOGBU 포털 업무와 관련하여, 신청인들의 개인정보를 중요시하며, 개인정보보호법을 준수하고 있습니다.</p>
+				<p>NONGBU는 (이하 '자사'는) NONGBU 포털 업무와 관련하여, 신청인들의 개인정보를 중요시하며, 개인정보보호법을 준수하고 있습니다.</p>
 				<table>
 					<caption>&lt;수집 및 이용에 대한 동의&gt;</caption>
 					<tbody>
