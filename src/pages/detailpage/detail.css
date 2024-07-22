@@ -49,7 +49,7 @@ body, html {
   align-items: center;
   width: 60%;
   height: auto;
-  margin-top: 5%;
+  margin-top: 80px;
   gap: 20px;
   box-sizing: border-box;
 }
@@ -60,7 +60,7 @@ body, html {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 45%;
+  width: 50%;
   height: 100%;
   box-sizing: border-box;
   white-space: nowrap;
@@ -69,9 +69,9 @@ body, html {
 /* 상세 정보 제목 스타일 */
 .detail-title {
   width: 100%;
-  padding: 10px;
-  font-size: 20px;
-  margin-bottom: 30px;
+  padding: 15px 10px;
+  font-size: 17px;
+  margin-bottom: 15px;
   border-radius: 5px;
   background-color: #6E9FED;
   border: 3px solid #6E9FED;
@@ -85,7 +85,6 @@ body, html {
   display: flex;
   flex-direction: column;
   width: 100%;
-  font-size: 14px;
   box-sizing: border-box;
 }
 
@@ -95,8 +94,9 @@ body, html {
   align-items: center;
   position: relative;
   width: 100%;
-  height: 55px;
-  padding: 10px;
+  height: auto;
+  padding: 15px 10px;
+  font-size: 14px;
   margin-bottom: 10px;
   border-radius: 5px;
   background-color: #E6E6E6;
@@ -111,7 +111,6 @@ body, html {
   display: inline-block;
   width: 95px;
   text-align: left;
-  font-size: 15px;
   padding-left: 5px;
   white-space: nowrap;
 }
@@ -124,15 +123,24 @@ body, html {
 
 /* 각 상세 정보 항목의 값 스타일 */
 .d-info span {
-  flex-grow: 1;
+  display: inline-block;
+  width: calc(100% - 120px);
+  margin-left: 100px;
+  position: absolute;
   text-align: left;
   overflow: hidden;
   text-overflow: ellipsis;
-  position: absolute;
-  margin-left: 100px;
   white-space: nowrap;
-  display: inline-block;
-  width: calc(100% - 120px);
+  flex-grow: 1;
+}
+
+.d-info[info-title="농지명"] span {
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* 버튼 컨테이너 스타일 */
@@ -152,7 +160,7 @@ body, html {
   color: #fff;
   background-color: #6E9FED;
   border-radius: 20px;
-  font-size: 15px;
+  font-size: 14px;
   text-decoration: none;
   border: none;
   flex: 1;
