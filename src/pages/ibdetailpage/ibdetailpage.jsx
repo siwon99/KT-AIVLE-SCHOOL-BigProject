@@ -151,12 +151,13 @@ const IbDetailPage = () => {
             </div>
             <div className="map-label">
               <div className="label-box">
-                <div className="red-box"></div>
-                <span>불법 건축물 라벨링</span>
+                <div className="red-box">불법 건축물 라벨링</div>
               </div>
               <div className="label-box">
-                <div className="green-box"></div>
-                <span>비닐하우스·태양광 라벨링</span>
+                <div className="orange-box">농지 라벨링</div>
+              </div>
+              <div className="label-box">
+                <div className="green-box">비닐하우스·태양광 라벨링</div>
               </div>
             </div>
           </div>

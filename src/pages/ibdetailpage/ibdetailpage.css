@@ -228,18 +228,32 @@ body, html {
 
 /* 레드 박스 스타일 */
 .red-box {
-  width: 15px;
-  height: 15px;
+  padding: 2px 10px;
   margin-right: 5px;
   border: 2px solid red;
+  text-align: center;
+  font-size: 12px;
+  color: red;
+}
+
+/* 오렌지 박스 스타일 */
+.orange-box {
+  padding: 2px 10px;
+  margin-right: 5px;
+  border: 2px solid orange;
+  text-align: center;
+  font-size: 12px;
+  color: orange;
 }
 
 /* 그린 박스 스타일 */
 .green-box {
-  width: 15px;
-  height: 15px;
+  padding: 2px 10px;
   margin-right: 5px;
   border: 2px solid green;
+  text-align: center;
+  font-size: 12px;
+  color: green;
 }
 
 /* 반응형 스타일: 최대 너비 1279px */
