@@ -1,18 +1,18 @@
 .circle-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 90%;
-  padding: 2% 5%;
+  padding: 2% 7%;
   margin-top: 110px;
   margin-right: 10%;
-  gap: 40px;
+  gap: 10px;
   box-sizing: border-box;
 }
 
 .circle {
-  width: 85px;
-  height: 85px;
+  width: 105px;
+  height: 105px;
   background-color: #FFFFFF;
   border: 3px solid #6E9FED;
   border-radius: 50%;

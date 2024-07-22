@@ -51,8 +51,8 @@ const Youtube = () => (
 const ServiceIntroduction = () => (
   <section className="service-intro">
     <p className='introtitle'>NONGBU란?</p>
-    <p className='introsub'>농촌 지역의 인구 고령화와 도시화로 사용되지 않는 농지가 증가하고 있습니다. <br />
-      NONGBU는 AI 기반 농지 조사 시스템으로 저활용 농지를 파악하여<br /> 청년 농업인에게 임대 서비스를 제공합니다. <br />
+    <p className='introsub'>농촌 지역의 인구 고령화와 도시화로 사용되지 않는 농지가 증가하고 있습니다.<br/>
+      NONGBU는 AI 기반 농지 조사 시스템으로 저활용 농지를 파악하여<br/> 청년 농업인에게 임대 서비스를 제공합니다.<br/>
       이를 통해 비활용 농지를 효율적으로 활용하고, 농업의 미래를 만들어갑니다.</p>
   </section>
 );
