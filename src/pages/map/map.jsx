@@ -74,10 +74,10 @@ function Map() {
   }, [farms]);
  
   useEffect(() => {
-    if (typeof window.kakao !== "undefined" && farms.length > 0) {
+    if (typeof window.kakao !== "undefined") {
       const container = document.getElementById('map');
       const options = {
-        center: new kakao.maps.LatLng(farms[0].latitude, farms[0].longitude),
+        center: new kakao.maps.LatLng(36.80488, 127.19431),
         level: 8
       };
       //지도 불러오기
