@@ -42,13 +42,16 @@ const ServiceIntro = () => {
   ];
 
   // 기술 스택 목록
-  const techStack = [
+  const techStackLeft = [
     { label: "Frontend", text: "React, CSS" },
     { label: "Backend", text: "Django" },
     { label: "Database", text: "SQLite" },
-    { label: "Infrastructure", text: "AWS EC2 for hosting, S3 for storage" },
+    { label: "AI Model", text: "YOLO for object detection" }
+  ];
+
+  const techStackRight = [
+    { label: "Infra", text: "AWS EC2 for hosting, S3 for storage" },
     { label: "Mapping", text: "Kakao Map, Naver Map" },
-    { label: "AI Model", text: "YOLO for object detection" },
     { label: "Proxy Server", text: "Nginx" }
   ];
 
@@ -67,11 +70,20 @@ const ServiceIntro = () => {
       <SectionTitle title="기술 스택" />
       <img src={serviceFlowImage} alt="Service Flow" className="service-flow-image" />
       <div className="tech-stack">
-        {techStack.map((item, index) => (
-          <p key={index} className="tech-item">
-            <span className="label">{item.label}:</span> {item.text}
-          </p>
-        ))}
+        <div className="tech-column">
+          {techStackLeft.map((item, index) => (
+            <p key={index} className="tech-item">
+              <span className="label">{item.label}:</span> {item.text}
+            </p>
+          ))}
+        </div>
+        <div className="tech-column">
+          {techStackRight.map((item, index) => (
+            <p key={index} className="tech-item">
+              <span className="label">{item.label}:</span> {item.text}
+            </p>
+          ))}
+        </div>
       </div>
     </div>
   );
