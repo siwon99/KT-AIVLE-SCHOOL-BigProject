@@ -55,6 +55,10 @@ const DetailAdmin = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [logData, setLogData] = useState(null);
+
+  // 이미지 로딩 상태
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
  
   useEffect(() => {
     if (!farm_id) return;
@@ -184,11 +188,17 @@ const DetailAdmin = () => {
           </div>
   
           <div className="map">
-            {landDetail.image ? (
-              <img src={landDetail.image.farm_image} alt="FarmImg" />
+            {landDetail.image && !imageError ? (
+              <img
+                src={landDetail.image.farm_image}
+                alt="FarmImg"
+                onLoad={() => setImageLoaded(true)}
+                onError={() => setImageError(true)}
+              />
             ) : (
-              <p className='noImg'>이미지가 등록되지 않았습니다.</p>
+              !imageLoaded && <p className='loading'>이미지를 로딩 중입니다...</p>
             )}
+            {imageError && <p className='noImg'>이미지가 등록되지 않았습니다.</p>}
           </div>
         </div>
       </div>
