@@ -1,128 +1,141 @@
-/* Modal Container */
-.modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    width: 720px;
-    max-width: 95%;
-    height: 400px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
+/* 기본 스타일 */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Noto Sans KR', sans-serif;
+}
 
-  /* Modal Content */
+/* 모달 오버레이 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+
+/* 모달 컨테이너 */
+.modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 90vw;
+  max-width: 720px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+/* 모달 내용 */
 .modal-content {
-    height: auto; /* 높이 자동 조정 */
-    max-height: 90vh; /* 최대 높이 설정 */
-    overflow-y: auto; /* 세로 스크롤 추가 */
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
-  
-  /* Modal Header */
-  .modal h2 {
-    font-size: 1.5rem;
-    margin-top: 0;
+
+/* 모달 헤더 */
+.modal-content h2 {
+  font-size: 1.5rem;
+  margin-top: 0;
+  color: #333;
+}
+
+/* 텍스트 영역 */
+.text-area {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.text-area table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.text-area table th, .text-area table td {
+  padding: 8px;
+  border: 1px solid #dcdcdc;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.text-area table th {
+  background-color: #fafafa;
+  font-weight: bold;
+  width: 25%;
+}
+
+.text-area table td {
+  width: 75%;
+}
+
+.text-area table td.highlighted-text {
+  font-size: 0.9rem;
+  color: #0073e6;
+}
+
+.text-area p {
+  margin: 0;
+  line-height: 1.4;
+  color: #4f4f4f;
+}
+
+/* 체크박스 컨테이너 */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+}
+
+.checkbox-container .required-text {
+  color: #e60000;
+  font-weight: 500;
+}
+
+/* 반응형 조정 */
+@media (max-width: 600px) {
+  .modal-container {
+      width: 90%;
+      padding: 15px;
+      margin: 0 auto;
+      left: 50%;
+      transform: translate(-50%, -50%);
   }
 
-  caption, legend {
-    overflow: hidden;
-    left: 0;
-    right: 0;
-    width: 1px;
-    height: 1px;
-    margin-left: -9999px;
-    text-indent: -9999px;
-}
-  
-  /* textArea */
-  .textArea {
-    width: 100%;
-    height: 17em; /* 높이 조정 */
-    margin-bottom: 10px;
-    padding: 2%;
-    border: 1px solid #dcdcdc;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    overflow-x: hidden;
-    overflow-y: auto;
-    text-align: left;
-    color: #4f4f4f;
-    font-size: 18px;
-    font-family: 'Noto Sans KR', sans-serif; /* 글꼴 지정 */
-}
+  .modal-content h2 {
+      font-size: 1.2rem;
+  }
 
-.textArea table th {
-    background: #fafafa;
-}
-.textArea table th, .textArea table td {
-    height: 30px;
-    padding: 1%;
-    border: 1px solid #dcdcdc;
-}
+  .text-area {
+      padding: 5px;
+  }
 
-.textArea table td.pointCell {
-    font-size: 25px;
-}
+  .text-area table th, .text-area table td {
+      padding: 6px;
+      font-size: 0.8rem;
+  }
 
-.textArea * {
-    line-height: 1.4;
-}
-
-.required {
-    display: inline-block;
-    color: #ff0000;
-    font-weight: 300;
-    font-size: 18px;
-}
-
-p.checkBox {
-    text-align: right;
-    color: #969696;
-    font-size: 18px;
-}
-
-p.checkBox {
-    position: relative;
-}
-
-input[type="checkbox" i] {
-    transform: scale(1.5); /* 크기 조정 */
-    background-color: initial;
-    cursor: default;
-    appearance: auto;
-    box-sizing: border-box;
-    margin: 0px 10px 0px 0px;
-    padding: initial;
-    border: initial;
-}
-
-
-/* Overlay (background behind the modal) */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-    z-index: 999; /* Ensure the overlay is behind the modal but above everything else */
-}
-  
-/* Centering the modal vertically and horizontally */
-.modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-  
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    .modal {
-      width: 90%;
-    }
+  .checkbox-container {
+      font-size: 0.8rem;
+  }
 }
