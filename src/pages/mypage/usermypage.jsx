@@ -114,7 +114,7 @@ const UserMyPage = () => {
 								<th className="num-column">농지 번호</th>
 								<th className="name-column">농지명</th>
 								<th className="status-column">농지 상태</th>
-								<th className="me-column">임대 신청인</th>
+								{/* <th className="me-column">임대 신청인</th> */}
 							</tr>
 						</thead>
 						<tbody>
@@ -128,7 +128,7 @@ const UserMyPage = () => {
 										<td className="num-column">{farm.farm_id}</td>
 										<td className="name-column">{farm.farm_name}</td>
 										<td className="status-column">{getStatusText(farm.farm_status)}</td>
-										<td className="me-column">{farm.user_id}</td>
+										{/* <td className="me-column">{farm.user_id}</td> */}
 									</tr>
 								))
 							) : (

@@ -121,7 +121,7 @@ body, html {
 
 .name-column {
   width: auto;
-  text-align: left;
+  text-align: center;
   padding-left: 20px !important;
   box-sizing: border-box;
 }
