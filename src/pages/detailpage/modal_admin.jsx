@@ -8,9 +8,14 @@ const DetailModal = ({ isOpen, onClose, children }) => {
 
   return (
     <div className="adminModal-page">
-      <div className="adminModal">
-        <button className="adminModal-Btn" onClick={onClose}>X</button>
-        {children}
+      <div className="adminModal-container">
+        <div className="adminModal-gap">
+          {/* 왼쪽 빈 공간 */}
+        </div>
+        <div className="adminModal-content">
+          <button className="adminModal-Btn" onClick={onClose}>X</button>
+          {children}
+        </div>
       </div>
     </div>
   );

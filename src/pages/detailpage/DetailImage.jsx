@@ -6,10 +6,10 @@ const DetailImages = ({ logData }) => {
   console.log('logData:', logData);
 
   return (
-    <div className="adminModal-container">
+    <div className="adminModal-container2">
       {logData ? (
-        <div className="adminModal-content">
-          <h2>변화 탐지 결과</h2>
+        <div className="adminModal-images">
+          {/* <h2>변화 탐지 결과</h2> */}
 
           {/* cd 배열에서 이미지 추출 및 렌더링 */}
           {/* 2020년, 2021년 이미지 보여주는 코드 */}
@@ -72,7 +72,7 @@ const DetailImages = ({ logData }) => {
               {/* "3년 평균 변화율" 추가 */}
               <div className="change-rating-result">
                 <p>
-                  3년 평균 변화율: {logData.cd_log[0].change_rating_result !== undefined ? `${logData.cd_log[0].change_rating_result}%` : '정보 없음'}
+                  3년간 최대 변화율: {logData.cd_log[0].change_rating_result !== undefined ? `${logData.cd_log[0].change_rating_result}%` : '정보 없음'}
                 </p>
               </div>
             </>
