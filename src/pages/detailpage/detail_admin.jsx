@@ -5,7 +5,7 @@ import DetailModal from './modal_admin.jsx';
 import DetailImages from './DetailImage.jsx';
 import { getChangeLog, makeChangeLog } from '../../service/apiService.js';
 import './detail.css';
- 
+
 // 날짜함수
 const formatDate = (dateString) => {
   const date = new Date(dateString);
@@ -14,7 +14,7 @@ const formatDate = (dateString) => {
   const day = date.getDate();
   return `${year}년 ${month}월 ${day}일`;
 };
- 
+
 // 시간함수
 const formatTime = (timeString) => {
   const time = new Date(`1970-01-01T${timeString}Z`);
@@ -26,12 +26,12 @@ const formatTime = (timeString) => {
   const formattedTime = `${period} ${hours}:${minutes.toString().padStart(2, '0')}`;
   return formattedTime;
 };
- 
+
 // 상세 정보 페이지
 const DetailAdmin = () => {
   const navigate = useNavigate();
   const { farm_id } = useParams();
- 
+
   const [landDetail, setLandDetail] = useState({
     farm_id: 0,
     farm_name: '',
@@ -41,13 +41,13 @@ const DetailAdmin = () => {
     longitude: 0,
     image: null,
   });
- 
+
   const [landLog, setLandLog] = useState({
     farm_status: 0,
     farm_created: '',
     user_id: 0
   });
- 
+
   //농지 상세정보 변수
   const [farmDate, setFarmDate] = useState('');
   const [farmTime, setFarmTime] = useState('');
@@ -55,11 +55,12 @@ const DetailAdmin = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [logData, setLogData] = useState(null);
+  const [loading, setLoading] = useState(false); // 로딩 상태 추가
 
   // 이미지 로딩 상태
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
- 
+
   useEffect(() => {
     if (!farm_id) return;
     // 사용자가 로그인할 때 저장된 토큰
@@ -80,9 +81,7 @@ const DetailAdmin = () => {
         }
       })
       .then(data => {
-        console.log('data:', data)
-        // console.log('img', data.image.farm_image)
- 
+        console.log('data:', data);
         setLandDetail({
           farm_id: data.farm_id,
           farm_name: data.farm_name,
@@ -91,17 +90,17 @@ const DetailAdmin = () => {
           latitude: data.latitude,
           longitude: data.longitude,
           image: data.image ? { farm_image: data.image.farm_image } : null
-        })
- 
+        });
+
         //날짜 및 시간
         setLandLog(data.status_logs[0]);
         setFarmDate(formatDate(data.status_logs[0].farm_created));
         setFarmTime(formatTime(data.status_logs[0].farm_created.split('T')[1].split('Z')[0]));
- 
+
         //분양 상태 설정
         if (data.status_logs.length > 0) {
           const lastLog = data.status_logs[data.status_logs.length - 1];
-         
+          
           if (lastLog.farm_status === 0) {
             setFarmStatusText('분양 완료');
           } else if (lastLog.farm_status === 1) {
@@ -123,15 +122,18 @@ const DetailAdmin = () => {
       navigate('/login');
     }
   }, [farm_id, navigate]);
- 
-  const handleBackClick =() => {
+
+  const handleBackClick = () => {
     localStorage.setItem('currentFarmId', farm_id);
     navigate('/listadmin');
   }
 
   const handleChangeLogClick = () => {
+    if (isModalOpen) return; // 모달이 열려 있으면 로딩 오버레이를 표시하지 않음
+
     const token = localStorage.getItem('token');
     if (token) {
+      setLoading(true); // 로딩 상태 시작
       makeChangeLog(farm_id, token)
         .then(() => getChangeLog(farm_id, token))
         .then(data => {
@@ -141,10 +143,13 @@ const DetailAdmin = () => {
         })
         .catch(error => {
           console.error('Error:', error);
+        })
+        .finally(() => {
+          setLoading(false); // 로딩 상태 종료
         });
     }
   };
- 
+
   return (
     <div className="page">
       <Navbar />
@@ -202,6 +207,14 @@ const DetailAdmin = () => {
           </div>
         </div>
       </div>
+
+      {loading && (
+        <div className="loading-overlay">
+          <div className="loading-popup">
+            <p>변화 탐지 모델 생성 중...</p>
+          </div>
+        </div>
+      )}
 
       <DetailModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <DetailImages logData={logData} />

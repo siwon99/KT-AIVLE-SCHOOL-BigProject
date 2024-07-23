@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './modal_admin.css';
-
 // 상세 정보 페이지
 const DetailModal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
