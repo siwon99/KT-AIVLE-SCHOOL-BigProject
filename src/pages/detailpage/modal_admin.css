@@ -4,11 +4,11 @@
   align-items: center;
   position: fixed;
   width: 31%;
-  min-width: 450px;
+  min-width: 430px;
   height: auto;
   position: absolute;
-  left: 64.5%;
-  top: 55%;
+  right: 4.5%;
+  top: 405px;
   transform: translate(-50%, -50%); 
   border-radius: 15px;
   background-color: #FFFFFF;
@@ -77,7 +77,7 @@
   width: 100%;
   text-align: center;
   margin: 0;
-  margin-bottom: 5px;
+  margin-bottom: 7px;
 }
 
 .change-log-image,
@@ -98,7 +98,7 @@
 
 .change-rating-result {
   text-align: center;
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   padding: 10px;
   margin-top: 10px;
 }

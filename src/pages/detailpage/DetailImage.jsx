@@ -48,7 +48,7 @@ const DetailImages = ({ logData }) => {
                   <React.Fragment key={log.id}>
                     {log.farm_change_detection_result_image1 && (
                       <div className="change-log-image result-image-1">
-                        <p>결과 이미지 1</p>
+                        <p>20년-21년 변화탐지</p>
                         <img
                           src={log.farm_change_detection_result_image1}
                           alt="Result Image 1"
@@ -58,7 +58,7 @@ const DetailImages = ({ logData }) => {
 
                     {log.farm_change_detection_result_image2 && (
                       <div className="change-log-image result-image-2">
-                        <p>결과 이미지 2</p>
+                        <p>21년-22년 변화탐지</p>
                         <img
                           src={log.farm_change_detection_result_image2}
                           alt="Result Image 2"
@@ -71,8 +71,7 @@ const DetailImages = ({ logData }) => {
               
               {/* "3년 평균 변화율" 추가 */}
               <div className="change-rating-result">
-                <p>3년 평균 변화율</p>
-                <span>{logData.cd_log[0].change_rating_result !== undefined ? logData.cd_log[0].change_rating_result : '정보 없음'}</span>
+                <p>3년 평균 변화율: {logData.cd_log[0].change_rating_result !== undefined ? `${logData.cd_log[0].change_rating_result}%` : '정보 없음'}</p>
               </div>
             </>
           ) : (
