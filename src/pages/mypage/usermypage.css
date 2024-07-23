@@ -75,7 +75,7 @@ body, html {
   text-align: center;
   /* width: 100%; */
   padding: 15px;
-  border: 2px solid #E6E6E6;
+  border: 2px solid #D3D3D3;
   box-sizing: border-box;
   vertical-align: middle;
   white-space: nowrap;
@@ -92,6 +92,14 @@ body, html {
 
 .mypage-info td {
   font-size: 14px;
+}
+
+.mypage-info tbody tr:nth-child(odd) td {
+  background-color: #FFFFFF;
+}
+
+.mypage-info tbody tr:nth-child(even) td {
+  background-color: #F3F3F3;
 }
 
 .no-column {

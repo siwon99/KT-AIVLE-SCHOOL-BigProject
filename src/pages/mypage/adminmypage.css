@@ -88,7 +88,7 @@ body, html {
 
 .mypage-info th,
 .mypage-info td {
-  border: 2px solid #E6E6E6;
+  border: 2px solid #D3D3D3;
   box-sizing: border-box;
   white-space: nowrap;
 }
@@ -110,6 +110,14 @@ body, html {
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: center;
+}
+
+.mypage-info tbody tr:nth-child(odd) td {
+  background-color: #FFFFFF;
+}
+
+.mypage-info tbody tr:nth-child(even) td {
+  background-color: #F3F3F3;
 }
 
 /* .check-column {
@@ -168,10 +176,12 @@ body, html {
 
 .management-column button {
   display: block;
+  text-align: center;
   width: 100%;
   height: 30px;
-  /* padding: 5px 10px; */
+  padding: 0 5px;
   margin-bottom: 5px;
+  /* white-space: normal; */
 }
 
 .management-column button:last-child {
@@ -221,15 +231,15 @@ body, html {
 }
 
 @media (max-width: 1286px) { /* 반응형 */
-  .umypage-container.sidebar-open {
+  .amypage-container.sidebar-open {
     padding-left: 20%;
   }
 
-  .umypage-title {
+  .amypage-title {
     font-size: calc(28px + (30 - 28) * ((100vw - 768px) / (1279 - 768))) !important;
   }
 
-  .umypage-title::after {
+  .amypage-title::after {
     height: calc(2px + (3 - 2) * ((100vw - 768px) / (1279 - 768))) !important;
   }
   
@@ -258,8 +268,12 @@ body, html {
     width: 13.5%;
   }
 
+  .management-column button {
+    font-size: calc(12px + (14 - 12) * ((100vw - 768px) / (1279 - 768)));
+  }
+
   .pagination button {
-    font-size: calc(12px + (14 - 12) * ((100vw - 768px) / (1279 - 768)));;
+    font-size: calc(12px + (14 - 12) * ((100vw - 768px) / (1279 - 768)));
   }
 }
 
@@ -286,17 +300,17 @@ body, html {
 }
 
 @media(max-width: 1024px) {
-  .umypage-container.sidebar-open {
+  .amypage-container.sidebar-open {
     padding-left: 210px;
   }
 }
 
 @media(max-width: 768px) {
-  .umypage-title {
+  .amypage-title {
     font-size: 28px !important;
   }
 
-  .umypage-title::after {
+  .amypage-title::after {
     height: 2px !important;
   }
 
@@ -306,6 +320,10 @@ body, html {
 
   .mypage-info td {
     font-size: 13px !important;
+  }
+
+  .management-column button{
+    font-size: 12px !important;
   }
 
   .pagination button {
