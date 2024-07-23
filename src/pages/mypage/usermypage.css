@@ -90,8 +90,9 @@ body, html {
 }
 
 .mypage-info td {
-  padding: 10px;
+  padding: 15px;
   font-size: 14px;
+  text-align: center;
 }
 
 .no-column {
