@@ -1,3 +1,4 @@
+/* Font face 설정 */
 @font-face {
   font-family: 'MoveSans-Bold';
   src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/MoveSans-Bold.woff2') format('woff2');
@@ -11,31 +12,41 @@
   font-weight: 300;
   src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
   src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
- }
+}
 
 /* 깜박이는 커서 애니메이션 */
 @keyframes blink-caret {
   50% { border-color: transparent; }
 }
 
-/* 커서 깜빡임 중지 애니메이션 */
 @keyframes blink-caret-end {
   0%, 100% { border-color: transparent; }
 }
 
+/* 애니메이션을 위한 typed-text 클래스 */
 .typed-text {
   display: inline-block;
   overflow: hidden;
-  border-right: 2px solid black; 
+  border-right: 2px solid black;
   white-space: nowrap;
-  animation: typing 200s steps(40, end), blink-caret .75s step-end infinite;
+  animation: typing 2s steps(40, end), blink-caret .75s step-end infinite;
 }
 
+/* 애니메이션 완료 후 스타일 */
 .typed-text.finished {
   animation: none;
   border-right: none;
 }
 
+/* 모바일 뷰 텍스트 중앙 정렬 및 줄 바꿈 */
+@media (max-width: 768px) {
+  .typed-text {
+    white-space: pre-wrap;
+    text-align: center;
+  }
+}
+
+/* 기본 스타일 설정 */
 body, html {
   margin: 0;
   padding: 0;
@@ -48,6 +59,7 @@ body, html {
   height: 100%;
 }
 
+/* 메인 홈 스타일 */
 .home {
   width: 100%;
   height: 100%;
@@ -57,6 +69,7 @@ body, html {
   align-items: center;
 }
 
+/* 메인 텍스트 스타일 */
 .maintext {
   font-family: 'MoveSans-Bold';
   justify-content: center;
@@ -74,12 +87,13 @@ body, html {
   font-weight: 100;
 }
 
+/* 컨텐츠 스타일 */
 .content {
   display: grid;
   justify-items: center;
   position: relative;
-  grid-template-columns: 1fr 1fr; /* 2개의 열 */
-  grid-template-rows: 1fr 3fr;    /* 첫 번째 행 1/4, 두 번째 행 3/4 비율 */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 3fr;
   gap: 20px;
   width: 100%;
   height: 100%;
@@ -89,29 +103,31 @@ body, html {
   overflow-y: scroll;
 }
 
+/* 스크롤바 숨김 */
 .content::-webkit-scrollbar {
   display: none;
 }
 
-.content::before { /* 홈페이지 중간 선 */
+/* 중앙선 스타일 */
+.content::before {
   content: "";
   position: absolute;
   background-color: #00008C;
   width: 2px;
-  height: calc(100vh - 30%);  /* 뷰포트 높이의 70% */
+  height: calc(100vh - 30%);
   left: 49%;
   top: 15%;
   transform: translateX(-50%);
 }
 
-/* 그리드 영역별(행열로 구분) 배치 */
+/* 메인 텍스트 그리드 설정 */
 .content .maintext {
   grid-column: 1;
   grid-row: 1;
   display: flex;
-  justify-content: center;    /* 수평 중앙 */
-  align-items: center;        /* 수직 중앙 */
-  text-align: center;         /* 텍스트 수평 중앙 */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   width: 90%;
   padding: 2% 5%;
   margin-top: 110px;
@@ -119,6 +135,7 @@ body, html {
   box-sizing: border-box;
 }
 
+/* 서비스 소개 스타일 */
 .content .service-intro {
   grid-column: 1;
   grid-row: 2;
@@ -141,20 +158,19 @@ body, html {
 .introsub {
   font-family: 'NanumBarunGothic';
   font-size: 17px;
-  line-height: 2.2; 
+  line-height: 2.2;
   word-break: keep-all;
   text-align: center;
-  /* white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; */
 }
 
+/* 서클 컨테이너 스타일 */
 .content .circle-container {
   grid-column: 2;
   grid-row: 1;
   box-sizing: border-box;
 }
 
+/* 유튜브 컨테이너 스타일 */
 .content .youtube-container {
   grid-column: 2;
   grid-row: 2;
@@ -180,6 +196,7 @@ body, html {
   border: none;
 }
 
+/* 챗봇 스타일 */
 .chatbot {
   position: absolute;
   bottom: 50px;
@@ -204,11 +221,11 @@ body, html {
   height: 60%;
 }
 
-/* 챗봇 말풍선 추가 */
+/* 챗봇 말풍선 스타일 */
 .chatBot-tooltip {
   position: absolute;
   top: 50%;
-  right: 80px;/*calc(82px + 10px);*/
+  right: 80px;
   padding: 1rem .85rem .85rem;
   width: max-content;
   font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
@@ -269,8 +286,9 @@ body, html {
   display: inline-block;
 }
 
+/* 푸터 스타일 */
 .footer {
-  grid-column: 1 / span 2;  /* 1열~2열 */
+  grid-column: 1 / span 2;
   grid-row: 3;
   display: flex;
   flex-direction: column;
@@ -284,7 +302,6 @@ body, html {
   padding: 0;
   font-size: 11px;
   background-color: #FFFFFF;
-  /* bottom: 0; */
   box-sizing: border-box;
   z-index: 996;
   flex: 0;
@@ -294,7 +311,8 @@ body, html {
   margin: 1px;
 }
 
-@media (max-width: 1279px) { /* 반응형 */
+/* 반응형 스타일 - 최대 너비 1279px */
+@media (max-width: 1279px) {
   .home {
     overflow-y: auto;
     -ms-overflow-style: none;
@@ -357,11 +375,11 @@ body, html {
     box-sizing: border-box;
   }
 
-  .content.sidebar-open .circle-container{
+  .content.sidebar-open .circle-container {
     gap: 5px;
   }
 
-  .content.sidebar-open .circle-container .circle{
+  .content.sidebar-open .circle-container .circle {
     width: 120px;
     height: 120px;
     max-width: 120px;
@@ -383,15 +401,15 @@ body, html {
     position: relative;
     width: 100%;
     height: 0;
-    padding-bottom: 56.25%; /* 반응형 비디오 16:9 비율 */
+    padding-bottom: 56.25%;
   }
 
   .content .youtube iframe {
     position: absolute;
-    top: 0; 
+    top: 0;
     left: 0;
-    width: 100%; 
-    height: 100%; 
+    width: 100%;
+    height: 100%;
   }
 
   .chatbot {
@@ -419,6 +437,7 @@ body, html {
   }
 }
 
+/* 반응형 스타일 - 최대 너비 1050px */
 @media (max-width: 1050px) {
   .content.sidebar-open {
     padding-left: 210px;
@@ -439,11 +458,12 @@ body, html {
     height: 130px;
   }
 
-  .content.sidebar-open .circle-container{
+  .content.sidebar-open .circle-container {
     gap: 30px;
   }
 }
 
+/* 반응형 스타일 - 최대 너비 768px */
 @media (max-width: 768px) {
   .content .maintext, 
   .content .circle-container,

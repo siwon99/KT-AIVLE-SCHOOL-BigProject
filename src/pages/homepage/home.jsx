@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react'; // useState: 모달 열림상태 관리
+import React, { useEffect, useState } from 'react';
 import "./home.css";
 import Navbar from '../navbar/navbar.jsx';
 import Search from './Search.jsx';
 import WchatBot from "/assets/WchatBot.svg"
-import ChatBot from './ChatBot.jsx'; // 이건우 추가
+import ChatBot from './ChatBot.jsx';
 
 // 메인 페이지 문구
 const MainText = () => {
   const [displayText, setDisplayText] = useState('');
   const [isFinished, setIsFinished] = useState(false);
-  const fullText = 'Next Our New Generation, Better then Us';
+  const fullText = 'Next Our New Generation,\nBetter then Us';
 
   useEffect(() => {
     let index = 0;
@@ -27,7 +27,7 @@ const MainText = () => {
   return (
     <section className="maintext">
       <p className='maintitle'>NONGBU</p>
-      <p className='mainsub typed-text'>{displayText}</p>
+      <p className={`mainsub typed-text ${isFinished ? 'finished' : ''}`}>{displayText}</p>
     </section>
   );
 };
@@ -107,7 +107,6 @@ const HomePage = () => {
       </div>
     </div>
   );
-  
 };
 
 export default HomePage;
