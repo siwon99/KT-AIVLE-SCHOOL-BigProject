@@ -71,7 +71,9 @@ const DetailImages = ({ logData }) => {
               
               {/* "3년 평균 변화율" 추가 */}
               <div className="change-rating-result">
-                <p>3년 평균 변화율: {logData.cd_log[0].change_rating_result !== undefined ? `${logData.cd_log[0].change_rating_result}%` : '정보 없음'}</p>
+                <p>
+                  3년 평균 변화율: {logData.cd_log[0].change_rating_result !== undefined ? `${logData.cd_log[0].change_rating_result}%` : '정보 없음'}
+                </p>
               </div>
             </>
           ) : (
