@@ -67,8 +67,6 @@
   justify-content: center;
   grid-template-columns: 1fr 1fr;
   width: auto;
-  /* max-width: 440px; */
-  /* max-height: 200px; */
   box-sizing: border-box;
 }
 
@@ -98,11 +96,16 @@
 
 .change-rating-result {
   text-align: center;
-  /* border: 1px solid #ddd; */
   padding: 10px;
   margin-top: 10px;
 }
 
 .change-rating-result p {
   margin: 0;
+}
+
+@media (max-width: 768px) {
+  .adminModal-page {
+    margin-left: 210px;
+  }
 }
