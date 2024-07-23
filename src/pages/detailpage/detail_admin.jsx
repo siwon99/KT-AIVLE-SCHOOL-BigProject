@@ -161,7 +161,7 @@ const DetailAdmin = () => {
                 <span className="d-info" info-title="농지명">
                   <span>{landDetail.farm_name}</span>
                 </span>
-                <span className="d-info" info-title="소유주">
+                <span className="d-info" info-title="지목">
                   <span>{landDetail.farm_owner}</span>
                 </span>
                 <span className="d-info" info-title="위도 / 경도">

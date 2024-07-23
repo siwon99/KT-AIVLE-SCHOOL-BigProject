@@ -105,7 +105,7 @@ const Iblist = () => {
                   <div className='farm-info'>
                     <div className='num'>{farms.length - (firstIndex + index)}.</div>
                     <div className='farm-name'>[{farm.farm_name}]</div>
-                    <div className='farm-owner'>소유자: {farm.farm_owner}</div>
+                    <div className='farm-owner'>지목: {farm.farm_owner}</div>
                     <div className='farm-size'>농지 크기: {farm.farm_size}</div>
 
                     <button onClick={() => handleFarmDetail(farm.farm_id)} className="choiceBtn">선택</button>
