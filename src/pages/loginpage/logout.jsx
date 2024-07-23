@@ -9,7 +9,7 @@ const Logout = () => {
     const token = localStorage.getItem('token');
     
     if (token) {
-      fetch('http://3.39.228.42/users/logout/', { 
+      fetch('http://3.39.228.42:8080/users/logout/', { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

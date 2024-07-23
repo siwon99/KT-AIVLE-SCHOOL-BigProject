@@ -18,7 +18,7 @@ const ListAll = () => {
     });
     
     if (token) {
-      fetch('http://3.39.228.42/users/authorization/', { 
+      fetch('http://3.39.228.42:8080/users/authorization/', { 
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

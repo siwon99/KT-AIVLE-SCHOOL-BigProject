@@ -15,7 +15,7 @@ const ListPage = () => {
     const token = localStorage.getItem('token');
     
     if (token) {
-      fetch('http://3.39.228.42/farms/admin/list/', { 
+      fetch('http://3.39.228.42:8080/farms/admin/list/', { 
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

@@ -1,4 +1,4 @@
-const base_url = 'http://3.39.228.42';
+const base_url = 'http://3.39.228.42:8080';
 
 // 주어진 엔드포인트에 대해 토큰을 사용하여 GET 요청을 보내고, JSON 데이터를 반환
 export const fetchWithToken = async (endpoint, token, method = 'GET') => {

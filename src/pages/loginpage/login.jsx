@@ -26,7 +26,7 @@ const Login = () => {
   };
 
   const loginProgcess = () => {
-    fetch('http://3.39.228.42/users/login/', {
+    fetch('http://3.39.228.42:8080/users/login/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',

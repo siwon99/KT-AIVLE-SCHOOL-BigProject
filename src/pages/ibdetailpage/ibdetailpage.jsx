@@ -59,7 +59,7 @@ const IbDetailPage = () => {
     // 사용자가 로그인할 때 저장된 토큰
     const token = localStorage.getItem('token');
     if (token) {
-      fetch(`http://3.39.228.42/farms/ibdetail/${farm_id}`, { 
+      fetch(`http://3.39.228.42:8080/farms/ibdetail/${farm_id}`, { 
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

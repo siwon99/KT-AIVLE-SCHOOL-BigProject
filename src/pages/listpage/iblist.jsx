@@ -16,7 +16,7 @@ const Iblist = () => {
     const username = localStorage.getItem('username');
     
     if (token && username) {
-      fetch('http://3.39.228.42/farms/iblist/', { 
+      fetch('http://3.39.228.42:8080/farms/iblist/', { 
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

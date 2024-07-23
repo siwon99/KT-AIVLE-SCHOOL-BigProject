@@ -93,7 +93,7 @@ const Signup = () => {
   // 아이디 유효성 검사(중복 여부)
   
   const checkUsernameValid = (uname) => {
-    fetch(`http://3.39.228.42/users/check-dup?username=${uname}`, {
+    fetch(`http://3.39.228.42:8080/users/check-dup?username=${uname}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -123,7 +123,7 @@ const Signup = () => {
     //checkUsernameValid();
 
     if (passwordValid && passwordMatch && usernameValid == 1 && agreementChecked){
-      fetch('http://3.39.228.42/users/signup/', {
+      fetch('http://3.39.228.42:8080/users/signup/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8',

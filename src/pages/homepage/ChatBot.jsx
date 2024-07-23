@@ -34,7 +34,7 @@ const ChatBot = ({ closeModal }) => {
     }
 
     // 서버로 메시지 전송
-    fetch('http://3.39.228.42/chatbot/chat/', { 
+    fetch('http://3.39.228.42:8080/chatbot/chat/', { 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
