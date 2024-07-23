@@ -105,7 +105,7 @@ const UserMyPage = () => {
 					<table className="mypage-info">
 						<thead>
 							<tr>
-                <th className='no-column'>No</th>
+                				<th className='no-column'>No</th>
 								<th className="time-column">임대 신청 시간</th>
 								<th className="num-column">농지 번호</th>
 								<th className="name-column">농지명</th>
@@ -129,7 +129,7 @@ const UserMyPage = () => {
 								))
 							) : (
 								<tr>
-									<td colSpan="7" className="no-farms">임대 신청된 농지가 없습니다.</td>
+									<td colSpan="5" className="no-farms">임대 신청된 농지가 없습니다.</td>
 								</tr>
 							)}
 						</tbody>
