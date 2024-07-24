@@ -170,7 +170,9 @@ body, html {
 }
 
 /* 버튼 호버 스타일 */
-.backBtn:hover, .changeBtn:hover {
+.backBtn:hover,
+.rentBtn:hover,
+.changeBtn:hover {
   cursor: pointer;
   background-color: #00008C;
   color: white;
