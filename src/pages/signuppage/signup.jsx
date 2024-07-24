@@ -5,6 +5,7 @@ import UserInput from '../loginpage/UserInput';
 import UserButton from '../loginpage/UserBtn';
 import Navbar from '../navbar/navbar';
 import SignupModal from '../signupmodal/signupmodal'; // Import the SignupModal component
+// import Footer from '../homepage/footer.jsx';
 
 const Signup = () => {
   // 유저 정보
@@ -254,6 +255,7 @@ const Signup = () => {
         </div>
       </div>
     </main>
+    {/* <Footer /> */}
   </>
   );
 };

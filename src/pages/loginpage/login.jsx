@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import UserBtn from './UserBtn.jsx';
 import UserInput from './UserInput.jsx';
 import Navbar from '../navbar/navbar.jsx';
+import Footer from '../homepage/footer.jsx';
 
 const Login = () => {
   const [userInfo, setUserInfo] = useState({
@@ -88,6 +89,7 @@ const Login = () => {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 };
