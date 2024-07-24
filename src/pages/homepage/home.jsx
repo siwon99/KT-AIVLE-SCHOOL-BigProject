@@ -4,6 +4,7 @@ import Navbar from '../navbar/navbar.jsx';
 import Search from './Search.jsx';
 import WchatBot from "/assets/WchatBot.svg"
 import ChatBot from './ChatBot.jsx';
+import Footer from './footer.jsx';
 
 // 메인 페이지 문구
 const MainText = () => {
@@ -58,13 +59,13 @@ const ServiceIntroduction = () => (
 );
 
 // 메인 페이지 푸터
-const Footer = () => (
-  <footer className="footer">
-    <p>대전 서구 문정로48번길 30(KT 탄방타워) 13층 교육장</p>
-    <p>ⓒ 2024 20조. ALL RIGHTS RESERVED.</p>
-    <a href='/privacyPolicy'>개인정보처리방침</a>
-  </footer>
-);
+// const Footer = () => (
+//   <footer className="footer">
+//     <p>대전 서구 문정로48번길 30(KT 탄방타워) 13층 교육장</p>
+//     <p>ⓒ 2024 20조. ALL RIGHTS RESERVED.</p>
+//     <a href='/privacyPolicy'>개인정보처리방침</a>
+//   </footer>
+// );
 
 // 챗봇 이미지 클릭 시 모달 열고 닫기
 const HomePage = () => {

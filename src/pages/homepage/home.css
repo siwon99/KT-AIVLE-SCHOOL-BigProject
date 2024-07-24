@@ -286,31 +286,6 @@ body, html {
   display: inline-block;
 }
 
-/* 푸터 스타일 */
-.footer {
-  grid-column: 1 / span 2;
-  grid-row: 3;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  height: 75px;
-  min-height: 75px;
-  margin: 0;
-  padding: 0;
-  font-size: 11px;
-  background-color: #FFFFFF;
-  box-sizing: border-box;
-  z-index: 996;
-  flex: 0;
-}
-
-.footer p {
-  margin: 1px;
-}
-
 /* 반응형 스타일 - 최대 너비 1279px */
 @media (max-width: 1279px) {
   .home {
