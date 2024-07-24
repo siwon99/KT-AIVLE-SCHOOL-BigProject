@@ -447,7 +447,14 @@ body, html {
   }
 
   .youtube-container {
-    min-width: 430px;
+    min-width: 350px;
     margin-left: auto;
+  }
+
+  .whomeicon {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    transform: translateX(-15%);
   }
 }
