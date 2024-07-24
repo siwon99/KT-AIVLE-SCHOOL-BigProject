@@ -21,7 +21,7 @@ const Navbar = () => {
         document.querySelector('.content')?.classList.remove('sidebar-open');
         document.querySelector('.list-container')?.classList.remove('sidebar-open');
         document.querySelector('.listpage')?.classList.remove('sidebar-open');
-        document.querySelector('.service-contents')?.classList.remove('sidebar-open');
+        document.querySelector('.info-section')?.classList.remove('sidebar-open');
         document.querySelector('.team-contents')?.classList.remove('sidebar-open');
         document.querySelector('.faq-container')?.classList.remove('sidebar-open');
         document.querySelector('.signup-content')?.classList.remove('sidebar-open');
@@ -35,7 +35,7 @@ const Navbar = () => {
         document.querySelector('.content')?.classList.add('sidebar-open');
         document.querySelector('.list-container')?.classList.add('sidebar-open');
         document.querySelector('.listpage')?.classList.add('sidebar-open');
-        document.querySelector('.service-contents')?.classList.add('sidebar-open');
+        document.querySelector('.info-section')?.classList.add('sidebar-open');
         document.querySelector('.team-contents')?.classList.add('sidebar-open');
         document.querySelector('.faq-container')?.classList.add('sidebar-open');
         document.querySelector('.signup-content')?.classList.add('sidebar-open');
@@ -61,7 +61,7 @@ const Navbar = () => {
     document.querySelector('.content')?.classList.toggle('sidebar-open', !menuOpen);
     document.querySelector('.list-container')?.classList.toggle('sidebar-open', !menuOpen);
     document.querySelector('.listpage')?.classList.toggle('sidebar-open', !menuOpen);
-    document.querySelector('.service-contents')?.classList.toggle('sidebar-open', !menuOpen);
+    document.querySelector('.info-section')?.classList.toggle('sidebar-open', !menuOpen);
     document.querySelector('.team-contents')?.classList.toggle('sidebar-open', !menuOpen);
     document.querySelector('.faq-container')?.classList.toggle('sidebar-open', !menuOpen);
     document.querySelector('.signup-content')?.classList.toggle('sidebar-open', !menuOpen);

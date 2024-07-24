@@ -5,12 +5,12 @@ import "./service.css";
 import serviceFlowImage from '/assets/serviceflow.webp';
 
 // 섹션 타이틀 컴포넌트
-const SectionTitle = ({ title }) => (
-  <div className="section-title">
-    {title}
-    <div className="underline"></div>
-  </div>
-);
+// const SectionTitle = ({ title }) => (
+//   <div className="section-title">
+//     {title}
+//     <div className="underline"></div>
+//   </div>
+// );
 
 // 문단 리스트 컴포넌트
 const ParagraphList = ({ items }) => (
@@ -57,17 +57,17 @@ const ServiceIntro = () => {
 
   return (
     <div className='info-section'>
-      <SectionTitle title="서비스 소개" />
+      <div className="servicetitle">서비스 소개</div>
       <div className='subtitle'>&ldquo;농업이 미래를 구한다&rdquo;</div>
       <ParagraphList items={introItems} />
 
-      <SectionTitle title="주요 기능" />
+      <div className="functiontitle">주요 기능</div>
       <SlideBanner />
 
-      <SectionTitle title="기대 효과" />
+      <div className="effecttitle">기대 효과</div>
       <ParagraphList items={effectsItems} />
 
-      <SectionTitle title="기술 스택" />
+      <div className="stacktitle">기술 스택</div>
       <img src={serviceFlowImage} alt="Service Flow" className="service-flow-image" />
       <div className="tech-stack">
         <div className="tech-column">
