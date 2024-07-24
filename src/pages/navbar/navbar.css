@@ -262,3 +262,14 @@ body, html {
     display: block;
   } */
 }
+
+
+/* 반응형 스타일 - 최대 너비 768px */
+@media (max-width: 768px) {
+  .whomeicon {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    transform: translateX(-15%);
+  }
+}
