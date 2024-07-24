@@ -94,7 +94,7 @@ const DetailPage = () => {
             const lastLog = data.status_logs[data.status_logs.length - 1];
 
             if (lastLog.farm_status === 0) {
-              setFarmStatusText('분양 완료');
+              setFarmStatusText('확인 예정');
             } else if (lastLog.farm_status === 1) {
               setFarmStatusText('유휴 농지');
             } else if (lastLog.farm_status === 2) {

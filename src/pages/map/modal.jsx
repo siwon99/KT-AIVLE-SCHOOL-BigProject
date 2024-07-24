@@ -84,7 +84,7 @@ const Modal = ({farm_id, closeModal}) => {
 
         //분양 상태 설정
         if (data.status_logs[0].farm_status === 0) {
-          setFarmStatusText('분양 완료');
+          setFarmStatusText('확인 예정');
         } else if (data.status_logs[0].farm_status === 1) {
           setFarmStatusText('유휴 농지');
         } else if (data.status_logs[0].farm_status === 2) {
