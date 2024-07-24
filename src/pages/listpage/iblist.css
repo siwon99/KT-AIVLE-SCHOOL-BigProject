@@ -5,6 +5,7 @@ body, html {
   height: 100%;
 }
 
+/* 페이지 기본 설정 */
 #root {
   display: flex;
   flex-direction: column;
@@ -36,6 +37,7 @@ body, html {
   display: none;
 }
 
+/* 리스트 컨테이너 설정 */
 .lists-container {
   display: flex;
   flex-direction: column;
@@ -45,6 +47,7 @@ body, html {
   box-sizing: border-box;
 }
 
+/* 제목 스타일 */
 .title {
   position: relative;
   text-align: center;
@@ -68,6 +71,7 @@ body, html {
   transform: translateX(-50%);
 }
 
+/* 리스트 정보 컨테이너 */
 .lists-info {
   display: flex;
   flex-direction: column;
@@ -79,6 +83,7 @@ body, html {
   box-sizing: border-box;
 }
 
+/* 리스트 항목 스타일 */
 .lists {
   display: flex;
   justify-content: space-between;
@@ -91,6 +96,7 @@ body, html {
   box-sizing: border-box;
 }
 
+/* 농지 정보 스타일 */
 .farm-info {
   display: flex;
   align-items: center;
@@ -164,6 +170,7 @@ body, html {
   box-sizing: border-box;
 }
 
+/* 페이지네이션 버튼 스타일 */
 .pagination {
   display: flex;
   justify-content: center;
@@ -194,7 +201,8 @@ body, html {
   cursor: not-allowed;
 }
 
-@media (max-width: 1279px) { /* 반응형 */
+/* 반응형 스타일 */
+@media (max-width: 1279px) {
   .listpage.sidebar-open {
     padding-left: 20%;
   }
@@ -230,6 +238,7 @@ body, html {
   }
 }
 
+/* 태블릿 이하 화면에서의 반응형 스타일 */
 @media(max-width: 1024px) {
   .listpage.sidebar-open {
     padding-left: 210px;
@@ -240,6 +249,7 @@ body, html {
   }
 }
 
+/* 스마트폰 화면에서의 반응형 스타일 */
 @media (max-width: 768px) {
   .title {
     font-size: 28px !important;

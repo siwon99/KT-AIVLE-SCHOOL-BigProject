@@ -195,6 +195,10 @@ body, html {
     height: 2px !important;
   }
 
+  .team-info {
+    width: 80%;
+  }
+
   .teammate {
     display: grid;
     grid-template-columns: 1fr 1fr;

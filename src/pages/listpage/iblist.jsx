@@ -8,13 +8,32 @@ const Iblist = () => {
   const navigate = useNavigate();
   const [farms, setFarms] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 5; 
-  const pageCount = 5; 
+  const [pageSize, setPageSize] = useState(5); // PC는 5 설정
+  const pageCount = 5;
 
+  // 화면 크기에 따라 pageSize 조정
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setPageSize(11); // 모바일은 11 설정
+      } else {
+        setPageSize(5); // 그 외에는 5 설정
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  // 컴포넌트가 마운트될 때 농지 리스트를 가져오는 useEffect 훅
   useEffect(() => {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('username');
-    
+
     if (token && username) {
       fetch('http://3.39.228.42:8080/farms/iblist/', { 
         method: 'GET',
@@ -37,12 +56,12 @@ const Iblist = () => {
         //currentFarmId에 맞는 페이지 설정
         const currentFarmId = localStorage.getItem('currentFarmId');
         if (currentFarmId) {
-            const index = data.results.findIndex(farm => farm.farm_id.toString() === currentFarmId);
-            if (index !== -1) {
-                const page = Math.ceil((index + 1) / pageSize);
-                setCurrentPage(page);
-                localStorage.removeItem('currentFarmId');
-            }
+          const index = data.results.findIndex(farm => farm.farm_id.toString() === currentFarmId);
+          if (index !== -1) {
+            const page = Math.ceil((index + 1) / pageSize);
+            setCurrentPage(page);
+            localStorage.removeItem('currentFarmId');
+          }
         }
       })
       // 로컬 스토리지에만 토큰이 남아있어도 로그인 페이지로 유도 가능
@@ -52,7 +71,7 @@ const Iblist = () => {
     } else {
       navigate('/login');
     }
-  }, [navigate]);
+  }, [navigate, pageSize]);
 
   // farms 상태가 업데이트될 때마다 현재 상태를 출력
   useEffect(() => {
@@ -85,7 +104,7 @@ const Iblist = () => {
     </button>
   );
 
-   // 농지 선택 시 해당 farm_id localStorage에 저장
+  // 농지 선택 시 해당 farm_id localStorage에 저장
   const handleFarmDetail = (farmId) => {
     localStorage.setItem('selectedFarmId', farmId);
     navigate(`/ibdetail/${farmId}`);
@@ -96,7 +115,7 @@ const Iblist = () => {
       <Navbar />
       <div className='listpage'>
         <div className="lists-container">
-          <div className="title">불법 건물 리스트</div>
+          <div className="title">불법 건축물 리스트</div>
 
           <div className='lists-info'>
             {currentItems.length > 0 ? (
