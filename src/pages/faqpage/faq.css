@@ -173,6 +173,14 @@ body, html {
   .faq-title::after {
     height: calc(2px + (3 - 2) * ((100vw - 768px) / (1279 - 768))) !important;
   }
+
+  .number {
+    font-size: calc(10px + (15 - 10) * ((100vw - 768px) / (1279 - 768))) !important;
+  }
+
+  .question .text {
+    font-size: calc(13px + (13 - 10) * ((100vw - 768px) / (1279 - 768))) !important;
+  }
 }
 
 @media(max-width: 1024px) {
@@ -209,7 +217,23 @@ body, html {
     height: 2px !important;
   }
 
+  .faq-container {
+    width: 80%;
+  }
+
+  .number {
+    text-align: center;
+    width: 50px;
+    min-width: 30px;
+    font-size: 10px !important;
+  }
+
+  .question {
+    padding: 3px;
+  }
+
   .question .text {
+    font-size: 10px !important;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
