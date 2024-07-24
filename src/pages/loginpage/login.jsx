@@ -57,7 +57,8 @@ const Login = () => {
   return (
     <>
       <Navbar />
-      <main className="login-content">
+      <main className="login-container">
+      <div className="login-content">
         <div className="login-title">로그인</div>
         <div className="login">
           <div className="userFrame">
@@ -88,8 +89,9 @@ const Login = () => {
             </div>
           </div>
         </div>
-      </main>
+      </div>
       <Footer />
+      </main>
     </>
   );
 };

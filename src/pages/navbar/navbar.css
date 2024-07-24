@@ -73,6 +73,7 @@ body, html {
 .whomeicon {
   max-width: 186.5px;
   max-height: 62px;
+  margin: auto;
 }
 
 .navbar nav ul .categories {

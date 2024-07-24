@@ -13,6 +13,16 @@ body, html {
   height: 100%;
 }
 
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: #282828;
+  box-sizing: border-box;
+}
+
 .login-content {
   display: flex;
   flex-direction: column;
@@ -21,7 +31,6 @@ body, html {
   height: 100%;
   padding-bottom: 70px;
   box-sizing: border-box;
-  color: #282828;
 }
 
 .login-title {
@@ -110,7 +119,7 @@ body, html {
 }
 
 @media (max-width: 1279px) { /* 반응형 */
-  .login-content.sidebar-open {
+  .login-container.sidebar-open {
     padding-left: 20%;
   }
 
@@ -124,7 +133,7 @@ body, html {
 }
 
 @media(max-width: 1024px) {
-  .login-content.sidebar-open {
+  .login-container.sidebar-open {
     padding-left: 210px;
   }
 }

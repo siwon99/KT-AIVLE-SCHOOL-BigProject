@@ -25,12 +25,13 @@ const Navbar = () => {
         document.querySelector('.team-contents')?.classList.remove('sidebar-open');
         document.querySelector('.faq-container')?.classList.remove('sidebar-open');
         document.querySelector('.signup-content')?.classList.remove('sidebar-open');
-        document.querySelector('.login-content')?.classList.remove('sidebar-open');
+        document.querySelector('.login-container')?.classList.remove('sidebar-open');
         document.querySelector('.detailpage')?.classList.remove('sidebar-open');
         document.querySelector('.map-container')?.classList.remove('sidebar-open');
         document.querySelector('.modal-container')?.classList.remove('sidebar-open');
         document.querySelector('.umypage-container')?.classList.remove('sidebar-open');
         document.querySelector('.amypage-container')?.classList.remove('sidebar-open');
+        document.querySelector('.footer')?.classList.remove('sidebar-open');
       } else if (menuOpen) {
         document.querySelector('.content')?.classList.add('sidebar-open');
         document.querySelector('.list-container')?.classList.add('sidebar-open');
@@ -39,12 +40,13 @@ const Navbar = () => {
         document.querySelector('.team-contents')?.classList.add('sidebar-open');
         document.querySelector('.faq-container')?.classList.add('sidebar-open');
         document.querySelector('.signup-content')?.classList.add('sidebar-open');
-        document.querySelector('.login-content')?.classList.add('sidebar-open');
+        document.querySelector('.login-container')?.classList.add('sidebar-open');
         document.querySelector('.detailpage')?.classList.add('sidebar-open');
         document.querySelector('.map-container')?.classList.add('sidebar-open');
         document.querySelector('.modal-container')?.classList.add('sidebar-open');
         document.querySelector('.umypage-container')?.classList.add('sidebar-open');
         document.querySelector('.amypage-container')?.classList.add('sidebar-open');
+        document.querySelector('.footer')?.classList.add('sidebar-open');
       }
     };
 
@@ -65,12 +67,13 @@ const Navbar = () => {
     document.querySelector('.team-contents')?.classList.toggle('sidebar-open', !menuOpen);
     document.querySelector('.faq-container')?.classList.toggle('sidebar-open', !menuOpen);
     document.querySelector('.signup-content')?.classList.toggle('sidebar-open', !menuOpen);
-    document.querySelector('.login-content')?.classList.toggle('sidebar-open', !menuOpen);
+    document.querySelector('.login-container')?.classList.toggle('sidebar-open', !menuOpen);
     document.querySelector('.detailpage')?.classList.toggle('sidebar-open', !menuOpen);
     document.querySelector('.map-container')?.classList.toggle('sidebar-open', !menuOpen);
     document.querySelector('.modal-container')?.classList.toggle('sidebar-open', !menuOpen);
     document.querySelector('.umypage-container')?.classList.toggle('sidebar-open', !menuOpen);
     document.querySelector('.amypage-container')?.classList.toggle('sidebar-open', !menuOpen);
+    document.querySelector('.footer')?.classList.toggle('sidebar-open', !menuOpen);
   };
 
   return (
