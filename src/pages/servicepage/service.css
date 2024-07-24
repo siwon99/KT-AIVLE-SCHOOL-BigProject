@@ -245,7 +245,11 @@ body, html {
   }
 
   .subtitle {
-    font-size: 28px !important;
+    font-size: 25px !important;
+  }
+
+  .info-section {
+    width: 80%;
   }
 
   .paragraph-list {
