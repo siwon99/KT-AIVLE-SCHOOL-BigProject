@@ -126,6 +126,7 @@ const Navbar = () => {
         </ul>
       </nav>
       <div className={`sidebar ${menuOpen ? "show" : ""}`}>
+        <div className="spacer"></div>
         <a href="/">홈</a>
         <a href="/listall">농지 임대</a>
         <a href="/service">서비스 소개</a>
