@@ -279,12 +279,51 @@ body, html {
 }
 
 @media(max-width: 768px) {
-  .detail-title {
-    font-size: 16px !important;
+  .detail-container {
+    width: 100%;
+    margin-top: 350px;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .d-info,
+  .map {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: 100%; 
+    box-sizing: border-box;
+  }
+  
+  .map img {
+    max-width: 90%; 
+    max-height: 90%; 
+    margin: 0; 
+    box-sizing: border-box;
+  }
+
+  .detail-title {
+    font-size: 16px !important;
+    width: 160%;
+    margin-left: -155px;
+    margin-right: 35px;
+    margin-top: 20px;
+  }
+
+  .d-info {
+    font-size: 13px !important;
+    width: 160%;
+    margin-left: -155px;
+  }
+
   .backBtn {
     font-size: 13px !important;
+    margin-left: -155px;
+  }
+
+  .changeBtn {
+    margin-right: 40px;
   }
 }
