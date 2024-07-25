@@ -161,6 +161,18 @@ body, html {
   cursor: pointer;
 }
 
+.nomap-page {
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 2.2;
+	flex-direction: column;
+}
+
 @media (max-width: 1279px) { /* 반응형 */
   .map-container.sidebar-open {
     padding-left: 20%;
@@ -191,4 +203,8 @@ body, html {
   .map-title::after {
     height: 2px !important;
   }
+
+  .nomap-page {
+		font-size: 20px;
+	}
 }

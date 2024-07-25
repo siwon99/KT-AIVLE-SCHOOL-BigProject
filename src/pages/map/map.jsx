@@ -24,6 +24,9 @@ function Map() {
   const [isExpanded, setIsExpanded] = useState(false); // 확장 상태 관리
   const currentOverlayRef = useRef(null);
   const currentMarkerRef = useRef(null);
+
+  // 윈도우 크기 감지를 위한 상태
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
  
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -140,19 +143,44 @@ function Map() {
     }
   }, [farms, landDetail.image, navigate]);
  
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     if (window.innerWidth <= 1024 && modalFarmId) {
+  //       closeModal();
+  //     }
+  //   };
+ 
+  //   window.addEventListener('resize', handleResize);
+ 
+  //   return () => {
+  //     window.removeEventListener('resize', handleResize);
+  //   };
+  // }, [modalFarmId]);
+
+    // 윈도우 크기 변경 감지
+    useEffect(() => {
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+  
+      window.addEventListener('resize', handleResize);
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+  
+  // 윈도우 크기 변경에 따라 리디렉션 처리
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 1024 && modalFarmId) {
-        closeModal();
-      }
-    };
- 
-    window.addEventListener('resize', handleResize);
- 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [modalFarmId]);
+    // 윈도우 크기가 768px 이하일 때 nomap으로 이동
+    if (windowWidth <= 768) {
+      navigate('/nomap');
+    } 
+    // 윈도우 크기가 768px 이상일 때 map으로 이동
+    else if (windowWidth > 768) {
+      navigate('/map');
+    }
+  }, [windowWidth, navigate]);
  
   const closeModal = () => {
     setModalFarmId(null);

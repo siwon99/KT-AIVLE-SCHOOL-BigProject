@@ -28,6 +28,7 @@ const FaqPage = lazy(() => import('./pages/faqpage/faq'));
 const Map = lazy(() => import('./pages/map/map'));
 const Notfound = lazy(() => import('./pages/notfoundpage/notfound'));
 const Session = lazy(() => import('./pages/session/session'));
+const Nomap = lazy(() => import('./pages/map/nomap'));
 
 //마이페이지
 const MyPage = lazy(() => import('./pages/mypage/mypage'));
@@ -36,10 +37,17 @@ const UserMyPage = lazy(() => import('./pages/mypage/usermypage'));
 const PrivacyPolicy = lazy(() => import('./pages/privacypolicy/policypage'));
 
 function App() {
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
-    setIsAdmin(true);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
@@ -66,6 +74,7 @@ function App() {
           <Route path="/map" element={<Map />} />
           <Route path="/notfound" element={<Notfound />} />
           <Route path="/session" element={<Session />}/>
+          <Route path="/nomap" element={<Nomap />}/>
 
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/mypage/admin" element={<AdminMyPage />} />
