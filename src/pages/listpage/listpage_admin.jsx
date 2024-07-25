@@ -15,8 +15,8 @@ const ListPage = () => {
   useEffect(() => {
     const updateSettings = () => {
       if (window.innerWidth <= 768) {
-        setPageSize(10); // 모바일은 10 설정
-        setPageCount(4); // 모바일은 4 설정
+        setPageSize(5); // 기존 모바일은 10 설정
+        setPageCount(4); // 기존 모바일은 4 설정
       } else {
         setPageSize(5); // 그 외에는 5 설정
         setPageCount(5); // PC는 5 설정
