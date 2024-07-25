@@ -8,72 +8,56 @@ import WmyPage from "/assets/Wmypage.jpg";
 
 // Navbar 컴포넌트 정의
 const Navbar = () => {
+  // 토큰 상태와 메뉴 열림 상태 관리
   const [token, setToken] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false); // 메뉴의 열림/닫힘 상태를 관리하는 상태(초기값: false)
 
   useEffect(() => {
+    // 로컬 스토리지에서 토큰 가져오기
     const token = localStorage.getItem("token");
     setToken(token);
 
+    // 화면 크기 변경 시 사이드바 상태 조정
     const handleResize = () => {
       if (window.innerWidth > 1279) {
         setMenuOpen(false);
-        document.querySelector('.content')?.classList.remove('sidebar-open');
-        document.querySelector('.list-container')?.classList.remove('sidebar-open');
-        document.querySelector('.listpage')?.classList.remove('sidebar-open');
-        document.querySelector('.info-section')?.classList.remove('sidebar-open');
-        document.querySelector('.team-contents')?.classList.remove('sidebar-open');
-        document.querySelector('.faq-container')?.classList.remove('sidebar-open');
-        document.querySelector('.signup-content')?.classList.remove('sidebar-open');
-        document.querySelector('.login-container')?.classList.remove('sidebar-open');
-        document.querySelector('.detailpage')?.classList.remove('sidebar-open');
-        document.querySelector('.map-container')?.classList.remove('sidebar-open');
-        document.querySelector('.modal-container')?.classList.remove('sidebar-open');
-        document.querySelector('.umypage-container')?.classList.remove('sidebar-open');
-        document.querySelector('.amypage-container')?.classList.remove('sidebar-open');
-        document.querySelector('.footer')?.classList.remove('sidebar-open');
+        // 특정 요소에서 sidebar-open 클래스 제거
+        document.querySelectorAll('.sidebar-open').forEach(el => el.classList.remove('sidebar-open'));
       } else if (menuOpen) {
-        document.querySelector('.content')?.classList.add('sidebar-open');
-        document.querySelector('.list-container')?.classList.add('sidebar-open');
-        document.querySelector('.listpage')?.classList.add('sidebar-open');
-        document.querySelector('.info-section')?.classList.add('sidebar-open');
-        document.querySelector('.team-contents')?.classList.add('sidebar-open');
-        document.querySelector('.faq-container')?.classList.add('sidebar-open');
-        document.querySelector('.signup-content')?.classList.add('sidebar-open');
-        document.querySelector('.login-container')?.classList.add('sidebar-open');
-        document.querySelector('.detailpage')?.classList.add('sidebar-open');
-        document.querySelector('.map-container')?.classList.add('sidebar-open');
-        document.querySelector('.modal-container')?.classList.add('sidebar-open');
-        document.querySelector('.umypage-container')?.classList.add('sidebar-open');
-        document.querySelector('.amypage-container')?.classList.add('sidebar-open');
-        document.querySelector('.footer')?.classList.add('sidebar-open');
+        // 사이드바 열기
+        const elements = [
+          '.content', '.list-container', '.listpage', '.info-section',
+          '.team-contents', '.faq-container', '.signup-content',
+          '.login-container', '.detailpage', '.map-container',
+          '.modal-container', '.umypage-container',
+          '.amypage-container', '.footer'
+        ];
+        elements.forEach(selector => {
+          document.querySelector(selector)?.classList.add('sidebar-open');
+        });
       }
     };
 
-    // 새로고침 없이 동적으로 화면 크기가 변경되도록 하는 코드
+    // 리사이즈 이벤트 리스너 추가
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, [menuOpen]);
 
-  // 현재 메뉴 상태를 반전시키는 함수
+  // 메뉴 토글 함수
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-    document.querySelector('.content')?.classList.toggle('sidebar-open', !menuOpen);
-    document.querySelector('.list-container')?.classList.toggle('sidebar-open', !menuOpen);
-    document.querySelector('.listpage')?.classList.toggle('sidebar-open', !menuOpen);
-    document.querySelector('.info-section')?.classList.toggle('sidebar-open', !menuOpen);
-    document.querySelector('.team-contents')?.classList.toggle('sidebar-open', !menuOpen);
-    document.querySelector('.faq-container')?.classList.toggle('sidebar-open', !menuOpen);
-    document.querySelector('.signup-content')?.classList.toggle('sidebar-open', !menuOpen);
-    document.querySelector('.login-container')?.classList.toggle('sidebar-open', !menuOpen);
-    document.querySelector('.detailpage')?.classList.toggle('sidebar-open', !menuOpen);
-    document.querySelector('.map-container')?.classList.toggle('sidebar-open', !menuOpen);
-    document.querySelector('.modal-container')?.classList.toggle('sidebar-open', !menuOpen);
-    document.querySelector('.umypage-container')?.classList.toggle('sidebar-open', !menuOpen);
-    document.querySelector('.amypage-container')?.classList.toggle('sidebar-open', !menuOpen);
-    document.querySelector('.footer')?.classList.toggle('sidebar-open', !menuOpen);
+    const elements = [
+      '.content', '.list-container', '.listpage', '.info-section',
+      '.team-contents', '.faq-container', '.signup-content',
+      '.login-container', '.detailpage', '.map-container',
+      '.modal-container', '.umypage-container',
+      '.amypage-container', '.footer'
+    ];
+    elements.forEach(selector => {
+      document.querySelector(selector)?.classList.toggle('sidebar-open', !menuOpen);
+    });
   };
 
   return (
@@ -87,12 +71,14 @@ const Navbar = () => {
             <div></div>
           </div>
 
+          {/* 홈 아이콘 */}
           <li className="home-icon">
             <a href="/">
               <img src={WhomeIcon} alt="NongBu" className="whomeicon" />
             </a>
           </li>
 
+          {/* 카테고리 링크 */}
           <div className="categories">
             <li className="category"><a href="/listall">농지 임대</a></li>
             <li className="category"><a href="/service">서비스 소개</a></li>
@@ -100,27 +86,28 @@ const Navbar = () => {
             <li className="category"><a href="/faq">FAQ</a></li>
             <li className="category"><a href="/map">지도</a></li>
           </div>
-          
+
+          {/* 인증 아이콘 */}
           <li className="auth-icons">
             {!token ? (
               <div className="first-icons">
                 <a href="/login" className="login-link">
-                  <img src={WlogIn} alt="Log In" className="login-icon"/>
+                  <img src={WlogIn} alt="Log In" className="login-icon" />
                   <span>Login</span>
                 </a>
                 <a href="/signup" className="signup-link">
-                  <img src={WsignUp} alt="Sign Up" className="signup-icon"/>
+                  <img src={WsignUp} alt="Sign Up" className="signup-icon" />
                   <span>Signup</span>
                 </a>
               </div>
             ) : (
               <div className="second-icons">
                 <a href="/mypage" className="mypage-link">
-                  <img src={WmyPage} alt="My Page" className="mypage-icon"/>
+                  <img src={WmyPage} alt="My Page" className="mypage-icon" />
                   <span>Mypage</span>
                 </a>
                 <a href="/logout" className="logout-link">
-                  <img src={WlogOut} alt="Log Out" className="logout-icon"/>
+                  <img src={WlogOut} alt="Log Out" className="logout-icon" />
                   <span>Logout</span>
                 </a>
               </div>
@@ -143,7 +130,10 @@ const Navbar = () => {
               <a href="/signup">회원가입하세요 &gt;</a>
             </>
           ) : (
-            <a href="/mypage">마이페이지 &gt;</a>
+            <>
+              <a href="/mypage">마이페이지 &gt;</a>
+              <a href="/logout">로그아웃 &gt;</a>
+            </>
           )}
         </div>
       </div>
