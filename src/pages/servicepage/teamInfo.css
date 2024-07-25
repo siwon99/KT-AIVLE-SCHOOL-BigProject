@@ -5,7 +5,6 @@ body, html {
   height: 100%;
 }
 
-/* 전체 레이아웃을 중앙 정렬하는 컨테이너 */
 #root {
   display: flex;
   flex-direction: column;
@@ -14,7 +13,6 @@ body, html {
   height: 100%;
 }
 
-/* 개별 페이지를 구성하는 컨테이너 */
 .page {
   display: flex;
   flex-direction: column;
@@ -23,7 +21,6 @@ body, html {
   height: 100%;
 }
 
-/* 팀 구성원 목록을 담는 컨테이너 */
 .team-contents {
   display: flex;
   flex-direction: column;
@@ -36,12 +33,10 @@ body, html {
   -ms-overflow-style: none;
 }
 
-/* 웹킷 브라우저에서 스크롤바 숨기기 */
 .team-contents::-webkit-scrollbar {
   display: none;
 }
 
-/* 팀 정보 섹션 스타일링 */
 .team-info {
   display: flex;
   flex-direction: column;
@@ -51,7 +46,6 @@ body, html {
   box-sizing: border-box;
 }
 
-/* 팀 타이틀 스타일링 */
 .team-title {
   position: relative;
   text-align: center;
@@ -63,7 +57,6 @@ body, html {
   box-sizing: border-box;
 }
 
-/* 팀 타이틀 아래에 밑줄 추가 */
 .team-title::after {
   content: '';
   display: block;
@@ -76,7 +69,6 @@ body, html {
   transform: translateX(-50%);
 }
 
-/* 개별 팀원 섹션 스타일링 */
 .teammate {
   display: flex;
   flex-direction: column;
@@ -85,7 +77,6 @@ body, html {
   box-sizing: border-box;
 }
 
-/* 다섯 개의 팀원을 한 줄에 배치 */
 .teammate .row-5 {
   display: flex;
   justify-content: space-between;
@@ -94,7 +85,6 @@ body, html {
   box-sizing: border-box;
 }
 
-/* 네 개의 팀원을 한 줄에 배치 */
 .teammate .row-4 {
   display: flex;
   justify-content: space-between;
@@ -102,7 +92,6 @@ body, html {
   box-sizing: border-box;
 }
 
-/* 팀원 목록 스타일링 */
 .teammate ul {
   display: flex;
   justify-content: space-between;
@@ -113,7 +102,6 @@ body, html {
   box-sizing: border-box;
 }
 
-/* 개별 팀원 항목 스타일링 */
 .teammate li {
   display: flex;
   flex-direction: column;
@@ -122,7 +110,6 @@ body, html {
   box-sizing: border-box;
 }
 
-/* 프로필 사진 스타일링 */
 .profile-pic {
   width: 120px;
   height: 120px;
@@ -135,8 +122,7 @@ body, html {
   object-fit: cover;
 }
 
-/* 화면 크기에 따라 반응형 레이아웃 적용 */
-@media (max-width: 1279px) {
+@media (max-width: 1279px) { /* 반응형 */
   .team-contents.sidebar-open {
     padding-left: 20%;
   }
@@ -164,7 +150,6 @@ body, html {
   }
 }
 
-/* 중간 크기 화면용 반응형 레이아웃 */
 @media(max-width: 1024px) {
   .team-contents.sidebar-open {
     padding-left: 210px;
@@ -185,8 +170,22 @@ body, html {
   } */
 }
 
-/* 작은 화면용 반응형 레이아웃 */
 @media(max-width: 768px) {
+  .team-title {
+    font-size: 28px !important;
+  }
+
+  .team-title::after {
+    height: 2px !important;
+  }
+
+  .teammate {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 작은 화면용 반응형 레이아웃 */
+/* @media(max-width: 768px) {
   .team-title {
     font-size: 28px !important;
   }
@@ -219,4 +218,4 @@ body, html {
     grid-column: span 2;
     justify-self: center;
   }
-}
+} */
