@@ -9,24 +9,24 @@ const Iblist = () => {
   const [farms, setFarms] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(5); // PC는 5 설정
-  const pageCount = 5; // 표시할 페이지 번호 갯수
+  const [pageCount, setPageCount] = useState(5); // 초기 값은 PC 설정
 
-  // 화면 크기에 따라 pageSize 조정
+  // 화면 크기에 따라 pageSize와 pageCount 설정
   useEffect(() => {
-    const handleResize = () => {
+    const updateSettings = () => {
       if (window.innerWidth <= 768) {
         setPageSize(10); // 모바일은 10 설정
+        setPageCount(4); // 모바일은 4 설정
       } else {
         setPageSize(5); // 그 외에는 5 설정
+        setPageCount(5); // PC는 5 설정
       }
     };
 
-    handleResize();
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', updateSettings);
+    updateSettings(); // 초기 로드 시 호출
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    return () => window.removeEventListener('resize', updateSettings);
   }, []);
 
   // 컴포넌트가 마운트될 때 농지 리스트를 가져오는 useEffect 훅
