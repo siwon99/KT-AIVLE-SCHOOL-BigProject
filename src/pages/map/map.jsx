@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react'; // eslint-disable-line no-unused-vars
-import Navbar from '../navbar/navbar';
+import Navbar from '../navbar/navbar.jsx';
 import { useNavigate } from 'react-router-dom';
 import './map.css';
-import Modal from './modal';
+import Modal from './modal.jsx';
 
 const { kakao } = window;
 

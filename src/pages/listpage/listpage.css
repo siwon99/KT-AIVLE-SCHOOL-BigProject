@@ -137,7 +137,7 @@ body, html {
   align-items: center;
   /* width: 85px; */
   width: 9%;
-  min-width: 75px;
+  min-width: 50px;
   height: 35px;
   margin-left: auto;
   font-size: 14px;
@@ -213,7 +213,7 @@ body, html {
   }
 
   .num {
-    font-size: calc(14px + (15 - 14) * ((100vw - 768px) / (1279 - 768))) !important;
+    font-size: calc(10px + (15 - 10) * ((100vw - 768px) / (1279 - 768))) !important;
   }
 
   .no-farms {
@@ -222,6 +222,10 @@ body, html {
 
   .pagination button {
     font-size: calc(12px + (14 - 12) * ((100vw - 768px) / (1279 - 768)));;
+  }
+
+  .farm-name {
+    font-size: calc(11px + (14 - 11) * ((100vw - 768px) / (1279 - 768)));
   }
 }
 
@@ -251,13 +255,18 @@ body, html {
     height: 2px !important;
   }
 
-  .farm-info,
+  .farm-info {
+    font-size: 11px !important;
+  }
+
   .choiceBtn {
-    font-size: 13px !important;
+    margin-left: 10px;
+    font-size: 11px !important;
+    height: 21px !important;
   }
 
   .num {
-    font-size: 14px !important;
+    font-size: 10px !important;
   }
 
   .farm-size {
@@ -270,5 +279,13 @@ body, html {
 
   .no-farms {
     font-size: 15px;
+  }
+
+  .lists-container {
+    width: 80%;
+  }
+
+  .lists {
+    height: 11.5%;
   }
 }

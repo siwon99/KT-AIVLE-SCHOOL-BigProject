@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../navbar/navbar';
+import Navbar from '../navbar/navbar.jsx';
 import './notfound.css'
 
 export const Notfound = () => {

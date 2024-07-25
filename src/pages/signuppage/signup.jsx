@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react'; // eslint-disable-line no-unused-vars
 import "./signup.css"; //권혜민 추가
 import { useNavigate } from 'react-router-dom';
-import UserInput from '../loginpage/UserInput';
-import UserButton from '../loginpage/UserBtn';
-import Navbar from '../navbar/navbar';
-import SignupModal from '../signupmodal/signupmodal'; // Import the SignupModal component
+import UserInput from '../loginpage/UserInput.jsx';
+import UserButton from '../loginpage/UserBtn.jsx';
+import Navbar from '../navbar/navbar.jsx';
+import SignupModal from '../signupmodal/signupmodal.jsx'; // Import the SignupModal component
 // import Footer from '../homepage/footer.jsx';
 
 const Signup = () => {

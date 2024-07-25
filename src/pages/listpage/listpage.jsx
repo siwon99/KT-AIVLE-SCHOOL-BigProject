@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../navbar/navbar';
+import Navbar from '../navbar/navbar.jsx';
 import './listpage.css';
 
 // 상세 정보 페이지 컴포넌트

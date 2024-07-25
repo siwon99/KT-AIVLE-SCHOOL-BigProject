@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from '../navbar/navbar';
-import SlideBanner from './slidebanner';
+import Navbar from '../navbar/navbar.jsx';
+import SlideBanner from './slidebanner.jsx';
 import "./service.css";
 import serviceFlowImage from '/assets/serviceflow.webp';
 
