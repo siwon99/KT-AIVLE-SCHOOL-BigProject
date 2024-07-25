@@ -172,12 +172,10 @@ function Map() {
   
   // 윈도우 크기 변경에 따라 리디렉션 처리
   useEffect(() => {
-    // 윈도우 크기가 768px 이하일 때 nomap으로 이동
-    if (windowWidth <= 768) {
+    if (windowWidth <= 390) {
       navigate('/nomap');
     } 
-    // 윈도우 크기가 768px 이상일 때 map으로 이동
-    else if (windowWidth > 768) {
+    else if (windowWidth > 390) {
       navigate('/map');
     }
   }, [windowWidth, navigate]);

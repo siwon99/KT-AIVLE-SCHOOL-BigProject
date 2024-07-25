@@ -203,7 +203,9 @@ body, html {
   .map-title::after {
     height: 2px !important;
   }
+}
 
+@media (max-width: 390px) {
   .nomap-page {
 		font-size: 20px;
 	}
