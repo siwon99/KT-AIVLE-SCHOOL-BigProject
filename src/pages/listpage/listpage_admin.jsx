@@ -8,8 +8,24 @@ const ListPage = () => {
   const navigate = useNavigate();
   const [farms, setFarms] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 5; // 한 페이지에 나열할 목록 수
+  const [pageSize, setPageSize] = useState(5); // PC는 5 설정
   const pageCount = 5; // 표시할 페이지 번호 갯수
+
+  // 화면 크기에 따라 pageSize 설정
+  useEffect(() => {
+    const updatePageSize = () => {
+      if (window.innerWidth <= 768) {
+        setPageSize(10); // 모바일은 10 설정
+      } else {
+        setPageSize(5); // 그 외에는 5 설정
+      }
+    };
+
+    window.addEventListener('resize', updatePageSize);
+    updatePageSize(); // 초기 로드 시 호출
+
+    return () => window.removeEventListener('resize', updatePageSize);
+  }, []);
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -20,7 +36,7 @@ const ListPage = () => {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Token ${token}`,
-        }, 
+        },
       })
       .then(response => {
         console.log(response);
@@ -34,7 +50,7 @@ const ListPage = () => {
         console.log('data.results:', data.results);
         setFarms(data.results.reverse());
 
-        //currentFarmId에 맞는 페이지 설정
+        // currentFarmId에 맞는 페이지 설정
         const currentFarmId = localStorage.getItem('currentFarmId');
         if (currentFarmId) {
           const index = data.results.findIndex(farm => farm.farm_id.toString() === currentFarmId);
@@ -52,7 +68,7 @@ const ListPage = () => {
     } else {
       navigate('/login');
     }
-  }, [navigate]);
+  }, [navigate, pageSize]);
 
   // farms 상태가 업데이트될 때마다 현재 상태를 출력
   useEffect(() => {

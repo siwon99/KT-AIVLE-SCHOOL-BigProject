@@ -9,13 +9,13 @@ const Iblist = () => {
   const [farms, setFarms] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(5); // PC는 5 설정
-  const pageCount = 5;
+  const pageCount = 5; // 표시할 페이지 번호 갯수
 
   // 화면 크기에 따라 pageSize 조정
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) {
-        setPageSize(11); // 모바일은 11 설정
+        setPageSize(10); // 모바일은 10 설정
       } else {
         setPageSize(5); // 그 외에는 5 설정
       }
