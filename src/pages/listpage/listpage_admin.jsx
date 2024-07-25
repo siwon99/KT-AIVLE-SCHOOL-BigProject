@@ -9,22 +9,24 @@ const ListPage = () => {
   const [farms, setFarms] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(5); // PC는 5 설정
-  const pageCount = 5; // 표시할 페이지 번호 갯수
+  const [pageCount, setPageCount] = useState(5); // 초기 값은 PC 설정
 
-  // 화면 크기에 따라 pageSize 설정
+  // 화면 크기에 따라 pageSize와 pageCount 설정
   useEffect(() => {
-    const updatePageSize = () => {
+    const updateSettings = () => {
       if (window.innerWidth <= 768) {
         setPageSize(10); // 모바일은 10 설정
+        setPageCount(4); // 모바일은 4 설정
       } else {
         setPageSize(5); // 그 외에는 5 설정
+        setPageCount(5); // PC는 5 설정
       }
     };
 
-    window.addEventListener('resize', updatePageSize);
-    updatePageSize(); // 초기 로드 시 호출
+    window.addEventListener('resize', updateSettings);
+    updateSettings(); // 초기 로드 시 호출
 
-    return () => window.removeEventListener('resize', updatePageSize);
+    return () => window.removeEventListener('resize', updateSettings);
   }, []);
 
   useEffect(() => {
