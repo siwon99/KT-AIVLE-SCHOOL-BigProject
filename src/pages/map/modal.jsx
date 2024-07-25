@@ -122,7 +122,7 @@ const Modal = ({farm_id, closeModal}) => {
           <div className="modal-title">농지 상세정보</div>
           <div className="modal-detail">
             <span className="m-info"><div className='m-subtitle'>상세 주소: {landDetail.farm_name}</div> </span> 
-            <span className="m-info"><div className='m-subtitle'>소유주: {landDetail.farm_owner}</div> </span> 
+            <span className="m-info"><div className='m-subtitle'>지목: {landDetail.farm_owner}</div> </span> 
             <span className="m-info"><div className='m-subtitle'>농지 면적: {landDetail.farm_size}</div> </span> 
             <span className="m-info"><div className='m-subtitle'>게시 날짜: {farmDate}</div> </span>
             <span className="m-info"><div className='m-subtitle'>농지 상태: {farmStatusText}</div> </span>

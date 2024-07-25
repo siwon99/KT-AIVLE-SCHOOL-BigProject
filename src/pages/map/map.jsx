@@ -98,7 +98,7 @@ function Map() {
         <div class="content-wrap">
           <div class="content-info">
             <div class="content-title">${farm.farm_name}</div>
-            <div class="content-owner">소유자: ${farm.farm_owner}</div>
+            <div class="content-owner">지목: ${farm.farm_owner}</div>
             <div class="content-size">면적: ${farm.farm_size}</div>
             <a class="content-link" data-id="${farm.farm_id}">더 보기 ></a>
           </div>  
