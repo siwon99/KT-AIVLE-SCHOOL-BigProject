@@ -143,9 +143,8 @@ body, html {
   align-items: center;
   /* width: 85px; */
   width: 9%;
-  min-width: 55px;
+  min-width: 50px;
   height: 35px;
-  min-height: 25px;
   margin-left: auto;
   font-size: 14px;
   border: 3px solid #6E9FED;
@@ -259,9 +258,14 @@ body, html {
     height: 2px !important;
   }
 
-  .farm-info,
-  .choiceBtn {
+  .farm-info {
     font-size: 11px !important;
+  }
+
+  .choiceBtn {
+    margin-left: 10px;
+    font-size: 11px !important;
+    height: 21px !important;
   }
 
   .num {
