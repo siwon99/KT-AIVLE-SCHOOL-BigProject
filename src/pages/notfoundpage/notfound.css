@@ -9,3 +9,8 @@
     line-height: 2.2;
   }
   
+@media (max-width: 768px) {
+	.notfound-page {
+		font-size: 20px;
+	}
+}
