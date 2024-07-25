@@ -279,11 +279,45 @@ body, html {
 }
 
 @media(max-width: 768px) {
+  .detail-title {
+    font-size: 16px !important;
+  }
+
+  .d-info,
+  .backBtn {
+    font-size: 13px !important;
+  }
+}
+
+/* @media(max-width: 768px) {
   .detail-container {
-    width: 100%;
-    margin-top: 300px;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    width: 90%;
+    margin-top: 300px;
+    box-sizing: border-box;
+  }
+
+  .detail-container.no-sidebar {
+    margin-top: 120px;
+  }
+
+  .detail-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 351px;
+    margin-left: 0;
+    box-sizing: border-box;
+  }
+
+  .detail-title {
+    width: 100%;
+    max-width: 351px;
+    box-sizing: border-box;
   }
 
   .map {
@@ -303,27 +337,4 @@ body, html {
     margin: 0; 
     box-sizing: border-box;
   }
-
-  .detail-title {
-    font-size: 16px !important;
-    width: 160%;
-    margin-left: -155px;
-    margin-right: 35px;
-    margin-top: 20px;
-  }
-
-  .d-info {
-    font-size: 13px !important;
-    width: 160%;
-    margin-left: -155px;
-  }
-
-  .backBtn {
-    font-size: 13px !important;
-    margin-left: -155px;
-  }
-
-  .changeBtn {
-    margin-right: 40px;
-  }
-}
+} */

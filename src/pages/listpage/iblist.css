@@ -5,7 +5,6 @@ body, html {
   height: 100%;
 }
 
-/* 페이지 기본 설정 */
 #root {
   display: flex;
   flex-direction: column;
@@ -37,7 +36,6 @@ body, html {
   display: none;
 }
 
-/* 리스트 컨테이너 설정 */
 .lists-container {
   display: flex;
   flex-direction: column;
@@ -47,7 +45,6 @@ body, html {
   box-sizing: border-box;
 }
 
-/* 제목 스타일 */
 .title {
   position: relative;
   text-align: center;
@@ -71,7 +68,6 @@ body, html {
   transform: translateX(-50%);
 }
 
-/* 리스트 정보 컨테이너 */
 .lists-info {
   display: flex;
   flex-direction: column;
@@ -83,7 +79,6 @@ body, html {
   box-sizing: border-box;
 }
 
-/* 리스트 항목 스타일 */
 .lists {
   display: flex;
   justify-content: space-between;
@@ -96,7 +91,6 @@ body, html {
   box-sizing: border-box;
 }
 
-/* 농지 정보 스타일 */
 .farm-info {
   display: flex;
   align-items: center;
@@ -143,7 +137,7 @@ body, html {
   align-items: center;
   /* width: 85px; */
   width: 9%;
-  min-width: 50px;
+  min-width: 75px;
   height: 35px;
   margin-left: auto;
   font-size: 14px;
@@ -169,7 +163,6 @@ body, html {
   box-sizing: border-box;
 }
 
-/* 페이지네이션 버튼 스타일 */
 .pagination {
   display: flex;
   justify-content: center;
@@ -200,8 +193,7 @@ body, html {
   cursor: not-allowed;
 }
 
-/* 반응형 스타일 */
-@media (max-width: 1279px) {
+@media (max-width: 1279px) { /* 반응형 */
   .listpage.sidebar-open {
     padding-left: 20%;
   }
@@ -221,7 +213,7 @@ body, html {
   }
 
   .num {
-    font-size: calc(10px + (15 - 10) * ((100vw - 768px) / (1279 - 768))) !important;
+    font-size: calc(14px + (15 - 14) * ((100vw - 768px) / (1279 - 768))) !important;
   }
 
   .no-farms {
@@ -229,15 +221,10 @@ body, html {
   }
 
   .pagination button {
-    font-size: calc(12px + (14 - 12) * ((100vw - 768px) / (1279 - 768)));
-  }
-
-  .farm-name {
-    font-size: calc(11px + (14 - 11) * ((100vw - 768px) / (1279 - 768)));
+    font-size: calc(12px + (14 - 12) * ((100vw - 768px) / (1279 - 768)));;
   }
 }
 
-/* 태블릿 이하 화면에서의 반응형 스타일 */
 @media(max-width: 1024px) {
   .listpage.sidebar-open {
     padding-left: 210px;
@@ -248,7 +235,6 @@ body, html {
   }
 }
 
-/* 스마트폰 화면에서의 반응형 스타일 */
 @media (max-width: 768px) {
   .title {
     font-size: 28px !important;
@@ -258,18 +244,13 @@ body, html {
     height: 2px !important;
   }
 
-  .farm-info {
-    font-size: 11px !important;
-  }
-
+  .farm-info,
   .choiceBtn {
-    margin-left: 10px;
-    font-size: 11px !important;
-    height: 21px !important;
+    font-size: 13px !important;
   }
 
   .num {
-    font-size: 10px !important;
+    font-size: 14px !important;
   }
 
   .farm-size {
@@ -282,13 +263,5 @@ body, html {
 
   .no-farms {
     font-size: 15px;
-  }
-  
-  .lists-container {
-    width: 80%;
-  }
-
-  .lists {
-    height: 11.5%;
   }
 }
