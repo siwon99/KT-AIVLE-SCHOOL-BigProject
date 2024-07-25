@@ -27,6 +27,7 @@ const ServicePage = lazy(() => import('./pages/servicepage/service'));
 const FaqPage = lazy(() => import('./pages/faqpage/faq'));
 const Map = lazy(() => import('./pages/map/map'));
 const Notfound = lazy(() => import('./pages/notfoundpage/notfound'));
+const Session = lazy(() => import('./pages/session/session'));
 
 //마이페이지
 const MyPage = lazy(() => import('./pages/mypage/mypage'));
@@ -64,6 +65,7 @@ function App() {
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/map" element={<Map />} />
           <Route path="/notfound" element={<Notfound />} />
+          <Route path="/session" element={<Session />}/>
 
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/mypage/admin" element={<AdminMyPage />} />

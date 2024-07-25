@@ -1,0 +1,42 @@
+.session-page {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 2.2;
+	flex-direction: column;
+	gap: 20px; 
+}
+  
+.session-login{
+  width: 10%;
+	text-decoration: none;
+  padding: 5px;
+  font-size: 18px;
+  border: 3px solid #00008C;
+  border-radius: 20px;
+  background-color: #00008C;
+  color: #FFFFFF;
+  box-sizing: border-box;
+	margin-top: 10px;
+}
+
+.session-login:hover {
+  cursor: pointer;
+	background-color: #6E9FED;
+	border: 3px solid #6E9FED;
+}
+
+@media (max-width: 768px) {
+	.session-page {
+		font-size: 20px;
+	}
+
+  .session-login {
+    width: 60%;  
+    font-size: 14px; 
+  }
+}
