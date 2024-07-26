@@ -102,9 +102,9 @@ const DetailAdmin = () => {
           const lastLog = data.status_logs[data.status_logs.length - 1];
           
           if (lastLog.farm_status === 0) {
-            setFarmStatusText('확인 완료');
+            setFarmStatusText('확인 이전');
           } else if (lastLog.farm_status === 1) {
-            setFarmStatusText('유휴 농지');
+            setFarmStatusText('확인 완료');
           } else if (lastLog.farm_status === 2) {
             setFarmStatusText('분양 신청');
           } else if (lastLog.farm_status === 3) {
