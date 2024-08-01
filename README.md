@@ -72,12 +72,22 @@ vite 설치하기
 <br >
 
 # 👨‍👩‍👧‍👦 팀 소개
-
-|    BE    |     FE     |     FE     |     BE     |     AI     |     BE     |    FE    |   AI    |  AI   |
-| :-------: | :---------: | :-------: | :---------: | :----------: | :-----------: | :-----------: | :-----------: | :-----------: |
-|   강병관   |   권혜민  |      김시원     |    김찬희    |   문주원     |    송유경  |  이건우  |  진희원 |  한덕구|
-
-
+<table align="center">
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://github.com/byeonggwan"><img src="https://github.com/user-attachments/assets/24de07ae-d35e-4329-8295-36574a8482de" width="100px;" alt=""/><br /><sub><b>BE 강병관</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/hyeem37"><img src="https://avatars.githubusercontent.com/u/160707151?v=4" width="100px;" alt=""/><br /><sub><b>FE 권혜민</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/siwon99"><img src="https://avatars.githubusercontent.com/u/126474541?v=4" width="100px;" alt=""/><br /><sub><b>FE 김시원</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/githubryan125"><img src="https://avatars.githubusercontent.com/u/105639460?v=4" width="100px;" alt=""/><br /><sub><b>BE 김찬희</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/j-wonny"><img src="https://avatars.githubusercontent.com/u/120628442?v=4" width="100px;" alt=""/><br /><sub><b>AI 문주원</b></sub></a><br /></td>
+     <tr/>
+     <td align="center"><a href="https://github.com/Song-yk"><img src="https://github.com/user-attachments/assets/d576f43a-c45d-4a34-bf6c-79eed253c7e4" width="100px;" alt=""/><br /><sub><b>BE 송유경</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/KOR-GEON-WOO"><img src="https://avatars.githubusercontent.com/u/115761954?v=4" width="100px;" alt=""/><br /><sub><b>FE 이건우</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/ddongmando"><img src="https://avatars.githubusercontent.com/u/113417618?v=4" width="100px;" alt=""/><br /><sub><b>AI 진희원</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/HanDeokku"><img src="https://avatars.githubusercontent.com/u/148433888?v=4" width="100px;" alt=""/><br /><sub><b>AI 한덕구</b></sub></a><br /></td>
+    </tr>
+  </tbody>
+</table>
 <br>
 <br>
 
