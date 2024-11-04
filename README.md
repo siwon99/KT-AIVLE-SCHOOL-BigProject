@@ -40,13 +40,6 @@
 <br >
 <br >
 
-# 🗓️ 개발 기간
-2024.06.17 ~ 2024.07.26
-
-<br >
-<br >
-
-
 # 💻 핵심 기능
 
 1. 최근 3년 간 농지 위성사진의 변화 유뮤로 **유휴농지 탐지 서비스** 제공 
@@ -55,6 +48,124 @@
 
 <br >
 <br >
+
+# ⭐ 페이지 소개
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/e9f71e87-4b31-4135-a654-19d445657830"/>
+      <div>메인 페이지</div>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/f5bea3d8-9e35-44ef-8e66-b6a20c624939"/>
+      <div>개인정보 보호 페이지</div>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/007161ca-7d3c-4219-a135-62dc55b27b71"/>
+      <div>개인정보 보호 페이지</div>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/3c0e14c6-e14a-4893-af9d-218ddc2b6484"/>
+      <div>회원가입(유효성 검사) 페이지</div>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/ad573d3a-6c2c-4a57-9c66-bd74e826c26c"/>
+      <div>FAQ 페이지</div>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/530e3544-9664-47b7-8fc2-1a49e5cc4379"/>
+      <div>서비스 소개 페이지</div>
+    </td>
+  </tr>
+    <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/3f4dbd1b-e01e-4c63-87a8-72487f143ee9"/>
+      <div>불법 건축물 결과 페이지</div>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/6d6a05a2-cf53-476d-bf51-867bdd65d6e7"/>
+      <div>챗봇 페이지</div>
+    </td>
+  </tr>
+</table>
+
+<br >
+<br >
+
+## 🔒 관리자 페이지 소개
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/64df8183-fb45-4de7-90aa-fb73d9b2f88d"/>
+      <div>관리자 로그인 시 리스트 페이지</div>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/42c984ac-4c3a-4ad8-ac0d-45dc4fa365b6"/>
+      <div>관리자 농지 임대 리스트 페이지</div>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/7c063d5e-b4ad-4576-a89a-ac6d9b8e66cc"/>
+      <div>관리자 농지 임대 상세 페이지</div>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/cec8d5b0-c723-44dd-9b3f-252749d2b470"/>
+      <div>관리자 3년간 농지 변화 탐지 결과 확인 페이지</div>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/89501b4a-6026-426b-a9c8-f7027dbf317e"/>
+      <div>관리자 불법 건축물 리스트 페이지</div>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/4f4a04aa-3534-463c-af75-7ba903aa383b"/>
+      <div>관리자 마이페이지</div>
+    </td>
+  </tr>
+</table>
+
+<br >
+<br >
+
+## 🔑 사용자 페이지 소개
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/d5878147-bd26-432f-bc64-41317c620bf3"/>
+      <div>사용자 지도 페이지</div>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/c6798a81-8296-47f5-820a-44e557eac17b"/>
+      <div>사용자 유휴 농지 임대 페이지</div>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/fc8ab07c-0ce0-4757-b793-003044f3a590"/>
+      <div>사용자 유휴 농지 임대 상세페이지</div>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/020e3e13-579f-40db-83e8-1758622842e6"/>
+      <div>사용자 마이페이지</div>
+    </td>
+  </tr>
+</table>
+
+<br >
+<br >
+
+# 🗓️ 개발 기간
+2024.06.17 ~ 2024.07.26
+
+<br >
+<br >
+
 
 # 📲 설치
 
